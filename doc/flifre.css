@@ -1,0 +1,27 @@
+header {
+    margin: auto;
+}
+
+img {
+    height:80px;
+    width:200px;
+}
+
+p {
+    float: left;
+}
+.nav li {
+    list-style-type: none;
+    padding-right: 30px;
+    font-size: 1.3em;
+}
+
+.nav ul {
+    margin: 0 10px 0 20px;
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
