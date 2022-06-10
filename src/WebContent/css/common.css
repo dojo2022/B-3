@@ -72,7 +72,7 @@ img {border-style: none;}
 
   .header {
   z-index: 30;/*重なり優先度一番*/
-  background-color:black;
+  background-color:#c6e872;
   position: fixed;
   position: absolute;
   top: 0; /*上に固定*/
@@ -114,13 +114,13 @@ img {border-style: none;}
   letter-spacing: 2px;
   font-size: 16px;
   text-transform: capitalize;
-  color: #ddd;
+  color: #056334;
   opacity: 0;
   transition: 0.5s;
 }
 
 .menu li {
-  border-top: 1px solid rgb(75, 75, 75);
+  border-top: 1px solid rgb(169, 221, 47);
   padding: 15px 0;
   margin: 0 54px;
   opacity: 0;
@@ -142,7 +142,7 @@ img {border-style: none;}
   position: relative;
   cursor: pointer;
   padding: 24px 14px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #a3060c;
 }
 
 .navicon {
