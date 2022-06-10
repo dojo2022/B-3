@@ -38,3 +38,34 @@ a:visited {color: #056334;}
 a:hover {color: #09a858;}
 a:active {color: #a3060c;}
 img {border-style: none;}
+
+#error_message {
+	color: red;
+}
+/* id="nav" */
+#nav li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 30px;
+  }
+  #nav {
+    margin: 0 0 0 0;
+    padding: 15px 30px 12px 30px;
+    background-image: url(../images/menu-bg.png);
+  }
+  #nav li a:link {
+    color: #056334;
+    text-decoration: none;
+  }
+  #nav li a:visited {
+    color: #056334;
+    text-decoration: none;
+  }
+  #nav li a:hover {
+    color: #09a858;
+    text-decoration: none;
+  }
+  #nav li a:active {
+    color: #a3060c;
+    text-decoration: none;
+  }
