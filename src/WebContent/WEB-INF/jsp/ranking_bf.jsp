@@ -243,9 +243,9 @@
         <div class="ranklist">
             <p class="ranking">バラエティー</p>
             <ul class="list">
-                <li><img class="rank" src="Gold.png">あぶりえんがわ</li>
-                <li><img class="rank" src="Silver.png">あぶりとろ</li>
-                <li><img class="rank" src="Bronze.png">あぶりカルビ</li>
+                <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
+                <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
+                <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
             </ul>
         </div>
         </div>
