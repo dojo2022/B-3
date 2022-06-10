@@ -70,7 +70,12 @@ img {border-style: none;}
     text-decoration: none;
   }
 
-  .header {
+/* Navbar & Navmenu color */
+:root {
+  --background-navbar: #c6e872;
+}
+/*ヘッダーの設定*/
+.header {
   z-index: 30;/*重なり優先度一番*/
   background-color:#c6e872;
   position: fixed;
@@ -88,6 +93,7 @@ img {border-style: none;}
   width: 100%;
   height: auto;
   top: 0;
+  right: 0;
   margin-top: 52px;
   padding: 0 0 10px 0;
   clear: both;
@@ -96,7 +102,7 @@ img {border-style: none;}
   /*ハンバーガーメニューバーのアニメーション設定*/
 
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;/*アニメーションの速度*/
-  transform: scale(1, 0); /*高さ、幅のモーション*/
+  transform: translateX(100%); /*高さ、幅のモーション*/
   transform-origin: top;  /*要素変形の起点*/
 }
 
@@ -146,7 +152,7 @@ img {border-style: none;}
 }
 
 .navicon {
-  background: #ddd;
+  background: #056334;
   display: block;
   height: 3px;
   width: 26px;
@@ -161,7 +167,7 @@ img {border-style: none;}
   height: 100%;
   width: 100%;
   position: absolute;
-  background: #ddd;
+  background: #056334;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
 }
 
@@ -210,7 +216,7 @@ img {border-style: none;}
 .navtext {
   position: absolute;
   text-transform: uppercase;
-  color: #ddd;
+  color: #056334;
   letter-spacing: 4px;
   font-size: 20px;
 }
