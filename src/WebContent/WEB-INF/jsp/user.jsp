@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>マイページ | FLIFRE</title>
+<title>ユーザーページ | FLIFRE</title>
 <link rel="stylesheet" href="/FLIFRE/css/common.css">
 <link rel="stylesheet" href="/FLIFRE/css/profile.css">
 <script src="/FLIFRE/js/profile.js"></script>
@@ -102,8 +102,12 @@
          </select>
       </form>
 <!-- ルーレット -->
+
 <div>
-<a href="/FLIFRE/ProfileServlet"><img src ="/FLIFRE/WecContent/images/pf_edit.png"></a>
+	<form id = follow_Lift method="POST" action="/FLIFRE/MypageServlet">
+		<input type="button" name="FOLLOW" value="フォロー">
+		<input type="button" name="FOLLOW" value="フォロー中">
+	</form>
 	<table>
 		<tr>
 			<td>
@@ -130,30 +134,10 @@
 		<p>フォロワー数</p><!-- m_userのfollow_idを引用予定 -->
 </div>
 
-<div>
-<!-- <c:forEach var="" items="" > -->
-<form   id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
-	<table>
-		<tr>
-			<td>
-			<a href="/FLIFRE/Servlet">レビュー投稿</a>
+	<a href="/FLIFRE/Servlet">レビュー投稿</a>
 			<!-- t_reviewのvideo_id, user_id, review_contents, genre_id,
 			feelcat_name1, feelcat_name2, star, reply_id, stamp_id, review_dateを引用 -->
-			</td>
-			<a href="/FLIFRE/Servlet"><a>リプライ</a>
-			<!-- t_replyのreply_contentsを引用 -->
-			</td>
-			<td>
-			<a href="/FLIFRE/Servlet"><a>スタンプを送ったレビュー</a>
-			<!-- t_reactionのreaction_id, review_id, user_id, stamp_idを引用 -->
-			</td>
-		</tr>
-	</table>
-	<input type="submit" name="DELETET" value="削除">
-	<input type="submit" name="EDIT" value="編集">
-</form>
-<!-- </c:forEach> -->
-</div>
-
+	<!-- スタンプ -->
+	<!-- リプライ -->
 </body>
 </html>
