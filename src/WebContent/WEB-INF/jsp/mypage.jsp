@@ -33,7 +33,6 @@
 		    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
   		 </ul>
           <!--ここまでメニュー-->
-      </div>
   </header>
 		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
 	<input type="text" name="text" placeholder="タイトル入力">
