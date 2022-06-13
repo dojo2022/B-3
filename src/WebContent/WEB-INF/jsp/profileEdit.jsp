@@ -10,8 +10,6 @@
 <script src="/FLIFRE/js/profile.js"></script>
 </head>
 <body>
-<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="649" height="119" alt="FLIFRE"></a>
-<input type="button" onclick="/FLIFRE/LoginServlet" value="ログアウト">
 <header>
 		<input type="checkbox" class="menu-btn" id="menu-btn">
 		<label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
@@ -33,8 +31,11 @@
 		    <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
 		    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
 		    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-  		</ul>
-  	</header>
+  		 </ul>
+          <!--ここまでメニュー-->
+  </header>
+		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
+	 	<a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="logout"></a>
 
 <!-- <c:forEach var="" items="" > -->
 <form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">

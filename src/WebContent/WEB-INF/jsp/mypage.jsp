@@ -10,10 +10,6 @@
 <script src="/FLIFRE/js/profile.js"></script>
 </head>
 <body>
-<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="649" height="119" alt="FLIFRE"></a>
-<input type="text" name="text" placeholder="タイトル入力">
-<input type="submit" name="submit" value="検索">
-<input type="button" onclick="/FLIFRE/LoginServlet" value="ログアウト">
 <header>
 		<input type="checkbox" class="menu-btn" id="menu-btn">
 		<label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
@@ -37,7 +33,6 @@
 		    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
   		 </ul>
           <!--ここまでメニュー-->
-      </div>
   </header>
 		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
 	<input type="text" name="text" placeholder="タイトル入力">
@@ -138,25 +133,29 @@
 
 <div>
 <!-- <c:forEach var="" items="" > -->
-<form   id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
+<form id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
-			<a href="/FLIFRE/Servlet">レビュー投稿</a>
-			<!-- t_reviewのvideo_id, user_id, review_contents, genre_id,
-			feelcat_name1, feelcat_name2, star, reply_id, stamp_id, review_dateを引用 -->
-			</td>
-			<a href="/FLIFRE/Servlet"><a>リプライ</a>
-			<!-- t_replyのreply_contentsを引用 -->
+			<span>レビュー投稿</span>
 			</td>
 			<td>
-			<a href="/FLIFRE/Servlet"><a>スタンプを送ったレビュー</a>
-			<!-- t_reactionのreaction_id, review_id, user_id, stamp_idを引用 -->
+			<span>リプライ</span>
+			</td>
+			<td>
+			<span>スタンプを送ったレビュー</span>
 			</td>
 		</tr>
+		<tr>
+		<td><table>レビュー投稿一覧
+				<input type="submit" name="REVIEWDELETET" value="削除">
+				<input type="submit" name="REVIEWEDIT" value="編集">
+		</table></td>
+
+		</tr>
 	</table>
-	<input type="submit" name="DELETET" value="削除">
-	<input type="submit" name="EDIT" value="編集">
+	<table>
+
 </form>
 <!-- </c:forEach> -->
 </div>

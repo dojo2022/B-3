@@ -5,8 +5,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/FLIFRE/css/Style.css">
-    <link rel="stylesheet" href="/FLIFRE/css/ranking.css">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="ranking.css">
     <title>ランキング | FLIFRE</title>
 </head>
 
@@ -35,7 +35,7 @@
                     <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
                     <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
                     <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-                    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+                    <li><a href="/FLIFRE/LoginServlet">ログイン</a></li>
                 </ul>
                 <!--ここまでメニュー-->
             </div>
@@ -89,6 +89,7 @@
         <br>
         再生時間
         <select name="select3">
+            <option label=""></option>
             <option label="～30分"></option>
             <option label="31～60分"></option>
             <option label="61～90分"></option>
@@ -256,4 +257,5 @@
 
     </footer>
 </body>
+
 </html>
