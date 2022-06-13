@@ -5,8 +5,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/FLIFRE/css/Style.css">
-    <link rel="stylesheet" href="/FLIFRE/css/ranking.css">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="ranking.css">
     <title>ランキング | FLIFRE</title>
 </head>
 
@@ -35,13 +35,13 @@
                     <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
                     <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
                     <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-                    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+                    <li><a href="/FLIFRE/LoginServlet">ログイン</a></li>
                 </ul>
                 <!--ここまでメニュー-->
             </div>
         </div>
     </header>
-    <h1 class="logo"><a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a></h1>
+    <h1 class="logo"><a href="/FLIFRE/Top_afServlet"><img src="logo.png" width="480" height="281" alt="FLIFRE"></a></h1>
     <div class="search"><input type="text" name="text" placeholder="タイトル入力">
     <input type="submit" name="submit" value="検索">
     <input type="button" onclick="/FLIFRE/LoginServlet" value="ログイン">
@@ -89,6 +89,7 @@
         <br>
         再生時間
         <select name="select3">
+            <option label=""></option>
             <option label="～30分"></option>
             <option label="31～60分"></option>
             <option label="61～90分"></option>
@@ -256,4 +257,5 @@
 
     </footer>
 </body>
+
 </html>
