@@ -7,7 +7,7 @@
     text-align: right;
 }
 .post-btn {
-	 background: url("/images/post2.png") no-repeat;
+	 background: url("../images/post2.png") no-repeat;
 }
 
 .post-btn a {

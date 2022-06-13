@@ -123,6 +123,7 @@
       <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
    </form>
 
+	<!-- 投稿フォーム-->
    <main>
    		<div class="post-box">
    			<p class="post-btn">
