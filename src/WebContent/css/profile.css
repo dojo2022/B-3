@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-p,span {
+p,span,table,td {
 	border: solid #000;
 }
 /* 作成段階でブロックが分かりやすいように、全体に線を引く */
