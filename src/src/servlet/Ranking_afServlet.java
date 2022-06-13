@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RankingServlet
+ * Servlet implementation class Ranking_afServlet
  */
-@WebServlet("/RankingServlet")
-public class RankingServlet extends HttpServlet {
+@WebServlet("/Ranking_afServlet")
+public class Ranking_afServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ログインページにフォワードする
+		//ランキングページへ遷移
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking_af.jsp");
 		dispatcher.forward(request, response);
 	}
