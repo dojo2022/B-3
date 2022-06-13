@@ -107,19 +107,19 @@
                 <option label="2020年代"></option>
              </select>
           </form>
-          <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
+          <input type="image" src="./images/roulette" name="ROULETTE" value="ルーレット">
 
 <div>
 <a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
 	<table>
 		<tr>
 			<td>
-			<img src ="/FLIFRE/WecContent/images/pf_hd.png">
+			<img src ="./images/pf_hd.png">
 			</td><!-- m_userのuser_hd ヘッダーを引用、backgroundにしたい -->
 		</tr>
 		<tr>
 			<td>
-			<img src ="/FLIFRE/WecContent/images/pf_img.png">
+			<img src ="./images/pf_img.png">
 			</td><!-- m_userのuser_img アイコンを引用 -->
 		</tr>
 		<tr>
