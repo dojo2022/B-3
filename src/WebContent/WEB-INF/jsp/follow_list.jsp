@@ -82,6 +82,7 @@
             <br>
             再生時間
              <select name="select3">
+             　<option label=""></option>
                <option label="～30分"></option>
                <option label="31～60分"></option>
                <option label="61～90分"></option>
