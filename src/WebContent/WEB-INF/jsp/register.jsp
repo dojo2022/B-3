@@ -8,33 +8,41 @@
 <link rel="stylesheet" type="text/css" href="/FLIFRE/css/common.css">
 <link rel="stylesheet" type="text/css" href="/FLIFRE/css/register.css">
 </head>
-<body>
-	<h1>FLIFRE</h1>
-	<h2>新規会員登録</h2>
-	<form>
+<body id="register_body">
+<!-- ロゴ -->
+	<a href="/FLIFRE/Top_afServlet">
+		<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
+	</a>
+<!-- 新規会員登録 -->
+	<h2 id="explain">新規会員登録</h2>
+	<form method="POST" action="/FLIFRE/RegisterServlet">
 		<table id="register_table">
 			<tr>
 				<td>
-				<label>メールアドレス(IDになります)</label>
+				<label>メールアドレス(ID)<br>
 				<input type="text" name="ID">
+				</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-				<label>パスワード</label>
+				<label>パスワード<br>
 				<input type="password" name="PW">
+				</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-				<label>パスワード（再入力）</label>
+				<label>パスワード（再入力）<br>
 				<input type="password" name="PW">
+				</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-				<label>ユーザー名</label>
+				<label>ユーザー名<br>
 				<input type="text" name="user_name">
+				</label>
 				</td>
 			</tr>
 			<tr>
