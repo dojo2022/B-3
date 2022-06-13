@@ -129,7 +129,7 @@
 	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
 	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
 </div>
-
+<br>
 
 <!-- <c:forEach var="" items="" > -->
 <form id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
