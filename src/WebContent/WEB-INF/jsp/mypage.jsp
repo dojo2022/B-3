@@ -111,27 +111,14 @@
           <input type="image" src="./images/roulette" name="ROULETTE" value="ルーレット">
 
 <div>
-<a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
-	<table>
-		<tr>
-			<td>
-			<img src ="./images/pf_hd.png" style="background">
-			</td><!-- m_userのuser_hd ヘッダーを引用 -->
-			<td>
-			<img src ="./images/pf_img.png">
-			</td><!-- m_userのuser_img アイコンを引用 -->
-			<td>
-			ユーザー名
-			</td><!-- m_userのuser_nameを引用予定 -->
-		</tr>
-		<tr>
-			<td>
-			プロフィール文
-			</td><!-- m_userのuser_pfを引用予定 -->
-		</tr>
-	</table>
-		<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
-		<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
+<img src ="./images/pf_hd.png" style="background"><!-- m_userのuser_hd ヘッダーを引用 -->
+	<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用 -->
+	<p>ユーザー名</p><!-- m_userのuser_nameを引用予定 -->
+	<a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
+
+	<span>プロフィール文</span><!-- m_userのuser_pfを引用予定 -->
+	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
+	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
 </div>
 
 
@@ -166,7 +153,5 @@
 	</table>
 </form>
 <!-- </c:forEach> -->
-
-
 </body>
 </html>
