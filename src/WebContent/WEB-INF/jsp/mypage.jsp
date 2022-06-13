@@ -123,10 +123,9 @@
 <div class ="myprofile">
 	<img src ="./images/pf_img.png">
 	<!-- m_userのuser_img アイコンを引用 -->
-	<p>ユーザー名</p><!-- m_userのuser_nameを引用予定 -->
+	<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
 	<a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
-
-	<span>プロフィール文</span><!-- m_userのuser_pfを引用予定 -->
+	<p>プロフィール文</p><!-- m_userのuser_pfを引用予定 -->
 	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
 	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
 </div>
