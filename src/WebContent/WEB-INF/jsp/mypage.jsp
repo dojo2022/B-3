@@ -133,8 +133,8 @@
 			</td><!-- m_userのuser_pfを引用予定 -->
 		</tr>
 	</table>
-		<p>フォロー数</p><!-- m_userのfollow_idを引用予定 -->
-		<p>フォロワー数</p><!-- m_userのfollow_idを引用予定 -->
+		<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
+		<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
 </div>
 
 
