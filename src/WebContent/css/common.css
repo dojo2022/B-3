@@ -14,7 +14,17 @@ body {
 }
 
 #logo {
-  text-align: start;
+    text-align: center;
+}
+
+.log {
+    text-align: right;
+    margin-top: 25px;
+    margin-right: 100px;
+}
+
+.search {
+    text-align: center;
 }
 
 h2 {
@@ -138,3 +148,4 @@ img {border-style: none;}
 }
 
 input[name=text]        {width: 30em; height: 2.5em;}
+
