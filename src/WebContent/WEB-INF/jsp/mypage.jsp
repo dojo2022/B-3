@@ -142,21 +142,18 @@
 	<table>
 		<tr>
 			<td>
-			<a href="/FLIFRE/Servlet">レビュー投稿</a>
-			<!-- t_reviewのvideo_id, user_id, review_contents, genre_id,
-			feelcat_name1, feelcat_name2, star, reply_id, stamp_id, review_dateを引用 -->
-			</td>
-			<a href="/FLIFRE/Servlet"><a>リプライ</a>
-			<!-- t_replyのreply_contentsを引用 -->
+			<input type="submit" name="REVIEWDELETET" value="削除">
+			<input type="submit" name="REVIEWEDIT" value="編集">
+			<span>レビュー投稿</span>
 			</td>
 			<td>
-			<a href="/FLIFRE/Servlet"><a>スタンプを送ったレビュー</a>
-			<!-- t_reactionのreaction_id, review_id, user_id, stamp_idを引用 -->
+			<span>リプライ</span>
+			</td>
+			<td>
+			<span>スタンプを送ったレビュー</span>
 			</td>
 		</tr>
 	</table>
-	<input type="submit" name="DELETET" value="削除">
-	<input type="submit" name="EDIT" value="編集">
 </form>
 <!-- </c:forEach> -->
 </div>
