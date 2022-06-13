@@ -31,7 +31,7 @@
             <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
             <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
             <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-              <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
             <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
             <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>　　　　　　<!--ログアウト状態のページではカット-->
           </ul>
