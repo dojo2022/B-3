@@ -124,38 +124,34 @@
 <div>
 	<form id = follow_Lift method="POST" action="/FLIFRE/MypageServlet">
 		<input type="button" name="FOLLOW" value="フォロー">
-		<input type="button" name="FOLLOW" value="フォロー中">
+		<!-- 既にフォローしている場合は「フォロー中」と表示する -->
+
 	</form>
+	<div class ="userprofile">
+	<img src ="./images/pf_img.png">
+	<!-- m_userのuser_img アイコンを引用 -->
+	<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
+	<p>プロフィール文</p><!-- m_userのuser_pfを引用予定 -->
+	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
+	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
+	</div>
+</div>
+<br>
+
+<form id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
-			<img src ="/FLIFRE/WecContent/images/pf_hd.png">
-			</td><!-- m_userのuser_hd ヘッダーを引用、backgroundにしたい -->
+			<span>レビュー投稿</span>
+			</td>
 		</tr>
 		<tr>
-			<td>
-			<img src ="/FLIFRE/WecContent/images/pf_img.png">
-			</td><!-- m_userのuser_img アイコンを引用 -->
-		</tr>
-		<tr>
-			<td>
-			ユーザー名
-			</td><!-- m_userのuser_nameを引用予定 -->
-		</tr>
-		<tr>
-			<td>
-			プロフィール文
-			</td><!-- m_userのuser_pfを引用予定 -->
+		<td id= "review_list" style="visibility: visible;"><table><p>レビュー投稿一覧</p>
+				<input type="button" name="STAMP" value="スタンプ">
+				<input type="text" name="REPLY" value="リプライ">
+		</table></td>
 		</tr>
 	</table>
-		<p>フォロー数</p><!-- m_userのfollow_idを引用予定 -->
-		<p>フォロワー数</p><!-- m_userのfollow_idを引用予定 -->
-</div>
-
-	<a href="/FLIFRE/Servlet">レビュー投稿</a>
-			<!-- t_reviewのvideo_id, user_id, review_contents, genre_id,
-			feelcat_name1, feelcat_name2, star, reply_id, stamp_id, review_dateを引用 -->
-	<!-- スタンプ -->
-	<!-- リプライ -->
+</form>
 </body>
 </html>

@@ -120,17 +120,17 @@
       </div>
       </form>
       <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
-
+<br>
+<br>
 <div class ="myprofile">
-	<img src ="./images/pf_img.png">
-	<!-- m_userのuser_img アイコンを引用 -->
+	<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
 	<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
 	<a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
 	<p>プロフィール文</p><!-- m_userのuser_pfを引用予定 -->
 	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
 	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
 </div>
-
+<br>
 
 <!-- <c:forEach var="" items="" > -->
 <form id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
@@ -151,11 +151,11 @@
 				<input type="submit" name="REVIEWDELETET" value="削除">
 				<input type="submit" name="REVIEWEDIT" value="編集">
 		</table></td>
-		<td id= "reply_list" style="visibility: hidden;"><table><p>リプライ一覧</p>
+		<td id= "reply_list" style="visibility: visible;"><table><p>リプライ一覧</p>
 				<input type="submit" name="REPLYDELETET" value="削除">
 				<input type="submit" name="REPLYWEDIT" value="編集">
 		</table></td>
-		<td id= "stamp_list" style="visibility: hidden;"><table><p>スタンプを送ったレビュー一覧</p>
+		<td id= "stamp_list" style="visibility: visible;"><table><p>スタンプを送ったレビュー一覧</p>
 				<input type="submit" name="STAMPDELETET" value="削除">
 				<input type="submit" name="STAMPEDIT" value="編集">
 		</table></td>
