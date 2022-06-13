@@ -91,7 +91,7 @@ img {border-style: none;}
     top: 0;
     left: 0;
     z-index: 80;
-    background-color: #3584bb;
+    background-color: #056334;
 }
 .menu-content ul {
     padding: 70px 10px 0;
@@ -130,9 +130,9 @@ img {border-style: none;}
     top: 0;
     left: 100%;/*leftの値を変更してメニューを画面外へ*/
     z-index: 80;
-    background-color: #3584bb;/*背景色変更*/
+    background-color: #056334;/*背景色変更*/
     transition: all 0.5s;/*アニメーション設定*/
 }
 #menu-btn-check:checked ~ .menu-content {
-    left: 50%;/*メニューを画面内へ*/
+    left: 80%;/*メニューを画面内へ*/
 }

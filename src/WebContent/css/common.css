@@ -42,181 +42,97 @@ img {border-style: none;}
 #error_message {
 	color: red;
 }
-/* id="nav" */
-#nav li {
-    display: inline;
-    list-style-type: none;
-    padding-right: 30px;
-  }
-  #nav {
-    margin: 0 0 0 0;
-    padding: 15px 30px 12px 30px;
-    background-image: url(../images/menu-bg.png);
-  }
-  #nav li a:link {
-    color: #056334;
-    text-decoration: none;
-  }
-  #nav li a:visited {
-    color: #056334;
-    text-decoration: none;
-  }
-  #nav li a:hover {
-    color: #09a858;
-    text-decoration: none;
-  }
-  #nav li a:active {
-    color: #a3060c;
-    text-decoration: none;
-  }
-
-/* Navbar & Navmenu color */
-:root {
-  --background-navbar: #c6e872;
-}
-/*ヘッダーの設定*/
-.header {
-  z-index: 30;/*重なり優先度一番*/
-  background-color:#c6e872;
-  position: fixed;
-  position: absolute;
-  top: 0; /*上に固定*/
-  width: 100%;
-  height: 52px;
-  position: sticky;/*スクロール時メニューバー固定*/
-  top: 0px;
-}
-/* メニューバー設定 */
-.menu {
-  list-style: none;
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: 0;
-  right: 0;
-  margin-top: 52px;
-  padding: 0 0 10px 0;
-  clear: both;
-  background: var(--background-navbar);
-
-  /*ハンバーガーメニューバーのアニメーション設定*/
-
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;/*アニメーションの速度*/
-  transform: translateX(100%); /*高さ、幅のモーション*/
-  transform-origin: top;  /*要素変形の起点*/
-}
-
-/* ハンバーガーメニューバーのボタン設定*/
-.menu-btn:checked ~ .menu {
-  transform: scale(1, 1);
-  transform-origin: top;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
-
-/* ハンバーガーメニューバーの文字 */
-.menu a {
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #056334;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.menu li {
-  border-top: 1px solid rgb(169, 221, 47);
-  padding: 15px 0;
-  margin: 0 54px;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.menu-btn:checked ~ .menu a,
-.menu-btn:checked ~ .menu li {
-  opacity: 1;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
-}
-
 .menu-btn {
-  display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
 }
-
-.menu-icon {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding: 24px 14px;
-  -webkit-tap-highlight-color: #a3060c;
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;
 }
-
-.navicon {
-  background: #056334;
-  display: block;
-  height: 3px;
-  width: 26px;
-  position: relative;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+.menu-btn span:before {
+    bottom: 8px;
 }
-
-.navicon:before,
-.navicon:after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: #056334;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+.menu-btn span:after {
+    top: 8px;
 }
-
-.navicon:before {
-  top: 9px;
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
 }
-
-.navicon:after {
-  bottom: 9px;
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
 }
-
-/* Hamburger Menu Animation Start */
-.menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
 }
-
-.menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
+#menu-btn-check {
+    display: none;
 }
-
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
-  top: 0;
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #056334;
 }
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  bottom: 0;
+.menu-content ul {
+    padding: 70px 10px 0;
 }
-
-.menu-btn:checked ~ .menu-icon .navicon {
-  background: rgba(0, 0, 0, 0);
-  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
 }
-/* Hamburger Menu Animation End */
-
-/* Navbar Container */
-.navtext-container {
-  width: 100%;
-  height: 52px;
-  position: absolute;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
 }
-
-/* Navbar Text */
-.navtext {
-  position: absolute;
-  text-transform: uppercase;
-  color: #056334;
-  letter-spacing: 4px;
-  font-size: 20px;
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;/*[position: fixed]の固定を外す*/
+    -webkit-overflow-scrolling: touch;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #056334;/*背景色変更*/
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 80%;/*メニューを画面内へ*/
 }

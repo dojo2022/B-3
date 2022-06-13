@@ -35,9 +35,15 @@
 		    <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
 		    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
 		    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-  		</ul>
-  	</header>
-	<form name="sample">
+  		 </ul>
+          <!--ここまでメニュー-->
+      </div>
+  </header>
+		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
+	<input type="text" name="text" placeholder="タイトル入力">
+        <input type="submit" name="submit" value="検索">
+        <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="logout"></a>
+        <form name="sample">
     感想カテゴリ１
 		<select name="select1" onchange="change(this)">
           <option>選択してください</option>

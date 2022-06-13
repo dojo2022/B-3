@@ -10,32 +10,37 @@
 </head>
 <body>
 	<header>
-		<input type="checkbox" class="menu-btn" id="menu-btn">
-		<label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
-  		<ul class="menu">
-		    <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-		    <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-		   	<li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-		    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-		    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-  		</ul>
-  	</header>
-	<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="649" height="119" alt="FLIFRE"></a>
+      <div class="hamburger-menu">
+          <input type="checkbox" id="menu-btn-check">
+          <label for="menu-btn-check" class="menu-btn"><span></span></label>
+          <!--ここからメニュー-->
+          <div class="menu-content">
+         <ul>
+            <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
+              <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+            <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
+            <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+          </ul>
+          <!--ここまでメニュー-->
+      </div>
+  </header>
+		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
 	<input type="text" name="text" placeholder="タイトル入力">
         <input type="submit" name="submit" value="検索">
-        <input type="button" onclick="/FLIFRE/LoginServlet" value="ログイン">
+        <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="logout"></a>
         <form name="sample">
             感想カテゴリ１
             <select name="select1" onchange="change(this)">
