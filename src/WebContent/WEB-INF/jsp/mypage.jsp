@@ -115,15 +115,11 @@
 	<table>
 		<tr>
 			<td>
-			<img src ="./images/pf_hd.png">
-			</td><!-- m_userのuser_hd ヘッダーを引用、backgroundにしたい -->
-		</tr>
-		<tr>
+			<img src ="./images/pf_hd.png" style="background">
+			</td><!-- m_userのuser_hd ヘッダーを引用 -->
 			<td>
 			<img src ="./images/pf_img.png">
 			</td><!-- m_userのuser_img アイコンを引用 -->
-		</tr>
-		<tr>
 			<td>
 			ユーザー名
 			</td><!-- m_userのuser_nameを引用予定 -->
@@ -154,15 +150,15 @@
 			</td>
 		</tr>
 		<tr>
-		<td id= "review_list"><table><p>レビュー投稿一覧</p>
+		<td id= "review_list" style="visibility: visible;"><table><p>レビュー投稿一覧</p>
 				<input type="submit" name="REVIEWDELETET" value="削除">
 				<input type="submit" name="REVIEWEDIT" value="編集">
 		</table></td>
-		<td id= "reply_list"><table><p>リプライ一覧</p>
+		<td id= "reply_list" style="visibility: hidden;"><table><p>リプライ一覧</p>
 				<input type="submit" name="REPLYDELETET" value="削除">
 				<input type="submit" name="REPLYWEDIT" value="編集">
 		</table></td>
-		<td id= "stamp_list"><table><p>スタンプを送ったレビュー一覧</p>
+		<td id= "stamp_list" style="visibility: hidden;"><table><p>スタンプを送ったレビュー一覧</p>
 				<input type="submit" name="STAMPDELETET" value="削除">
 				<input type="submit" name="STAMPEDIT" value="編集">
 		</table></td>
