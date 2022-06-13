@@ -37,6 +37,7 @@
           </ul>
           <!--ここまでメニュー-->
       </div>
+      </div>
   </header>
   <form method="POST" action="/FLIFRE/SearchServlet">
 		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
