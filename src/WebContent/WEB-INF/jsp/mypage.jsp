@@ -10,10 +10,6 @@
 <script src="/FLIFRE/js/profile.js"></script>
 </head>
 <body>
-<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="649" height="119" alt="FLIFRE"></a>
-<input type="text" name="text" placeholder="タイトル入力">
-<input type="submit" name="submit" value="検索">
-<input type="button" onclick="/FLIFRE/LoginServlet" value="ログアウト">
 <header>
 		<input type="checkbox" class="menu-btn" id="menu-btn">
 		<label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
@@ -138,12 +134,10 @@
 
 <div>
 <!-- <c:forEach var="" items="" > -->
-<form   id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
+<form id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
-			<input type="submit" name="REVIEWDELETET" value="削除">
-			<input type="submit" name="REVIEWEDIT" value="編集">
 			<span>レビュー投稿</span>
 			</td>
 			<td>
@@ -153,7 +147,16 @@
 			<span>スタンプを送ったレビュー</span>
 			</td>
 		</tr>
+		<tr>
+		<td><table>レビュー投稿一覧
+				<input type="submit" name="REVIEWDELETET" value="削除">
+				<input type="submit" name="REVIEWEDIT" value="編集">
+		</table></td>
+
+		</tr>
 	</table>
+	<table>
+
 </form>
 <!-- </c:forEach> -->
 </div>
