@@ -116,9 +116,35 @@
             <option label="2020年代"></option>
          </select>
          <br>
-         <input type="submit" name="submit" value="検索">
+         <input type="submit" name="SEARCH" value="検索">
       </div>
       <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
    </form>
+
+   <main>
+   		<div class="post-box">
+   			<table id="post">
+           	<c:forEach var="e" items="${post}" >
+				<tr class="data_row">
+		            <td>
+		            	${e.number}
+		            </td>
+		            <td>
+						${e.name}
+					</td>
+					<td>
+						<a href="${e.companypage}" target="_blank">${e.company}</a>
+					</td>
+					<td>
+						${e.tel}
+					</td>
+					<td>
+						${e.email}
+					</td>
+		        </tr>
+	    	</c:forEach>
+	    	<input type="submit" name="POST" value="投稿">
+        </div>
+
 </body>
 </html>
