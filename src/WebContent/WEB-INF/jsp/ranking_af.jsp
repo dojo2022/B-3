@@ -5,15 +5,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="ranking.css">
+    <link rel="stylesheet" href="/FLIFRE/css/Style.css">
+    <link rel="stylesheet" href="/FLIFRE/css/ranking.css">
     <title>ランキング | FLIFRE</title>
 </head>
 
 <body>
     <!---->
     <header>
-        <a href="Top_bfServlet.java"><img id="logo" src="logo.png"></a>
+        <a href="Top_afServlet.java"><img id="logo" src="images/logo.png"></a>
         <!--検索とログイン（ほぼ全画面）-->
         <input type="text" name="text" placeholder="タイトル入力">
         <input type="submit" name="submit" value="検索">

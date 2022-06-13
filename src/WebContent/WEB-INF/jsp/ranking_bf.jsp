@@ -41,7 +41,7 @@
             </div>
         </div>
     </header>
-    <h1 class="logo"><a href="/FLIFRE/Top_afServlet"><img src="logo.png" width="480" height="281" alt="FLIFRE"></a></h1>
+    <h1 class="logo"><a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a></h1>
     <div class="search"><input type="text" name="text" placeholder="タイトル入力">
     <input type="submit" name="submit" value="検索">
     <input type="button" onclick="/FLIFRE/LoginServlet" value="ログイン">
