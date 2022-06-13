@@ -136,3 +136,5 @@ img {border-style: none;}
 #menu-btn-check:checked ~ .menu-content {
     left: 80%;/*メニューを画面内へ*/
 }
+
+input[name=text]        {width: 30em; height: 2.5em;}
