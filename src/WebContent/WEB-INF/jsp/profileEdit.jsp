@@ -11,11 +11,16 @@
 </head>
 <body>
 <header>
+      <p class="log">
+         <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
+         <!--ログアウト状態のページではこっち→　<a href="/FLIFRE/LoginServlet"><img src="images/login.png"  width="97" height="29" alt="ログイン"></a>　-->
+      </p>
       <div class="hamburger-menu">
-          <input type="checkbox" id="menu-btn-check">
-          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-          <!--ここからメニュー-->
-          <div class="menu-content">
+         <input type="checkbox" id="menu-btn-check">
+         <label for="menu-btn-check" class="menu-btn"><span></span></label>
+      </div>
+      <!--ここからメニュー-->
+      <div class="menu-content">
          <ul>
             <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
             <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
@@ -31,19 +36,13 @@
             <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
             <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
             <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-              <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+            <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
             <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-            <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>　　　　　　<!--ログアウト状態のページではカット-->
-          </ul>
-          <!--ここまでメニュー-->
+            <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
+         </ul>
       </div>
-      </div>
-  </header>
-<h1 id="logo">
-<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
-</h1>
-<a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
-
+      <!--ここまでメニュー-->
+</header>
 
 <!-- <c:forEach var="" items="" > -->
 <form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">
