@@ -36,7 +36,7 @@
                     <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
                     <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
                     <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-                    <li><a href="/FLIFRE/LogoutServlet">ログアウト</a></li>
+                    <li><a href="/FLIFRE/LogoutServlet" onclick="return confirm('本当にログアウトしますか？')">ログアウト</a></li>
                 </ul>
                 <!--ここまでメニュー-->
             </div>
