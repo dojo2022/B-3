@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.ranking-box {
+    border: 3px double #a3060c;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.ranking {
+    text-align: center;
+    color: #056334;
+}
+.ranklist {
+    padding-top: 2em;
+    padding-bottom: 3em;
+    width: 500px;
+    margin: auto;
+}
+.list {
+    border: 3px double #a3060c;
+    list-style: none;
+
+}
+.rank {
+    height: 30px;
+    width: 30px;
+
+}
