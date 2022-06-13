@@ -36,6 +36,7 @@
   </header>
 		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
 	 	<a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="logout"></a>
+
 <!-- <c:forEach var="" items="" > -->
 <form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">
 	<table>
