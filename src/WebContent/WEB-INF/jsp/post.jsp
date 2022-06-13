@@ -37,11 +37,12 @@
           <!--ここまでメニュー-->
       </div>
   </header>
+  <form method="POST" action="/FLIFRE/SearchServlet">
 		<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
 	<input type="text" name="text" placeholder="タイトル入力">
         <input type="submit" name="submit" value="検索">
-        <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="logout"></a>
-        <form name="sample">
+        <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト">
+
             感想カテゴリ１
             <select name="select1" onchange="change(this)">
                <option>選択してください</option>
@@ -105,6 +106,8 @@
                 <option label="2020年代"></option>
              </select>
           </form>
+
+          <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
 
 </body>
 </html>
