@@ -18,7 +18,6 @@
       <div class="hamburger-menu">
          <input type="checkbox" id="menu-btn-check">
          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-      </div>
       <!--ここからメニュー-->
       <div class="menu-content">
          <ul>
@@ -41,9 +40,10 @@
             <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
          </ul>
       </div>
-      <!--ここまでメニュー-->
+    </div>
+    <!--ここまでメニュー-->
+</header>
 
-   </header>
    <form method="POST" action="/FLIFRE/SearchServlet">
       <h1 id="logo">
          <a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>

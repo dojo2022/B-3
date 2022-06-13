@@ -15,10 +15,9 @@
          <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
          <!--ログアウト状態のページではこっち→　<a href="/FLIFRE/LoginServlet"><img src="images/login.png"  width="97" height="29" alt="ログイン"></a>　-->
       </p>
-      <div class="hamburger-menu">
+    <div class="hamburger-menu">
          <input type="checkbox" id="menu-btn-check">
          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-      </div>
       <!--ここからメニュー-->
       <div class="menu-content">
          <ul>
@@ -41,6 +40,7 @@
             <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
          </ul>
       </div>
+    </div>
       <!--ここまでメニュー-->
 
    </header>

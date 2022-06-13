@@ -1,13 +1,9 @@
 @charset "UTF-8";
-body {
-	border: 1px;
-}
+
 .myprofile {
   background-image: url("./images/pf_hd.png");
   background-repeat: no-repeat;
+  text-align: center;
 }
 /* m_userのuser_hd ヘッダーを引用 */
 
-.myprofile img, p, a {
-  display: inline;
-}
