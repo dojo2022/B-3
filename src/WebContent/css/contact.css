@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
+/* ロゴ */
+#logo {
+	margin: auto;
+}
+
 /* お問い合わせ */
+#contact_body {
+	height: 1000px;
+}
+
 #contact_table {
 	margin: auto;
 	border: 1px solid black;
@@ -8,4 +17,9 @@
 
 #explain {
 	text-align: center;
+}
+
+#ct_items {
+	margin: auto;
+	padding: 20px;
 }
