@@ -56,7 +56,7 @@
 
     <form method="POST" action="/FLIFRE/SearchServlet">
         <h1 id="logo">
-            <a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
+            <a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
         </h1>
         <div class="search">
             作品名

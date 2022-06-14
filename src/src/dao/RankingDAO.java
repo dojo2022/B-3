@@ -12,7 +12,7 @@ public class RankingDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Ranking> select(Ranking param) {
 		Connection conn = null;
-		List<Ranking> cardList = new ArrayList<Ranking>();
+		List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -57,16 +57,16 @@ public class RankingDAO {
 				rs.getString("address"),
 				rs.getString("mail")
 				);
-				cardList_total.add(card);
+				ReviewRanking.add(card);
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			cardList_total = null;
+			ReviewRanking = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			cardList_total = null;
+			ReviewRanking = null;
 		}
 		finally {
 			// データベースを切断
@@ -76,12 +76,12 @@ public class RankingDAO {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					cardList_total = null;
+					ReviewRanking = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return cardList_total;
+		return ReviewRanking;
 	}
 }
