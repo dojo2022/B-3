@@ -77,7 +77,7 @@
          	<div class="text">
 	         	本文
 	         	<br>
-	        	<textarea id="text" name="text" cols="40" rows="4"></textarea>
+	        	<textarea name="text" cols="100" rows="10"></textarea>
         	</div>
         </div>
         </div>
