@@ -43,8 +43,8 @@ td {
 	border: 3px double #a3060c;
 }
 
-.review_tag, .reply_tag, .stamp_tag{
-	padding:0 50 0 50;
+#review_tag, #reply_tag, #stamp_tag{
+	margin:0px 50px;
 	border: 3px double #a3060c;
 }
 

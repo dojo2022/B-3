@@ -35,9 +35,9 @@
 	<table>
 		<tr>
 			<td>
-			<span  id="review_tag" >レビュー投稿</span>
-			<span  id= "reply_tag" >リプライ</span>
-			<span  id= "stamp_tag" >スタンプを送ったレビュー</span>
+			<span  id="review_tag" >　　レビュー投稿　　</span>
+			<span  id= "reply_tag" >　　リプライ　　</span>
+			<span  id= "stamp_tag" >　　スタンプを送ったレビュー　　</span>
 			</td>
 		</tr>
 		<tr>
@@ -81,6 +81,7 @@
 			<span>感想カテゴリ２：非日常的</span><!-- t_reviewのfeelcat_name2を引用 -->
 			<p>始まりにして頂点。全てが最高。</p><!-- t_reviewのreview_contentsを引用 -->
 				<input type="button" name="STAMP" value="スタンプ">
+				<!-- <dialog>を使って、jsで動きを作る -->
 				<input type="text" name="REPLY" value="リプライ">
 				<input type="submit" name="REPLYSEND" value="送信">
 				<br>
