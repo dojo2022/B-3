@@ -39,11 +39,11 @@ table {
 	width: 1000px;
 }
 
-td, span {
+td {
 	border: 3px double #a3060c;
 }
 
-span{
+.review_tag, .reply_tag, .stamp_tag{
 	padding:0 50 0 50;
 }
 
