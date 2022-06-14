@@ -17,6 +17,11 @@ p,span,table,td,div {
 }
 /* m_userのuser_hd ヘッダーを引用予定 */
 
-table {
+
+
+table, tr, td{
 	text-align: center;
+}
+.pf_edit {
+	text-align: right;
 }
