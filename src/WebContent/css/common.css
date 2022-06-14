@@ -39,7 +39,6 @@ h2 {
 h3 {
   color: #a3060c;
   font-family: serif;
-  text-align: right;
 }
 
 
@@ -147,5 +146,10 @@ img {border-style: none;}
     left: 80%;/*メニューを画面内へ*/
 }
 
-input[name=text]        {width: 30em; height: 2.5em;}
+input[name=title]        {width: 30em; height: 2.5em;}
+
+.roulette {
+	 text-align: right;
+	 margin-right: 100px;
+}
 
