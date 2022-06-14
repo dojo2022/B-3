@@ -38,6 +38,7 @@
             <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
             <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
             <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
+            <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
          </ul>
       </div>
     </div>
