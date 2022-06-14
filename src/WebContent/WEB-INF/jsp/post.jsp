@@ -17,6 +17,7 @@
 
 	<!-- 投稿フォーム-->
    <main>
+   		<div class="wrapper">
    		<div class="post-box">
 			<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
 			<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
@@ -76,8 +77,9 @@
          	<div class="text">
 	         	本文
 	         	<br>
-	        	<input type="text" name="text">
+	        	<textarea id="text" name="text" cols="40" rows="4"></textarea>
         	</div>
+        </div>
         </div>
 	</main>
 

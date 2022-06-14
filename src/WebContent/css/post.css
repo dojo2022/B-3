@@ -14,8 +14,9 @@
 .post-contents {
 	left: 20px;
 }
-.text {
+/*#text {
 	left: 20px;
-}
+	width: 80em;
+	height: 30em;
+}*/
 
-input[name=text]         {width: 80em; height: 30em;}
