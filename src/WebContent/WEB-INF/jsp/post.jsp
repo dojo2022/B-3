@@ -52,7 +52,7 @@
       </h1>
       <div class="search">
          作品名
-         <input type="text" name="text" placeholder="タイトル入力">
+         <input type="text" name="title" placeholder="タイトル入力">
          <br>
          感想カテゴリ１
          <select name="select1" onchange="change(this)">
@@ -120,15 +120,72 @@
          <br>
          <input type="submit" name="SEARCH" value="検索">
       </div>
-      <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
+      <p class="roulette">
+      	<input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
+      </p>
    </form>
 
 	<!-- 投稿フォーム-->
    <main>
    		<div class="post-box">
+			<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
+			<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
    			<p class="post-btn">
 	    		<a href="/FLIFRE/PostServlet"><img src="images/post.png" width="205.5" height="53" alt="投稿"></a>
         	</p>
+        	<div class="post-contents">
+        	<h1>作品名</h1><!-- m_videoのvideo_nameを引用 -->
+        	<h2>再生時間</h2><!-- m_videoのvideo_timeを引用 -->
+        	<h2>作品ジャンル</h2><!-- m_videoのgenre_idを引用 -->
+        	<br>
+        	感想カテゴリ１
+	        <select name="select1" onchange="change(this)">
+	        	<option>選択してください</option>
+	            <option value="1番目">爆笑コメディ</option>
+	            <option value="2番目">ポジティブ</option>
+	            <option value="3番目">癒される</option>
+	            <option value="4番目">スカッとする</option>
+	            <option value="5番目">優雅</option>
+	            <option value="6番目">非日常的</option>
+	            <option value="7番目">わくわく</option>
+	            <option value="8番目">ときめく</option>
+	            <option value="9番目">勉強になる</option>
+	            <option value="10番目">泣ける</option>
+	            <option value="11番目">儚い</option>
+	            <option value="12番目">衝撃的</option>
+	            <option value="13番目">ミステリアス</option>
+	            <option value="14番目">ダークな</option>
+	            <option value="15番目">怖い</option>
+	            <option value="16番目">グロテスク</option>
+	        </select>
+         	感想カテゴリ２
+         	<select name="select2">
+	            <option>選択してください</option>
+	            <option label="爆笑コメディ"></option>
+	            <option label="ポジティブ"></option>
+	            <option label="癒される"></option>
+	            <option label="スカッとする"></option>
+	            <option label="優雅"></option>
+	            <option label="非日常的"></option>
+	            <option label="わくわく"></option>
+	            <option label="ときめく"></option>
+	            <option label="勉強になる"></option>
+	            <option label="泣ける"></option>
+	            <option label="儚い"></option>
+	            <option label="衝撃的"></option>
+	            <option label="ミステリアス"></option>
+	            <option label="ダークな"></option>
+	            <option label="怖い"></option>
+	            <option label="グロテスク"></option>
+         	</select>
+         	</div>
+         	<br>
+         	<br>
+         	<div class="text">
+	         	本文
+	         	<br>
+	        	<input type="text" name="text">
+        	</div>
         </div>
 	</main>
 
