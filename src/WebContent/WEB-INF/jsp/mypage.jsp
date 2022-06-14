@@ -10,6 +10,7 @@
 <script src="/FLIFRE/js/profile.js " defer></script>
 </head>
 <body>
+<div class="wrapper">
 <header>
       <p class="log">
          <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
@@ -196,5 +197,6 @@
 </main>
 <br>
 <br>
+</div>
 </body>
 </html>
