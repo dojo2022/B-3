@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<div class="wrapper">
     <!---->
     <header>
         <p class="log">
@@ -126,7 +127,7 @@
         <div class="ranking-box">
             <h1 class="ranking">項目別ランキング</h1>
             <div class="ranklist">
-                <p class="ranking">通算</p>
+                <h3 class="ranking">通算</h3>
                 <ul class="list">
                     <li><img class="rank" src="Gold.png">あぶりえんがわ</li>
                     <li><img class="rank" src="Silver.png">あぶりとろ</li>
@@ -134,7 +135,7 @@
                 </ul>
             </div>
             <div class="ranklist">
-                <p class="ranking">月間</p>
+                <h3 class="ranking">月間</h3>
                 <ul class="list">
                     <li><img class="rank" src="Gold.png">あぶりえんがわ</li>
                     <li><img class="rank" src="Silver.png">あぶりとろ</li>
@@ -266,6 +267,7 @@
     <footer>
 
     </footer>
+</div>
 </body>
 
 </html>
