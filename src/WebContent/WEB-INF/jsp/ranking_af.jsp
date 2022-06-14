@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<div class="wrapper">
     <!---->
     <header>
         <p class="log">
@@ -274,6 +275,7 @@
     <footer>
 
     </footer>
+</div>
 </body>
 
 </html>
