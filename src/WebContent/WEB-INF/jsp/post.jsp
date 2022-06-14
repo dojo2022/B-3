@@ -48,6 +48,7 @@
 	            <option value="15番目">怖い</option>
 	            <option value="16番目">グロテスク</option>
 	        </select>
+	        <br>
          	感想カテゴリ２
          	<select name="select2">
 	            <option>選択してください</option>
