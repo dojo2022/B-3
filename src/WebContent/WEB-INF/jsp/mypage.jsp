@@ -38,6 +38,7 @@
             <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
             <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
             <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
+            <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
          </ul>
       </div>
     </div>
@@ -95,6 +96,7 @@
          <br>
          再生時間
          <select name="select3">
+         	<option label=""></option>
             <option label="～30分"></option>
             <option label="31～60分"></option>
             <option label="61～90分"></option>
@@ -119,48 +121,53 @@
       </div>
       </form>
       <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
-
+<br>
+<br>
 <div class ="myprofile">
-	<img src ="./images/pf_img.png">
-	<!-- m_userのuser_img アイコンを引用 -->
+	<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
 	<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
 	<a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
-	<p>プロフィール文</p><!-- m_userのuser_pfを引用予定 -->
+	<br>
+	<span>プロフィール文</span><!-- m_userのuser_pfを引用予定 -->
+	<br>
+	<br>
 	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
 	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
 </div>
-
+<br>
 
 <!-- <c:forEach var="" items="" > -->
 <form id = myreview_edit method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
-			<span>レビュー投稿</span>
-			</td>
-			<td>
-			<span>リプライ</span>
-			</td>
-			<td>
-			<span>スタンプを送ったレビュー</span>
+			<span  id="review_tag" >レビュー投稿</span>
+			<span  id= "reply_tag" >リプライ</span>
+			<span  id= "stamp_tag" >スタンプを送ったレビュー</span>
 			</td>
 		</tr>
 		<tr>
-		<td id= "review_list" style="visibility: visible;"><table><p>レビュー投稿一覧</p>
+		<td >
+		<div id= "review_list" >
+		<p>レビュー投稿一覧</p>
 				<input type="submit" name="REVIEWDELETET" value="削除">
 				<input type="submit" name="REVIEWEDIT" value="編集">
-		</table></td>
-		<td id= "reply_list" style="visibility: hidden;"><table><p>リプライ一覧</p>
-				<input type="submit" name="REPLYDELETET" value="削除">
-				<input type="submit" name="REPLYWEDIT" value="編集">
-		</table></td>
-		<td id= "stamp_list" style="visibility: hidden;"><table><p>スタンプを送ったレビュー一覧</p>
+		</div>
+		<div id= "reply_list" >
+			<p>リプライ一覧</p>
+			<input type="submit" name="REPLYDELETET" value="削除">
+			<input type="submit" name="REPLYWEDIT" value="編集">
+		</div>
+		<div id= "stamp_list" >
+		<p>スタンプを送ったレビュー一覧</p>
 				<input type="submit" name="STAMPDELETET" value="削除">
 				<input type="submit" name="STAMPEDIT" value="編集">
-		</table></td>
+		</div>
+		</td>
 		</tr>
 	</table>
 </form>
 <!-- </c:forEach> -->
+
 </body>
 </html>

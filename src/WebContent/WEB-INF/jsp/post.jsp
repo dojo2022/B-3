@@ -19,29 +19,30 @@
       <div class="hamburger-menu">
          <input type="checkbox" id="menu-btn-check">
          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-      </div>
       <!--ここからメニュー-->
-      <div class="menu-content">
-         <ul>
-            <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-            <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-            <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
-         </ul>
-      </div>
+      	<div class="menu-content">
+         	<ul>
+            	<li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
+	            <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+	            <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
+	            <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
+	            <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
+	         </ul>
+	      </div>
+		</div>
       <!--ここまでメニュー-->
 
    </header>
@@ -96,6 +97,7 @@
          <br>
          再生時間
          <select name="select3">
+         	<option label=""></option>
             <option label="～30分"></option>
             <option label="31～60分"></option>
             <option label="61～90分"></option>
@@ -118,33 +120,17 @@
          <br>
          <input type="submit" name="SEARCH" value="検索">
       </div>
-      <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
+      <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
    </form>
 
+	<!-- 投稿フォーム-->
    <main>
    		<div class="post-box">
-   			<table id="post">
-           	<c:forEach var="e" items="${post}" >
-				<tr class="data_row">
-		            <td>
-		            	${e.number}
-		            </td>
-		            <td>
-						${e.name}
-					</td>
-					<td>
-						<a href="${e.companypage}" target="_blank">${e.company}</a>
-					</td>
-					<td>
-						${e.tel}
-					</td>
-					<td>
-						${e.email}
-					</td>
-		        </tr>
-	    	</c:forEach>
-	    	<input type="submit" name="POST" value="投稿">
+   			<p class="post-btn">
+	    		<a href="/FLIFRE/PostServlet"><img src="images/post.png" width="205.5" height="53" alt="投稿"></a>
+        	</p>
         </div>
+	</main>
 
 </body>
 </html>

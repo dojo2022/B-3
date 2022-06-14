@@ -20,7 +20,6 @@
         <div class="hamburger-menu">
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
-        </div>
         <!--ここからメニュー-->
         <div class="menu-content">
             <ul>
@@ -41,8 +40,9 @@
                 <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
                 <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
                 <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-                <!--ログアウト状態のページではカット-->
+                <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
             </ul>
+        </div>
         </div>
         <!--ここまでメニュー-->
 
@@ -98,6 +98,7 @@
             <br>
             再生時間
             <select name="select3">
+            	<option label=""></option>
                 <option label="～30分"></option>
                 <option label="31～60分"></option>
                 <option label="61～90分"></option>

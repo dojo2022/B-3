@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#search-result-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min(70% / 3, 100%), 1fr));
+    gap: 1rem;
+}
+
+.search-result-item {
+    border: 1px solid black;
+}
+
+.search-result-item .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 100%;
+}
+
+.video-image {
+    background-color: green;
+    height: 150px;
+}
+
+table.video-info th {
+    text-align: end;
+    width: 80px;
+}
