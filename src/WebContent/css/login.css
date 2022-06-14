@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
+/* ログインページ */
+#login_body {
+	text-align:center;
+}
+
 /* ログインテーブル */
 #login_table {
 	margin: auto;
+}
+
+#explain {
+	text-align: center;
 }

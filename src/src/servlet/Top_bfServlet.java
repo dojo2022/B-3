@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Result_afServlet
+ * Servlet implementation class Top_bfServlet
  */
-@WebServlet("/Result_afServlet")
-public class Result_afServlet extends HttpServlet {
+@WebServlet("/Top_bfServlet")
+public class Top_bfServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request
-		.getRequestDispatcher("/WEB-INF/jsp/result_af.jsp")
-		.forward(request, response);
+		//ログイン前トップページに遷移
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
+		dispatcher.forward(request, response);
 	}
+
 }

@@ -28,4 +28,4 @@ public class LogoutServlet extends HttpServlet {
 		// ログインページにリダイレクトする
 		response.sendRedirect("/FLIFRE/LoginServlet");
 	}
-}
+｝
