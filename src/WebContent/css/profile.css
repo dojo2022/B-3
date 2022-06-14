@@ -47,10 +47,10 @@ td {
 	margin:0px 50px;
 	border: 3px double #a3060c;
 }
-
 /*レビュー投稿等のテーブルの位置*/
 
-.pf_edit {
+
+#pf_edit {
 	text-align: right;
 }
 /*編集ボタンの位置*/
