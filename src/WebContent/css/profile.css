@@ -17,11 +17,18 @@ p,span,table,td,div {
 }
 /* m_userのuser_hd ヘッダーを引用予定 */
 
+.myprofile {
+
+}
+/*マイページのプロフィール部分のスタイル*/
 
 
 table, tr, td{
 	text-align: center;
 }
+/*レビュー投稿等のテーブルの位置*/
+
 .pf_edit {
 	text-align: right;
 }
+/*編集ボタンの位置*/
