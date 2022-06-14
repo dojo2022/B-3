@@ -120,19 +120,19 @@
          <input type="submit" name="submit" value="検索">
       </div>
       </form>
-      <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
+      <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
 <br>
 <br>
 <div class ="myprofile">
 	<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
-	<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
+	<span>炙りえんがわ</span><!-- m_userのuser_nameを引用予定 -->
 	<a href="/FLIFRE/ProfileServlet"><img src ="./images/pf_edit.png"></a>
 	<br>
-	<span>プロフィール文</span><!-- m_userのuser_pfを引用予定 -->
+	<span>アニメと洋画が好きです！</span><!-- m_userのuser_pfを引用予定 -->
 	<br>
 	<br>
-	<span>フォロー数</span><!-- m_userのfollow_idを引用予定 -->
-	<span>フォロワー数</span><!-- m_userのfollow_idを引用予定 -->
+	<span>フォロー</span><!-- m_userのfollow_idを引用予定 -->
+	<span>フォロワー</span><!-- m_userのfollow_idを引用予定 -->
 </div>
 <br>
 
@@ -151,7 +151,14 @@
 		<div id= "review_list" >
 		<p>レビュー投稿一覧</p>
 
-			<p>おもしろかった</p>
+			<span>炙りえんがわ</span><span>アイアンマン</span><span>★★★★★</span>
+			<!-- t_reviewのuser_id,video_id,starを引用 -->
+			<span>2022年6月14日</span><!-- t_reviewのreview_dateを引用 -->
+			<br>
+			<span>アクション</span><!-- t_reviewのgenre_idを引用 -->
+			<span>スカッとする</span><!-- t_reviewのfeelcat_name1を引用 -->
+			<span>わくわく</span><!-- t_reviewのfeelcat_name2を引用 -->
+			<p>面白すぎる！！！他のアベンジャーズ作品も見てみようと思った。</p><!-- t_reviewのreview_contentsを引用 -->
 
 
 				<input type="submit" name="REVIEWDELETET" value="削除">
