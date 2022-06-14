@@ -45,6 +45,7 @@ td {
 
 .review_tag, .reply_tag, .stamp_tag{
 	padding:0 50 0 50;
+	border: 3px double #a3060c;
 }
 
 /*レビュー投稿等のテーブルの位置*/

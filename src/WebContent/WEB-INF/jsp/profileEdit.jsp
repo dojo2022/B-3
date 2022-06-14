@@ -12,7 +12,7 @@
 <body>
 <header>
       <p class="log">
-         <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
+         <a href="/FLIFRE/LogoutServlet"><img src="./images/logout.png"  width="120" height="29" alt="ログアウト"></a>
          <!--ログアウト状態のページではこっち→　<a href="/FLIFRE/LoginServlet"><img src="images/login.png"  width="97" height="29" alt="ログイン"></a>　-->
       </p>
        <div class="hamburger-menu">
@@ -52,19 +52,19 @@
 		<tr>
 			<td>アイコン
 			</td>
-			<td><input type="image" src=".png" name="icon" value="編集">
+			<td><input type="image" src="./images/pf_img.png" name="icon" value="編集">
 			</td>
 		</tr>
 		<tr>
 			<td>ヘッダー
 			</td>
-			<td><input type="image" src=".png" name="header" value="編集">
+			<td><input type="image" src="./images/pf_hd.png" name="header" value="編集">
 			</td>
 		</tr>
 		<tr>
 			<td>ユーザー名
 			</td>
-			<td><input type="image" name="userName" value="編集">
+			<td><input type="text" name="userName" value="編集">
 			</td>
 		</tr>
 		<tr>
