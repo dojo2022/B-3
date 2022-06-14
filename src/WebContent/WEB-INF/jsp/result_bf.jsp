@@ -53,6 +53,7 @@
                             <li><a href=" /FLIFRE/MypageServlet">マイページ</a></li>
                             <!--ログアウト状態のページではカット-->
                         </core:if>
+                        <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
                     </ul>
                     <!--ここまでメニュー-->
                 </div>
@@ -131,7 +132,7 @@
                 <br>
                 <input type="submit" name="submit" value="検索">
             </div>
-            <input type="image" src="images/roulette" name="ROULETTE" value="ルーレット">
+            <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
         </form>
 
         <!-- 検索結果　一覧 start-->

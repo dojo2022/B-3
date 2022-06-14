@@ -4,19 +4,18 @@
     border: 3px double #a3060c;
     margin-right: 40px;
     margin-left: 40px;
-    text-align: right;
-}
-.post-btn {
-	 background: url("/images/post2.png") no-repeat;
+    padding: 20px;
 }
 
-.post-btn a {
-	display: inline-black;
+
+
+
+
+.post-contents {
+	left: 20px;
+}
+.text {
+	left: 20px;
 }
 
-.post-btn a:hover {
-	background-color: transparent;
-}
-.post-btn a:hover img {
-	visibility: hidden;
-}
+input[name=text]         {width: 80em; height: 30em;}

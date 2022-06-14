@@ -14,17 +14,7 @@ body {
 }
 
 #logo {
-    text-align: center;
-}
-
-.log {
-    text-align: right;
-    margin-top: 25px;
-    margin-right: 100px;
-}
-
-.search {
-    text-align: center;
+  text-align: start;
 }
 
 h2 {
@@ -39,6 +29,7 @@ h2 {
 h3 {
   color: #a3060c;
   font-family: serif;
+  text-align: right;
 }
 
 
@@ -49,7 +40,7 @@ a:active {color: #a3060c;}
 img {border-style: none;}
 
 #error_message {
-	color: red;
+    color: red;
 }
 .menu-btn {
     position: fixed;
@@ -146,10 +137,56 @@ img {border-style: none;}
     left: 80%;/*メニューを画面内へ*/
 }
 
-input[name=title]        {width: 30em; height: 2.5em;}
+input[name=text]        {width: 30em; height: 2.5em;}
 
-.roulette {
-	 text-align: right;
-	 margin-right: 100px;
+
+
+
+/* 共通ここまで */
+
+.border1{
+ border: solid 3px #000000;
+ position:relative;
+ left:50px;
+ width:80%;
 }
 
+
+.table{
+  position: relative;
+  left: 90px;
+  bottom: 30px;
+}
+
+
+.circle{
+  position: relative;
+  top: 85px;
+  width: 80px;
+  height: 80px;
+  border-radius:50%;
+  backgroung-color:#fff;
+}
+
+.user{
+  position: relative;
+  left: 90px;
+}
+
+.video{
+  position: relative;
+  left: 100px;
+}
+
+.time{
+  position: relative;
+  left: 370px;
+}
+
+.review{
+display: inline-block;
+position: relative;
+left:90px;
+width: 463%;
+height: 50px;
+}
