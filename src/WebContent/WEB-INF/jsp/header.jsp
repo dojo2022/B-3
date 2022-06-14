@@ -60,7 +60,7 @@
         </h1>
         <div class="search">
             作品名
-            <input type="text" name="text" placeholder="タイトル入力">
+            <input type="text" name="title" placeholder="タイトル入力">
             <br>
             感想カテゴリ１
             <select name="select1" onchange="change(this)">
@@ -98,6 +98,8 @@
             <input type="submit" name="submit" value="検索">
         </div>
     </form>
-    <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
+    <p class="roulette">
+    	<input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
+    </p>
 
 </header>
