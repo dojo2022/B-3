@@ -7,7 +7,7 @@
 <title>マイページ | FLIFRE</title>
 <link rel="stylesheet" href="/FLIFRE/css/common.css">
 <link rel="stylesheet" href="/FLIFRE/css/profile.css">
-<script src="/FLIFRE/js/profile.js"></script>
+<script src="/FLIFRE/js/profile.js " defer></script>
 </head>
 <body>
 <header>
@@ -150,6 +150,10 @@
 		<td >
 		<div id= "review_list" >
 		<p>レビュー投稿一覧</p>
+
+			<p>おもしろかった</p>
+
+
 				<input type="submit" name="REVIEWDELETET" value="削除">
 				<input type="submit" name="REVIEWEDIT" value="編集">
 		</div>
