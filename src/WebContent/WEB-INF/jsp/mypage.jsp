@@ -140,31 +140,33 @@
 	<table>
 		<tr>
 			<td>
-			<span>レビュー投稿</span>
-			</td>
-			<td>
-			<span>リプライ</span>
-			</td>
-			<td>
-			<span>スタンプを送ったレビュー</span>
+			<span  id="review_tag" >レビュー投稿</span>
+			<span  id= "reply_tag" >リプライ</span>
+			<span  id= "stamp_tag" >スタンプを送ったレビュー</span>
 			</td>
 		</tr>
 		<tr>
-		<td id= "review_list" style="visibility: visible;"><table><p>レビュー投稿一覧</p>
+		<td >
+		<div id= "review_list" >
+		<p>レビュー投稿一覧</p>
 				<input type="submit" name="REVIEWDELETET" value="削除">
 				<input type="submit" name="REVIEWEDIT" value="編集">
-		</table></td>
-		<td id= "reply_list" style="visibility: visible;"><table><p>リプライ一覧</p>
-				<input type="submit" name="REPLYDELETET" value="削除">
-				<input type="submit" name="REPLYWEDIT" value="編集">
-		</table></td>
-		<td id= "stamp_list" style="visibility: visible;"><table><p>スタンプを送ったレビュー一覧</p>
+		</div>
+		<div id= "reply_list" >
+			<p>リプライ一覧</p>
+			<input type="submit" name="REPLYDELETET" value="削除">
+			<input type="submit" name="REPLYWEDIT" value="編集">
+		</div>
+		<div id= "stamp_list" >
+		<p>スタンプを送ったレビュー一覧</p>
 				<input type="submit" name="STAMPDELETET" value="削除">
 				<input type="submit" name="STAMPEDIT" value="編集">
-		</table></td>
+		</div>
+		</td>
 		</tr>
 	</table>
 </form>
 <!-- </c:forEach> -->
+
 </body>
 </html>
