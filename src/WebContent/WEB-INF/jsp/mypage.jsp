@@ -10,6 +10,7 @@
 <script src="/FLIFRE/js/profile.js " defer></script>
 </head>
 <body>
+
 <header>
       <p class="log">
          <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
@@ -44,7 +45,6 @@
     </div>
       <!--ここまでメニュー-->
 
-   </header>
    <form method="POST" action="/FLIFRE/SearchServlet">
       <h1 id="logo">
          <a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
@@ -121,8 +121,12 @@
       </div>
       </form>
       <input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
+</header>
 <br>
 <br>
+
+<!-- メインここから -->
+<main>
 <div class ="myprofile">
 	<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
 	<span>炙りえんがわ</span><!-- m_userのuser_nameを引用予定 -->
@@ -134,6 +138,7 @@
 	<span>フォロー</span><!-- m_userのfollow_idを引用予定 -->
 	<span>フォロワー</span><!-- m_userのfollow_idを引用予定 -->
 </div>
+<hr>
 <br>
 
 <!-- <c:forEach var="" items="" > -->
@@ -189,6 +194,9 @@
 	</table>
 </form>
 <!-- </c:forEach> -->
+</main>
+<br>
+<br>
 
 </body>
 </html>

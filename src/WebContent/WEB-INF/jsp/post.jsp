@@ -11,6 +11,7 @@
 
 
 <body>
+
    <header>
       <p class="log">
          <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
@@ -178,6 +179,7 @@
 	            <option label="怖い"></option>
 	            <option label="グロテスク"></option>
          	</select>
+         	5段階評価
          	</div>
          	<br>
          	<br>
