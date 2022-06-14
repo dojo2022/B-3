@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -49,7 +50,7 @@
     </header>
     <form method="POST" action="/FLIFRE/SearchServlet">
         <h1 id="logo">
-            <a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
+            <a href="/FLIFRE/Top_afServlet" ><img src="images/logo.png" width="480" height="281" alt="FLIFRE"></a>
         </h1>
         <div class="search">
             作品名
@@ -129,25 +130,31 @@
             <div class="ranklist">
                 <p class="ranking">通算</p>
                 <ul class="list">
+                <c:forEach begin="1" end="3" var="e" items="${cardList_total}" >
                     <li><img class="rank" src="Gold.png">あぶりえんがわ</li>
                     <li><img class="rank" src="Silver.png">あぶりとろ</li>
                     <li><img class="rank" src="Bronze.png">あぶりカルビ</li>
+                </c:forEach>
                 </ul>
             </div>
             <div class="ranklist">
                 <p class="ranking">月間</p>
                 <ul class="list">
+                <c:forEach var="e" items="${cardList_month}" >
                     <li><img class="rank" src="Gold.png">あぶりえんがわ</li>
                     <li><img class="rank" src="Silver.png">あぶりとろ</li>
                     <li><img class="rank" src="Bronze.png">あぶりカルビ</li>
+                </c:forEach>
                 </ul>
             </div>
             <div class="ranklist">
                 <p class="ranking">アニメ</p>
                 <ul class="list">
+                <c:forEach var="e" items="${cardlist_anime}">
                     <li><img class="rank" src="Gold.png">あぶりえんがわ</li>
                     <li><img class="rank" src="Silver.png">あぶりとろ</li>
                     <li><img class="rank" src="Bronze.png">あぶりカルビ</li>
+                </c:forEach>
                 </ul>
             </div>
             <div class="ranklist">
