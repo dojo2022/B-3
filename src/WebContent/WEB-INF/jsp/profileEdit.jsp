@@ -44,6 +44,8 @@
     </div>
 </header>
 
+<!-- メインここから -->
+<main>
 <!-- <c:forEach var="" items="" > -->
 <form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">
 	<table>
@@ -74,5 +76,6 @@
 	</table>
 </form>
 <!-- </c:forEach> -->
+</main>
 </body>
 </html>
