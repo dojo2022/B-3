@@ -151,7 +151,6 @@ input[name=title]        {width: 30em; height: 2.5em;}
 .search {
 	display: flex;
 	padding: 20px 8px;
-	text-align: center;
 }
 .search1 {
 	margin: 40px;
