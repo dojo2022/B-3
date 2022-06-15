@@ -39,8 +39,6 @@ table {
 	width: 1000px;
 }
 
-
-
 #review_tag, #reply_tag, #stamp_tag{
 	margin:0px 50px;
 	border: 3px double #a3060c;
@@ -50,6 +48,10 @@ table {
 
 
 #pf_edit {
-	text-align: right;
+	padding: 0px 100px 0px 100px;
 }
 /*編集ボタンの位置*/
+
+#username {
+	font-weight:bold;
+}
