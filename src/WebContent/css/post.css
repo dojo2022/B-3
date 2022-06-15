@@ -5,12 +5,12 @@
     margin-right: 40px;
     margin-left: 40px;
     padding: 20px;
+    max-width: 1000px;
 }
 
 .post-btn {
     position: relative;
     overflow: hidden;
-    /* background: url("../images/post.png"); */
     background:no-repeat url("../images/post.png");
     background-size: contain;
     width:205.5px;
@@ -19,7 +19,6 @@
 }
 
 .post-btn:hover{
-/* position: relative */
     overflow: hidden;
     background:no-repeat url("../images/post2.png");
     background-size: contain;

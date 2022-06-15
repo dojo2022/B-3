@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core" %>
 
 <header>
-<form method="POST" action="/FLIFRE/SearchServlet">
+<form method="POST" action="/FLIFRE/ResultServlet">
 	<div class="search">
 
 			<h1 id="logo">
@@ -20,7 +20,7 @@
 	    );
 	    %>
 	    <div class="search1">
-	    		 再生時間
+	    		再生時間
 		        <select name="select3">
 		            <option label=""></option>
 		            <option label="～30分"></option>
@@ -94,7 +94,7 @@
 	                <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
 	                <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
 	                <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-	                <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
+	                <li><a href="/FLIFRE/Ranking_bfServlet">レビューランキング</a></li>
 	                <core:if test="${ not empty id }">
 	                    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
 	                </core:if>

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.review {
+	background-color: #ffffff;
+    border: 3px double #a3060c;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding: 20px;
+    max-width: 1000px;
+}
+.date {
+	text-align: right;
+}
