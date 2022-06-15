@@ -81,7 +81,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><img src="./images/pf_hd.png">
+			<td><img src="./images/pfEdit_hd.png">
 			</td>
 		</tr>
 		<tr>

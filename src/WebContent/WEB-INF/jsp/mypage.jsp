@@ -64,9 +64,14 @@
 			<td>
 			<div id= "review_list" >
 			<hr>
+				<img id="pf_icon" src ="./images/pf_img.png">
+				<!-- <input class="circle" type="" name="" value="" readonly> -->
+				<!-- m_userのuser_img アイコンを引用予定 -->
+
 				<span id="username">炙りえんがわ　　</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
+			<br>
 			<br>
 
 				<span id="review_video">アイアンマン</span>
@@ -104,9 +109,14 @@
 
 			<div id= "reply_list" >
 			<hr>
+				<img id="pf_icon" src ="./images/pf_img.png">
+				<!-- <input class="circle" type="" name="" value="" readonly> -->
+				<!-- m_userのuser_img アイコンを引用予定 -->
+
 				<span id="reply_username">To うに軍艦</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_replyのreview_id, user_idを引用 -->
+				<br>
 				<br>
 
 				<span id="reply_time">2022年6月14日 21時30分</span>
@@ -114,7 +124,7 @@
 				<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
 			<br>
 
-				<span id="reply">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</span>
+				<p id="reply">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p>
 				<!-- <input class="reply"type="" name="" value="" readonly> -->
 				<!-- t_replyのreply_contentsを引用 -->
 					<input type="submit" name="REPLYDELETET" value="削除">
@@ -124,9 +134,14 @@
 
 			<div id= "stamp_list" >
 			<hr>
+				<img id="pf_icon" src ="./images/pf_img.png">
+				<!-- <input class="circle" type="" name="" value="" readonly> -->
+				<!-- m_userのuser_img アイコンを引用予定 -->
+
 				<span id="username">うに軍艦　　</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
+			<br>
 			<br>
 
 				<span id="review_video">アイアンマン</span>
@@ -209,7 +224,7 @@ p id="review" ：レビュー本文
 div id= "reply_list" ：リプライ一覧
 span id="reply_username" ：リプライ先のユーザー名
 span id="reply_time" ：リプライ日付
-span id="reply" ：リプライ本文
+p id="reply" ：リプライ本文
 
 div id= "stamp_list" ：スタンプを送ったレビュー一覧
  -->
