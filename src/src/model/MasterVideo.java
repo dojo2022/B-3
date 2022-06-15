@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 public class MasterVideo implements Serializable{
 	private String video_id;
 	private String video_name;
@@ -13,6 +14,8 @@ public class MasterVideo implements Serializable{
 	//引数があるコンストラクタ
 	public MasterVideo(String video_id, String video_name, int video_year, int video_time, String genre_id) {
 =======
+=======
+>>>>>>> Stashed changes
 public class MasterVideo implements Serializable {
 	private String video_id;	    // 作品ID
 	private String video_name;		// 作品名
@@ -22,6 +25,9 @@ public class MasterVideo implements Serializable {
 
 	// 引数があるコンストラクタ
 	public MasterVideo(String video_id, String video_name, String video_year, String video_timee, String genre_idt) {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		super();
 		this.video_id = video_id;
@@ -32,7 +38,11 @@ public class MasterVideo implements Serializable {
 	}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	//引数がないコンストラクタ
+=======
+	// 引数がないコンストラクタ(デフォルトコンストラクタ)
+>>>>>>> Stashed changes
 =======
 	// 引数がないコンストラクタ(デフォルトコンストラクタ)
 >>>>>>> Stashed changes
@@ -41,6 +51,7 @@ public class MasterVideo implements Serializable {
 		this.video_id = "";
 		this.video_name = "";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		this.video_year;
 		this.video_time;
 		this.genre_id = "";
@@ -48,11 +59,16 @@ public class MasterVideo implements Serializable {
 
 	//getter/setter
 =======
+=======
+>>>>>>> Stashed changes
 		this.video_year = "";
 		this.video_time = "";
 		this.genre_id = "";
 	}
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	public String getVideo_id() {
 		return video_id;
@@ -71,6 +87,7 @@ public class MasterVideo implements Serializable {
 	}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	public int getVideo_year() {
 		return video_year;
 	}
@@ -85,6 +102,8 @@ public class MasterVideo implements Serializable {
 
 	public void setVideo_time(int video_time) {
 =======
+=======
+>>>>>>> Stashed changes
 	public String getVideo_year() {
 		return video_year;
 	}
@@ -98,6 +117,9 @@ public class MasterVideo implements Serializable {
 	}
 
 	public void setVideo_time(String video_time) {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		this.video_time = video_time;
 	}
@@ -110,6 +132,11 @@ public class MasterVideo implements Serializable {
 		this.genre_id = genre_id;
 	}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 =======
 
 
