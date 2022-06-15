@@ -16,7 +16,7 @@
 <main>
 
 <!-- マイプロフィールボックスここから -->
-<div class ="myprofile">
+<div class="myprofile">
 	<img id="pf_icon" src ="./images/pf_img.png">
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
 	<!-- m_userのuser_img アイコンを引用予定 -->
@@ -48,9 +48,9 @@
 <hr>
 <br>
 
-<!-- マイレビュー・リプライ・スタンプ履歴一覧ここから -->
+<!-- マイレビュー投稿・リプライ・スタンプ履歴一覧ここから -->
 <!-- <c:forEach var="" items="" > -->
-<form id = mylist_edit method="POST" action="/FLIFRE/MypageServlet">
+<form id = "mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
@@ -168,7 +168,7 @@
 	</table>
 </form>
 <!-- </c:forEach> -->
-<!-- マイレビュー・リプライ・スタンプ履歴一覧ここまで -->
+<!-- マイレビュー投稿・リプライ・スタンプ履歴一覧ここまで -->
 
 </main>
 <!-- メインここまで -->
@@ -179,6 +179,17 @@
 </html>
 
 <!-- class, id一覧
-div class ="myprofile" ：マイプロフィールボックス
 
+div class="myprofile" ：マイプロフィールボックス
+img id="pf_icon" ：プロフィールのアイコン画像
+span id="username" ：ユーザー名全般
+a, img id="pf_edit" ：マイプロフィール編集ボタン
+span id="pf" ：プロフィール文
+span id="follow" ：フォロー数
+span id="follower" ：フォロワー数
+
+form id = "mylist_edit" ：マイレビュー投稿・リプライ・スタンプ履歴一覧フォーム(テーブル)
+span  id="review_tag" ：レビュー投稿見出し
+span  id= "reply_tag" ：見出し
+id= "stamp_tag" ：見出し
  -->
