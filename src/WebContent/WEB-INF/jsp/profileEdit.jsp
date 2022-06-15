@@ -15,7 +15,7 @@
 <a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
 </h1>
 
-<p class="log">
+<p class="log"><!-- このボタンの位置がずれてる -->
 	<a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
 	<img src="images/${ empty id ? 'login' : 'logout' }.png"
 	width="97" height="29" alt="${ empty id ? 'ログイン' : 'ログアウト' }">
@@ -57,6 +57,8 @@
 <!-- メインここから -->
 <main>
 <!-- <c:forEach var="" items="" > -->
+<!-- 画像をフォルダから選んでアップロードできるようにしたい -->
+<!-- レイアウトまだ未定 -->
 <form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">
 	<table>
 		<tr>
@@ -82,6 +84,8 @@
 		</tr>
 		<tr>
 			<td><img src="./images/pfEdit_hd.png">
+			<!-- マイページ・ユーザーページのより小さめのヘッダー画像使ってます。
+			サイズの調整方法が分からない -->
 			</td>
 		</tr>
 		<tr>
