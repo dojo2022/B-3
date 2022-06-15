@@ -67,9 +67,15 @@
 			<td>
 			<div id= "userreview_list" >
 			<hr>
+				<img id="pf_icon" src ="./images/pf_img.png">
+				<!-- <input class="circle" type="" name="" value="" readonly> -->
+				<!-- m_userのuser_img アイコンを引用予定 -->
+
 				<span id="username">うに軍艦　　</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
+				<br>
+				<br>
 
 				<span id="review_video">アイアンマン</span>
 				<!-- <input class="video"type="" name="" value="" readonly> -->
@@ -100,7 +106,11 @@
 				<!-- <input class="review"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_contentsを引用 -->
 					<input type="button" name="STAMP" value="スタンプ">
-					<input type="text" name="REPLY" value="リプライ">
+					<!-- スタンプの画像をクリックするとスタンプ一覧のダイアログボックスが開く。
+					  一覧からスタンプを1つ選択するとスタンプ画像が切り替わる予定 -->
+					<input type="button" name="REPLY" value="リプライ">
+					<!-- リプライボタンをクリックするとリプライ入力フォームが開く。
+					  入力後、送信ボタンを押す。 -->
 			<br>
 			</div>
 			</td>
