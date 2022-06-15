@@ -1,0 +1,82 @@
+【m_userテーブルを生成するSQL文】
+CREATE TABLE m_user (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	user_id VARCHAR(10),
+	user_mail VARCHAR(100) NOT NULL,
+	user_pw VARCHAR(20) NOT NULL,
+	user_name VARCHAR(20) NOT NULL,
+	user_pf VARCHAR(160),
+	user_img VARCHAR(50),
+	user_hd VARCHAR(50)
+);
+
+【m_videoテーブルを生成するSQL文】
+CREATE TABLE m_video (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	video_id VARCHAR(10),
+	video_name VARCHAR(100) NOT NULL,
+	video_year INT NOT NULL,
+	video_time INT NOT NULL,
+	genre_id VARCHAR(10) NOT NULL
+);
+
+【m_genreテーブルを生成するSQL文】
+CREATE TABLE m_genre (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	genre_id VARCHAR(10),
+	genre_name VARCHAR(10)
+);
+
+【m_feelcatテーブルを生成するSQL文】
+CREATE TABLE m_feelcat (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	feelcat_id VARCHAR(10),
+	feelcat_name VARCHAR(10)
+);
+
+【m_stampテーブルを生成するSQL文】
+CREATE TABLE m_stamp (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	stamp_id VARCHAR(10),
+	stamp_name VARCHAR(50)
+);
+
+【t_reviewテーブルを生成するSQL文】
+CREATE TABLE t_review (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	review_id VARCHAR(10),
+	video_id VARVHAR(10) NOT NULL,
+	user_id VARCHAR(10) NOT NULL,
+	review_contents VARCHAR(1000) NOT NULL,
+	genre_id VARCHAR(10) NOT NULL,
+	feelcat_name1 VARCHAR(10) NOT NULL,
+	feelcat_name2 VARCHAR(10),
+	star VARCHAR(1) NOT NULL,
+	review_date DATETIME NOT NULL
+);
+	
+【t_replyテーブルを生成するSQL文】
+CREATE TABLE t_reply (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	reply_id VARCHAR(10),
+	review_id VARCHAR(10) NOT NULL,
+	user_id VARCHAR(10) NOT NULL,
+	reply_contents VARCHAR(140) NOT NULL,
+	reply_date DATETIME NOT NULL
+);
+
+【t_reactionテーブルを生成するSQL文】
+CREATE TABLE t_reaction (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	reaction_id VARCHAR(10),
+	review_id VARCHAR(10) NOT NULL,
+	user_id VARCHAR(10) NOT NULL,
+	stamp_id VARCHAR(10) NOT NULL
+);
+
+【t_followテーブルを生成するSQL文】
+CREATE TABLE t_follow (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	follow_id VARCHAR(10) NOT NULL,
+	user_id VARCHAR(10) NOT NULL
+);
