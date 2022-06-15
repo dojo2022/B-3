@@ -11,8 +11,6 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<br>
-<br>
 
 <!-- メインここから -->
 <main>
@@ -82,8 +80,7 @@
 			<p>始まりにして頂点。全てが最高。</p><!-- t_reviewのreview_contentsを引用 -->
 				<input type="button" name="STAMP" value="スタンプ">
 				<!-- <dialog>を使って、jsで動きを作る -->
-				<input type="text" name="REPLY" value="リプライ">
-				<input type="submit" name="REPLYSEND" value="送信">
+				<input type="submit" name="REPLY" value="リプライ">
 				<br>
 		</div>
 		<br>

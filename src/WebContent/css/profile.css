@@ -35,17 +35,16 @@
 
 table {
 	margin: 0 auto;
-	text-align: center;
+	text-align: left;
 	width: 1000px;
 }
 
-td {
-	border: 3px double #a3060c;
-}
+
 
 #review_tag, #reply_tag, #stamp_tag{
 	margin:0px 50px;
 	border: 3px double #a3060c;
+	text-align: center;
 }
 /*レビュー投稿等のテーブルの位置*/
 
