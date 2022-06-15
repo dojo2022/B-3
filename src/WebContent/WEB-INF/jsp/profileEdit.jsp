@@ -44,7 +44,9 @@
 	                <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
 	                <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
 	                <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-	                <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+	                <core:if test="${ not empty id }">
+	                	<li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+	                </core:if>
 	                <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
 	            </ul>
 	        </div>
@@ -70,6 +72,7 @@
 		<tr>
 			<td>
 			<input type="submit" name="ICONWEDIT" value="編集">
+			<hr>
 			</td>
 		</tr>
 		<tr>
@@ -84,6 +87,7 @@
 		<tr>
 			<td>
 			<input type="submit" name="ICONWEDIT" value="編集">
+			<hr>
 			</td>
 		</tr>
 		<tr>
@@ -98,6 +102,7 @@
 		</tr>
 		<tr>
 			<td><input type="text" name="userName" value="編集">
+			<hr>
 			</td>
 		</tr>
 		<tr>

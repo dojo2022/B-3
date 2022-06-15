@@ -45,6 +45,7 @@
 	</c:forEach> フォローフォロワー一覧ページの形式に合わせる -->
 </div>
 <!-- マイプロフィールボックスここまで -->
+<br>
 <hr>
 <br>
 
@@ -54,42 +55,42 @@
 	<table>
 		<tr>
 			<td>
-			<span  id="review_tag" >　　レビュー投稿　　</span>
-			<span  id= "reply_tag" >　　リプライ　　</span>
+			<span  id="review_tag" >　　　　レビュー投稿　　　　</span>
+			<span  id= "reply_tag" >　　　　リプライ　　　　</span>
 			<span  id= "stamp_tag" >　　スタンプを送ったレビュー　　</span>
 			</td>
 		</tr>
 		<tr>
 			<td>
 			<div id= "review_list" >
-				<p>レビュー投稿一覧</p>
 			<hr>
 				<span id="username">炙りえんがわ　　</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
+			<br>
 
-				<span id="review_video">アイアンマン　　</span>
+				<span id="review_video">アイアンマン</span>
 				<!-- <input class="video"type="" name="" value="" readonly> -->
 				<!-- t_reviewのvideo_idを引用 -->
 
-				<span id="review_star">★★★★★　　</span>
+				<span id="review_star">　　★★★★★　　</span>
 				<!-- <input class="star"type="" name="" value="" readonly> -->
 				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
 
-				<span id="review_time">2022年6月14日 20時30分　　</span>
+				<span id="review_time">2022年6月14日 20時30分</span>
 				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
 			<br>
 
-				<span id="review_genre">ジャンル：アクション　　</span>
+				<span id="review_genre">　ジャンル：アクション　</span>
 				<!-- <input class="genre"type="" name="" value="" readonly> -->
 				<!-- t_reviewのgenre_idを引用 -->
 
-				<span id="review_feelcat1">感想カテゴリ1：スカッとする　　</span>
+				<span id="review_feelcat1">　感想カテゴリ1：スカッとする　</span>
 				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
 				<!-- t_reviewのfeelcat_name1を引用 -->
 
-				<span id="review_feelcat2">感想カテゴリ2：わくわく　　</span>
+				<span id="review_feelcat2">　感想カテゴリ2：わくわ　く</span>
 				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
 				<!-- t_reviewのfeelcat_name2を引用 -->
 
@@ -102,14 +103,13 @@
 			</div>
 
 			<div id= "reply_list" >
-				<p>リプライ一覧</p>
 			<hr>
 				<span id="reply_username">To うに軍艦</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_replyのreview_id, user_idを引用 -->
 				<br>
 
-				<span id="reply_time">2022年6月14日 21時30分　　</span>
+				<span id="reply_time">2022年6月14日 21時30分</span>
 				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
 			<br>
@@ -123,17 +123,17 @@
 			</div>
 
 			<div id= "stamp_list" >
-				<p>スタンプを送ったレビュー一覧</p>
 			<hr>
 				<span id="username">うに軍艦　　</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
+			<br>
 
-				<span id="review_video">アイアンマン　　</span>
+				<span id="review_video">アイアンマン</span>
 				<!-- <input class="video"type="" name="" value="" readonly> -->
 				<!-- t_reviewのvideo_idを引用 -->
 
-				<span id="review_star">★★★★★　　</span>
+				<span id="review_star">　　★★★★★　　</span>
 				<!-- <input class="star"type="" name="" value="" readonly> -->
 				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
 
@@ -142,15 +142,15 @@
 				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
 			<br>
 
-				<span id="review_genre">ジャンル：アクション　　</span>
+				<span id="review_genre">　ジャンル：アクション　</span>
 				<!-- <input class="genre"type="" name="" value="" readonly> -->
 				<!-- t_reviewのgenre_idを引用 -->
 
-				<span id="review_feelcat1">感想カテゴリ１：スカッとする　　</span>
+				<span id="review_feelcat1">　感想カテゴリ１：スカッとする　</span>
 				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
 				<!-- t_reviewのfeelcat_name1を引用 -->
 
-				<span id="review_feelcat2">感想カテゴリ２：非日常的　　</span>
+				<span id="review_feelcat2">　感想カテゴリ２：非日常的　</span>
 				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
 				<!-- t_reviewのfeelcat_name2を引用 -->
 

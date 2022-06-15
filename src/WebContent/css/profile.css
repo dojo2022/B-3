@@ -28,8 +28,12 @@
 	left:50px;
 	right:50px;
 }
-#username {
+#username, #reply_username {
 	font-weight:bold;
+}
+/*編集ボタンの位置*/
+#pf_edit {
+	padding: 0px 0px 0px 380px;
 }
 
 
@@ -39,15 +43,27 @@ table {
 	text-align: left;
 	width: 1000px;
 }
+hr {
+	border: 1px solid #a3060c;
+}
 
-#review_tag, #reply_tag, #stamp_tag{
+#review_tag, #reply_tag, #stamp_tag, #userreview_tag{
 	margin:0px 50px;
-	border: 3px double #a3060c;
+	background-color: #07964f;
 	text-align: center;
 }
-
-/*編集ボタンの位置*/
-#pf_edit {
-	padding: 0px 100px 0px 100px;
+#userreview_tag{
+	margin:0px 0px 0px 400px;
 }
 
+#review_video, #review_time, #reply_time{
+	background-color: #c6e872;
+}
+#review_genre, #review_feelcat1, #review_feelcat2{
+	border: 1px solid #f8343e;
+}
+
+
+#follow_Lift {
+	text-align: right;
+}

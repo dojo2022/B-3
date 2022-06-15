@@ -66,34 +66,33 @@
 		<tr>
 			<td>
 			<div id= "userreview_list" >
-				<p>　　レビュー投稿一覧　　</p>
 			<hr>
 				<span id="username">うに軍艦　　</span>
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
 
-				<span id="review_video">アイアンマン　　</span>
+				<span id="review_video">アイアンマン</span>
 				<!-- <input class="video"type="" name="" value="" readonly> -->
 				<!-- t_reviewのvideo_idを引用 -->
 
-				<span id="review_star">★★★★★　　</span>
+				<span id="review_star">　　★★★★★　　</span>
 				<!-- <input class="star"type="" name="" value="" readonly> -->
 				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
 
-				<span id="review_time">2022年6月12日16時00分　　</span>
+				<span id="review_time">2022年6月12日16時00分</span>
 				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_dateを引用 -->
 
 			<br>
-				<span id="review_genre">ジャンル：アクション　　</span>
+				<span id="review_genre">　ジャンル：アクション　</span>
 				<!-- <input class="genre"type="" name="" value="" readonly> -->
 				<!-- t_reviewのgenre_idを引用 -->
 
-				<span id="review_feelcat1">感想カテゴリ1：スカッとする　　</span>
+				<span id="review_feelcat1">　感想カテゴリ1：スカッとする　</span>
 				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
 				<!-- t_reviewのfeelcat_name1を引用 -->
 
-				<span id="review_feelcat2">感想カテゴリ2：非日常的　　</span>
+				<span id="review_feelcat2">　感想カテゴリ2：非日常的　</span>
 				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
 				<!-- t_reviewのfeelcat_name2を引用 -->
 
