@@ -7,9 +7,25 @@
     padding: 20px;
 }
 
+.post-btn {
+    position: relative;
+    overflow: hidden;
+    /* background: url("../images/post.png"); */
+    background:no-repeat url("../images/post.png");
+    background-size: contain;
+    width:205.5px;
+    height:53px;
+    left: 80%;
+}
 
-
-
+.post-btn:hover{
+/* position: relative */
+    overflow: hidden;
+    background:no-repeat url("../images/post2.png");
+    background-size: contain;
+    width:205.5px;
+    height:53px;
+}
 
 .post-contents {
 	left: 20px;
