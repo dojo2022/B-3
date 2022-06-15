@@ -14,11 +14,11 @@
 
 <body>
     <div class="wrapper">
-    
+
         <!-- header start -->
         <%@ include file="header.jsp" %>
         <!-- header end -->
-        
+
         <!-- 検索結果　一覧 start-->
         <main>
             <div id="search-result-container">

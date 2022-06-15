@@ -5,17 +5,29 @@
     margin-right: 40px;
     margin-left: 40px;
     padding: 20px;
+    max-width: 1000px;
 }
 
+.post-btn {
+    position: relative;
+    overflow: hidden;
+    background:no-repeat url("../images/post.png");
+    background-size: contain;
+    width:205.5px;
+    height:53px;
+    left: 80%;
+}
 
-
-
+.post-btn:hover{
+    overflow: hidden;
+    background:no-repeat url("../images/post2.png");
+    background-size: contain;
+    width:205.5px;
+    height:53px;
+}
 
 .post-contents {
 	left: 20px;
 }
-.text {
-	left: 20px;
-}
 
-input[name=text]         {width: 80em; height: 30em;}
+

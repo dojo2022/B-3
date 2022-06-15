@@ -9,21 +9,17 @@ body {
 
 .wrapper {
     margin: 0 auto 0 auto;
-    max-width: 1000px;
+    max-width: 700px;
 }
-
 #logo {
-    text-align: center;
+	margin: 0;
+    text-align: start;
 }
 
 .log {
     text-align: right;
     margin-top: 25px;
-    margin-right: 100px;
-}
-
-.search {
-    text-align: center;
+    padding-left: 90px;
 }
 
 h2 {
@@ -144,10 +140,21 @@ img {border-style: none;}
     left: 80%;/*メニューを画面内へ*/
 }
 
+/*検索機能欄*/
 input[name=title]        {width: 30em; height: 2.5em;}
 
 .roulette {
 	 text-align: right;
-	 margin-right: 100px;
+	 margin: 30px;
 }
+.search {
+	display: flex;
+	padding: 20px 8px;
+}
+.search1 {
+	margin: 40px;
 
+}
+.search-btn {
+	margin: 15px;
+}

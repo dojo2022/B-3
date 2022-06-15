@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#explain {
+	text-align: center;
+}
+
 /* フォロー一覧 */
 #follow_table {
 	margin: auto;

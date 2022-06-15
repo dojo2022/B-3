@@ -2,18 +2,19 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+/* 必要ないけど画面を見るために作成したサーブレット */
 /**
- * Servlet implementation class LogoutServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/LogoutServlet")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/ContactServlet")
+public class ContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,11 +22,8 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// セッションスコープを破棄する
-		HttpSession session = request.getSession();
-		session.invalidate();
-
-		// ログインページにリダイレクトする
-		response.sendRedirect("/FLIFRE/LoginServlet");
+		// お問い合わせページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/contact.jsp");
+		dispatcher.forward(request, response);
 	}
 }

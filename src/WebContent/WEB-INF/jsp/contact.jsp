@@ -6,13 +6,15 @@
 <title>お問い合わせ ｜ FLIFRE</title>
 <link rel="stylesheet" type="text/css" href="/FLIFRE/css/common.css">
 <link rel="stylesheet" type="text/css" href="/FLIFRE/css/contact.css">
-<body>
+</head>
+<body id="contact_body">
+	<div class="wrapper">
 <!-- ロゴ -->
-	<a href="/FLIFRE/Top_afServlet">
-		<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
-	</a>
-<!-- ログアウトボタン -->
-	<input type="button" onclick="/FLIFRE/LogoutServlet" value="ログアウト">
+	<div id="logo">
+		<a href="/FLIFRE/Top_afServlet">
+			<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
+		</a>
+	</div>
 <!-- ハンバーガーメニュー -->
    <header>
       <p class="log">
@@ -22,7 +24,6 @@
       <div class="hamburger-menu">
          <input type="checkbox" id="menu-btn-check">
          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-      </div>
 <!--ここからメニュー-->
       <div class="menu-content">
          <ul>
@@ -45,40 +46,55 @@
             <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
          </ul>
       </div>
-<!--ここまでメニュー-->
+      </div>
    </header>
+<!--ここまでメニュー-->
 <!-- お問い合わせ -->
+	<main>
+	<h2 id="explain">お問い合わせ</h2>
 	<table id="contact_table">
 		<tr>
-			<td id="explain">お問い合わせ</td>
-		</tr>
-		<tr>
 			<td>各種お問い合わせに関しましては、
-			aburiengawa@gmail.comに送信いただきますようお願い申し上げます。</td>
+			<strong>aburiengawa@gmail.com</strong>に送信いただきますようお願い申し上げます。</td>
 		</tr>
 		<tr>
 			<td>お問い合わせに含めていただきたい項目は以下の通りです。</td>
+			<br>
 		</tr>
 		<tr>
 			<td>
-			<ol>
-				<li>ユーザー名
-				<li>お問い合わせの種類
-				<ol>
-					<li>サービスについて
-					<li>作品情報について
-					<li>ユーザーについて
-					<li>その他
-				</ol>
-				<li>お問い合わせの内容（200文字まで）
-			</ol>
+			<table id="ct_items">
+				<tr>
+				<td>
+					<label>①ユーザー名</label><br>
+				</td>
+				</tr>
+				<tr>
+				<td>
+					<label>②お問い合わせの種類</label><br>
+					<ol>
+						<li>サービスについて
+						<li>作品情報について
+						<li>ユーザーについて
+						<li>その他
+					</ol>
+				</td>
+				</tr>
+				<tr>
+				<td>
+					<label>③お問い合わせの内容（200文字まで）</label><br>
+				</td>
+				</tr>
+			</table>
 			</td>
 		</tr>
 		<tr>
 			<td>以上の項目をすべて記入されませんと、
 			返信いたしかねますので何卒よろしくお願い申し上げます。</td>
+			<br>
 		</tr>
 	</table>
+	</main>
+	</div>
 </body>
-</head>
 </html>
