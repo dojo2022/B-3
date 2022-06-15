@@ -31,7 +31,7 @@
 	<br>
 
 	<span id="pf">アニメと洋画が好きです。</span>
-
+	<!-- <input class="profile"type="" name="" value="" readonly> -->
 	<!-- m_userのuser_pfを引用予定 -->
 	<br>
 	<br>
@@ -48,7 +48,7 @@
 <hr>
 <br>
 
-<!-- マイレビュー投稿・リプライ・スタンプ履歴一覧ここから -->
+<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
 <!-- <c:forEach var="" items="" > -->
 <form id = "mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 	<table>
@@ -135,7 +135,6 @@
 				<span id="review_time">2022年6月12日 16時00分</span>
 				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-
 			<br>
 
 				<span id="review_genre">ジャンル：アクション　　</span>
@@ -168,7 +167,7 @@
 	</table>
 </form>
 <!-- </c:forEach> -->
-<!-- マイレビュー投稿・リプライ・スタンプ履歴一覧ここまで -->
+<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 
 </main>
 <!-- メインここまで -->
@@ -190,6 +189,7 @@ span id="follower" ：フォロワー数
 
 form id = "mylist_edit" ：マイレビュー投稿・リプライ・スタンプ履歴一覧フォーム(テーブル)
 span  id="review_tag" ：レビュー投稿見出し
-span  id= "reply_tag" ：見出し
-id= "stamp_tag" ：見出し
+span  id= "reply_tag" ：リプライ見出し
+id= "stamp_tag" ：スタンプを送ったレビュー見出し
+
  -->
