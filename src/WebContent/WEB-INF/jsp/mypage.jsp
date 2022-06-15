@@ -182,7 +182,7 @@
 </body>
 </html>
 
-<!-- class, id一覧
+<!--マイページ class, id一覧
 
 div class="myprofile" ：マイプロフィールボックス
 img id="pf_icon" ：プロフィールのアイコン画像

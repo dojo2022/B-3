@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 作成段階でブロックが分かりやすいように、全体に線を引く */
  main {
     background-color: #ffffff;
     border: 3px double #a3060c;
@@ -9,20 +10,17 @@
     width: 1200px;
  }
 
-/* 作成段階でブロックが分かりやすいように、全体に線を引く */
-
+/* プロフィール背景のヘッダー画像。m_userのuser_hd を引用予定 */
 .myprofile {
   background-image: url("../images/pf_hd.png");
   background-repeat: no-repeat;
 }
-/* m_userのuser_hd ヘッダーを引用予定 */
-
 .userprofile {
   background-image: url("../images/pf_hd.png");
   background-repeat: no-repeat;
 }
-/* m_userのuser_hd ヘッダーを引用予定 */
 
+/*マイページ・ユーザーページのプロフィール部分のスタイル*/
 .myprofile {
 	position:static;
 			top: 50px;
@@ -30,9 +28,12 @@
 			left:50px;
 			right:50px;
 }
-/*マイページのプロフィール部分のスタイル*/
+#username {
+	font-weight:bold;
+}
 
 
+/*レビュー投稿等のテーブル、枠線のスタイル*/
 table {
 	margin: 0 auto;
 	text-align: left;
@@ -44,14 +45,9 @@ table {
 	border: 3px double #a3060c;
 	text-align: center;
 }
-/*レビュー投稿等のテーブルの位置*/
 
-
+/*編集ボタンの位置*/
 #pf_edit {
 	padding: 0px 100px 0px 100px;
 }
-/*編集ボタンの位置*/
 
-#username {
-	font-weight:bold;
-}

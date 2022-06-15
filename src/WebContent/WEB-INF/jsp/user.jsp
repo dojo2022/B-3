@@ -119,7 +119,7 @@
 </body>
 </html>
 
-<!-- class, id一覧
+<!-- ユーザーページ class, id一覧
 
 div class="userprofile" ：ユーザープロフィールボックス
 img id="pf_icon" ：プロフィールのアイコン画像
