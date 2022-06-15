@@ -7,6 +7,7 @@
 	<title>レビュー投稿 | FLIFRE</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/post.css">
+	<script src="js/post.js" defer></script>
 </head>
 
 
@@ -21,9 +22,7 @@
    		<div class="post-box">
 			<img src ="./images/pf_img.png"><!-- m_userのuser_img アイコンを引用予定 -->
 			<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
-   			<p class="post-btn">
-	    		<a href="/FLIFRE/PostServlet"><img src="images/post.png" width="205.5" height="53" alt="投稿"></a>
-        	</p>
+   			<div id="btn" class="post-btn"></div>
         	<div class="post-contents">
         	<h1>作品名</h1><!-- m_videoのvideo_nameを引用 -->
         	<h2>再生時間</h2><!-- m_videoのvideo_timeを引用 -->
