@@ -2,7 +2,6 @@ package model;
 import java.io.Serializable;
 
 public class MasterUser implements Serializable {
-	private String id;				//ID
 	private String user_id;			//ユーザーID
 	private String user_mail;		//メールアドレス
 	private String user_pw;			//パスワード
@@ -15,7 +14,6 @@ public class MasterUser implements Serializable {
 	public MasterUser(String id, String user_id, String user_mail, String user_pw, String user_name, String user_pf,
 			String user_img, String user_hd) {
 		super();
-		this.id = id;
 		this.user_id = user_id;
 		this.user_mail = user_mail;
 		this.user_pw = user_pw;
@@ -28,7 +26,6 @@ public class MasterUser implements Serializable {
 	//引数がないコンストラクタ
 	public MasterUser() {
 		super();
-		this.id = "";
 		this.user_id = "";
 		this.user_mail = "";
 		this.user_pw = "";
@@ -39,14 +36,6 @@ public class MasterUser implements Serializable {
 	}
 
 	//getter/setter
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public String getUser_id() {
 		return user_id;
 	}
