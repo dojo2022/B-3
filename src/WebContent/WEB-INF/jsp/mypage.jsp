@@ -15,7 +15,7 @@
 <!-- メインここから -->
 <main>
 
-<!-- マイページボックスここから -->
+<!-- マイプロフィールボックスここから -->
 <div class ="myprofile">
 	<img id="pf_icon" src ="./images/pf_img.png">
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
@@ -44,7 +44,7 @@
 		</tr>
 	</c:forEach> フォローフォロワー一覧ページの形式に合わせる -->
 </div>
-<!-- マイページボックスここまで -->
+<!-- マイプロフィールボックスここまで -->
 <hr>
 <br>
 
@@ -79,7 +79,7 @@
 				<span id="review_time">2022年6月14日 20時30分　　</span>
 				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-				<br>
+			<br>
 
 				<span id="review_genre">ジャンル：アクション　　</span>
 				<!-- <input class="genre"type="" name="" value="" readonly> -->
@@ -120,17 +120,46 @@
 			<div id= "stamp_list" >
 				<p>スタンプを送ったレビュー一覧</p>
 			<hr>
-				<span id="username">うに軍艦　　</span><span>アイアンマン　　</span><span>★★★★★　　</span>
-				<!-- t_reviewのuser_id,video_id,starを引用 -->
-				<span>2022年6月12日</span><!-- t_reviewのreview_dateを引用 -->
+				<span id="username">うに軍艦　　</span>
+				<!-- <input class="user"type="" name="" value="" readonly> -->
+				<!-- t_reviewのuser_idを引用 -->
+
+				<span id="review_video">アイアンマン　　</span>
+				<!-- <input class="video"type="" name="" value="" readonly> -->
+				<!-- t_reviewのvideo_idを引用 -->
+
+				<span id="review_star">★★★★★　　</span>
+				<!-- <input class="star"type="" name="" value="" readonly> -->
+				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
+
+				<span id="review_time">2022年6月12日 16時00分</span>
+				<!-- <input class="time"type="" name="" value="" readonly> -->
+				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
+
 			<br>
-				<span>ジャンル：アクション　　</span><!-- t_reviewのgenre_idを引用 -->
-				<span>感想カテゴリ１：スカッとする　　</span><!-- t_reviewのfeelcat_name1を引用 -->
-				<span>感想カテゴリ２：非日常的　　</span><!-- t_reviewのfeelcat_name2を引用 -->
-				<p>始まりにして頂点。全てが最高。</p><!-- t_reviewのreview_contentsを引用 -->
+
+				<span id="review_genre">ジャンル：アクション　　</span>
+				<!-- <input class="genre"type="" name="" value="" readonly> -->
+				<!-- t_reviewのgenre_idを引用 -->
+
+				<span id="review_feelcat1">感想カテゴリ１：スカッとする　　</span>
+				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
+				<!-- t_reviewのfeelcat_name1を引用 -->
+
+				<span id="review_feelcat2">感想カテゴリ２：非日常的　　</span>
+				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
+				<!-- t_reviewのfeelcat_name2を引用 -->
+
+				<p id="review">始まりにして頂点。全てが最高。</p>
+				<!-- <input class="review"type="" name="" value="" readonly> -->
+				<!-- t_reviewのreview_contentsを引用 -->
+
 					<input type="button" name="STAMP" value="スタンプ">
-					<!-- <dialog>を使って、jsで動きを作る -->
-					<input type="submit" name="REPLY" value="リプライ">
+					  <!-- スタンプの画像をクリックするとスタンプ一覧のダイアログボックスが開く。
+					  一覧からスタンプを1つ選択するとスタンプ画像が切り替わる予定 -->
+					<input type="button" name="REPLY" value="リプライ">
+					  <!-- リプライボタンをクリックするとリプライ入力フォームが開く。
+					  入力後、送信ボタンを押す。 -->
 			<br>
 			</div>
 			<br>
@@ -148,3 +177,8 @@
 <br>
 </body>
 </html>
+
+<!-- class, id一覧
+div class ="myprofile" ：マイプロフィールボックス
+
+ -->
