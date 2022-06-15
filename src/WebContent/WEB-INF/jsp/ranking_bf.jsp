@@ -18,145 +18,32 @@
     <main>
         <div class="ranking-box">
             <h1 class="ranking">項目別ランキング</h1>
-            <div class="ranklist">
-                <p class="ranking">通算</p>
-                <ul class="list">
-                <c:forEach begin="1" end="3" var="e" items="${ReviewRanking}" >
-                    <li><img class="rank" src="Gold.png"><c:out value="${ReviewRanking[1]}"></c:out></li>
-                    <li><img class="rank" src="Silver.png"><c:out value="${ReviewRanking[2]}"></c:out></li>
-                    <li><img class="rank" src="Bronze.png"><c:out value="${ReviewRanking[3]}"></c:out></li>
-                </c:forEach>
-                </ul>
-            </div>
-
-           <div class="ranklist">
-                <p class="ranking">月間</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">アニメ</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">国内</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">欧米</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">韓国</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">華流</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">アクション</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">コメディ</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">キッズ・ファミリー</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">ヒューマンドラマ</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">サスペンス</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">ラブロマンス</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">ホラー</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">ファンタジー</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">SF</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
-            <div class="ranklist">
-                <p class="ranking">バラエティー</p>
-                <ul class="list">
-                    <li><img class="rank" src="images/Gold.png">あぶりえんがわ</li>
-                    <li><img class="rank" src="images/Silver.png">あぶりとろ</li>
-                    <li><img class="rank" src="images/Bronze.png">あぶりカルビ</li>
-                </ul>
-            </div>
+			<%
+	    pageContext.setAttribute(
+	        "genre",
+	        new String[] {
+	            "通算","アニメ", "国内", "欧米",
+	            "韓国", "華流", "アクション", "コメディ", "キッズ・ファミリー", "ヒューマンドラマ",
+	            "サスペンス", "ラブロマンス", "ホラー", "ファンタジー", "SF","バラエティ"
+	        }
+	    );
+		pageContext.setAttribute(
+			"rank",
+			new String[] {
+					"Gold","Silver","Bronze"
+			}
+				);
+	    %>
+	    	<div class="ranklist">
+			<c:forEach var="g" items="${ genre }">
+				<p class="ranking">${g}</p>
+				<ul class="list">
+				<c:forEach begin="0" end="2" var="i">
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${Genre[g][i].video_id}">${ Genre[g][i].video_name}</a></li>
+				</c:forEach>
+				</ul>
+			</c:forEach>
+			</div>
         </div>
     </main>
     <footer>
