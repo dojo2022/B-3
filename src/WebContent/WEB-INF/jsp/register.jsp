@@ -9,11 +9,15 @@
 <link rel="stylesheet" type="text/css" href="/FLIFRE/css/register.css">
 </head>
 <body id="register_body">
+	<div class="wrapper">
 <!-- ロゴ -->
-	<a href="/FLIFRE/Top_afServlet">
-		<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
-	</a>
+	<header>
+		<a href="/FLIFRE/Top_afServlet">
+			<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
+		</a>
+	</header>
 <!-- 新規会員登録 -->
+	<main>
 	<h2 id="explain">新規会員登録</h2>
 	<form method="POST" action="/FLIFRE/RegisterServlet">
 		<table id="register_table">
@@ -42,17 +46,19 @@
 				<td>
 				<label>ユーザー名<br>
 				<input type="text" name="user_name">
-				</label>
+				</label><br>
 				</td>
 			</tr>
 			<tr>
 		        <td>
 		        <input type="submit" name="REGISTER" value="登録">
-		        <input type="reset" name="reset" value="リセット">
+		        <input type="reset" name="reset" value="リセット"><br>
           		<span id="error_message"></span>
 		        <td>
 		    </tr>
 		</table>
 	</form>
+	</main>
+	</div>
 </body>
 </html>

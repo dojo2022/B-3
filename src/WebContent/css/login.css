@@ -3,11 +3,16 @@
 /* ログインページ */
 #login_body {
 	text-align:center;
+	height: 1000px;
 }
 
 /* ログインテーブル */
 #login_table {
 	margin: auto;
+}
+
+#login_table td {
+	padding: 10px;
 }
 
 #explain {
