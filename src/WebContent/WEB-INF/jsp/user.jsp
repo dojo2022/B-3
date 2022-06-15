@@ -56,7 +56,7 @@
 
 <!-- ユーザーレビュー投稿一覧ここから -->
 <!-- <c:forEach var="" items="" > -->
-<form id = userreview method="POST" action="/FLIFRE/MypageServlet">
+<form id = "userreview" method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
@@ -72,33 +72,42 @@
 				<!-- <input class="user"type="" name="" value="" readonly> -->
 				<!-- t_reviewのuser_idを引用 -->
 
-				<span>アイアンマン　　</span>
+				<span id="review_video">アイアンマン　　</span>
 				<!-- <input class="video"type="" name="" value="" readonly> -->
 				<!-- t_reviewのvideo_idを引用 -->
 
-				<span>★★★★★　　</span>
+				<span id="review_star">★★★★★　　</span>
 				<!-- <input class="star"type="" name="" value="" readonly> -->
 				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
 
-				<span>2022年6月12日16時00分　　</span>
+				<span id="review_time">2022年6月12日16時00分　　</span>
+				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_dateを引用 -->
 
 			<br>
-				<span>ジャンル：アクション　　</span><!-- t_reviewのgenre_idを引用 -->
+				<span id="review_genre">ジャンル：アクション　　</span>
+				<!-- <input class="genre"type="" name="" value="" readonly> -->
+				<!-- t_reviewのgenre_idを引用 -->
 
-				<span>感想カテゴリ1：スカッとする　　</span><!-- t_reviewのfeelcat_name1を引用 -->
+				<span id="review_feelcat1">感想カテゴリ1：スカッとする　　</span>
+				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
+				<!-- t_reviewのfeelcat_name1を引用 -->
 
-				<span>感想カテゴリ2：非日常的　　</span><!-- t_reviewのfeelcat_name2を引用 -->
+				<span id="review_feelcat2">感想カテゴリ2：非日常的　　</span>
+				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
+				<!-- t_reviewのfeelcat_name2を引用 -->
 
-				<p>始まりにして頂点。全てが最高。</p>
+				<p id="review">始まりにして頂点。全てが最高。</p>
+				<!-- <input class="review"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_contentsを引用 -->
-
 					<input type="button" name="STAMP" value="スタンプ">
 					<input type="text" name="REPLY" value="リプライ">
+			<br>
 			</div>
 			</td>
 		</tr>
 	</table>
+<!-- </c:forEach> -->
 </form>
 <!-- ユーザーレビュー投稿一覧ここまで -->
 
@@ -112,20 +121,16 @@
 
 <!-- class, id一覧
 
-div class="myprofile" ：マイプロフィールボックス
+div class="userprofile" ：ユーザープロフィールボックス
 img id="pf_icon" ：プロフィールのアイコン画像
 span id="username" ：ユーザー名全般
-a, img id="pf_edit" ：マイプロフィール編集ボタン
 span id="pf" ：プロフィール文
 span id="follow" ：フォロー数
 span id="follower" ：フォロワー数
 
-form id = "mylist_edit" ：マイレビュー投稿・リプライ・スタンプ履歴一覧フォーム(テーブル)
-
-span  id="review_tag" ：レビュー投稿見出し
-span  id= "reply_tag" ：リプライ見出し
-id= "stamp_tag" ：スタンプを送ったレビュー見出し
-div id= "review_list" ：レビュー投稿一覧
+form id = "userreview" ：ユーザーレビュー投稿フォーム(テーブル)
+span id="userreview_tag" ：ユーザーレビュー投稿見出し
+div id= "userreview_list" ：ユーザーレビュー投稿一覧
 span id="review_video" ：レビュー作品名
 span id="review_star" ：レビュー五段階評価
 span id="review_time" ：レビュー日付
@@ -133,11 +138,4 @@ span id="review_genre" ：レビュージャンル
 span id="review_feelcat1" ：レビュー感想カテゴリ1
 span id="review_feelcat2" ：レビュー感想カテゴリ2
 p id="review" ：レビュー本文
-
-div id= "reply_list" ：リプライ一覧
-span id="reply_username" ：リプライ先のユーザー名
-span id="reply_time" ：リプライ日付
-span id="reply" ：リプライ本文
-
-div id= "stamp_list" ：スタンプを送ったレビュー一覧
  -->
