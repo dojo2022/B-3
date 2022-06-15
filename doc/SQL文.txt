@@ -51,7 +51,7 @@ CREATE TABLE t_review (
 	genre_id VARCHAR(10) NOT NULL,
 	feelcat_name1 VARCHAR(10) NOT NULL,
 	feelcat_name2 VARCHAR(10),
-	star CHAR NOT NULL,
+	star VARCHAR(1) NOT NULL,
 	review_date DATETIME NOT NULL
 );
 	
