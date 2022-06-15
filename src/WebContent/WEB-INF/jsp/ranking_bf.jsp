@@ -22,9 +22,9 @@
                 <p class="ranking">通算</p>
                 <ul class="list">
                 <c:forEach begin="1" end="3" var="e" items="${ReviewRanking}" >
-                    <li><img class="rank" src="Gold.png"><c:out value="${e}"></c:out></li>
-                    <li><img class="rank" src="Silver.png"><c:out value="${e}"></c:out></li>
-                    <li><img class="rank" src="Bronze.png"><c:out value="${e}"></c:out></li>
+                    <li><img class="rank" src="Gold.png"><c:out value="${ReviewRanking[1]}"></c:out></li>
+                    <li><img class="rank" src="Silver.png"><c:out value="${ReviewRanking[2]}"></c:out></li>
+                    <li><img class="rank" src="Bronze.png"><c:out value="${ReviewRanking[3]}"></c:out></li>
                 </c:forEach>
                 </ul>
             </div>
