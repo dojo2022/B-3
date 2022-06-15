@@ -21,12 +21,12 @@
 }
 
 /*マイページ・ユーザーページのプロフィール部分のスタイル*/
-.myprofile {
+.myprofile, .userprofile {
 	position:static;
-			top: 50px;
-			bottom:50px;
-			left:50px;
-			right:50px;
+	top: 50px;
+	bottom:50px;
+	left:50px;
+	right:50px;
 }
 #username {
 	font-weight:bold;
