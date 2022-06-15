@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Ranking;
+
 public class RankingDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Ranking> select(Ranking param) {
@@ -22,7 +24,7 @@ public class RankingDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する(件数ランキングがどう記述すべきかわからないので放置)
-			String sql = "RANK genre_id",,,,,;
+			String sql = "SELECT video_id count(video_id) FROM t_review GROUP BY video_id ORDER BY count(video_id) DESC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
