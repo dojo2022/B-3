@@ -148,7 +148,7 @@ input[name=text]        {width: 30em; height: 2.5em;}
  border: solid 3px #000000;
  position:relative;
  left:50px;
- width:80%;
+ width:85%;
 }
 
 
@@ -161,7 +161,7 @@ input[name=text]        {width: 30em; height: 2.5em;}
 
 .circle{
   position: relative;
-  top: 85px;
+  top: 115px;
   width: 80px;
   height: 80px;
   border-radius:50%;
@@ -170,16 +170,19 @@ input[name=text]        {width: 30em; height: 2.5em;}
 
 .user{
   position: relative;
+  top: 10px;
   left: 90px;
 }
 
 .video{
   position: relative;
+  top: 10px;
   left: 100px;
 }
 
 .time{
   position: relative;
+  top: 10px;
   left: 370px;
 }
 
@@ -189,4 +192,61 @@ position: relative;
 left:90px;
 width: 463%;
 height: 50px;
+}
+
+#image_file{
+position:relative;
+left: 380px;
+top: 15px;
+}
+
+#reply{
+position: relative;
+left: 745px;
+top: 15px;
+}
+/*星表示*/
+.open {
+    cursor:pointer;
+}
+#popup {
+    display: none;
+}
+.overlay {
+    display: none;
+}
+#popup:checked + .overlay {
+    display: block;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.window {
+    width: 90vw;
+    max-width: 380px;
+    height: 200px;
+    background-color: #7fff7f;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text {
+    font-size: 25px;
+    margin: 0;
+    color: #fcfff9;
+}
+.close {
+    cursor:pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 20px;
 }
