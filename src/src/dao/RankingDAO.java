@@ -23,7 +23,7 @@ public class RankingDAO {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
-			// SQL文を準備する(件数ランキングがどう記述すべきかわからないので放置)
+			// SQL文を準備する(件数をカウントし降順で3つ表示)
 			String sql = "SELECT video_id count(video_id) FROM t_review GROUP BY video_id ORDER BY count(video_id) DESC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
