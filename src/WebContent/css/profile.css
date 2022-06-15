@@ -55,6 +55,10 @@ hr {
 #userreview_tag{
 	margin:0px 0px 0px 400px;
 }
+#review_list, #reply_list, #stamp_list, #userreview_list{
+	height: 350px;
+	overflow: auto;
+}
 
 #review_video, #review_time, #reply_time{
 	background-color: #c6e872;
