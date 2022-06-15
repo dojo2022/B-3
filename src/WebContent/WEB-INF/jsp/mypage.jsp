@@ -16,7 +16,7 @@
 <main>
 
 <!-- マイプロフィールボックスここから -->
-<div class ="myprofile">
+<div class="myprofile">
 	<img id="pf_icon" src ="./images/pf_img.png">
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
 	<!-- m_userのuser_img アイコンを引用予定 -->
@@ -31,7 +31,7 @@
 	<br>
 
 	<span id="pf">アニメと洋画が好きです。</span>
-
+	<!-- <input class="profile"type="" name="" value="" readonly> -->
 	<!-- m_userのuser_pfを引用予定 -->
 	<br>
 	<br>
@@ -48,9 +48,9 @@
 <hr>
 <br>
 
-<!-- マイレビュー・リプライ・スタンプ履歴一覧ここから -->
+<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
 <!-- <c:forEach var="" items="" > -->
-<form id = mylist_edit method="POST" action="/FLIFRE/MypageServlet">
+<form id = "mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
 			<td>
@@ -105,13 +105,18 @@
 				<p>リプライ一覧</p>
 			<hr>
 				<span id="reply_username">To うに軍艦</span>
+				<!-- <input class="user"type="" name="" value="" readonly> -->
+				<!-- t_replyのreview_id, user_idを引用 -->
 				<br>
 
-				<span id="username">炙りえんがわ　　</span>
-				<!-- <input class="user"type="" name="" value="" readonly> -->
-				<!-- t_reviewのuser_idを引用 -->
-				<br>
+				<span id="reply_time">2022年6月14日 21時30分　　</span>
+				<!-- <input class="time"type="" name="" value="" readonly> -->
+				<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
+			<br>
+
 				<span id="reply">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</span>
+				<!-- <input class="reply"type="" name="" value="" readonly> -->
+				<!-- t_replyのreply_contentsを引用 -->
 					<input type="submit" name="REPLYDELETET" value="削除">
 					<input type="submit" name="REPLYWEDIT" value="編集">
 			<br>
@@ -135,7 +140,6 @@
 				<span id="review_time">2022年6月12日 16時00分</span>
 				<!-- <input class="time"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-
 			<br>
 
 				<span id="review_genre">ジャンル：アクション　　</span>
@@ -168,7 +172,7 @@
 	</table>
 </form>
 <!-- </c:forEach> -->
-<!-- マイレビュー・リプライ・スタンプ履歴一覧ここまで -->
+<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 
 </main>
 <!-- メインここまで -->
@@ -179,6 +183,33 @@
 </html>
 
 <!-- class, id一覧
-div class ="myprofile" ：マイプロフィールボックス
 
+div class="myprofile" ：マイプロフィールボックス
+img id="pf_icon" ：プロフィールのアイコン画像
+span id="username" ：ユーザー名全般
+a, img id="pf_edit" ：マイプロフィール編集ボタン
+span id="pf" ：プロフィール文
+span id="follow" ：フォロー数
+span id="follower" ：フォロワー数
+
+form id = "mylist_edit" ：マイレビュー投稿・リプライ・スタンプ履歴一覧フォーム(テーブル)
+
+span  id="review_tag" ：レビュー投稿見出し
+span  id= "reply_tag" ：リプライ見出し
+id= "stamp_tag" ：スタンプを送ったレビュー見出し
+div id= "review_list" ：レビュー投稿一覧
+span id="review_video" ：レビュー作品名
+span id="review_star" ：レビュー五段階評価
+span id="review_time" ：レビュー日付
+span id="review_genre" ：レビュージャンル
+span id="review_feelcat1" ：レビュー感想カテゴリ1
+span id="review_feelcat2" ：レビュー感想カテゴリ2
+p id="review" ：レビュー本文
+
+div id= "reply_list" ：リプライ一覧
+span id="reply_username" ：リプライ先のユーザー名
+span id="reply_time" ：リプライ日付
+span id="reply" ：リプライ本文
+
+div id= "stamp_list" ：スタンプを送ったレビュー一覧
  -->
