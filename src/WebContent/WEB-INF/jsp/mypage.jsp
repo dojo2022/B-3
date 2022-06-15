@@ -105,13 +105,18 @@
 				<p>リプライ一覧</p>
 			<hr>
 				<span id="reply_username">To うに軍艦</span>
+				<!-- <input class="user"type="" name="" value="" readonly> -->
+				<!-- t_replyのreview_id, user_idを引用 -->
 				<br>
 
-				<span id="username">炙りえんがわ　　</span>
-				<!-- <input class="user"type="" name="" value="" readonly> -->
-				<!-- t_reviewのuser_idを引用 -->
-				<br>
+				<span id="reply_time">2022年6月14日 21時30分　　</span>
+				<!-- <input class="time"type="" name="" value="" readonly> -->
+				<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
+			<br>
+
 				<span id="reply">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</span>
+				<!-- <input class="reply"type="" name="" value="" readonly> -->
+				<!-- t_replyのreply_contentsを引用 -->
 					<input type="submit" name="REPLYDELETET" value="削除">
 					<input type="submit" name="REPLYWEDIT" value="編集">
 			<br>
@@ -188,8 +193,23 @@ span id="follow" ：フォロー数
 span id="follower" ：フォロワー数
 
 form id = "mylist_edit" ：マイレビュー投稿・リプライ・スタンプ履歴一覧フォーム(テーブル)
+
 span  id="review_tag" ：レビュー投稿見出し
 span  id= "reply_tag" ：リプライ見出し
 id= "stamp_tag" ：スタンプを送ったレビュー見出し
+div id= "review_list" ：レビュー投稿一覧
+span id="review_video" ：レビュー作品名
+span id="review_star" ：レビュー五段階評価
+span id="review_time" ：レビュー日付
+span id="review_genre" ：レビュージャンル
+span id="review_feelcat1" ：レビュー感想カテゴリ1
+span id="review_feelcat2" ：レビュー感想カテゴリ2
+p id="review" ：レビュー本文
 
+div id= "reply_list" ：リプライ一覧
+span id="reply_username" ：リプライ先のユーザー名
+span id="reply_time" ：リプライ日付
+span id="reply" ：リプライ本文
+
+div id= "stamp_list" ：スタンプを送ったレビュー一覧
  -->
