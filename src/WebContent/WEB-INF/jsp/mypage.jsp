@@ -104,6 +104,7 @@
 				<!-- t_reviewのreview_contentsを引用 -->
 					<input type="submit" name="REVIEWDELETET" value="削除">
 					<input type="submit" name="REVIEWEDIT" value="編集">
+
 			<br>
 			<br>
 			<hr>
@@ -173,7 +174,8 @@
 				<!-- <input class="reply"type="" name="" value="" readonly> -->
 				<!-- t_replyのreply_contentsを引用 -->
 					<input type="submit" name="REPLYDELETET" value="削除">
-					<input type="submit" name="REPLYWEDIT" value="編集">
+					<input type="submit" name="REPLYWEDIT" value="編集"
+					href="/FLIFRE/css/common.css>
 			<br>
 			<br>
 			<hr>
