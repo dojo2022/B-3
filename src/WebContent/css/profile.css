@@ -7,8 +7,12 @@
     margin-right: 40px;
     margin-left: 40px;
     padding: 20px;
-    width: 1200px;
+    width: 1000px;
  }
+
+.log {
+	left: 70%;
+}
 
 /* プロフィール背景のヘッダー画像。m_userのuser_hd を引用予定 */
 .myprofile {
@@ -69,3 +73,50 @@ hr {
 #follow_Lift {
 	text-align: right;
 }
+
+
+#image_file{
+position:relative;
+left: 380px;
+top: 15px;
+}
+
+#reply{
+position: relative;
+left: 745px;
+top: 15px;
+}
+/*星表示*/
+.open {
+    cursor:pointer;
+}
+#popup {
+    display: none;
+}
+.overlay {
+    display: none;
+}
+#popup:checked + .overlay {
+    display: block;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.window {
+    width: 90vw;
+    max-width: 380px;
+    height: 200px;
+    background-color: #7fff7f;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
