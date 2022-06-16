@@ -45,7 +45,7 @@
 table {
 	margin: 0 auto;
 	text-align: left;
-	width: 1000px;
+	width: 800px;
 }
 hr {
 	border: 1px solid #a3060c;
@@ -126,10 +126,22 @@ hr {
     right: 8px;
     font-size: 20px;
 }
-
+#image_file {
+	text-align: right;
+}
 
 /*プロフィール変更テーブルのボタン位置*/
 #editbutton, #confilmButton {
 	text-align: center;
 }
-
+.window {
+	display: flex;
+  flex-direction: column;
+}
+#image_file,  #reply{
+	display: flex;
+  flex-direction: column;
+}
+ #image_file, #reply {
+ 	margin:0px 0px 0px 650px;
+ }

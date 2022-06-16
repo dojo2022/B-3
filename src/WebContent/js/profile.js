@@ -37,6 +37,7 @@ stamp_tag.addEventListener('click', function() {
 
 
 
+
 /*にこちゃんスタンプクリックで変化ループ*/
       var img_src = new Array("images/nikochan5.png","images/nikochan6.png");
       var i = 0;
