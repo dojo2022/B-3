@@ -42,10 +42,11 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		MasterUserDao iDao = new MasterUserDao();
-		if (iDao.isLoginOK(id, pw)) {	// ログイン成功
+		LoginUser user = iDao.isLoginOK(id, pw);
+		if (user != null) {	// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new LoginUser(id));
+			session.setAttribute("id", user);
 
 			// トップページ（ログイン後）にリダイレクトする
 			response.sendRedirect("/FLIFRE/Top_afServlet");
