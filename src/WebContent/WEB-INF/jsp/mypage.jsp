@@ -311,10 +311,29 @@
 				<!-- <input class="review"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_contentsを引用 -->
 
-					<input type="button" name="STAMP" value="スタンプ">
-					  <!-- スタンプの画像をクリックするとスタンプ一覧のダイアログボックスが開く。
-					  一覧からスタンプを1つ選択するとスタンプ画像が切り替わる予定 -->
-					<input type="button" name="REPLY" value="リプライ">
+					<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50">
+					  <!-- スタンプの画像をクリックすると画像が変化 -->
+					<input class="review"type="" name="" value="" readonly>
+    				<label class="open" for="popup">
+    				<img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50">
+    				</label>
+   					<input type="checkbox" id="popup">
+
+					<div class="overlay">
+    				<div class="window">
+        				<label class="close" for="popup">×
+        				</label>
+       				<from>
+            		<div class="example">
+    					<label for="namelabel">ユーザー名</label>
+    					<input type="text" name="name" id="namelabel" placeholder="">
+  					</div>
+   					<div class="example">
+    					<label for="ikenlabel">リプライ内容</label>
+    					<textarea id="iken"></textarea>
+ 					</div>
+  					<div class="example">
+    					<input type="submit" value="送信する">
 					  <!-- リプライボタンをクリックするとリプライ入力フォームが開く。
 					  入力後、送信ボタンを押す。 -->
 			<br>
@@ -333,6 +352,21 @@
 
 <br>
 <br>
+ <script>
+//スタンプクリックで変化ループ
+      var img_src = new Array("images/nikochan5.png","images/nikochan6.png");
+      var i = 0;
+
+      function henkou() {
+
+        if (i == 1) {
+          i = 0;
+        } else {
+          i ++;
+        }
+        document.getElementById("image_file").src = img_src[i];
+      }
+</script>
 </body>
 </html>
 
