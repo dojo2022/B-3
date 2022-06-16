@@ -80,3 +80,39 @@ CREATE TABLE t_follow (
 	follow_id VARCHAR(10) NOT NULL,
 	user_id VARCHAR(10) NOT NULL
 );
+
+【m_userの挿入】
+
+【m_videoの挿入】
+
+【m_genreの挿入】
+
+【m_feelcatの挿入】
+
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000001', '爆笑コメディ');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000002', 'ポジティブ');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000003', '癒される');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000004', 'スカッとする');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000005', '優雅');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000006', '非日常的');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000007', 'わくわく');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000008', 'ときめく');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000009', '勉強になる');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000010', '泣ける');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000011', '儚い');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000012', '衝撃的');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000013', 'ミステリアス');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000014', 'ダーク');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000015', '怖い');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000016', 'グロテスク');
+
+【m_stampの挿入】
+
+【t_reviewの挿入】
+
+【t_replyの挿入】
+
+【t_reactionの挿入】
+
+【t_followの挿入】
+
