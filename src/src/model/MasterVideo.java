@@ -9,7 +9,7 @@ public class MasterVideo implements Serializable{
 	private String genre_id;		// ジャンルID
 
 	// 引数があるコンストラクタ
-	public MasterVideo(String video_id, String video_name, String video_year, String video_timee, String genre_idt) {
+	public MasterVideo(String video_id, String video_name, String video_year, String video_time, String genre_id) {
 		super();
 		this.video_id = video_id;
 		this.video_name = video_name;
