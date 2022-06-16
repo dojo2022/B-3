@@ -21,7 +21,7 @@
 	    %>
 	    <div class="search1">
 	    		再生時間
-		        <select name="select3">
+		        <select name="time">
 		            <option label=""></option>
 		            <option label="～30分"></option>
 		            <core:forEach var="i" begin="30" end="150" step="30">
@@ -30,7 +30,7 @@
 		            <option label="181分～"></option>
 		        </select>
 		        年代
-		        <select name="select4">
+		        <select name="year">
 		            <option label=""></option>
 		            <option label="～1960年代"></option>
 		            <core:forEach var="year" begin="1970" end="2020" step="10">
@@ -39,17 +39,17 @@
 		        </select>
 		        <br>
 		        感想カテゴリ１
-		        <select name="select1" onchange="change(this)">
+		        <select name="feelcat1" onchange="change(this)">
 		        	<option>選択してください</option>
 		            <core:forEach items="${ categories }" varStatus="status">
-		            	<option value="${ status.count }番目">${ status.current }</option>
+		      			<option value="${ status.current }">${ status.current }</option>
 		            </core:forEach>
 		        </select>
 		        感想カテゴリ２
-		        <select name="select2">
+		        <select name="feelcat2">
 		            <option>選択してください</option>
-		            <core:forEach var="cat" items="${ categories }">
-		            	<option label="${ cat }"></option>
+		            <core:forEach items="${ categories }" varStatus="status">
+		            	<option value="${ status.current }">${ status.current }</option>
 		            </core:forEach>
 		        </select>
 		        <br>
