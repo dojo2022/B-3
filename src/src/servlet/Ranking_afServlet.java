@@ -21,7 +21,7 @@ public class Ranking_afServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//ランキングページへ遷移
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking_bf.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking_af.jsp");
 		dispatcher.forward(request, response);
 	}
 

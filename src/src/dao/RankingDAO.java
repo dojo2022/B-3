@@ -24,28 +24,10 @@ public class RankingDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する(件数をカウントし降順で3つ表示)
-			String sql = "SELECT video_id count(video_id) FROM t_review GROUP BY video_id ORDER BY count(video_id) DESC";
+			String sql = "SELECT video_id count(video_id) FROM t_review "
+					+ ""
+					+ "GROUP BY video_id ORDER BY count(video_id) DESC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-
-			// SQL文を完成させる
-			if (param.getName() != null) {
-				pStmt.setString(1, "%" + param.getName() + "%");
-			}
-			else {
-				pStmt.setString(1, "%");
-			}
-			if (param.getCompany() != null) {
-				pStmt.setString(2, "%" + param.getCompany() + "%");
-			}
-			else {
-				pStmt.setString(2, "%");
-			}
-			if (param.getMail() != null) {
-				pStmt.setString(3, "%" + param.getMail() + "%");
-			}
-			else {
-				pStmt.setString(3, "%");
-			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -53,12 +35,7 @@ public class RankingDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				Ranking card = new Ranking(
-				rs.getString("number"),
-				rs.getString("name"),
-				rs.getString("company"),
-				rs.getString("address"),
-				rs.getString("mail")
-				);
+				rs.getString("video_id"));
 				ReviewRanking.add(card);
 			}
 		}
