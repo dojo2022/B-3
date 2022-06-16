@@ -50,9 +50,9 @@
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
 				<tr>
-					<td><span id="review_tag"> レビュー投稿 </span> <span
-						id="reply_tag"> リプライ </span> <span id="stamp_tag">
-							スタンプを送ったレビュー </span></td>
+					<td><span id="review_tag"> レビュー投稿 </span>
+					<span id="reply_tag"> リプライ </span>
+					<span id="stamp_tag">スタンプを送ったレビュー </span></td>
 				</tr>
 				<tr>
 					<td>
@@ -91,8 +91,8 @@
 							<p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p>
 							<!-- <input class="review"type="" name="" value="" readonly> -->
 							<!-- t_reviewのreview_contentsを引用 -->
-							<input type="submit" name="REVIEWDELETET" value="削除"> <input
-								type="submit" name="REVIEWEDIT" value="編集"> <br> <br>
+							<input type="submit" name="REVIEWDELETET" value="削除">
+							 <input type="submit" name="REVIEWEDIT" value="編集"> <br> <br>
 						</div>
 
 						<div id="reply_list">
@@ -104,13 +104,12 @@
 							<span id="reply_username">To うに軍艦</span>
 							<!-- <input class="user"type="" name="" value="" readonly> -->
 							<!-- t_replyのreview_id, user_idを引用 -->
-							<br> <br> <span id="reply_time">2022年6月14日
-								21時30分</span>
+							<br> <br> <span id="reply_time">2022年6月14日21時30分</span>
 							<!-- <input class="time"type="" name="" value="" readonly> -->
 							<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
 							<br>
 
-							<p id="reply">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p>
+							<p id="reply_sentence">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p>
 							<!-- <input class="reply"type="" name="" value="" readonly> -->
 							<!-- t_replyのreply_contentsを引用 -->
 							<input type="submit" name="REPLYDELETET" value="削除"> <input
@@ -149,13 +148,14 @@
 							<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
 							<!-- t_reviewのfeelcat_name2を引用 -->
 
-							<p id="review">始まりにして頂点。全てが最高。</p>
+							<p id="review">始まりにして頂点。全てが最高。
+							うわあああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
 							<!-- <input class="review"type="" name="" value="" readonly> -->
 							<!-- t_reviewのreview_contentsを引用 -->
 							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50"
 								height="50">
 							<!-- スタンプの画像をクリックすると画像が変化 -->
-
+							<br>
 								<!-- <input class="review" readonly> -->
 									<label class="open"	for="popup"><img id="reply" src="images/reply.png"
 									onclick="replyfrom()" width="50" height="50">
@@ -243,7 +243,7 @@ p id="review" ：レビュー本文
 div id= "reply_list" ：リプライ一覧
 span id="reply_username" ：リプライ先のユーザー名
 span id="reply_time" ：リプライ日付
-p id="reply" ：リプライ本文
+p id="reply_sentence" ：リプライ本文
 
 div id= "stamp_list" ：スタンプを送ったレビュー一覧
  -->

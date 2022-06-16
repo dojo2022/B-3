@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.MasterUser;
+import dao.MasterUserDao;
+import model.LoginUser;
 
 /**
  * Servlet implementation class LoginServlet
@@ -40,11 +41,12 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("PW");
 
 		// ログイン処理を行う
-		MasterUserDAO iDao = new MasterUserDAO();
-		if (iDao.isLoginOK(new MasterUser(id, pw))) {	// ログイン成功
+		MasterUserDao iDao = new MasterUserDao();
+		LoginUser user = iDao.isLoginOK(id, pw);
+		if (user != null) {	// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new LoginUser(id));
+			session.setAttribute("id", user);
 
 			// トップページ（ログイン後）にリダイレクトする
 			response.sendRedirect("/FLIFRE/Top_afServlet");
@@ -52,11 +54,10 @@ public class LoginServlet extends HttpServlet {
 
 		else {									// ログイン失敗
 			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-			request.setAttribute("result",
-			new Result("ログイン失敗", "IDまたはパスワードに間違いがあります。", "/FLIFRE/LoginServlet"));
+			request.setAttribute("error_message", "ログインに失敗しました");
 
-			// トップページ（ログイン前）にフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_bf.jsp");
+			// ログインページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}
 

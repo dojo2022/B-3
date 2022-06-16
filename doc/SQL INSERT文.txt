@@ -1,0 +1,95 @@
+【m_userの挿入】
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000001', 'a@gmail.com', 'abcde', '伊藤慶秀', '今日も元気に行ってみよっ！', '', '', );
+【m_videoの挿入】
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'SPY×FAMILY', '2022', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ONE PIECE', '1999', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ちはやふる', '2011', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000004', 'マスカレード・ホテル', '2019', '133', 'g000000002');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000005', '孤独のグルメ', '2012', '33', 'g000000002');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000006', '全裸監督', '2019', '50', 'g000000002');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000007', 'The Mask', '1994', '101', 'g000000003');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000008', 'The Shining', '1980', '119', 'g000000003');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000009', 'Suiside Squad', '2016', '132', 'g000000003');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000010', '梨泰院クラス', '2020', '70', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000011', '愛の不時着', '2019', '70', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000012', '脱出おひとり島', '2022', '60', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000013', '少林サッカー', '2001', '112', 'g000000005');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000014', '華麗なるスパイス', '2017', '70', 'g000000005');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000015', 'チャイニーズオデッセイ　其の壱', '1995', '87', 'g000000005');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000016', 'るろうに剣心', '2012', '134', 'g000000006');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000017', 'バキ', '2020', '24', 'g000000006');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000018', 'アイアンマン', '2008', '125', 'g000000006');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000019', '勇者ヨシヒコ', '2011', '28', 'g000000007');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000020', 'フルハウス', '1985', '24', 'g000000007');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000021', 'トークサバイバー', '2022', '30', '000000007');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000022', 'ポケットモンスター', '2021', '24', 'g000000008');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000023', 'いないいないばあっ！', '2008', '45', 'g000000008');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000024', 'ひつじのショーン', '2020', '13', 'g000000008');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000025', '万引き家族', '2018', '120', 'g000000009');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000026', 'マイ・フェア・レディ', '1964', '173', 'g000000009');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000027', '東京物語', '1953', '135', 'g000000009');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000028', '今際の国のアリス', '2020', '50', 'g000000010');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000029', '名探偵コナン', '1996', '24', 'g000000010');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000030', 'イカゲーム', '2021', '60', 'g000000010');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000031', 'おっさんずラブ', '2019', '113', 'g000000011');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000032', 'バブル', '2022', '101', 'g000000011');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000033', '幸せの黄色いハンカチ', '1977', '108', 'g000000011');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000034', '呪怨', '2002', '92', 'g000000012');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000035', 'IT "それ"が見えたら、終わり。', '2017', '134', 'g000000012');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000036', '神様の言うとおり', '2014', '116', g000000012');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000037', '泣きたい私は猫をかぶる', '2020', '105', 'g000000013');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000038', 'ファンタスティック・ビーストと黒い魔法使いの誕生', '2018', '133', 'g000000013');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000039', 'チャーリーとチョコレート工場', '2005', '114', 'g000000013');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000040', 'バック・トゥ・ザ・フューチャー', '1985', '116', 'g000000014');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000041', 'Dr.STONE', '2019', '24', 'g000000014');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000042', '新世紀エヴァンゲリオン', '1995', '23', 'g000000014');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000043', 'はじめてのおつかい', '2013', '15', 'g000000015');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000044', '知っているお兄さん', '2017', '90', 'g000000015');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000045', '相席食堂', '2018', '30', 'g000000015');
+
+【m_genreの挿入】
+
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000001', 'アニメ');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000002', '国内');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000003', '欧米');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000004', '韓国');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000005', '華流');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000006', 'アクション');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000007', 'コメディ');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000008', 'キッズ・ファミリー');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000009', 'ヒューマンドラマ');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000010', 'サスペンス');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000011', 'ラブロマンス');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000012', 'ホラー');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000013', 'ファンタジー');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000014', 'SF');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000015', 'バラエティ');
+
+【m_feelcatの挿入】
+
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000001', '爆笑コメディ');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000002', 'ポジティブ');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000003', '癒される');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000004', 'スカッとする');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000005', '優雅');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000006', '非日常的');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000007', 'わくわく');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000008', 'ときめく');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000009', '勉強になる');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000010', '泣ける');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000011', '儚い');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000012', '衝撃的');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000013', 'ミステリアス');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000014', 'ダーク');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000015', '怖い');
+INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000016', 'グロテスク');
+
+【m_stampの挿入】
+
+【t_reviewの挿入】
+
+【t_replyの挿入】
+
+【t_reactionの挿入】
+
+【t_followの挿入】
