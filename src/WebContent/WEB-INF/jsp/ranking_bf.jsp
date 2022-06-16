@@ -12,7 +12,6 @@
 </head>
 
 <body>
-<div class="wrapper">
     <!---->
     <%@ include file="header.jsp" %>
     <main>
@@ -49,7 +48,6 @@
     <footer>
 
     </footer>
-</div>
 </body>
 
 </html>
