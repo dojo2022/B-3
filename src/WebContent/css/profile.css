@@ -73,7 +73,15 @@ hr {
 #follow_Lift {
 	text-align: right;
 }
+
+
+/*リプライテーブル(ポップアップ)のスタイル */
+
 /*リプライポップアップ表示*/
+
+
+/*リプライポップアップ表示*/
+
 .open {
     cursor:pointer;
 }
@@ -118,3 +126,10 @@ hr {
     right: 8px;
     font-size: 20px;
 }
+
+
+/*プロフィール変更テーブルのボタン位置*/
+#editbutton, #confilmButton {
+	text-align: center;
+}
+
