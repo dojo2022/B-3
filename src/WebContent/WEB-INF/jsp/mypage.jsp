@@ -247,27 +247,7 @@
 
 					<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50">
 					  <!-- スタンプの画像をクリックすると画像が変化 -->
-					<input class="review"type="" name="" value="" readonly>
-    				<label class="open" for="popup">
-    				<img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50">
-    				</label>
-   					<input type="checkbox" id="popup">
 
-					<div class="overlay">
-    				<div class="window">
-        				<label class="close" for="popup">×
-        				</label>
-       				<from>
-            		<div class="example">
-    					<label for="namelabel">ユーザー名</label>
-    					<input type="text" name="name" id="namelabel" placeholder="">
-  					</div>
-   					<div class="example">
-    					<label for="ikenlabel">リプライ内容</label>
-    					<textarea id="iken"></textarea>
- 					</div>
-  					<div class="example">
-    					<input type="submit" value="送信する">
 					  <!-- リプライボタンをクリックするとリプライ入力フォームが開く。
 					  入力後、送信ボタンを押す。 -->
 			<br>

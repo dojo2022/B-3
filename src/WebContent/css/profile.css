@@ -73,8 +73,7 @@ hr {
 #follow_Lift {
 	text-align: right;
 }
-
-
+/*リプライポップアップ表示*/
 .open {
     cursor:pointer;
 }
