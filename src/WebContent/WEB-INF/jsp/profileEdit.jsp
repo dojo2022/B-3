@@ -11,47 +11,52 @@
 </head>
 <body>
 <header>
-<h1 id="logo">
-<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
-</h1>
+<!-- <form method="POST" action="/FLIFRE/ResultServlet"> -->
+	<div class="search">
 
-<p class="log"><!-- このボタンの位置がずれてる -->
-	<a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
-	<img src="images/${ empty id ? 'login' : 'logout' }.png"
-	width="97" height="29" alt="${ empty id ? 'ログイン' : 'ログアウト' }">
-	</a>
-</p>
+			<h1 id="logo">
+		    	<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
+		    </h1>
 
-<!--ここからメニュー-->
- <div class="hamburger-menu">
-	        <input type="checkbox" id="menu-btn-check">
-	        <label for="menu-btn-check" class="menu-btn"><span></span></label>
-	        <div class="menu-content">
-	            <ul>
-	                <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-	                <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-	                <core:if test="${ not empty id }">
-	                	<li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-	                </core:if>
-	                <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
-	            </ul>
-	        </div>
-	    </div>
-<!--ここまでメニュー-->
+		    <p class="log">
+		        <a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
+		            <img src="images/${ empty id ? 'login' : 'logout' }.png"
+		                 width="97" height="29"
+		                 alt="${ empty id ? 'ログイン' : 'ログアウト' }">
+		        </a>
+	    	</p>
+
+			<!--ここからメニュー-->
+			<div class="hamburger-menu">
+				<input type="checkbox" id="menu-btn-check">
+				<label for="menu-btn-check" class="menu-btn"><span></span></label>
+				<div class="menu-content">
+					<ul>
+				    <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
+				    <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+				    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
+				    	<core:if test="${ not empty id }">
+				        <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+				        </core:if>
+				    <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
+					</ul>
+				</div>
+			</div>
+	</div>
+	<!--ここまでメニュー-->
 </header>
 
 <!-- メインここから -->
@@ -59,73 +64,46 @@
 <!-- <c:forEach var="" items="" > -->
 <!-- 画像をフォルダから選んでアップロードできるようにしたい -->
 <!-- レイアウトまだ未定 -->
+
 <form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">
-	<table>
-		<tr>
-			<td>
-			アイコン
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<img src="./images/pf_img.png">
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<input type="submit" name="ICONWEDIT" value="編集">
-			<hr>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			ヘッダー
-			</td>
-		</tr>
-		<tr>
-			<td><img src="./images/pfEdit_hd.png">
-			<!-- マイページ・ユーザーページのより小さめのヘッダー画像使ってます。
-			サイズの調整方法が分からない -->
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<input type="submit" name="ICONWEDIT" value="編集">
-			<hr>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			ユーザー名
-			</td>
-		</tr>
-		<tr>
-			<td>
-			炙りえんがわ
-			</td>
-		</tr>
-		<tr>
-			<td><input type="text" name="userName" value="編集">
-			<hr>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			プロフィール文
-			</td>
-		</tr>
-		<tr>
-			<td>
-			アニメと洋画が好きです。
-			</td>
-		</tr>
-		<tr>
-			<td><input type="text" name="profile" value="編集">
-			</td>
-		</tr>
-	</table>
+<!-- マイプロフィールボックスここから -->
+<div class="myprofileEdit">
+	<p>・アイコン変更</p>
+	<img id="pf_icon" src ="./images/pf_img.png">
+	<!-- <input class="circle" type="" name="" value="" readonly> -->
+	<!-- m_userのuser_img アイコンを引用予定 -->
+	<p id="editbutton"><input type="submit" name="ICONWEDIT" value="編集"></p>
+<hr>
+	<p>・ヘッダー変更</p>
+	<img id="pf_icon" src ="./images/pfEdit_hd.png">
+	<!-- <input class="circle" type="" name="" value="" readonly> -->
+	<!-- m_userのuser_hd ヘッダーを引用予定 -->
+	<p id="editbutton"><input type="submit" name="ICONWEDIT" value="編集"></p>
+<hr>
+	<p>・ユーザー名変更</p>
+	<span id="username">炙りえんがわ　　</span>
+	<!-- <input class="user"type="" name="" value="" readonly> -->
+	<!-- m_userのuser_nameを引用予定 -->
+	<p id="edittext"><input type="text" name="userNameEdit" value="編集"></p>
+<hr>
+	<br>
+	<br>
+	<span id="pf">・プロフィール文変更</span>
+	<br>
+	<br>
+	<span id="pf">アニメと洋画が好きです。</span>
+	<!-- <input class="profile"type="" name="" value="" readonly> -->
+	<!-- m_userのuser_pfを引用予定 -->
+	<p id="edittext"><input type="text" name="profileEdit" value="編集"></p>
+	<br>
+	<br>
+	<p id="confilmButton"><input type="button" name="editConfilm" value="変更内容を確定">
+	<br>
+</div>
 </form>
 <!-- </c:forEach> -->
+<!-- マイプロフィールボックスここまで -->
+<br>
 <!-- メインここまで -->
 </main>
 <br>

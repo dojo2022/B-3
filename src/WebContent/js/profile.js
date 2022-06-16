@@ -1,6 +1,7 @@
 /**
  *
  */
+ /**/
  /*タグのエレメントを代入*/
 const review_tag = document.getElementById('review_tag');
 const reply_tag = document.getElementById("reply_tag");
@@ -33,3 +34,19 @@ stamp_tag.addEventListener('click', function() {
 	reply_list.style.display = 'none';
 	stamp_list.style.display = 'block';
 });
+
+
+
+/*にこちゃんスタンプクリックで変化ループ*/
+      var img_src = new Array("images/nikochan5.png","images/nikochan6.png");
+      var i = 0;
+
+      function henkou() {
+
+        if (i == 1) {
+          i = 0;
+        } else {
+          i ++;
+        }
+        document.getElementById("image_file").src = img_src[i];
+      }

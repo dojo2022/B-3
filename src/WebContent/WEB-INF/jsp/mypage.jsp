@@ -106,50 +106,6 @@
 					<input type="submit" name="REVIEWEDIT" value="編集">
 			<br>
 			<br>
-			<hr>
-
-			<img id="pf_icon" src ="./images/pf_img.png">
-				<!-- <input class="circle" type="" name="" value="" readonly> -->
-				<!-- m_userのuser_img アイコンを引用予定 -->
-
-				<span id="username">炙りえんがわ　　</span>
-				<!-- <input class="user"type="" name="" value="" readonly> -->
-				<!-- t_reviewのuser_idを引用 -->
-			<br>
-			<br>
-
-				<span id="review_video">アイアンマン</span>
-				<!-- <input class="video"type="" name="" value="" readonly> -->
-				<!-- t_reviewのvideo_idを引用 -->
-
-				<span id="review_star">　　★★★★★　　</span>
-				<!-- <input class="star"type="" name="" value="" readonly> -->
-				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
-
-				<span id="review_time">2022年6月14日 20時30分</span>
-				<!-- <input class="time"type="" name="" value="" readonly> -->
-				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-			<br>
-
-				<span id="review_genre">　ジャンル：アクション　</span>
-				<!-- <input class="genre"type="" name="" value="" readonly> -->
-				<!-- t_reviewのgenre_idを引用 -->
-
-				<span id="review_feelcat1">　感想カテゴリ1：スカッとする　</span>
-				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
-				<!-- t_reviewのfeelcat_name1を引用 -->
-
-				<span id="review_feelcat2">　感想カテゴリ2：わくわく　</span>
-				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
-				<!-- t_reviewのfeelcat_name2を引用 -->
-
-				<p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p>
-				<!-- <input class="review"type="" name="" value="" readonly> -->
-				<!-- t_reviewのreview_contentsを引用 -->
-					<input type="submit" name="REVIEWDELETET" value="削除">
-					<input type="submit" name="REVIEWEDIT" value="編集">
-			<br>
-			<br>
 			</div>
 
 			<div id= "reply_list" >
@@ -174,30 +130,7 @@
 				<!-- t_replyのreply_contentsを引用 -->
 					<input type="submit" name="REPLYDELETET" value="削除">
 					<input type="submit" name="REPLYWEDIT" value="編集">
-			<br>
-			<br>
-			<hr>
 
-			<img id="pf_icon" src ="./images/pf_img.png">
-				<!-- <input class="circle" type="" name="" value="" readonly> -->
-				<!-- m_userのuser_img アイコンを引用予定 -->
-
-				<span id="reply_username">To うに軍艦</span>
-				<!-- <input class="user"type="" name="" value="" readonly> -->
-				<!-- t_replyのreview_id, user_idを引用 -->
-				<br>
-				<br>
-
-				<span id="reply_time">2022年6月14日 21時30分</span>
-				<!-- <input class="time"type="" name="" value="" readonly> -->
-				<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
-			<br>
-
-				<p id="reply">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p>
-				<!-- <input class="reply"type="" name="" value="" readonly> -->
-				<!-- t_replyのreply_contentsを引用 -->
-					<input type="submit" name="REPLYDELETET" value="削除">
-					<input type="submit" name="REPLYWEDIT" value="編集">
 			<br>
 			<br>
 			</div>
@@ -242,62 +175,36 @@
 				<p id="review">始まりにして頂点。全てが最高。</p>
 				<!-- <input class="review"type="" name="" value="" readonly> -->
 				<!-- t_reviewのreview_contentsを引用 -->
+			<br>
+			<br>
+					<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50">
+					<!-- スタンプの画像をクリックすると画像が変化 -->
 
-					<input type="button" name="STAMP" value="スタンプ">
-					  <!-- スタンプの画像をクリックするとスタンプ一覧のダイアログボックスが開く。
-					  一覧からスタンプを1つ選択するとスタンプ画像が切り替わる予定 -->
-					<input type="button" name="REPLY" value="リプライ">
+					<input class="review"type="" name="" value="" readonly>
+    				<label class="open" for="popup">
+    				<img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50">
+    				</label>
+   					<input type="checkbox" id="popup">
+
+					<div class="overlay">
+    				<div class="window">
+        				<label class="close" for="popup">×
+        				</label>
+
+       				<from>
+            		<div class="example">
+    					<label for="namelabel">ユーザー名</label>
+    					<input type="text" name="name" id="namelabel" placeholder="">
+  					</div>
+   					<div class="example">
+    					<label for="ikenlabel">リプライ内容</label>
+    					<textarea id="iken"></textarea>
+ 					</div>
+  					<div class="example">
+    					<input type="submit" value="送信する">
 					  <!-- リプライボタンをクリックするとリプライ入力フォームが開く。
 					  入力後、送信ボタンを押す。 -->
-			<br>
-			<br>
-			<hr>
-
-			<img id="pf_icon" src ="./images/pf_img.png">
-				<!-- <input class="circle" type="" name="" value="" readonly> -->
-				<!-- m_userのuser_img アイコンを引用予定 -->
-
-				<span id="username">うに軍艦　　</span>
-				<!-- <input class="user"type="" name="" value="" readonly> -->
-				<!-- t_reviewのuser_idを引用 -->
-			<br>
-			<br>
-
-				<span id="review_video">アイアンマン</span>
-				<!-- <input class="video"type="" name="" value="" readonly> -->
-				<!-- t_reviewのvideo_idを引用 -->
-
-				<span id="review_star">　　★★★★★　　</span>
-				<!-- <input class="star"type="" name="" value="" readonly> -->
-				<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
-
-				<span id="review_time">2022年6月12日 16時00分</span>
-				<!-- <input class="time"type="" name="" value="" readonly> -->
-				<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-			<br>
-
-				<span id="review_genre">　ジャンル：アクション　</span>
-				<!-- <input class="genre"type="" name="" value="" readonly> -->
-				<!-- t_reviewのgenre_idを引用 -->
-
-				<span id="review_feelcat1">　感想カテゴリ１：スカッとする　</span>
-				<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
-				<!-- t_reviewのfeelcat_name1を引用 -->
-
-				<span id="review_feelcat2">　感想カテゴリ２：非日常的　</span>
-				<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
-				<!-- t_reviewのfeelcat_name2を引用 -->
-
-				<p id="review">始まりにして頂点。全てが最高。</p>
-				<!-- <input class="review"type="" name="" value="" readonly> -->
-				<!-- t_reviewのreview_contentsを引用 -->
-
-					<input type="button" name="STAMP" value="スタンプ">
-					  <!-- スタンプの画像をクリックするとスタンプ一覧のダイアログボックスが開く。
-					  一覧からスタンプを1つ選択するとスタンプ画像が切り替わる予定 -->
-					<input type="button" name="REPLY" value="リプライ">
-					  <!-- リプライボタンをクリックするとリプライ入力フォームが開く。
-					  入力後、送信ボタンを押す。 -->
+					</form>
 			<br>
 			<br>
 			</div>
@@ -308,12 +215,60 @@
 </form>
 <!-- </c:forEach> -->
 <!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
-
 </main>
 <!-- メインここまで -->
+<br>
+<br>
+<script>
+/*タグのエレメントを代入*/
+const review_tag = document.getElementById('review_tag');
+const reply_tag = document.getElementById("reply_tag");
+const stamp_tag = document.getElementById("stamp_tag");
 
-<br>
-<br>
+/*リストのエレメントを代入*/
+const review_list = document.getElementById("review_list");
+const reply_list =document.getElementById("reply_list");
+const stamp_list =document.getElementById("stamp_list");
+
+/*初期化（全てのリストを表示しない）*/
+review_list.style.display = 'none';
+reply_list.style.display = 'none';
+stamp_list.style.display = 'none';
+
+/*各タグがクリックされた時の処理*/
+review_tag.addEventListener('click', function() {
+	review_list.style.display = 'block';
+	reply_list.style.display = 'none';
+	stamp_list.style.display = 'none';
+});
+
+reply_tag.addEventListener('click', function() {
+	review_list.style.display = 'none';
+	reply_list.style.display = 'block';
+	stamp_list.style.display = 'none';
+});
+stamp_tag.addEventListener('click', function() {
+	review_list.style.display = 'none';
+	reply_list.style.display = 'none';
+	stamp_list.style.display = 'block';
+});
+
+
+
+/*にこちゃんスタンプクリックで変化ループ*/
+      var img_src = new Array("images/nikochan5.png","images/nikochan6.png");
+      var i = 0;
+
+      function henkou() {
+
+        if (i == 1) {
+          i = 0;
+        } else {
+          i ++;
+        }
+        document.getElementById("image_file").src = img_src[i];
+      }
+</script>
 </body>
 </html>
 

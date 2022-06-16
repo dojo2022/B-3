@@ -11,25 +11,78 @@
 <body>
 	<%@ include file="header.jsp" %>
 
-	<!-- 投稿フォーム-->
-	<main>
-		<div class="review">
-			<div class="video-image"></div>
-			<h1>作品名</h1><!-- m_videoのvideo_nameを引用 -->
-        	<h2>再生時間</h2><!-- m_videoのvideo_timeを引用 -->
-        	<h2>作品ジャンル</h2><!-- m_videoのgenre_idを引用 -->
+	<h2>レビュー投稿を表示します</h2>
+	<div class="border1">
+		<table class="table">
+			<tr>
+    			<td><input class="circle" type="" name="" value="" readonly></td>
+   			</tr>
+   			<tr>
+    			<td><input class="user" type="" name="" value="" readonly></td>
+			    <td><input class="video" type="" name="" value="" readonly></td>
+			    <td><input class="time" type="" name="" value="" readonly></td>
+			    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
+   			</tr>
+   			<tr>
+			    <td><input class="review" type="" name="" value="" readonly></td>
+			    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
+   				<input type="checkbox" id="popup">
+					<div class="overlay">
+    					<div class="window">
+        					<label class="close" for="popup">×</label>
+        					<from>
+            					<div class="example">
+    								<label for="namelabel">ユーザー名</label>
+    								<input type="text" name="name" id="namelabel" placeholder="匿名">
+  								</div>
+   								<div class="example">
+								    <label for="ikenlabel" >リプライ内容</label>
+								    <textarea id="iken" placeholder="内容を入力してください"></textarea>
+								</div>
+								<div class="example">
+								    <input type="submit" value="送信する">
+								</div>
+        					</from>
+    					</div>
+					</div>
+			</tr>
+ 		</table>
+  		<div class="border-bottom"></div>
+	</div>
+  <!--label class="label" for="name">名前</label>
+  <input id="name" type="text" name="name">
+  <label class="label" for="message">コメント</label>
+  <textarea rows="4" id="message" placeholder="ご意見をお寄せ下さい。" name="comment"></textarea>
+  <input type="submit">
+</form-->
 
-        	<a href="/FLIFRE/Servlet"><img src ="./images/pf_img.png"></a><!-- m_userのuser_img アイコンを引用予定 -->
-			<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
-			<div class="review-contents">
-				<div class="feelcat">
-	        	感想カテゴリ１<!-- m_feelcatのfeelcat_idを引用 -->
-	        	感想カテゴリ１<!-- m_feelcatのfeelcat_idを引用 -->
-	        	</div>
-				<p class="date">投稿日時</p><!-- <!-- t_reviewのreview_dateを引用 -->
-				本文<!-- t_reviewのreview_contentsを引用 -->
-        	</div>
-		</div>
-	</main>
+
+<style>
+label, input[type=text]{
+ display:block;
+}
+</style>
+<!-- レビュー星表示 -->
+    <script>
+//スタンプクリックで変化ループ
+      var img_src = new Array("images/nikochan5.png","images/nikochan6.png");
+      var i = 0;
+
+      function henkou() {
+
+        if (i == 1) {
+          i = 0;
+        } else {
+          i ++;
+        }
+        document.getElementById("image_file").src = img_src[i];
+      }
+//リプライクリックで入力フォーム表示
+/*function replyfrom(){
+    var reply = document.getElementById('reply');
+    var source = reply.src;
+
+}*/
+</script>
 </body>
 </html>
