@@ -26,7 +26,7 @@ public class MasterUserDao extends HttpServlet {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from IDPW where ID = ? and PW = ?";
+			String sql = "select count(*) from m_user where user_mail = ? and user_pw = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, id);
 			pStmt.setString(2,pw);
