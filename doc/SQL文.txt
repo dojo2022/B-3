@@ -87,6 +87,21 @@ CREATE TABLE t_follow (
 
 【m_genreの挿入】
 
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000001', 'アニメ');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000002', '国内');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000003', '欧米');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000004', '韓国');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000005', '華流');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000006', 'アクション');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000007', 'コメディ');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000008', 'キッズ・ファミリー');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000009', 'ヒューマンドラマ');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000010', 'サスペンス');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000011', 'ラブロマンス');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000012', 'ホラー');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000013', 'ファンタジー');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000014', 'SF');
+INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000015', 'バラエティ');
 【m_feelcatの挿入】
 
 INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000001', '爆笑コメディ');
