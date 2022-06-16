@@ -65,20 +65,29 @@
 <!-- 画像をフォルダから選んでアップロードできるようにしたい -->
 <!-- レイアウトまだ未定 -->
 
-<form id = profile_edit method="POST" action="/FLIFRE/ProfileServlet">
 <!-- マイプロフィールボックスここから -->
 <div class="myprofileEdit">
 	<p>・アイコン変更</p>
 	<img id="pf_icon" src ="./images/pf_img.png">
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
 	<!-- m_userのuser_img アイコンを引用予定 -->
-	<p id="editbutton"><input type="submit" name="ICONWEDIT" value="編集"></p>
+	<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+  		<div class="portlate" id="imageframe">
+    		<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
+  		</div>
+	</form>
+<br>
 <hr>
 	<p>・ヘッダー変更</p>
 	<img id="pf_icon" src ="./images/pfEdit_hd.png">
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
 	<!-- m_userのuser_hd ヘッダーを引用予定 -->
-	<p id="editbutton"><input type="submit" name="ICONWEDIT" value="編集"></p>
+	<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+  		<div class="portlate" id="imageframe">
+    		<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
+  		</div>
+	</form>
+<br>
 <hr>
 	<p>・ユーザー名変更</p>
 	<span id="username">炙りえんがわ　　</span>
@@ -100,7 +109,6 @@
 	<p id="confilmButton"><input type="button" name="editConfilm" value="変更内容を確定">
 	<br>
 </div>
-</form>
 <!-- </c:forEach> -->
 <!-- マイプロフィールボックスここまで -->
 <br>
