@@ -15,8 +15,7 @@ public class Review implements Serializable{
 	private Date review_date;
 
 	//引数があるコンストラクタ
-	public Review(String review_id, String video_id, String user_id, String review_contents, String genre_id,
-			String feelcat_name1, String feelcat_name2, String star, Date review_date) {
+	public Review(String review_id, String video_id, String user_id, String review_contents, String genre_id,String feelcat_name1, String feelcat_name2, String star, Date review_date) {
 		super();
 		this.review_id = review_id;
 		this.video_id = video_id;
@@ -40,6 +39,80 @@ public class Review implements Serializable{
 		this.feelcat_name1 = "";
 		this.feelcat_name2 = "";
 		this.star = "";
-		this.review_date = null ;
+		this.review_date = null;
+
+
+	}
+
+	public String getReview_id() {
+		return review_id;
+	}
+
+	public void setReview_id(String review_id) {
+		this.review_id = review_id;
+	}
+
+	public String getVideo_id() {
+		return video_id;
+	}
+
+	public void setVideo_id(String video_id) {
+		this.video_id = video_id;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getReview_contents() {
+		return review_contents;
+	}
+
+	public void setReview_contents(String review_contents) {
+		this.review_contents = review_contents;
+	}
+
+	public String getGenre_id() {
+		return genre_id;
+	}
+
+	public void setGenre_id(String genre_id) {
+		this.genre_id = genre_id;
+	}
+
+	public String getFeelcat_name1() {
+		return feelcat_name1;
+	}
+
+	public void setFeelcat_name1(String feelcat_name1) {
+		this.feelcat_name1 = feelcat_name1;
+	}
+
+	public String getFeelcat_name2() {
+		return feelcat_name2;
+	}
+
+	public void setFeelcat_name2(String feelcat_name2) {
+		this.feelcat_name2 = feelcat_name2;
+	}
+
+	public String getStar() {
+		return star;
+	}
+
+	public void setStar(String star) {
+		this.star = star;
+	}
+
+	public Date getReview_date() {
+		return review_date;
+	}
+
+	public void setReview_date(Date review_date) {
+		this.review_date = review_date;
 	}
 }

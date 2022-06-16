@@ -41,7 +41,7 @@ public class ReviewDao {
 					rs.getString("feelcat_name1"),
 					rs.getString("feelcat_name2"),
 					rs.getString("star"),
-					rs.getString("review_date")
+					rs.getDate("review_date")
 					);
 					ReviewRanking.add(card);
 				}
