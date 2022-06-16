@@ -13,7 +13,7 @@
 
 <body>
 <%@ include file="header.jsp" %>
-<h2 class"aaa">レビュー投稿を表示します</h2>
+<h2>レビュー投稿を表示します</h2>
 <div class="border1">
  <table class="table">
    <tr>
@@ -35,11 +35,11 @@
         <from>
             <div class="example">
     <label for="namelabel">ユーザー名</label>
-    <input type="text" name="name" id="namelabel" placeholder="">
+    <input type="text" name="name" id="namelabel" placeholder="匿名">
   </div>
    <div class="example">
-    <label for="ikenlabel">リプライ内容</label>
-    <textarea id="iken"></textarea>
+    <label for="ikenlabel" >リプライ内容</label>
+    <textarea id="iken" placeholder="内容を入力してください"></textarea>
   </div>
   <div class="example">
     <input type="submit" value="送信する">
