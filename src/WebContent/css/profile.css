@@ -75,18 +75,6 @@ hr {
 }
 
 
-#image_file{
-position:relative;
-left: 380px;
-top: 15px;
-}
-
-#reply{
-position: relative;
-left: 745px;
-top: 15px;
-}
-/*星表示*/
 .open {
     cursor:pointer;
 }
@@ -119,4 +107,15 @@ top: 15px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+.text {
+    font-size: 25px;
+    margin: 0;
+    color: #fcfff9;
+}
+.close {
+    cursor:pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 20px;
+}
