@@ -7,7 +7,7 @@ public class Follow implements Serializable{
 	private String follow_id;		//フォローID
 
 	//引数があるコンストラクタ
-	public Follow(String id, String user_id, String follow_id) {
+	public Follow(String user_id, String follow_id) {
 		super();
 		this.user_id = user_id;
 		this.follow_id = follow_id;

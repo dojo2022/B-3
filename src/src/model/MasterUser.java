@@ -11,7 +11,7 @@ public class MasterUser implements Serializable {
 	private String user_hd;			//ヘッダー画像
 
 	//引数があるコンストラクタ
-	public MasterUser(String id, String user_id, String user_mail, String user_pw, String user_name, String user_pf,
+	public MasterUser(String user_id, String user_mail, String user_pw, String user_name, String user_pf,
 			String user_img, String user_hd) {
 		super();
 		this.user_id = user_id;

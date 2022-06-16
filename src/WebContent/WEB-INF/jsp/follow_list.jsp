@@ -11,21 +11,7 @@
 <body>
 	<div class="wrapper">
 	<%@ include file="header.jsp" %>
-<!-- フォローフォロワーを表形式で表示する -->
-	<main>
-	<h2 id="explain">フォロー/フォロワー一覧</h2>
-	<table>
-		<tbody>
-			<tr>
-				<th>フォロー</th><th>フォロワー</th>
-			</tr>
-			<!-- t_followからデータを取得 -->
-			<c:forEach var="e" items="${cardList}" >
-			<tr>
-				<td>${e.follow_id}</td><td>${e.user_id}</td>
-			</tr>
-		</tbody>
-	</table>
+
 <!-- フォロー一覧を表示する -->
 	<h2 id="explain">フォロー</h2>
 	<div>
@@ -34,11 +20,11 @@
 		    <tr>
 		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
 		    </tr>
-		    <c:forEach var="i" items="${cardList}" >
+		    <c:forEach var="i" items="${followList}" >
 		    <tr>
-			    <td>${i.number}</td>
-			    <td>${i.name}</td>
-			    <td>${i.company}</td>
+			    <td>${i.user_img}</td>
+			    <td>${i.user_name}</td>
+			    <td>${i.user_pf}</td>
 		    </tr>
 		    </c:forEach>
   		</tbody>
@@ -53,11 +39,11 @@
 		    <tr>
 		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
 		    </tr>
-		    <c:forEach var="i" items="${cardList}" >
+		    <c:forEach var="i" items="${followList}" >
 		    <tr>
-			    <td>${i.number}</td>
-			    <td>${i.name}</td>
-			    <td>${i.company}</td>
+			    <td>${i.user_img}</td>
+			    <td>${i.user_pf}</td>
+			    <td>${i.user_pf}</td>
 		    </tr>
 		    </c:forEach>
   		</tbody>
