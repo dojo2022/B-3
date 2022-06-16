@@ -4,14 +4,16 @@
 	text-align: center;
 }
 
+.flex {
+	display: flex;
+}
+
 /* フォロー一覧 */
 #follow_table {
 	margin: auto;
-	border: 1px solid black;
 }
 
 /* フォロワー一覧 */
 #follower_table {
 	margin: auto;
-	border: 1px solid black;
 }

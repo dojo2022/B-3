@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +14,8 @@
 	<%@ include file="header.jsp" %>
 
 <!-- フォロー一覧を表示する -->
-	<h2 id="explain">フォロー</h2>
-	<div>
-	<table id="follow_table">
+	<div class="flex">
+	<table border="1" id="follow_table">
   		<tbody>
 		    <tr>
 		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
@@ -26,15 +26,17 @@
 			    <td>${i.user_name}</td>
 			    <td>${i.user_pf}</td>
 		    </tr>
+		    <tr>
+		    	<td colspan="3">
+		    	<input type="submit" name="UnfollowBottun" value="フォロー解除">
+		    	</td>
+		    </tr>
 		    </c:forEach>
   		</tbody>
 	</table>
-	</div>
-	フォロー解除
+
 <!-- フォロワー一覧を表示する -->
-	<h2 id="explain">フォロワー</h2>
-	<div>
-	<table id="follower_table">
+	<table border="1" id="follower_table">
   		<tbody>
 		    <tr>
 		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
@@ -45,12 +47,16 @@
 			    <td>${i.user_pf}</td>
 			    <td>${i.user_pf}</td>
 		    </tr>
+		    <tr>
+		    	<td colspan="3">
+		    	<input type="submit" name="FollowBottun" value="フォロー">
+				<input type="submit" name="UnfollowBottun" value="フォロー解除">
+				</td>
+		    </tr>
 		    </c:forEach>
   		</tbody>
 	</table>
 	</div>
-	フォロー・フォロー解除
-	</main>
 	</div>
 </body>
 </html>
