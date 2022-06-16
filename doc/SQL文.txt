@@ -84,7 +84,42 @@ CREATE TABLE t_follow (
 【m_userの挿入】
 
 【m_videoの挿入】
-
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'SPY×FAMILY', '2022', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ONE PIECE', '1999', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ちはやふる', '2011', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000004', 'マスカレード・ホテル', '2019', '133', 'g000000002');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000005', '孤独のグルメ', '2012', '33', 'g000000002');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000006', '全裸監督', '2019', '50', 'g000000002');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000007', 'The Mask', '1994', '101', 'g000000003');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000008', 'The Shining', '1980', '119', 'g000000003');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000009', 'Suiside Squad', '2016', '132', 'g000000003');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000010', '梨泰院クラス', '2020', '70', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000011', '愛の不時着', '2019', '70', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000012', '脱出おひとり島', '2022', '60', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000013', '少林サッカー', '2001', '112', 'g000000005');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000014', '華麗なるスパイス', '2017', '70', 'g000000005');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000015', 'チャイニーズオデッセイ　其の壱', '1995', '87', 'g000000005');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000016', 'るろうに剣心', '2012', '134', 'g000000006');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000017', 'バキ', '2020', '24', 'g000000006');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000018', 'アイアンマン', '2008', '125', 'g000000006');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000019', '勇者ヨシヒコ', '2011', '28', 'g000000007');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000020', 'フルハウス', '1985', '24', 'g000000007');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000021', 'トークサバイバー', '2022', '30', '000000007');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000022', 'ポケットモンスター', '2021', '24', 'g000000008');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000023', 'いないいないばあっ！', '2008', '45', 'g000000008');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000024', 'ひつじのショーン', '2020', '13', 'g000000008');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000025', '万引き家族', '2018', '120', 'g000000009');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000026', 'マイ・フェア・レディ', '1964', '173', 'g000000009');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000027', '東京物語', '1953', '135', 'g000000009');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000028', '今際の国のアリス', '2020', '50', 'g000000010');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000029', '名探偵コナン', '1996', '24', 'g000000010');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000030', 'イカゲーム', '2021', '60', 'g000000010');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000031', 'おっさんずラブ', '2019', '113', 'g000000011');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000032', 'バブル', '2022', '101', 'g000000011');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000033', '幸せの黄色いハンカチ', '1977', '108', 'g000000011');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000034', '呪怨', '2002', '92', 'g000000012');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000035', 'IT "それ"が見えたら、終わり。', '2017', '134', 'g000000012');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000036', '神様の言うとおり', '2014', '116', g000000012');
 【m_genreの挿入】
 
 INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000001', 'アニメ');
