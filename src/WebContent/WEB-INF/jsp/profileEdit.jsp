@@ -73,19 +73,19 @@
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
 	<!-- m_userのuser_img アイコンを引用予定 -->
 	<p id="editbutton"><input type="submit" name="ICONWEDIT" value="編集"></p>
-
+<hr>
 	<p>・ヘッダー変更</p>
 	<img id="pf_icon" src ="./images/pfEdit_hd.png">
 	<!-- <input class="circle" type="" name="" value="" readonly> -->
 	<!-- m_userのuser_hd ヘッダーを引用予定 -->
 	<p id="editbutton"><input type="submit" name="ICONWEDIT" value="編集"></p>
-
+<hr>
 	<p>・ユーザー名変更</p>
 	<span id="username">炙りえんがわ　　</span>
 	<!-- <input class="user"type="" name="" value="" readonly> -->
 	<!-- m_userのuser_nameを引用予定 -->
-	<p id="edittext"><input type="text" name="userName" value="編集"></p>
-
+	<p id="edittext"><input type="text" name="userNameEdit" value="編集"></p>
+<hr>
 	<br>
 	<br>
 	<span id="pf">・プロフィール文変更</span>
@@ -94,8 +94,10 @@
 	<span id="pf">アニメと洋画が好きです。</span>
 	<!-- <input class="profile"type="" name="" value="" readonly> -->
 	<!-- m_userのuser_pfを引用予定 -->
-	<p id="edittext"><input type="text" name="profile" value="編集"></p>
+	<p id="edittext"><input type="text" name="profileEdit" value="編集"></p>
 	<br>
+	<br>
+	<p id="confilmButton"><input type="button" name="editConfilm" value="変更内容を確定">
 	<br>
 </div>
 </form>

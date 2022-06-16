@@ -74,7 +74,7 @@ hr {
 	text-align: right;
 }
 
-
+/*リプライテーブル(ポップアップ)のスタイル */
 .open {
     cursor:pointer;
 }
@@ -118,4 +118,9 @@ hr {
     top: 8px;
     right: 8px;
     font-size: 20px;
+}
+
+/*プロフィール変更テーブルのボタン位置*/
+#editbutton, #confilmButton {
+	text-align: center;
 }
