@@ -46,7 +46,7 @@ public class PostServlet extends HttpServlet {
 
 		// 投稿処理を行う
 		ReviewDao rDao = new ReviewDao();
-		if (rDao.insert(new Review(number, name, company, companypage, department, position, postalcode, address, tel, fax, email, remarks))) {	// 登録成功
+		if (rDao.insert(new Review(review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "投稿しました。", "/simpleBC/PostServlet"));
 		}
@@ -56,7 +56,7 @@ public class PostServlet extends HttpServlet {
 		}
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
 	}
 }
