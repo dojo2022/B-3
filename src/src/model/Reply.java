@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Timestamp;
 
 public class Reply implements Serializable {
 	private String reply_id;
@@ -28,7 +27,7 @@ public class Reply implements Serializable {
 		this.review_id = "";
 		this.user_id = "";
 		this.reply_contents = "";
-		this.reply_date ;
+		this.reply_date = null ;
 	}
 
 	//getter/setter
