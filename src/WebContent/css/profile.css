@@ -45,7 +45,7 @@
 table {
 	margin: 0 auto;
 	text-align: left;
-	width: 1000px;
+	width: 1200px;
 }
 hr {
 	border: 1px solid #a3060c;
@@ -126,7 +126,9 @@ hr {
     right: 8px;
     font-size: 20px;
 }
-
+#image_file {
+	text-align: right;
+}
 
 /*プロフィール変更テーブルのボタン位置*/
 #editbutton, #confilmButton {
