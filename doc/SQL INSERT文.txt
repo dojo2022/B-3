@@ -1,88 +1,5 @@
-【m_userテーブルを生成するSQL文】
-CREATE TABLE m_user (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	user_id VARCHAR(10),
-	user_mail VARCHAR(100) NOT NULL,
-	user_pw VARCHAR(20) NOT NULL,
-	user_name VARCHAR(20) NOT NULL,
-	user_pf VARCHAR(160),
-	user_img VARCHAR(50),
-	user_hd VARCHAR(50)
-);
-
-【m_videoテーブルを生成するSQL文】
-CREATE TABLE m_video (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	video_id VARCHAR(10),
-	video_name VARCHAR(100) NOT NULL,
-	video_year INT NOT NULL,
-	video_time INT NOT NULL,
-	genre_id VARCHAR(10) NOT NULL
-);
-
-【m_genreテーブルを生成するSQL文】
-CREATE TABLE m_genre (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	genre_id VARCHAR(10),
-	genre_name VARCHAR(10)
-);
-
-【m_feelcatテーブルを生成するSQL文】
-CREATE TABLE m_feelcat (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	feelcat_id VARCHAR(10),
-	feelcat_name VARCHAR(10)
-);
-
-【m_stampテーブルを生成するSQL文】
-CREATE TABLE m_stamp (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	stamp_id VARCHAR(10),
-	stamp_name VARCHAR(50)
-);
-
-【t_reviewテーブルを生成するSQL文】
-CREATE TABLE t_review (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	review_id VARCHAR(10),
-	video_id VARCHAR(10) NOT NULL,
-	user_id VARCHAR(10) NOT NULL,
-	review_contents VARCHAR(1000) NOT NULL,
-	genre_id VARCHAR(10) NOT NULL,
-	feelcat_name1 VARCHAR(10) NOT NULL,
-	feelcat_name2 VARCHAR(10),
-	star VARCHAR(1) NOT NULL,
-	review_date DATETIME NOT NULL
-);
-	
-【t_replyテーブルを生成するSQL文】
-CREATE TABLE t_reply (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	reply_id VARCHAR(10),
-	review_id VARCHAR(10) NOT NULL,
-	user_id VARCHAR(10) NOT NULL,
-	reply_contents VARCHAR(140) NOT NULL,
-	reply_date DATETIME NOT NULL
-);
-
-【t_reactionテーブルを生成するSQL文】
-CREATE TABLE t_reaction (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	reaction_id VARCHAR(10),
-	review_id VARCHAR(10) NOT NULL,
-	user_id VARCHAR(10) NOT NULL,
-	stamp_id VARCHAR(10) NOT NULL
-);
-
-【t_followテーブルを生成するSQL文】
-CREATE TABLE t_follow (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	follow_id VARCHAR(10) NOT NULL,
-	user_id VARCHAR(10) NOT NULL
-);
-
 【m_userの挿入】
-
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000001', 'a@gmail.com', 'abcde', '伊藤慶秀', '今日も元気に行ってみよっ！', '', '', );
 【m_videoの挿入】
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'SPY×FAMILY', '2022', '30', 'g000000001');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ONE PIECE', '1999', '30', 'g000000001');
@@ -120,6 +37,16 @@ INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VAL
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000034', '呪怨', '2002', '92', 'g000000012');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000035', 'IT "それ"が見えたら、終わり。', '2017', '134', 'g000000012');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000036', '神様の言うとおり', '2014', '116', g000000012');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000037', '泣きたい私は猫をかぶる', '2020', '105', 'g000000013');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000038', 'ファンタスティック・ビーストと黒い魔法使いの誕生', '2018', '133', 'g000000013');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000039', 'チャーリーとチョコレート工場', '2005', '114', 'g000000013');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000040', 'バック・トゥ・ザ・フューチャー', '1985', '116', 'g000000014');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000041', 'Dr.STONE', '2019', '24', 'g000000014');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000042', '新世紀エヴァンゲリオン', '1995', '23', 'g000000014');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000043', 'はじめてのおつかい', '2013', '15', 'g000000015');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000044', '知っているお兄さん', '2017', '90', 'g000000015');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000045', '相席食堂', '2018', '30', 'g000000015');
+
 【m_genreの挿入】
 
 INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000001', 'アニメ');
@@ -137,6 +64,7 @@ INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000012', 'ホラー');
 INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000013', 'ファンタジー');
 INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000014', 'SF');
 INSERT INTO m_genre (genre_id, genre_name) VALUES ('g000000015', 'バラエティ');
+
 【m_feelcatの挿入】
 
 INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000001', '爆笑コメディ');
@@ -165,4 +93,3 @@ INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000016', 'グロ�
 【t_reactionの挿入】
 
 【t_followの挿入】
-
