@@ -18,13 +18,13 @@
     			<td><input class="circle" type="" name="" value="" readonly></td>
    			</tr>
    			<tr>
-    			<td><input class="user"type="" name="" value="" readonly></td>
-			    <td><input class="video"type="" name="" value="" readonly></td>
-			    <td><input class="time"type="" name="" value="" readonly></td>
+    			<td><input class="user" type="" name="" value="" readonly></td>
+			    <td><input class="video" type="" name="" value="" readonly></td>
+			    <td><input class="time" type="" name="" value="" readonly></td>
 			    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    			</tr>
    			<tr>
-			    <td><input class="review"type="" name="" value="" readonly></td>
+			    <td><input class="review" type="" name="" value="" readonly></td>
 			    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
    				<input type="checkbox" id="popup">
 					<div class="overlay">

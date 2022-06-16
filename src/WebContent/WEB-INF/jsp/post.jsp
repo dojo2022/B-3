@@ -19,8 +19,11 @@
 	<!-- 投稿フォーム-->
    	<main>
    		<div class="post-box">
-			<a href="/FLIFRE/MypageServlet"><img src ="./images/pf_img.png"></a><!-- m_userのuser_img アイコンを引用予定 -->
-			<span>ユーザー名</span><!-- m_userのuser_nameを引用予定 -->
+			<tr>
+    			<td><input class="circle" type="" name="" value="" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
+   				<td><input class="user" type="" name="" value="" readonly></td>
+   			</tr>
+<!-- 			<span>ユーザー名</span>m_userのuser_nameを引用予定 -->
    			<div id="btn" class="post-btn"></div>
         	<div class="post-contents">
 	        	<h1>作品名</h1><!-- m_videoのvideo_nameを引用 -->
