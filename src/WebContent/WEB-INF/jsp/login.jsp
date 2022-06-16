@@ -37,7 +37,7 @@
 			        <td>
 			        <input type="submit" name="LOGIN" value="ログイン">
 			        <input type="reset" name="reset" value="リセット"><br>
-			        <span id="error_message"></span>
+			        <span id="error_message"><%= request.getAttribute("error_message") %></span>
 			        <td>
 			    </tr>
 			    <tr>

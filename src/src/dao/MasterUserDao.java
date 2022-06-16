@@ -1,41 +1,67 @@
 package dao;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class MasterUserDao
  */
 @WebServlet("/MasterUserDao")
 public class MasterUserDao extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MasterUserDao() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public boolean isLoginOK(String id,String pw) {
+		Connection conn = null;
+		boolean loginResult = false;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+			// SELECT文を準備する
+			String sql = "select count(*) from IDPW where ID = ? and PW = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, id);
+			pStmt.setString(2,pw);
+
+			// SELECT文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+			rs.next();
+			if (rs.getInt("count(*)") == 1) {
+				loginResult = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			loginResult = false;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			loginResult = false;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					loginResult = false;
+				}
+			}
+		}
+
+		// 結果を返す
+		return loginResult;
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
