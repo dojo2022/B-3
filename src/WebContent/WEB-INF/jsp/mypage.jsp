@@ -45,10 +45,10 @@
 			<!-- m_userのfollow_idを引用予定 -->
 			<!--<span id="follower">フォロワー</span> -->
 			<!-- m_userのfollow_idを引用予定 -->
-			<c:forEach var="e" items="${cardList}" >
+			<c:forEach var="i" items="${cardList}" >
 		<tr>
-			<td>${e.follow_id}</td>
-			<td>${e.user_id}</td>
+			<td>${i.follow_id}</td>
+			<td>${i.user_id}</td>
 		</tr>
 			</c:forEach> <!--フォローフォロワー一覧ページの形式に合わせる -->
 		</div>
