@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
 			        <td>
 			        <input type="submit" name="LOGIN" value="ログイン">
 			        <input type="reset" name="reset" value="リセット"><br>
-			        <span id="error_message"><%= request.getAttribute("error_message") %></span>
+			        <span id="error_message">${ error_message }</span>
 			        <td>
 			    </tr>
 			    <tr>

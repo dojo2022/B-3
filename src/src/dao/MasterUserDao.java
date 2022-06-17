@@ -9,15 +9,16 @@ import java.sql.SQLException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
+import model.LoginUser;
+
 /**
  * Servlet implementation class MasterUserDao
  */
 @WebServlet("/MasterUserDao")
 public class MasterUserDao extends HttpServlet {
-	public boolean isLoginOK(String id,String pw) {
+	public LoginUser isLoginOK(String id,String pw) {
 		Connection conn = null;
-		boolean loginResult = false;
-
+		LoginUser user = null;
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -26,7 +27,7 @@ public class MasterUserDao extends HttpServlet {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from m_user where user_mail = ? and user_pw = ?";
+			String sql = "select user_id from m_user where user_mail = ? and user_pw = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, id);
 			pStmt.setString(2,pw);
@@ -35,18 +36,17 @@ public class MasterUserDao extends HttpServlet {
 			ResultSet rs = pStmt.executeQuery();
 
 			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
-			rs.next();
-			if (rs.getInt("count(*)") == 1) {
-				loginResult = true;
+			if (rs.next()) {
+				user = new LoginUser(rs.getString("user_id"));
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			loginResult = false;
+			user = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			loginResult = false;
+			user = null;
 		}
 		finally {
 			// データベースを切断
@@ -56,12 +56,12 @@ public class MasterUserDao extends HttpServlet {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					loginResult = false;
+					user = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return loginResult;
+		return user;
 	}
 }

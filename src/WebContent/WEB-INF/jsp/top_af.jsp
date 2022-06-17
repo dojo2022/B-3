@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +13,9 @@
 <body>
 <%@ include file="header.jsp" %>
 <h2>レビュー投稿を表示します</h2>
+<!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
+<  c:forEach var="e" items="${ReviewRanking}" >
+    <form method="POST" action="/FLIFRE/Top_afServlet"-->
 <div class="border1">
  <table class="table">
    <tr>
@@ -28,8 +30,8 @@
    <tr>
     <td><input class="review"type="" name="" value="" readonly></td>
     <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
-   <input type="checkbox" id="popup">
-<div class="overlay">
+     <input type="checkbox" id="popup">
+     <div class="overlay">
     <div class="window">
         <label class="close" for="popup">×</label>
         <from>
@@ -51,19 +53,6 @@
  </table>
   <div class="border-bottom"></div>
 </div>
-  <!--label class="label" for="name">名前</label>
-  <input id="name" type="text" name="name">
-  <label class="label" for="message">コメント</label>
-  <textarea rows="4" id="message" placeholder="ご意見をお寄せ下さい。" name="comment"></textarea>
-  <input type="submit">
-</form-->
-
-
-<style>
-label, input[type=text]{
- display:block;
-}
-</style>
 <!-- レビュー星表示 -->
     <script>
 //スタンプクリックで変化ループ
@@ -79,14 +68,7 @@ label, input[type=text]{
         }
         document.getElementById("image_file").src = img_src[i];
       }
-//リプライクリックで入力フォーム表示
-/*function replyfrom(){
-    var reply = document.getElementById('reply');
-    var source = reply.src;
-
-}*/
 </script>
-
 
 </body>
 </html>

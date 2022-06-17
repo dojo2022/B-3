@@ -74,14 +74,7 @@ hr {
 	text-align: right;
 }
 
-
 /*リプライテーブル(ポップアップ)のスタイル */
-
-/*リプライポップアップ表示*/
-
-
-/*リプライポップアップ表示*/
-
 .open {
     cursor:pointer;
 }
@@ -145,3 +138,13 @@ hr {
  #image_file, #reply {
  	margin:0px 0px 0px 650px;
  }
+
+
+#imageframe{
+    width: 800px;
+    height: 250px;
+    border: 1px solid #07964f;
+    background-image: url(./hogehoge.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

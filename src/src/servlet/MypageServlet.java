@@ -21,7 +21,6 @@ public class MypageServlet extends HttpServlet {
      */
     public MypageServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -32,6 +31,19 @@ public class MypageServlet extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 				dispatcher.forward(request, response);
 	}
+
+		//リクエストパラメータを取得する
+			request.setCharacterEncoding("UTF-8");
+			String icon = request.getParameter("icon");
+			String userName = request.getParameter("userName");
+			String profileS = request.getParameter("profileS");
+			String  = request.getParameter("");
+			String postalcode = request.getParameter("postalcode");
+			String address = request.getParameter("address");
+			String telephonenumber = request.getParameter("telephonenumber");
+			String faxnumber = request.getParameter("faxnumber");
+			String mailaddress = request.getParameter("mailaddress");
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

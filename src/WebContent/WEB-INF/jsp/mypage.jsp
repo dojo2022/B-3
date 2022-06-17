@@ -17,28 +17,40 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
-			<img id="pf_icon" src="./images/pf_img.png">
-			<!-- <input class="circle" type="" name="" value="" readonly> -->
+			<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+			<img id="pf_icon">
+			<input class="circle" type="image" name="icon" value="" readonly>
 			<!-- m_userのuser_img アイコンを引用予定 -->
 
-			<span id="username">炙りえんがわ </span>
-			<!-- <input class="user"type="" name="" value="" readonly> -->
+			<!-- <span id="username">炙りえんがわ </span> -->
+			<span id="username">
+			<input class="user" type="text" name="userName" value="" readonly>
+			</span>
 			<!-- m_userのuser_nameを引用予定 -->
 
-			<a id="pf_edit" href="/FLIFRE/ProfileServlet"> <img id="pf_edit"
-				src="./images/pf_edit.png"></a> <br> <br> <span id="pf">アニメと洋画が好きです。</span>
-			<!-- <input class="profile"type="" name="" value="" readonly> -->
+			<a id="pf_edit" href="/FLIFRE/ProfileServlet">
+			<img id="pf_edit"src="./images/pf_edit.png"></a>
+			<br>
+			<br>
+
+			<!-- <span id="pf">アニメと洋画が好きです。</span> -->
+			<span id="pf">
+			<input class="profile" type="text" name="profileS" value="" readonly>
+			</span>
 			<!-- m_userのuser_pfを引用予定 -->
-			<br> <br> <span id="follow">フォロー</span>
+			<br>
+			<br>
+
+			<!-- <span id="follow">フォロー</span> -->
 			<!-- m_userのfollow_idを引用予定 -->
-			<span id="follower">フォロワー</span>
+			<!--<span id="follower">フォロワー</span> -->
 			<!-- m_userのfollow_idを引用予定 -->
-			<!-- <c:forEach var="e" items="${cardList}" >
+			<c:forEach var="e" items="${cardList}" >
 		<tr>
 			<td>${e.follow_id}</td>
 			<td>${e.user_id}</td>
 		</tr>
-	</c:forEach> フォローフォロワー一覧ページの形式に合わせる -->
+			</c:forEach> <!--フォローフォロワー一覧ページの形式に合わせる -->
 		</div>
 		<!-- マイプロフィールボックスここまで -->
 		<br>
@@ -157,6 +169,7 @@
 							<!-- スタンプの画像をクリックすると画像が変化 -->
 							<br>
 								<!-- <input class="review" readonly> -->
+								<!-- リプライフォームここから -->
 									<label class="open"	for="popup"><img id="reply" src="images/reply.png"
 									onclick="replyfrom()" width="50" height="50">
 									</label>
@@ -180,39 +193,22 @@
 										<div class="example">
 											<input type="submit" value="送信する">
 											<!-- リプライボタンをクリックするとリプライ入力フォームが開く。
-						  入力後、送信ボタンを押す。 -->
+						  					入力後、送信ボタンを押す。 -->
 										</div>
 									</div>
 								</div>
+								<!-- リプライフォームここまで -->
 							</div>
 						</td>
 				</tr>
 			</table>
 		</form>
-<!-- 		<form>
-			<div class="example">
-				<label for="namelabel">ユーザー名</label> <input type="text" name="name"
-					id="namelabel" placeholder="">
-			</div>
-			<div class="example">
-				<label for="ikenlabel">リプライ内容</label>
-				<textarea id="iken"></textarea>
-			</div>
-			<div class="example">
-				<input type="submit" value="送信する">
-				リプライボタンをクリックするとリプライ入力フォームが開く。
-					  入力後、送信ボタンを押す。
-			</div>
-		</form> -->
 		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
-	</main>
-	<!-- メインここまで -->
-	<br>
-	<br>
-	<script>
-
-	</script>
+</main>
+<!-- メインここまで -->
+<br>
+<br>
 </body>
 </html>
 
