@@ -20,7 +20,7 @@
 	<!-- 投稿フォーム-->
    	<main>
    		<div class="post-box">
-   			<form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
+   			<form id="post_form" method="GET" action="/FLIFRE/PostServlet" onsubmit="return post()">
 				<table>
 					<tr>
 		    			<td><input class="circle" type="" name=""  value="${user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
@@ -35,6 +35,8 @@
 
 		        <h2>${video_time}</h2><!-- m_videoのvideo_timeを引用 -->
 		        <h2>${genre_id}</h2><!-- m_videoのgenre_idを引用 -->
+		    </form>
+		    <form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
 			    <table>
 			        <tr>
 						<td>
