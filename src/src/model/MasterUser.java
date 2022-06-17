@@ -22,6 +22,8 @@ public class MasterUser implements Serializable {
 		this.user_img = user_img;
 		this.user_hd = user_hd;
 	}
+
+	//マイページのコンストラクタ
 	public MasterUser(String user_id, String user_name, String user_pf,
 			String user_img, String user_hd) {
 		super();
@@ -31,6 +33,7 @@ public class MasterUser implements Serializable {
 		this.user_img = user_img;
 		this.user_hd = user_hd;
 	}
+
 	//引数がないコンストラクタ
 	public MasterUser() {
 		super();

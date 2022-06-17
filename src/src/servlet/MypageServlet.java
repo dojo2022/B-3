@@ -31,14 +31,16 @@ public class MypageServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//セッションからユーザーIDを取得
+
 		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 		//session.getAttribute("xxx")
-		//idをとる
+		//idをとる →書き方分からない
 
 		//if (session = "id", user) {
 		// セッションスコープにIDを格納する
 		//HttpSession session = request.getSession();
 		//session.setAttribute(user_id);
+		//session.getAttribute("user_id")
 		// }
 
 		String user_id = "";
@@ -48,24 +50,17 @@ public class MypageServlet extends HttpServlet {
 		MasterUser user = dao.selectOne(user_id);
 		request.setAttribute("m_user", user);
 
-
-		//ReviweDao dao = new ReviewDao();
-		//Review user = dao.selectOne(review_id);
-		//request.setAttribute("t_review", user);
-
 		// マイページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 				dispatcher.forward(request, response);
 				return;
-
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
+		doGet(request, response);
 //
 //				//リクエストパラメータを取得する
 //				//マイレビュー投稿一覧関連

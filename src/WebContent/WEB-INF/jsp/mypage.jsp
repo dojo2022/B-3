@@ -18,7 +18,6 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
-		<!--user_id -->
 			<span id="pf_hd">
 			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
 			</span>
@@ -51,8 +50,8 @@
 
 			<a id="follow" href="/FLIFRE/FollowlistServlet">フォロー・フォロワー</a>
 			<br>
-			<input class="follow" type="text" name="follow_id" value="${follow_id}" readonly>
-			<input class="follow" type="text" name="follow_id" value="${follow_id}" readonly>
+			<input class="follow" type="text" name="user_id" value="${t_follow.user_id}" readonly>
+			<input class="follow" type="text" name="follow_id" value="${t_follow.follow_id}" readonly>
 			<!-- m_userのfollow_idを引用 -->
 		</div>
 		<!-- マイプロフィールボックスここまで -->
@@ -72,61 +71,61 @@
 				<tr>
 					<td>
 						<div id="review_list">
-						<!--review_idを呼び出したい -->
+						<!--t_reviewを呼び出したい -->
 						<hr>
 							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 							<img id="pf_icon">
-							<input class="circle" type="image" name="user_img" value="${user_img}" readonly>
-							<!-- m_userのuser_img アイコンを引用 -->
+							<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+							<!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
 
 							<!-- <span id="username">炙りえんがわ </span> -->
 							<span id="username">
-							<input class="user" type="text" name="user_name" value="${user_name}" readonly>
+							<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
 							</span>
-							<!-- m_userのuser_nameを引用 -->
+							<!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
 
 						<br>
 						<br>
 							<!-- <span id="review_video">アイアンマン</span> -->
 							<span id="review_video">
-							<input class="video" type="text" name="video_id" value="${video_id}" readonly>
+							<input class="video" type="text" name="video_id" value="${t_review.video_id}" readonly>
 							</span>
 							<!-- t_reviewのvideo_idを引用 -->
 
 							<!-- <span id="review_star"> ★★★★★ </span> -->
 							<span id="review_star">
-							<input class="star" type="text" name="star" value="${star}" readonly>
+							<input class="star" type="text" name="star" value="${t_review.star}" readonly>
 							</span>
 							<!-- t_reviewのstarを引用 -->
 
 							<!-- <span id="review_time">2022年6月14日 20時30分</span> -->
 							<span id="review_time">
-							<input class="time" type="date" name="review_date" value="${review_date}" readonly>
+							<input class="time" type="date" name="review_date" value="${t_review.review_date}" readonly>
 							</span>
 							<!-- t_reviewのreview_dateを引用 -->
 
 						<br>
 							<!-- <span id="review_genre"> ジャンル：アクション </span> -->
 							<span id="review_genre">
-							<input class="genre" type="text" name="genre_id" value="${genre_id}" readonly>
+							<input class="genre" type="text" name="genre_id" value="${t_review.genre_id}" readonly>
 							</span>
 							<!-- t_reviewのgenre_idを引用 -->
 
 							<!-- <span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span> -->
 							<span id="review_feelcat1">
-							<input class="feelcat1" type="text" name="feelcat_name1" value="${feelcat_name1}" readonly>
+							<input class="feelcat1" type="text" name="feelcat_name1" value="${t_review.feelcat_name1}" readonly>
 							</span>
 							<!-- t_reviewのfeelcat_name1を引用 -->
 
 							<!-- <span id="review_feelcat2"> 感想カテゴリ2：わくわく </span> -->
 							<span id="review_feelcat2">
-							<input class="feelcat2" type="text" name="feelcat_name2" value="${feelcat_name2}" readonly>
+							<input class="feelcat2" type="text" name="feelcat_name2" value="${t_review.feelcat_name2}" readonly>
 							</span>
 							<!-- t_reviewのfeelcat_name2を引用 -->
 
 							<!-- <p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p> -->
 							<p id="review">
-							<input class="review" type="text" name="review_contents" value="${review_contents}" readonly>
+							<input class="review" type="text" name="review_contents" value="${t_review.review_contents}" readonly>
 							</p>
 							<!-- t_reviewのreview_contentsを引用 -->
 
@@ -137,37 +136,37 @@
 						</div>
 
 						<div id="reply_list">
-						<!-- reply_id, review_idを呼び出したい -->
+						<!-- t_replyを呼び出したい -->
 							<hr>
+							<!-- <span id="reply_username">To うに軍艦</span>
+							<span id="reply_username">
+							<input class="user" type="text" name="user_id" value="${t_review.user_id}" readonly>
+							</span>
+							-->
+
 							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 							<img id="pf_icon">
-							<input class="circle" type="image" name="user_img" value="${user_img}" readonly>
-							<!-- m_userのuser_img アイコンを引用 -->
-
-							<!-- <span id="reply_username">To うに軍艦</span>-->
-							<span id="reply_username">
-							<input class="user" type="text" name="review_id" value="${review_id}" readonly>
-							</span>
-							<!-- t_replyのreview_id, user_idを引用 -->
+							<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+							<!-- m_userのuser_imgを引用 --><!-- t_replyのuser_idを引用? -->
 
 							<!-- <span id="reply_username">From 炙りえんがわ</span>-->
 							<span id="reply_username">
-							<input class="user" type="text" name="user_id" value="${user_id}" readonly>
+							<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
 							</span>
-							<!-- user_idを引用 -->
+							<!-- m_userのuser_nameを引用 --><!-- t_replyのuser_idを引用? -->
 
 						<br>
 						<br>
 							<!-- <span id="reply_time">2022年6月14日21時30分</span> -->
 							<span id="reply_time">
-							<input class="time" type="date" name="reply_date" value="${reply_date}" readonly>
+							<input class="time" type="date" name="reply_date" value="${t_reply.reply_date}" readonly>
 							</span>
 							<!-- t_replyのreply_dateを引用 -->
 							<br>
 
 							<!-- <p id="reply_sentence">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p> -->
 							<p id="reply_sentence">
-							<input class="reply" type="text" name="reply_contents" value="${reply_contents}" readonly>
+							<input class="reply" type="text" name="reply_contents" value="${t_reply.reply_contents}" readonly>
 							</p>
 							<!-- t_replyのreply_contentsを引用 -->
 							<input type="submit" name="REPLYDELETET" value="削除">
@@ -177,62 +176,71 @@
 						</div>
 
 						<div id="stamp_list">
-						<!--review_id, reaction_id を呼び出したい-->
+						<!--t_reactionを呼び出したい-->
 							<hr>
 							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 							<img id="pf_icon">
-							<input class="circle" type="image" name="user_img" value="${user_img}" readonly>
-							<!-- m_userのuser_img アイコンを引用 -->
+							<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+							<!-- m_userのuser_imgを引用 --> <!-- t_reactionのreview_idを引用？ -->
 
 							<!-- <span id="username">うに軍艦 </span> -->
 							<span id="username">
-							<input class="user" type="text" name="user_name" value="${user_name}" readonly>
+							<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
 							</span>
-							<!-- t_reviewのuser_idを引用 -->
+							<!-- t_reviewのuser_nameを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 						<br>
 						<br>
 							<!-- <span id="review_video">アイアンマン</span> -->
 							<span id="review_video">
-							<input class="video" type="text" name="video_id" value="${video_id}" readonly>
+							<input class="video" type="text" name="video_id" value="${t_review.video_id}" readonly>
 							</span>
-							<!-- t_reviewのvideo_idを引用 -->
+							<!-- t_reviewのvideo_idを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<!-- <span id="review_star"> ★★★★★ </span> -->
 							<span id="review_star">
-							<input class="star" type="text" name="star" value="${star}" readonly>
+							<input class="star" type="text" name="star" value="${t_review.star}" readonly>
 							</span>
-							<!-- t_reviewのstarを引用 -->
+							<!-- t_reviewのstarを引用 --><!-- t_reactionのreview_idを引用？ -->
 
-							<span id="review_time">2022年6月12日 16時00分</span>
-							<!-- <input class="time"type="" name="" value="" readonly> -->
-							<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-
-
-							<br> <span id="review_genre"> ジャンル：アクション </span>
-							<!-- <input class="genre"type="" name="" value="" readonly> -->
-							<!-- t_reviewのgenre_idを引用 -->
+							<!-- <span id="review_time">2022年6月12日 16時00分</span> -->
+							<span id="review_time">
+							<input class= "time" type="date" name="review_date" value="${t_review.review_date}" readonly>
+							</span>
+							<!-- t_reviewのreview_dateを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 
-							<span id="review_feelcat1"> 感想カテゴリ１：スカッとする </span>
-							<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
-							<!-- t_reviewのfeelcat_name1を引用 -->
+							<br>
+							<!-- <span id="review_genre"> ジャンル：アクション </span> -->
+							<span id="review_genre">
+							<input class="genre" type="text" name="genre_id" value="${t_review.genre_id}" readonly>
+							</span>
+							<!-- t_reviewのgenre_idを引用 --><!-- t_reactionのreview_idを引用？ -->
 
-							<span id="review_feelcat2"> 感想カテゴリ２：非日常的 </span>
-							<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
-							<!-- t_reviewのfeelcat_name2を引用 -->
+							<!-- <span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span> -->
+							<span id="review_feelcat1">
+							<input class="feelcat1" type="text" name="feelcat_name1" value="${t_review.feelcat_name1}" readonly>
+							</span>
+							<!-- t_reviewのfeelcat_name1を引用 --><!-- t_reactionのreview_idを引用？ -->
 
-							<p id="review">始まりにして頂点。全てが最高。
-							うわあああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-							<!-- <input class="review"type="" name="" value="" readonly> -->
-							<!-- t_reviewのreview_contentsを引用 -->
+							<!-- <span id="review_feelcat2"> 感想カテゴリ2：非日常的 </span> -->
+							<span id="review_feelcat2">
+							<input class="feelcat2" type="text" name="feelcat_name2" value="${t_review.feelcat_name2}" readonly>
+							</span>
+							<!-- t_reviewのfeelcat_name2を引用 --><!-- t_reactionのreview_idを引用？ -->
 
-							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50"
-								height="50">
+							<!-- <p id="review">始まりにして頂点。全てが最高。</p> -->
+							<p id="review">
+							<input class="review" type="text" name="review_contents" value="${t_review.review_contents}" readonly>
+							</p>
+							<!-- t_reviewのreview_contentsを引用 --><!-- t_reactionのreview_idを引用？ -->
+
+							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
+							<input class="stamp" type="image" name="stamp_id" value="${t_reaction.stamp_id}" readonly>
 							<!-- スタンプの画像をクリックすると画像が変化 -->
 							<br>
-								<!-- <input class="review" readonly> -->
-								<!-- リプライフォームここから -->
+
+								<!-- リプライフォームここから ここのデータ格納方法が分からない-->
 									<label class="open"	for="popup"><img id="reply" src="images/reply.png"
 									onclick="replyfrom()" width="50" height="50">
 									</label>
