@@ -35,11 +35,13 @@ public class MypageServlet extends HttpServlet {
 		//session.getAttribute("xxx")
 		//idをとる
 
-		String user_id = "u000000001"; //itou
-		//String video_id = "";
-		//String review_id = "";
-		//String _id = "";
-		//String _id = "";
+		//if (session = "id", user) {
+		// セッションスコープにIDを格納する
+		//HttpSession session = request.getSession();
+		//session.setAttribute(user_id);
+		// }
+
+		String user_id = "";
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
