@@ -70,3 +70,4 @@ public class PostServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
 	}
+}
