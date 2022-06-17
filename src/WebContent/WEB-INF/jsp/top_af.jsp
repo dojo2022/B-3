@@ -68,6 +68,9 @@
         }
         document.getElementById("image_file").src = img_src[i];
       }
+      //resultという名前のスコープの中身を取り出す
+      //中身がsuccessだったら成功しましたのアラート表示
+
 </script>
 
 </body>

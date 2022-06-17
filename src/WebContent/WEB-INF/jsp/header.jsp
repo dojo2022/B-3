@@ -20,42 +20,74 @@
 	    );
 	    %>
 	    <div class="search1">
-	    		再生時間
-		        <select name="time">
-		            <option label=""></option>
-		            <option label="～30分"></option>
-		            <core:forEach var="i" begin="30" end="150" step="30">
-		            	<option label="${ i + 1 }～${ i + 30 }分"></option>
-		            </core:forEach>
-		            <option label="181分～"></option>
-		        </select>
-		        年代
-		        <select name="year">
-		            <option label=""></option>
-		            <option label="～1960年代"></option>
-		            <core:forEach var="year" begin="1970" end="2020" step="10">
-		            	<option label="${ year }年代"></option>
-		            </core:forEach>
-		        </select>
-		        <br>
-		        感想カテゴリ１
-		        <select name="feelcat1" onchange="change(this)">
-		        	<option>選択してください</option>
-		            <core:forEach items="${ categories }" varStatus="status">
-		      			<option value="${ status.current }">${ status.current }</option>
-		            </core:forEach>
-		        </select>
-		        感想カテゴリ２
-		        <select name="feelcat2">
-		            <option>選択してください</option>
-		            <core:forEach items="${ categories }" varStatus="status">
-		            	<option value="${ status.current }">${ status.current }</option>
-		            </core:forEach>
-		        </select>
-		        <br>
-		         作品名
-		    	<input type="text" name="title" placeholder="タイトル入力">
-		    	<input type="submit" name="submit" value="検索">
+	    	<table>
+		    	<tr>
+		    		<td>
+			    		再生時間
+			    	</td>
+			    	<td>
+				        <select name="time">
+				            <option label=""></option>
+				            <option label="～30分"></option>
+				            <core:forEach var="i" begin="30" end="150" step="30">
+				            	<option label="${ i + 1 }～${ i + 30 }分"></option>
+				            </core:forEach>
+				            <option label="181分～"></option>
+				        </select>
+			        </td>
+			        <td>
+			        	年代
+			        </td>
+			        <td>
+				        <select name="year">
+				            <option label=""></option>
+				            <option label="～1960年代"></option>
+				            <core:forEach var="year" begin="1970" end="2020" step="10">
+				            	<option label="${ year }年代"></option>
+				            </core:forEach>
+				        </select>
+			        </td>
+				</tr>
+				<tr>
+					<td>
+				        感想カテゴリ１
+				    </td>
+				    <td>
+				        <select name="feelcat1" onchange="change(this)">
+				        	<option>選択してください</option>
+				            <core:forEach items="${ categories }" varStatus="status">
+				      			<option value="${ status.current }">${ status.current }</option>
+				            </core:forEach>
+				        </select>
+			        </td>
+			        <td>
+				        感想カテゴリ２
+				    </td>
+				    <td>
+				        <select name="feelcat2">
+				            <option>選択してください</option>
+				            <core:forEach items="${ categories }" varStatus="status">
+				            	<option value="${ status.current }">${ status.current }</option>
+				            </core:forEach>
+				        </select>
+					</td>
+		    	</tr>
+		    	<tr>
+		    		<td>
+				         作品名
+				    </td>
+				    <td colspan="3">
+				    	<input type="text" name="title" placeholder="タイトル入力">
+				    </td>
+				    <td>
+				    </td>
+				    <td>
+				    </td>
+				    <td>
+				    	<input type="submit" name="submit" value="検索">
+				    </td>
+				</tr>
+		    </table>
 		</div>
 
 		<div class="search2">

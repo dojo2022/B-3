@@ -1,10 +1,9 @@
 @charset "UTF-8";
 .ranking-box {
     border: 3px double #a3060c;
-    margin: 0 auto 0 auto;
+    margin:0 auto 0 auto;
     padding:20px;
     max-width:1000px;
-
 }
 .ranking {
     text-align: center;

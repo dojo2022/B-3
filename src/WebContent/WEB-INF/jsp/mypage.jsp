@@ -17,6 +17,7 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
+		<!--user_id -->
 			<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 			<img id="pf_icon">
 			<input class="circle" type="image" name="user_img" value="" readonly>
@@ -41,16 +42,12 @@
 			<br>
 			<br>
 
-			<!-- <span id="follow">フォロー</span> -->
-			<!-- m_userのfollow_idを引用予定 -->
-			<!--<span id="follower">フォロワー</span> -->
-			<!-- m_userのfollow_idを引用予定 -->
-			<c:forEach var="i" items="${cardList}" >
-		<tr>
-			<td>${i.follow_id}</td>
-			<td>${i.user_id}</td>
-		</tr>
-			</c:forEach> <!--フォローフォロワー一覧ページの形式に合わせる -->
+			<span id="follow">フォロー</span>
+			<span id="follower">フォロワー</span>
+			<br>
+			<input class="follow" type="text" name="follow_id" value="" readonly>
+			<!-- <input class="follow" type="text" name="follow_id" value="" readonly> -->
+			<!-- m_userのfollow_idを引用 -->
 		</div>
 		<!-- マイプロフィールボックスここまで -->
 		<br>
@@ -69,45 +66,72 @@
 				<tr>
 					<td>
 						<div id="review_list">
-							<hr>
-							<img id="pf_icon" src="./images/pf_img.png">
-							<!-- <input class="circle" type="" name="" value="" readonly> -->
-							<!-- m_userのuser_img アイコンを引用予定 -->
+						<!--review_id, user_id -->
+						<hr>
+							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+							<img id="pf_icon">
+							<input class="circle" type="image" name="user_img" value="" readonly>
+							<!-- m_userのuser_img アイコンを引用 -->
 
-							<span id="username">炙りえんがわ </span>
-							<!-- <input class="user"type="" name="" value="" readonly> -->
-							<!-- t_reviewのuser_idを引用 -->
-							<br> <br> <span id="review_video">アイアンマン</span>
-							<!-- <input class="video"type="" name="" value="" readonly> -->
+							<!-- <span id="username">炙りえんがわ </span> -->
+							<span id="username">
+							<input class="user" type="text" name="user_name" value="" readonly>
+							</span>
+							<!-- m_userのuser_nameを引用 -->
+
+						<br>
+						<br>
+							<!-- <span id="review_video">アイアンマン</span> -->
+							<span id="review_video">
+							<input class="video" type="text" name="video_id" value="" readonly>
+							</span>
 							<!-- t_reviewのvideo_idを引用 -->
 
-							<span id="review_star"> ★★★★★ </span>
-							<!-- <input class="star"type="" name="" value="" readonly> -->
+							<!-- <span id="review_star"> ★★★★★ </span> -->
+							<span id="review_star">
+							<input class="star" type="text" name="star" value="" readonly>
+							</span>
 							<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
 
-							<span id="review_time">2022年6月14日 20時30分</span>
-							<!-- <input class="time"type="" name="" value="" readonly> -->
-							<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-							<br> <span id="review_genre"> ジャンル：アクション </span>
-							<!-- <input class="genre"type="" name="" value="" readonly> -->
+							<!-- <span id="review_time">2022年6月14日 20時30分</span> -->
+							<span id="review_time">
+							<input class="time" type="date" name="review_date" value="" readonly>
+							</span>
+							<!-- t_reviewのreview_dateを引用 -->
+
+						<br>
+							<!-- <span id="review_genre"> ジャンル：アクション </span> -->
+							<span id="review_genre">
+							<input class="genre" type="text" name="genre_id" value="" readonly>
+							</span>
 							<!-- t_reviewのgenre_idを引用 -->
 
-							<span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span>
-							<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
+							<!-- <span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span> -->
+							<span id="review_feelcat1">
+							<input class="feelcat1" type="text" name="feelcat_name1" value="" readonly>
+							</span>
 							<!-- t_reviewのfeelcat_name1を引用 -->
 
-							<span id="review_feelcat2"> 感想カテゴリ2：わくわく </span>
-							<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
+							<!-- <span id="review_feelcat2"> 感想カテゴリ2：わくわく </span> -->
+							<span id="review_feelcat2">
+							<input class="feelcat2" type="text" name="feelcat_name2" value="" readonly>
+							</span>
 							<!-- t_reviewのfeelcat_name2を引用 -->
 
-							<p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p>
-							<!-- <input class="review"type="" name="" value="" readonly> -->
+							<!-- <p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p> -->
+							<p id="review">
+							<input class="review" type="text" name="review_contents" value="" readonly>
+							</p>
 							<!-- t_reviewのreview_contentsを引用 -->
+
 							<input type="submit" name="REVIEWDELETET" value="削除">
-							 <input type="submit" name="REVIEWEDIT" value="編集"> <br> <br>
+							<input type="submit" name="REVIEWEDIT" value="編集">
+						<br>
+						<br>
 						</div>
 
 						<div id="reply_list">
+						<!-- reply_id, review_id -->
 							<hr>
 							<img id="pf_icon" src="./images/pf_img.png">
 							<!-- <input class="circle" type="" name="" value="" readonly> -->
@@ -116,6 +140,7 @@
 							<span id="reply_username">To うに軍艦</span>
 							<!-- <input class="user"type="" name="" value="" readonly> -->
 							<!-- t_replyのreview_id, user_idを引用 -->
+							from user_id
 							<br> <br> <span id="reply_time">2022年6月14日21時30分</span>
 							<!-- <input class="time"type="" name="" value="" readonly> -->
 							<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
@@ -129,6 +154,7 @@
 						</div>
 
 						<div id="stamp_list">
+						<!-- -->
 							<hr>
 							<img id="pf_icon" src="./images/pf_img.png">
 							<!-- <input class="circle" type="" name="" value="" readonly> -->
