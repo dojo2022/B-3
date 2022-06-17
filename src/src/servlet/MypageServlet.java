@@ -36,7 +36,7 @@ public class MypageServlet extends HttpServlet {
 			request.setCharacterEncoding("UTF-8");
 			String icon = request.getParameter("icon");
 			String userName = request.getParameter("userName");
-			String profileString = request.getParameter("profileString");
+			String profileS = request.getParameter("profileS");
 			String  = request.getParameter("");
 			String postalcode = request.getParameter("postalcode");
 			String address = request.getParameter("address");
