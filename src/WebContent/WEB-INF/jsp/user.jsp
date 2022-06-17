@@ -21,7 +21,9 @@
 <div class="userprofile">
 	<form id = follow_Lift method="POST" action="/FLIFRE/MypageServlet">
 		<input type="button" name="FOLLOW" value="フォロー">
-		<!-- 既にフォローしている場合は「フォロー中」と表示する、jsの処理？ -->
+		<!-- 既にフォローしている場合は「フォロー中」と表示する。jsで動きを付ける
+		FollowlistServletとFollowDaoの処理も必要 -->
+
 	</form>
 	<br>
 
