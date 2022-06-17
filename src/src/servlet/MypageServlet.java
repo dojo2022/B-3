@@ -34,15 +34,17 @@ public class MypageServlet extends HttpServlet {
 
 		//リクエストパラメータを取得する
 			request.setCharacterEncoding("UTF-8");
-			String icon = request.getParameter("icon");
-			String userName = request.getParameter("userName");
-			String profileS = request.getParameter("profileS");
+			String user_id = request.getParameter("user_id");
+			String user_img = request.getParameter("user_img");
+			String user_name = request.getParameter("user_name");
+			String user_pf = request.getParameter("user_pf");
+			String user_hd = request.getParameter("user_hd");
+
 			String  = request.getParameter("");
-			String postalcode = request.getParameter("postalcode");
-			String address = request.getParameter("address");
-			String telephonenumber = request.getParameter("telephonenumber");
-			String faxnumber = request.getParameter("faxnumber");
-			String mailaddress = request.getParameter("mailaddress");
+			String  = request.getParameter("");
+			String  = request.getParameter("");
+			String  = request.getParameter("");
+			String  = request.getParameter("");
 
 
 	/**

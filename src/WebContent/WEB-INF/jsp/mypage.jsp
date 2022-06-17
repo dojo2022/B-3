@@ -19,12 +19,12 @@
 		<div class="myprofile">
 			<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 			<img id="pf_icon">
-			<input class="circle" type="image" name="icon" value="" readonly>
+			<input class="circle" type="image" name="user_img" value="" readonly>
 			<!-- m_userのuser_img アイコンを引用予定 -->
 
 			<!-- <span id="username">炙りえんがわ </span> -->
 			<span id="username">
-			<input class="user" type="text" name="userName" value="" readonly>
+			<input class="user" type="text" name="user_name" value="" readonly>
 			</span>
 			<!-- m_userのuser_nameを引用予定 -->
 
@@ -35,7 +35,7 @@
 
 			<!-- <span id="pf">アニメと洋画が好きです。</span> -->
 			<span id="pf">
-			<input class="profile" type="text" name="profileS" value="" readonly>
+			<input class="profile" type="text" name="user_pf" value="" readonly>
 			</span>
 			<!-- m_userのuser_pfを引用予定 -->
 			<br>
@@ -45,10 +45,10 @@
 			<!-- m_userのfollow_idを引用予定 -->
 			<!--<span id="follower">フォロワー</span> -->
 			<!-- m_userのfollow_idを引用予定 -->
-			<c:forEach var="e" items="${cardList}" >
+			<c:forEach var="i" items="${cardList}" >
 		<tr>
-			<td>${e.follow_id}</td>
-			<td>${e.user_id}</td>
+			<td>${i.follow_id}</td>
+			<td>${i.user_id}</td>
 		</tr>
 			</c:forEach> <!--フォローフォロワー一覧ページの形式に合わせる -->
 		</div>
