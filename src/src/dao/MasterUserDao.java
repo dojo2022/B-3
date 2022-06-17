@@ -78,23 +78,25 @@ public class MasterUserDao extends HttpServlet {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select user_id from m_user where user_mail = ? ";
+			String sql = "select * from m_user where user_id = ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, id);
+			pStmt.setString(1, user_id);
 
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
-			if (rs.next()) {
-				user = new MasterUser();
+			rs.next();
+			user = new MasterUser(
 				//値を１つずつセットする
-				user.setUser_id(rs.getString("user_id"));
+				rs.getString("user_id"),
+				rs.getString("user_name"),
+				rs.getString("user_pf"),
+				rs.getString("user_img"),
+				rs.getString("user_hd")
+				);
 
-
-
-			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();

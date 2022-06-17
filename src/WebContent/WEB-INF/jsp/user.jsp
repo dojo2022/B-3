@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,12 +43,6 @@
 
 	<span id="follow">フォロー　　</span><!-- m_userのfollow_idを引用予定 -->
 	<span id="follower">フォロワー　　</span><!-- m_userのfollow_idを引用予定 -->
-	<!-- <c:forEach var="e" items="${cardList}" >
-		<tr>
-			<td>${e.follow_id}</td>
-			<td>${e.user_id}</td>
-		</tr>
-	</c:forEach> フォローフォロワー一覧ページの形式に合わせる -->
 
 </div>
 <!-- ユーザープロフィールボックスここまで -->
@@ -55,7 +50,6 @@
 <br>
 
 <!-- ユーザーレビュー投稿一覧ここから -->
-<!-- <c:forEach var="" items="" > -->
 <form id = "userreview" method="POST" action="/FLIFRE/MypageServlet">
 	<table>
 		<tr>
@@ -164,7 +158,6 @@
 			</td>
 		</tr>
 	</table>
-<!-- </c:forEach> -->
 </form>
 <!-- ユーザーレビュー投稿一覧ここまで -->
 
