@@ -133,32 +133,51 @@
 						<div id="reply_list">
 						<!-- reply_id, review_id -->
 							<hr>
-							<img id="pf_icon" src="./images/pf_img.png">
-							<!-- <input class="circle" type="" name="" value="" readonly> -->
-							<!-- m_userのuser_img アイコンを引用予定 -->
+							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+							<img id="pf_icon">
+							<input class="circle" type="image" name="user_img" value="" readonly>
+							<!-- m_userのuser_img アイコンを引用 -->
 
-							<span id="reply_username">To うに軍艦</span>
-							<!-- <input class="user"type="" name="" value="" readonly> -->
+							<!-- <span id="reply_username">To うに軍艦</span>-->
+							<span id="reply_username">
+							<input class="user" type="text" name="review_id" value="" readonly>
+							<input class="user" type="text" name="user_id" value="" readonly>
+							</span>
 							<!-- t_replyのreview_id, user_idを引用 -->
-							from user_id
-							<br> <br> <span id="reply_time">2022年6月14日21時30分</span>
-							<!-- <input class="time"type="" name="" value="" readonly> -->
-							<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
+
+							<!-- <span id="reply_username">From 炙りえんがわ</span>-->
+							<span id="reply_username">
+							<input class="user" type="text" name="user_id" value="" readonly>
+							</span>
+							<!-- user_idを引用 -->
+
+						<br>
+						<br>
+							<!-- <span id="reply_time">2022年6月14日21時30分</span> -->
+							<span id="reply_time">
+							<input class="time" type="date" name="reply_date" value="" readonly>
+							</span>
+							<!-- t_replyのreply_dateを引用 -->
 							<br>
 
-							<p id="reply_sentence">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p>
-							<!-- <input class="reply"type="" name="" value="" readonly> -->
+							<!-- <p id="reply_sentence">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p> -->
+							<p id="reply_sentence">
+							<input class="reply" type="text" name="reply_contents" value="" readonly>
+							</p>
 							<!-- t_replyのreply_contentsを引用 -->
-							<input type="submit" name="REPLYDELETET" value="削除"> <input
-								type="submit" name="REPLYWEDIT" value="編集"> <br> <br>
+							<input type="submit" name="REPLYDELETET" value="削除">
+							<input type="submit" name="REPLYWEDIT" value="編集">
+						<br>
+						<br>
 						</div>
 
 						<div id="stamp_list">
-						<!-- -->
+						<!--reaction_id -->
 							<hr>
-							<img id="pf_icon" src="./images/pf_img.png">
-							<!-- <input class="circle" type="" name="" value="" readonly> -->
-							<!-- m_userのuser_img アイコンを引用予定 -->
+							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+							<img id="pf_icon">
+							<input class="circle" type="image" name="user_img" value="" readonly>
+							<!-- m_userのuser_img アイコンを引用 -->
 
 							<span id="username">うに軍艦 </span>
 							<!-- <input class="user"type="" name="" value="" readonly> -->

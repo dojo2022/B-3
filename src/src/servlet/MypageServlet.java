@@ -39,7 +39,7 @@ public class MypageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
-		//リクエストパラメータを取得する
+		//リクエストパラメータを取得する 画面に表示 GET?
 		//マイプロフィール関連
 			request.setCharacterEncoding("UTF-8");
 			String user_id = request.getParameter("user_id");
@@ -74,5 +74,7 @@ public class MypageServlet extends HttpServlet {
 			String stamp_id = request.getParameter("stamp_id");
 
 	}
+
+		//リクエストパラメータを取得する 内容の編集 こっちがPOST？
 
 }
