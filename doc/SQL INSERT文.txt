@@ -1,5 +1,16 @@
 【m_userの挿入】
 INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000001', 'a@gmail.com', 'abcde', '伊藤慶秀', '今日も元気に行ってみよっ！', '', '', );
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000002', 'b@gmail.com', 'abcde', '石田夏帆', 'ドラマが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000003', 'c@gmail.com', 'abcde', '橋本美玖', '韓流が好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000004', 'd@gmail.com', 'abcde', '高山芳久', 'ミステリーが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000005', 'e@gmail.com', 'abcde', '菊地航大', 'ファンタジーが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000006', 'f@gmail.com', 'abcde', '遠藤洋渡', 'アニメが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000007', 'g@gmail.com', 'abcde', 'よっしー', '時代劇が好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000008', 'h@gmail.com', 'abcde', 'かほりん', 'ラブロマンスが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000009', 'i@gmail.com', 'abcde', 'みくさん', 'SFが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000010', 'j@gmail.com', 'abcde', 'たかちゃん', 'バラエティが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000011', 'k@gmail.com', 'abcde', 'こうちゃん', 'ホラーが好き', '', '');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000012', 'l@gmail.com', 'abcde', 'ひろと', 'ドキュメンタリーが好き', '', '');
 【m_videoの挿入】
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'SPY×FAMILY', '2022', '30', 'g000000001');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000002', 'ONE PIECE', '1999', '30', 'g000000001');
@@ -93,3 +104,21 @@ INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000016', 'グロ�
 【t_reactionの挿入】
 
 【t_followの挿入】
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000001', 'u000000002');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000001', 'u000000004');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000001', 'u000000006');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000001', 'u000000008');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000001', 'u000000010');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000001', 'u000000012');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000002', 'u000000001');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000002', 'u000000003');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000002', 'u000000005');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000002', 'u000000007');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000002', 'u000000009');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000002', 'u000000011');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000003', 'u000000001');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000003', 'u000000002');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000003', 'u000000004');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000003', 'u000000005');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000003', 'u000000006');
+INSERT INTO t_follow (user_id,follow_id) VALUES ('u000000003', 'u000000007');
