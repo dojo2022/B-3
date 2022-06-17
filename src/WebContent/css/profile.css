@@ -14,15 +14,6 @@
 	left: 70%;
 }
 
-/* プロフィール背景のヘッダー画像。m_userのuser_hd を引用予定 */
-.myprofile {
-  background-image: url("../images/pf_hd.png");
-  background-repeat: no-repeat;
-}
-.userprofile {
-  background-image: url("../images/pf_hd.png");
-  background-repeat: no-repeat;
-}
 
 /*マイ・ユーザーページのプロフィール部分のスタイル*/
 .myprofile, .userprofile {
@@ -124,10 +115,6 @@ hr {
 	text-align: right;
 }
 
-/*プロフィール変更テーブルのボタン位置*/
-#editbutton, #confilmButton {
-	text-align: center;
-}
 .window {
 	display: flex;
   flex-direction: column;
@@ -141,6 +128,15 @@ hr {
  }
 
 
+/*プロフィール変更テーブルのボタン位置*/
+#editbutton, #confilmButton {
+	text-align: center;
+}
+
+
+/*プロフィール変更ページの画像選択部分。
+個人サイトからのコピペなので画像読み込みはできても、保存と反映ができない。
+実装するなら矢沢講師のNyampleを参考に作り直す必要がある。*/
 #imageframe{
     width: 800px;
     height: 250px;
