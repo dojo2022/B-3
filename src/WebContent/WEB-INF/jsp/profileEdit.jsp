@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +62,6 @@
 
 <!-- メインここから -->
 <main>
-<!-- <c:forEach var="" items="" > -->
 <!-- 画像をフォルダから選んでアップロードできるようにしたい -->
 <!-- レイアウトまだ未定 -->
 
@@ -109,7 +109,6 @@
 	<p id="confilmButton"><input type="button" name="editConfilm" value="変更内容を確定">
 	<br>
 </div>
-<!-- </c:forEach> -->
 <!-- マイプロフィールボックスここまで -->
 <br>
 <!-- メインここまで -->

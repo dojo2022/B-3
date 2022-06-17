@@ -8,6 +8,10 @@
 	display: flex;
 }
 
+#followListBottun {
+	text-align: right;
+}
+
 /* フォロー一覧 */
 #follow_table {
 	margin: auto;
