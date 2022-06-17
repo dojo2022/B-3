@@ -77,8 +77,8 @@ CREATE TABLE t_reaction (
 【t_followテーブルを生成するSQL文】
 CREATE TABLE t_follow (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	follow_id VARCHAR(10) NOT NULL,
 	user_id VARCHAR(10) NOT NULL
+	follow_id VARCHAR(10) NOT NULL,
 );
 
 

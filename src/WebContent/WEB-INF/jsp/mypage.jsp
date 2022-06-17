@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 
 			<!-- <span id="username">炙りえんがわ </span> -->
 			<span id="username">
-			<input class="user" type="text" name="user_name" value="" readonly>
+			<input class="user" type="text" name="user_name" value="${user_name}" readonly>
 			</span>
 			<!-- m_userのuser_nameを引用予定 -->
 
@@ -55,181 +56,6 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
-		<!-- <c:forEach var="" items="" > -->
-		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
-			<table>
-				<tr>
-					<td><span id="review_tag"> レビュー投稿 </span>
-					<span id="reply_tag"> リプライ </span>
-					<span id="stamp_tag">スタンプを送ったレビュー </span></td>
-				</tr>
-				<tr>
-					<td>
-						<div id="review_list">
-						<!--review_id, user_id -->
-						<hr>
-							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-							<img id="pf_icon">
-							<input class="circle" type="image" name="user_img" value="" readonly>
-							<!-- m_userのuser_img アイコンを引用 -->
-
-							<!-- <span id="username">炙りえんがわ </span> -->
-							<span id="username">
-							<input class="user" type="text" name="user_name" value="" readonly>
-							</span>
-							<!-- m_userのuser_nameを引用 -->
-
-						<br>
-						<br>
-							<!-- <span id="review_video">アイアンマン</span> -->
-							<span id="review_video">
-							<input class="video" type="text" name="video_id" value="" readonly>
-							</span>
-							<!-- t_reviewのvideo_idを引用 -->
-
-							<!-- <span id="review_star"> ★★★★★ </span> -->
-							<span id="review_star">
-							<input class="star" type="text" name="star" value="" readonly>
-							</span>
-							<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
-
-							<!-- <span id="review_time">2022年6月14日 20時30分</span> -->
-							<span id="review_time">
-							<input class="time" type="date" name="review_date" value="" readonly>
-							</span>
-							<!-- t_reviewのreview_dateを引用 -->
-
-						<br>
-							<!-- <span id="review_genre"> ジャンル：アクション </span> -->
-							<span id="review_genre">
-							<input class="genre" type="text" name="genre_id" value="" readonly>
-							</span>
-							<!-- t_reviewのgenre_idを引用 -->
-
-							<!-- <span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span> -->
-							<span id="review_feelcat1">
-							<input class="feelcat1" type="text" name="feelcat_name1" value="" readonly>
-							</span>
-							<!-- t_reviewのfeelcat_name1を引用 -->
-
-							<!-- <span id="review_feelcat2"> 感想カテゴリ2：わくわく </span> -->
-							<span id="review_feelcat2">
-							<input class="feelcat2" type="text" name="feelcat_name2" value="" readonly>
-							</span>
-							<!-- t_reviewのfeelcat_name2を引用 -->
-
-							<!-- <p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p> -->
-							<p id="review">
-							<input class="review" type="text" name="review_contents" value="" readonly>
-							</p>
-							<!-- t_reviewのreview_contentsを引用 -->
-
-							<input type="submit" name="REVIEWDELETET" value="削除">
-							<input type="submit" name="REVIEWEDIT" value="編集">
-						<br>
-						<br>
-						</div>
-
-						<div id="reply_list">
-						<!-- reply_id, review_id -->
-							<hr>
-							<img id="pf_icon" src="./images/pf_img.png">
-							<!-- <input class="circle" type="" name="" value="" readonly> -->
-							<!-- m_userのuser_img アイコンを引用予定 -->
-
-							<span id="reply_username">To うに軍艦</span>
-							<!-- <input class="user"type="" name="" value="" readonly> -->
-							<!-- t_replyのreview_id, user_idを引用 -->
-							from user_id
-							<br> <br> <span id="reply_time">2022年6月14日21時30分</span>
-							<!-- <input class="time"type="" name="" value="" readonly> -->
-							<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
-							<br>
-
-							<p id="reply_sentence">リプライありがとうございます！同じ作品が好きな方に出会えて嬉しいです。</p>
-							<!-- <input class="reply"type="" name="" value="" readonly> -->
-							<!-- t_replyのreply_contentsを引用 -->
-							<input type="submit" name="REPLYDELETET" value="削除"> <input
-								type="submit" name="REPLYWEDIT" value="編集"> <br> <br>
-						</div>
-
-						<div id="stamp_list">
-						<!-- -->
-							<hr>
-							<img id="pf_icon" src="./images/pf_img.png">
-							<!-- <input class="circle" type="" name="" value="" readonly> -->
-							<!-- m_userのuser_img アイコンを引用予定 -->
-
-							<span id="username">うに軍艦 </span>
-							<!-- <input class="user"type="" name="" value="" readonly> -->
-							<!-- t_reviewのuser_idを引用 -->
-							<br> <br> <span id="review_video">アイアンマン</span>
-							<!-- <input class="video"type="" name="" value="" readonly> -->
-							<!-- t_reviewのvideo_idを引用 -->
-
-							<span id="review_star"> ★★★★★ </span>
-							<!-- <input class="star"type="" name="" value="" readonly> -->
-							<!-- t_reviewのstarを引用、形式は画像なのか数値なのか未定 -->
-
-							<span id="review_time">2022年6月12日 16時00分</span>
-							<!-- <input class="time"type="" name="" value="" readonly> -->
-							<!-- t_reviewのreview_dateを引用、細かい時間まで必要か要検討 -->
-							<br> <span id="review_genre"> ジャンル：アクション </span>
-							<!-- <input class="genre"type="" name="" value="" readonly> -->
-							<!-- t_reviewのgenre_idを引用 -->
-
-							<span id="review_feelcat1"> 感想カテゴリ１：スカッとする </span>
-							<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
-							<!-- t_reviewのfeelcat_name1を引用 -->
-
-							<span id="review_feelcat2"> 感想カテゴリ２：非日常的 </span>
-							<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
-							<!-- t_reviewのfeelcat_name2を引用 -->
-
-							<p id="review">始まりにして頂点。全てが最高。
-							うわあああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-							<!-- <input class="review"type="" name="" value="" readonly> -->
-							<!-- t_reviewのreview_contentsを引用 -->
-							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50"
-								height="50">
-							<!-- スタンプの画像をクリックすると画像が変化 -->
-							<br>
-								<!-- <input class="review" readonly> -->
-								<!-- リプライフォームここから -->
-									<label class="open"	for="popup"><img id="reply" src="images/reply.png"
-									onclick="replyfrom()" width="50" height="50">
-									</label>
-								<input type="checkbox" id="popup">
-								<div class="overlay">
-									<div class="window" id=>
-										<label class="close" for="popup">× </label>
-										<div class="example">
-											<label for="namelabel">ユーザー名</label>
-											<br>
-											<input type="text"
-												name="name" id="namelabel" placeholder="">
-												<br>
-										</div>
-										<div class="example">
-											<label for="ikenlabel">リプライ内容</label>
-											<br>
-											<textarea id="iken"></textarea>
-											<br>
-										</div>
-										<div class="example">
-											<input type="submit" value="送信する">
-											<!-- リプライボタンをクリックするとリプライ入力フォームが開く。
-						  					入力後、送信ボタンを押す。 -->
-										</div>
-									</div>
-								</div>
-								<!-- リプライフォームここまで -->
-							</div>
-						</td>
-				</tr>
-			</table>
-		</form>
-		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 </main>
 <!-- メインここまで -->
