@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.MasterUserDao;
 import dao.ReviewDao;
+import model.MasterUser;
 import model.Review;
 
 /**
@@ -24,9 +25,15 @@ public class PostServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		MasterUserDao dao = new MasterUserDao();
+		MasterUser user = dao.selectOne(user_id);
+		request.setAttribute("m_user", user);
 		// 投稿ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/post.jsp");
 		dispatcher.forward(request, response);
+		return;
+
 	}
 
 	/**
@@ -43,7 +50,8 @@ public class PostServlet extends HttpServlet {
 		String feelcat_name1 = request.getParameter("feelcat_name1");
 		String feelcat_name2 = request.getParameter("feelcat_name2");
 		String star = request.getParameter("star");
-		Date review_date = request.getParameter("review_date");
+		String review_date = request.getParameter("review_date");
+
 
 		// 投稿処理を行う
 		ReviewDao rDao = new ReviewDao();

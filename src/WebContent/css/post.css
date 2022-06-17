@@ -3,9 +3,9 @@
 	background-color: #ffffff;
     border: 3px double #a3060c;
     position:relative;
-    padding: 20px;
-	left:50px;
-	width:85%;
+    margin:0 auto 0 auto;
+    padding:20px;
+    max-width:1000px;
 }
 
 .circle{
@@ -15,12 +15,6 @@
   height: 80px;
   border-radius:50%;
   backgroung-color:#fff;
-}
-
-.user{
-  position: relative;
-  top: 10px;
-  left: 90px;
 }
 
 .post-btn {
