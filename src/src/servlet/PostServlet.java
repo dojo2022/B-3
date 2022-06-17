@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,17 +43,19 @@ public class PostServlet extends HttpServlet {
 		String feelcat_name1 = request.getParameter("feelcat_name1");
 		String feelcat_name2 = request.getParameter("feelcat_name2");
 		String star = request.getParameter("star");
-		String review_date = request.getParameter("review_date");
+		Date review_date = request.getParameter("review_date");
 
 		// 投稿処理を行う
 		ReviewDao rDao = new ReviewDao();
 		if (rDao.insert(new Review(review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date))) {	// 登録成功
 			request.setAttribute("result",
-			new Result("登録成功！", "投稿しました。", "/simpleBC/PostServlet"));
+//			new Result("登録成功！", "投稿しました。", "/simpleBC/PostServlet"));
+			"success");
 		}
 		else {	// 登録失敗
 			request.setAttribute("result",
-			new Result("登録失敗！", "投稿できませんでした。", "/simpleBC/PostServlet"));
+//			new Result("登録失敗！", "投稿できませんでした。", "/simpleBC/PostServlet"));
+			"fail");
 		}
 
 		// 結果ページにフォワードする
