@@ -41,7 +41,7 @@
 				        	感想カテゴリ１
 				        </td>
 				        <td>
-					        <select name="select1" onchange="change(this)">
+					        <select name="feelcat_name1" onchange="change(this)">
 					        	<option>選択してください</option>
 					            <option value="1番目">爆笑コメディ</option>
 					            <option value="2番目">ポジティブ</option>
@@ -65,7 +65,7 @@
 				         	感想カテゴリ２
 				         </td>
 				         <td>
-				         	<select name="select2">
+				         	<select name="feelcat_name2">
 					            <option>選択してください</option>
 					            <option label="爆笑コメディ"></option>
 					            <option label="ポジティブ"></option>
@@ -89,6 +89,16 @@
 				        	5段階評価
 				        </td>
 				        <td>
+				        	<select name="star">
+				        		<option>選択してください</option>
+				        		<option>★</option>
+				        		<option>★★</option>
+				        		<option>★★★</option>
+				        		<option>★★★★</option>
+				        		<option>★★★★★</option>
+				        	</select>
+				        </td>
+				        <td>
 				        </td>
 				    </tr>
 					<tr>
@@ -97,11 +107,13 @@
 					    </td>
 					</tr>
 					<tr>
-					    <td colspan="5">
+					    <td colspan="6">
 					         <div class="text">
-					        	<textarea name="text" cols="100" rows="10"></textarea>
+					        	<textarea name="review_contents" cols="100" rows="10"></textarea>
 				        	</div>
 				        </td>
+					    <td>
+					    </td>
 					    <td>
 					    </td>
 					    <td>
