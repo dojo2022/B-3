@@ -2,8 +2,8 @@
 INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000001', 'a@gmail.com', 'abcde', '伊藤慶秀', '今日も元気に行ってみよっ！', '', '', );
 【m_videoの挿入】
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'SPY×FAMILY', '2022', '30', 'g000000001');
-INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ONE PIECE', '1999', '30', 'g000000001');
-INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'ちはやふる', '2011', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000002', 'ONE PIECE', '1999', '30', 'g000000001');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000003', 'ちはやふる', '2011', '30', 'g000000001');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000004', 'マスカレード・ホテル', '2019', '133', 'g000000002');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000005', '孤独のグルメ', '2012', '33', 'g000000002');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000006', '全裸監督', '2019', '50', 'g000000002');
