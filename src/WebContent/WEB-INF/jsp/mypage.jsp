@@ -106,22 +106,32 @@
 							</span>
 							<!-- t_reviewのgenre_idを引用 -->
 
-							<span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span>
-							<!-- <input class="feelcat1"type="" name="" value="" readonly> -->
+							<!-- <span id="review_feelcat1"> 感想カテゴリ1：スカッとする </span> -->
+							<span id="review_feelcat1">
+							<input class="feelcat1" type="text" name="feelcat_name1" value="" readonly>
+							</span>
 							<!-- t_reviewのfeelcat_name1を引用 -->
 
-							<span id="review_feelcat2"> 感想カテゴリ2：わくわく </span>
-							<!-- <input class="feelcat2"type="" name="" value="" readonly> -->
+							<!-- <span id="review_feelcat2"> 感想カテゴリ2：わくわく </span> -->
+							<span id="review_feelcat2">
+							<input class="feelcat2" type="text" name="feelcat_name2" value="" readonly>
+							</span>
 							<!-- t_reviewのfeelcat_name2を引用 -->
 
-							<p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p>
-							<!-- <input class="review"type="" name="" value="" readonly> -->
+							<!-- <p id="review">面白すぎる。他のアベンジャーズ作品も見てみようと思った。</p> -->
+							<p id="review">
+							<input class="review" type="text" name="review_contents" value="" readonly>
+							</p>
 							<!-- t_reviewのreview_contentsを引用 -->
+
 							<input type="submit" name="REVIEWDELETET" value="削除">
-							 <input type="submit" name="REVIEWEDIT" value="編集"> <br> <br>
+							<input type="submit" name="REVIEWEDIT" value="編集">
+						<br>
+						<br>
 						</div>
 
 						<div id="reply_list">
+						<!-- reply_id, review_id -->
 							<hr>
 							<img id="pf_icon" src="./images/pf_img.png">
 							<!-- <input class="circle" type="" name="" value="" readonly> -->
@@ -130,6 +140,7 @@
 							<span id="reply_username">To うに軍艦</span>
 							<!-- <input class="user"type="" name="" value="" readonly> -->
 							<!-- t_replyのreview_id, user_idを引用 -->
+							from user_id
 							<br> <br> <span id="reply_time">2022年6月14日21時30分</span>
 							<!-- <input class="time"type="" name="" value="" readonly> -->
 							<!-- t_replyのreply_dateを引用、細かい時間まで必要か要検討 -->
@@ -143,6 +154,7 @@
 						</div>
 
 						<div id="stamp_list">
+						<!-- -->
 							<hr>
 							<img id="pf_icon" src="./images/pf_img.png">
 							<!-- <input class="circle" type="" name="" value="" readonly> -->

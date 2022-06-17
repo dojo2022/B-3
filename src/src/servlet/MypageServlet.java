@@ -30,7 +30,14 @@ public class MypageServlet extends HttpServlet {
 		// マイページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 				dispatcher.forward(request, response);
+	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 
 		//リクエストパラメータを取得する
 		//マイプロフィール関連
@@ -41,8 +48,10 @@ public class MypageServlet extends HttpServlet {
 			String user_pf = request.getParameter("user_pf");
 			String user_hd = request.getParameter("user_hd");
 			String follow_id = request.getParameter("follow_id");
+
 		//マイレビュー投稿一覧関連
 			String review_id = request.getParameter("review_id");
+			String user_id = request.getParameter("user_id");
 			String video_id = request.getParameter("video_id");
 			String review_contents = request.getParameter("review_contents");
 			String genre_id = request.getParameter("genre_id");
@@ -50,19 +59,20 @@ public class MypageServlet extends HttpServlet {
 			String feelcat_name2 = request.getParameter("feelcat_name2");
 			String star = request.getParameter("star");
 			String review_date = request.getParameter("review_date");
+
 		//リプライ一覧関連
-
-
+			String reply_id = request.getParameter("reply_id");
+			String review_id = request.getParameter("review_id");
+			String user_id = request.getParameter("user_id");
+			String reply_contents = request.getParameter("reply_contents");
+			String reply_date = request.getParameter("reply_date");
 
 		//スタンプを送ったレビュー一覧関連
-	}
+			String reaction_id = request.getParameter("reaction_id");
+			String review_id = request.getParameter("review_id");
+			String user_id = request.getParameter("user_id");
+			String stamp_id = request.getParameter("stamp_id");
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
