@@ -37,7 +37,7 @@ public class FollowlistServlet extends HttpServlet {
 
 		LoginUser user = (LoginUser)session.getAttribute("id");
 
-		// フォロー一覧
+		// フォロー一覧を検索する
 		FollowDao  fDao = new FollowDao();
 		List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
 

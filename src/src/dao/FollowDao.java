@@ -29,7 +29,7 @@ public class FollowDao {
 			// 【検索項目】アイコン画像・ユーザー名・プロフィール文
 
 			//フォロー一覧
-			String FollowUser = "SELECT user_name,user_pf,user_img "
+			String FollowUser = "SELECT user_name,user_pf,user_img FROM m_user,t_follow "
 					+ "WHERE t_follow.follow_id = m_user.user_id "
 					+ "AND t_follow.user_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(FollowUser);
@@ -42,7 +42,7 @@ public class FollowDao {
 			// SQL文を実行し、結果表を取得する(変更なし)
 			ResultSet rs = pStmt.executeQuery();
 
-			// 結果表(rs)をコレクション(Follow)にコピーする
+			// 結果表(rs)をコレクション(followList)にコピーする
 			while (rs.next()) {
 				followList.add(
 					new MasterUser(
@@ -97,7 +97,7 @@ public class FollowDao {
 			// 【検索項目】アイコン画像・ユーザー名・プロフィール文
 
 			//フォロワー一覧
-			String FollowerUser = "SELECT user_name,user_pf,user_img "
+			String FollowerUser = "SELECT user_name,user_pf,user_img FROM m_user,t_follow "
 					+ "WHERE t_follow.user_id = m_user.user_id "
 					+ "AND t_follow.follow_id = ?";
 			PreparedStatement pStmt2 = conn.prepareStatement(FollowerUser);
@@ -110,7 +110,7 @@ public class FollowDao {
 			// SQL文を実行し、結果表を取得する(変更なし)
 			ResultSet rs = pStmt2.executeQuery();
 
-			// 結果表(rs)をコレクション(Follow)にコピーする
+			// 結果表(rs)をコレクション(followList)にコピーする
 			while (rs.next()) {
 				followList.add(
 					new MasterUser(

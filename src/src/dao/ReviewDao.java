@@ -14,7 +14,7 @@ public class ReviewDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 		public List<Review> select(Review param) {
 			Connection conn = null;
-			List<Review> ReviewRanking = new ArrayList<Review>();
+			List<Review> Review = new ArrayList<Review>();
 
 			try {
 				// JDBCドライバを読み込む
@@ -43,16 +43,16 @@ public class ReviewDao {
 					rs.getString("star"),
 					rs.getDate("review_date")
 					);
-					ReviewRanking.add(card);
+					Review.add(card);
 				}
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
-				ReviewRanking = null;
+				Review = null;
 			}
 			catch (ClassNotFoundException e) {
 				e.printStackTrace();
-				ReviewRanking = null;
+				Review = null;
 			}
 			finally {
 				// データベースを切断
@@ -62,13 +62,13 @@ public class ReviewDao {
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
-						ReviewRanking = null;
+						Review = null;
 					}
 				}
 			}
 
 			// 結果を返す
-			return ReviewRanking;
+			return Review;
 		}
 
 		// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
