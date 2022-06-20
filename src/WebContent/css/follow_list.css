@@ -14,29 +14,74 @@
 #follow_table{
 	border-collapse: collapse;
 	margin: auto;
-}
-#table td{
-	padding: 8px;
-	border: 1px solid #715c1f;
-	text-align: left;
+	height: 450px;
 }
 
-/* フォロワー一覧 */
-#follower_table {
-	border-collapse: collapse;
+div#table {
+	height: 500px;
+	overflow: auto;
 	margin: auto;
 }
 
-#follower_table th {
-	background-color: #a3060c;
+#follow_body{
+	width: 700px;
+	height: 450px;
 }
 
-#follower_table tr.data_row:hover {
+#follow_table th, #follow_table td{
+	border: 1px solid #715c1f;
+	text-align: left;
+}
+
+#follow_table th{
+	background-color: #c1e4e9;
+	color: #726d40;
+	vertical-align: top;
+	text-align: center;
+}
+
+table#follow_table tr.data_row:hover {
+	 	background-color: #e9efd5;
+	}
+
+#follow_table #bottun {
+	text-align: right;
+}
+
+/* フォロワー一覧 */
+#follower_table{
+	border-collapse: collapse;
+	margin: auto;
+	height: 450px;
+}
+
+div#table {
+	height: 500px;
+	overflow: auto;
+	margin: auto;
+}
+
+#follower_body{
+	width: 700px;
+	height: 450px;
+}
+
+#followrer_table th, #follow_table td{
+	border: 1px solid #715c1f;
+	text-align: left;
+}
+
+#follower_table th{
+	background-color: #c1e4e9;
+	color: #726d40;
+	vertical-align: top;
+	text-align: center;
+}
+
+table#follower_table tr.data_row:hover {
 	 	background-color: #e9efd5;
 }
 
-#follower_table td{
-	padding: 8px;
-	border: 1px solid #715c1f;
-	text-align: left;
+#follower_table #bottun {
+	text-align: right;
 }
