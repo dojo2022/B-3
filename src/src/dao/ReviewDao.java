@@ -25,6 +25,7 @@ public class ReviewDao {
 
 			// SQL文を準備する(件数をカウントし降順で3つ表示)
 			String sql = "SELECT review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date FROM t_review where user_id = ? ";
+			//Date型はどうすればいい？
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(0, user_id);
 			// SQL文を実行し、結果表を取得する
@@ -84,6 +85,7 @@ public class ReviewDao {
 
 				// SQL文を準備する(件数をカウントし降順で3つ表示)
 				String sql = "SELECT review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date FROM t_review ";
+				//Date型はどうすればいい？
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を実行し、結果表を取得する
@@ -144,6 +146,7 @@ public class ReviewDao {
 
 				// SQL文を準備する
 				String sql = "INSERT INTO Review (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				//Date型はどうすればいい？
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる

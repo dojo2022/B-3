@@ -30,7 +30,7 @@
 
 /*マイページ編集ボタンの位置*/
 .pf_edit {
-	padding: 0px 0px 0px 650px;
+	padding: 0px 0px 0px 800px;
 
 }
 
@@ -127,12 +127,12 @@ hr {
 
 
 /*プロフィール変更テーブルの位置調整*/
-#confilmButton, #imageframe, #edittext,
+#confilmButton, #imageframe, #edittext, #bf_edit,
 #ic_edit_tag, #hd_edit_tag, #user_edit_tag, #pf_edit_tag {
 	text-align: center;
 }
 
-.circle, .portlate, .header, .user, .profile {
+.circle, .portlate, .header, .user, .profile, .portlate {
 	text-align: center;
 }
 
