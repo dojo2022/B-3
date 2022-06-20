@@ -1,23 +1,42 @@
 @charset "UTF-8";
 
-#explain {
-	text-align: center;
-}
-
+/* フォロー/フォロワー一覧を横並びに */
 .flex {
 	display: flex;
 }
 
+/* フォローボタンを右寄せ */
 #followListBottun {
 	text-align: right;
 }
 
 /* フォロー一覧 */
-#follow_table {
+#follow_table{
+	border-collapse: collapse;
 	margin: auto;
+}
+#table td{
+	padding: 8px;
+	border: 1px solid #715c1f;
+	text-align: left;
 }
 
 /* フォロワー一覧 */
 #follower_table {
+	border-collapse: collapse;
 	margin: auto;
+}
+
+#follower_table th {
+	background-color: #a3060c;
+}
+
+#follower_table tr.data_row:hover {
+	 	background-color: #e9efd5;
+}
+
+#follower_table td{
+	padding: 8px;
+	border: 1px solid #715c1f;
+	text-align: left;
 }

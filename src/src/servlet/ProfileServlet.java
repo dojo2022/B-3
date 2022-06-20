@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MasterUserDao;
+import model.LoginUser;
 import model.MasterUser;
 
 /**
@@ -32,33 +34,22 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//HttpSession session = request.getSession();
-		//if (session.getAttribute("id") == null) {
-		//	response.sendRedirect("/FLIFRE/LoginServlet");
-		//return;
-		//}
-		//LoginUser user = (LoginUser)session.getAttribute("id");
-		//→書き方分からない★
-
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/FLIFRE/LoginServlet");
+		return;
+		}
 
 		//★セッションからユーザーIDを取得
 		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
-		//session.getAttribute("xxx")
-		//idをとる
-		//if (session = "id", user) {
-		// セッションスコープにIDを格納する
-		//HttpSession session = request.getSession();
-		//session.setAttribute(user_id);
-		//session.getAttribute("user_id")
-		// }→書き方分からない★
-
-		String user_id = "";
+		LoginUser user = (LoginUser)session.getAttribute("id");
+		String user_id = user.getUser_id();
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
-		MasterUser user = dao.selectOne(user_id);
-		request.setAttribute("m_user", user);
+		MasterUser user2 = dao.selectOne(user_id);
+		request.setAttribute("m_user", user2);
 
 		// プロフィール変更ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profileEdit.jsp");
@@ -71,8 +62,9 @@ public class ProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		//リクエストパラメータを取得する
 
-		//プロフィール変更処理
+		//プロフィール更新(変更)処理
 
 	}
 

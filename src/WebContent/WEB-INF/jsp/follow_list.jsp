@@ -27,7 +27,7 @@
 			    <td>${i.user_pf}</td>
 		    </tr>
 		    <tr>
-		    	<td colspan="3" >
+		    	<td colspan="3">
 		    	<input type="submit" name="UnfollowBottun" value="フォロー解除" id="followListBottun">
 		    	</td>
 		    </tr>
@@ -42,7 +42,7 @@
 		    <tr>
 		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
 		    </tr>
-		    <c:forEach var="i" items="${followList}" >
+		    <c:forEach var="i" items="${followerList}" >
 		    <tr>
 			    <td>${i.user_img}</td>
 			    <td>${i.user_name}</td>
