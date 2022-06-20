@@ -18,23 +18,38 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
+<<<<<<< HEAD
 
 			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
 			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
 
 			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 			<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+=======
+
+			<span>${m_user.user_hd}
+			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
+			</span>
+
+			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+			${m_user.user_img}
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			</span>
 			<!-- m_userのuser_img アイコンを引用、丸い形にするかは未定 -->
 
 			<span><!-- 炙りえんがわ  -->
+<<<<<<< HEAD
 			<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+=======
+			${m_user.user_name}
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			</span><!-- m_userのuser_nameを引用 -->
 
 
 			<span class ="pf_edit">
 			<a  href="/FLIFRE/ProfileServlet"><img src="./images/pf_edit.png"></a>
 			</span><!-- プロフィール編集ボタン -->
+<<<<<<< HEAD
 			<br>
 			<br>
 
@@ -49,6 +64,20 @@
 			<input class="follow" type="text" name="user_id" value="${t_follow.user_id}" readonly>
 			<input class="follow" type="text" name="follow_id" value="${t_follow.follow_id}" readonly>
 			<!-- t_followのuser_id,follow_idを引用 -->
+=======
+			<br>
+
+			<span><!-- アニメと洋画が好きです。 -->
+			${m_user.user_pf}
+			</span><!-- m_userのuser_pfを引用 -->
+			<br>
+			<br>
+
+			<a id="follow" href="/FLIFRE/FollowlistServlet">
+			<span>フォロー　${followCount}</span>
+			<span>フォロワー　${followerCount}</span>
+			</a>
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 		</div>
 		<!-- マイプロフィールボックスここまで -->
 		<br>
@@ -56,7 +85,21 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
+<<<<<<< HEAD
 		<!-- <c:forEach var="p" items="${postList}" > -->
+=======
+		<c:forEach var="e" items="${Review}" >
+			<p>${e.review_id}</p>
+		</c:forEach>
+
+		<c:forEach var="e" items="${Reply}" >
+			<p>${e.reply_id}</p>
+		</c:forEach>
+
+		<c:forEach var="e" items="${Reaction}" >
+			<p>${e.reaction_id}</p>
+		</c:forEach>
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
@@ -202,7 +245,7 @@
 							<br>
 
 							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
-							<input class="stamp" type="image" name="stamp_id" value="${t_reaction.stamp_id}" readonly>
+							<input class="stamp" type="image" name="STAMP" value="${t_reaction.stamp_id}" readonly>
 							<!-- スタンプの画像をクリックすると画像が変化 -->
 							<!-- m_stampのstamp_id, stamp_name -->
 							<br>

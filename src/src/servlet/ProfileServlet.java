@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.MasterUserDao;
+<<<<<<< HEAD
+=======
+import model.LoginUser;
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 import model.MasterUser;
 
 /**
@@ -40,6 +44,7 @@ public class ProfileServlet extends HttpServlet {
 		return;
 		}
 
+<<<<<<< HEAD
 //		//★セッションからユーザーIDを取得 →書き方分からない
 //		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 //		//session.getAttribute("xxx")
@@ -58,6 +63,17 @@ public class ProfileServlet extends HttpServlet {
 		MasterUserDao dao = new MasterUserDao();
 		MasterUser user = dao.selectOne(user_id);
 		request.setAttribute("m_user", user);
+=======
+		//★セッションからユーザーIDを取得
+		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+		LoginUser user = (LoginUser)session.getAttribute("id");
+		String user_id = user.getUser_id();
+
+		//データベースから名前を取得
+		MasterUserDao dao = new MasterUserDao();
+		MasterUser user2 = dao.selectOne(user_id);
+		request.setAttribute("m_user", user2);
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 		// プロフィール変更ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profileEdit.jsp");
@@ -70,8 +86,14 @@ public class ProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+<<<<<<< HEAD
 
 		//プロフィール変更処理
+=======
+		//リクエストパラメータを取得する
+
+		//プロフィール更新(変更)処理
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 	}
 

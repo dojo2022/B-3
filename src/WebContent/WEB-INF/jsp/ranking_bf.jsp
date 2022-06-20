@@ -38,11 +38,21 @@
 				<p class="ranking">${g}</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${Genre[g][i].video_id}">${ Genre[g][i].video_name}</a></li>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${ReviewRanking[g][i].video_id}">${ ReviewRanking[g][i].video_name}</a></li>
 				</c:forEach>
 				</ul>
 			</c:forEach>
 			</div>
+
+			<c:forEach var="t" items="${ totalRank }">
+
+			</c:forEach>
+
+
+			<c:forEach var="a" items="${ animeRank }">
+
+			</c:forEach>
+
         </div>
     </main>
     <footer>

@@ -98,6 +98,31 @@ INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000016', 'グロ�
 【m_stampの挿入】
 
 【t_reviewの挿入】
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000001', 'v000000001', 'u000000001',
+ 'スパイファミリー1話みました。軽く泣いてます...期待の上を行くアニメ化でした！家族に血の繋がりなど必要なし。これからも応援していきたいと素直に思ったのはスタッフの力量によるものだと思いますアーニャ良かったねぇ。あとメチャクチャかわいいねぇ。',
+ 'g000000001', '癒される', 'わくわく', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000002', 'v000000001', 'u000000001',
+ 'すばらしい！非の打ち所がありませんでした！原作の時点で凄まじく完成度の高い作品ですが、アニメのクオリティもひとつの映像作品としてのレベルが高い！','g000000001', '癒される', '爆笑コメディ', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000003', 'v000000001', 'u000000003',
+ 'キャラと声優がすごくマッチしていてまるで本物だなと思うくらい完成度が高い！　ヨルさん私と結婚してください！','g000000001', 'わくわく', '爆笑コメディ', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000004', 'v000000002', 'u000000004',
+ '全国民が知ってるであろうベッタベタの名シーン ちゃんと感動した。 「何が起こっても左腕のこれが仲間の印だ！」くぅ〜〜 おもれえ〜〜かっくぃ〜〜','g000000001', 'わくわく', '泣ける', '4');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000005', 'v000000002', 'u000000005',
+ 'クロコダイル、ボンちゃん、イワ様、Mr.だがね、バギー、ジンベエなどなどすごいメンツ出てくるし、そんなメンツでも倒せないマゼランに後から乗り込んできた黒ひげ、アツすぎるよな。とにかくぼんちゃん…。大好き。涙止まんなかった。顔馴染みメンツ出てき過ぎてほぼ同窓会。ジンベエさんいいやつ過ぎんかい？','g000000001', '泣ける', 'わくわく', '4');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000006', 'v000000003', 'u000000006',
+ '学生のこの頃に、こんなに熱くなれるものに出逢えることがどれほど幸せなことか。身に染みて思う。曇りなく何かに夢中になる。悔しくて泣くこと。貴重な経験。眩しすぎて泣けてくる。そんなスポーツアニメ沢山あると思う、ちはやふるのすごいところは、競技カルタという一見地味で目立たない競技の魅力を最大限に引き出していて、死ぬほど自分もやってみたくなるところ。そして古典は美しい。日本の美に触れられる。本当に秀悦な青春作品だと思います','g000000001', '泣ける', 'スカッとする', '4');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000007', 'v000000004', 'u000000007', 
+'「決して前情報無しで観て下さい」タイプの映画。キャストさえも、主役以外はチェックしない方がいい。木村拓哉がいかにもキムタクで、それが似合った役柄で、思った以上にいいんじゃない？と感じたのだが、東野圭吾が本作執筆の際に主人公の人物イメージを木村拓哉に想定していたというから、まさにハマり役だった訳。作家としても役者のいいお仕事。それがこの映画の一番の長所。長澤まさみもこういう役が似合う。そしてあの人の演技のお見事さに拍手だ。目立たない演技っていうのも難しいんだな。きっと。大満足だろう。','g000000002', 'わくわく', 'ミステリアス', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000008', 'v000000005', 'u000000008', '発声も演技も全く力まず最小限のもので成立させる松重さんの演技と凝りすぎない演出。こういうのでいいんだよ。いや、こういうのがいいんだよ。しかし腹の減る作品やなぁ。カフェ飯おでんの回が印象的でした。','g000000002', '優雅', '勉強になる', '5');
+
+
 
 【t_replyの挿入】
 

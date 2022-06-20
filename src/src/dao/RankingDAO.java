@@ -11,8 +11,8 @@ import java.util.List;
 import model.Ranking;
 
 public class RankingDAO {
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Ranking> select(Ranking param) {
+	// 引数paramで検索項目を指定し、検索結果のリストを返す(通算)
+	public List<Ranking> selectAll() {
 		Connection conn = null;
 		List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 
@@ -23,11 +23,11 @@ public class RankingDAO {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
-			// SQL文を準備する(件数をカウントし降順で3つ表示)
-			String sql = "SELECT video_id count(video_id) FROM t_review "
-					+ ""
-					+ "GROUP BY video_id ORDER BY count(video_id) DESC";
+			// SQL文を準備する(件数をカウントし降順で表示)
+			String sql = "SELECT t_review.video_id,M_VIDEO.video_name,count(t_review.video_id) FROM t_review LEFT JOIN M_VIDEO ON t_review.video_id=M_VIDEO.video_id GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -35,7 +35,9 @@ public class RankingDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				Ranking card = new Ranking(
-				rs.getString("video_id"));
+				rs.getString("video_id"),
+				rs.getString("video_name")
+				);
 				ReviewRanking.add(card);
 			}
 		}
@@ -63,4 +65,797 @@ public class RankingDAO {
 		// 結果を返す
 		return ReviewRanking;
 	}
+	// 引数paramで検索項目を指定し、検索結果のリストを返す(アニメ)
+		public List<Ranking> selectnime() {
+			Connection conn = null;
+			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+				// SQL文を準備する(件数をカウントし降順で3つ表示)
+				String sql = "SELECT t_review.video_id,M_VIDEO.video_name,count(t_review.video_id) FROM t_review LEFT JOIN M_VIDEO ON t_review.video_id=M_VIDEO.video_id GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC WHERE genre_id = 'g000000001' limit 3";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					Ranking card = new Ranking(
+					rs.getString("video_id"),
+					rs.getString("video_name"));
+					ReviewRanking.add(card);
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				ReviewRanking = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				ReviewRanking = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						ReviewRanking = null;
+					}
+				}
+			}
+
+			// 結果を返す
+			return ReviewRanking;
+		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(国内)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000002'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//		            rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(欧米)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000003'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(韓国)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000004'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(華流)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000005'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(アクション)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000006'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(コメディ)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000007'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(キッズ・ファミリー)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000008'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(ヒューマンドラマ)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000009'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(サスペンス)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000010'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(ラブロマンス)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000011'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(ホラー)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000012'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(ファンタジー)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000013'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(SF)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000014'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
+//		// 引数paramで検索項目を指定し、検索結果のリストを返す(バラエティ)
+//		public List<Ranking> select(Ranking param) {
+//			Connection conn = null;
+//			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+//
+//				// SQL文を準備する(件数をカウントし降順で3つ表示)
+//				String sql = "SELECT video_id count(video_id) FROM t_review "
+//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
+//						+ "WHERE genre_id='g000000015'";
+//				PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				// SQL文を実行し、結果表を取得する
+//				ResultSet rs = pStmt.executeQuery();
+//
+//				// 結果表をコレクションにコピーする
+//				while (rs.next()) {
+//					Ranking card = new Ranking(
+//					rs.getString("video_id"),
+//					rs.getString("video_name"));
+//					ReviewRanking.add(card);
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				ReviewRanking = null;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						ReviewRanking = null;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//			return ReviewRanking;
+//		}
 }

@@ -14,11 +14,11 @@
 
 <!-- フォロー一覧を表示する -->
 	<div class="flex">
+	<div id="table">
 	<table border="1" id="follow_table">
-		<p>フォロー</p>
-  		<tbody>
+  		<tbody id="follow_body">
 		    <tr>
-		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
+		      <th id="icon">アイコン</th><th id="userName">ユーザー名</th><th id="prof">プロフィール文</th>
 		    </tr>
 		    <c:forEach var="i" items="${followList}" >
 		    <tr>
@@ -27,36 +27,44 @@
 			    <td>${i.user_pf}</td>
 		    </tr>
 		    <tr>
-		    	<td colspan="3" >
+		    	<td id="bottun" colspan="3">
 		    	<input type="submit" name="UnfollowBottun" value="フォロー解除" id="followListBottun">
 		    	</td>
 		    </tr>
 		    </c:forEach>
   		</tbody>
 	</table>
+	</div>
 
 <!-- フォロワー一覧を表示する -->
+	<div id="table">
 	<table border="1" id="follower_table">
-  		<tbody>
-  		<p>フォロワー</p>
+  		<tbody id="follower_body">
 		    <tr>
 		      <th>アイコン</th><th>ユーザー名</th><th>プロフィール文</th>
 		    </tr>
-		    <c:forEach var="i" items="${followList}" >
+		    <c:forEach var="i" items="${followerList}" >
 		    <tr>
 			    <td>${i.user_img}</td>
 			    <td>${i.user_name}</td>
 			    <td>${i.user_pf}</td>
 		    </tr>
 		    <tr>
-		    	<td colspan="3">
-		    	<input type="submit" name="FollowBottun" value="フォロー" id="followListBottun">
-				<input type="submit" name="UnfollowBottun" value="フォロー解除" id="followListBottun">
+		    	<td id="bottun" colspan="3">
+		    	<c:choose>
+		    	<c:when test = "${i.follow_exchange}">
+		    		<input type="submit" name="UnfollowBottun" value="フォロー解除" id="followListBottun">
+		    	</c:when>
+		    	<c:otherwise>
+					<input type="submit" name="FollowBottun" value="フォロー" id="followListBottun">
+				</c:otherwise>
+				</c:choose>
 				</td>
 		    </tr>
 		    </c:forEach>
   		</tbody>
 	</table>
+	</div>
 	</div>
 </body>
 </html>

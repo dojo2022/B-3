@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,10 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.FollowDao;
 import dao.MasterUserDao;
+<<<<<<< HEAD
 import dao.ReplyDao;
 import dao.ReviewDao;
 import model.MasterUser;
+=======
+import dao.ReactionDao;
+import dao.ReplyDao;
+import dao.ReviewDao;
+import model.LoginUser;
+import model.MasterUser;
+import model.Reaction;
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 import model.Reply;
 import model.Review;
 
@@ -43,6 +54,7 @@ public class MypageServlet extends HttpServlet {
 		return;
 		}
 
+<<<<<<< HEAD
 //		//★セッションからユーザーIDを取得 →書き方分からない
 //		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 //		//session.getAttribute("xxx")
@@ -55,11 +67,44 @@ public class MypageServlet extends HttpServlet {
 //		}
 
 		String user_id = "";
+=======
+		//★セッションからユーザーIDを取得
+		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+		LoginUser user = (LoginUser)session.getAttribute("id");
+		String user_id = user.getUser_id();
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
-		MasterUser user = dao.selectOne(user_id);
-		request.setAttribute("m_user", user);
+		MasterUser userdata = dao.selectOne(user_id);
+		request.setAttribute("m_user", userdata);
+
+		// フォロー・フォロワーを数える
+		FollowDao  fDao = new FollowDao();
+		int follow_count = fDao.Followcount(user_id);
+		int follower_count = fDao.Followercount(user_id);
+		// 計算結果をリクエストスコープに格納する
+		request.setAttribute("followCount", follow_count);
+		request.setAttribute("followerCount", follower_count);
+
+		// レビュー一覧を検索する
+		ReviewDao  rDao = new ReviewDao();
+		List<Review> Review = rDao.select(user_id);
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("Review", Review);
+
+		// リプライ一覧を検索する
+		ReplyDao  pDao = new ReplyDao();
+ 		List<Reply> Reply = pDao.select(user_id);
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("Reply", Reply);
+
+		// リアクション一覧を検索する
+		ReactionDao  aDao = new ReactionDao();
+		List<Reaction> Reaction = aDao.select(user_id);
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("Reaction", Reaction);
+
 
 //		// フォロー一覧を検索する
 //				FollowDao  fDao = new FollowDao();
@@ -72,9 +117,9 @@ public class MypageServlet extends HttpServlet {
 
 
 		// マイページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
-				dispatcher.forward(request, response);
-				return;
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+		dispatcher.forward(request, response);
+		return;
 	}
 
 	/**
@@ -84,8 +129,13 @@ public class MypageServlet extends HttpServlet {
 		doGet(request, response);
 
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
+<<<<<<< HEAD
 //		// Resultページがいるのか？
 //
+=======
+//		// Resultのモデルとページがいるのか？
+
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			//★リクエストパラメータを取得する
 			//マイレビュー投稿一覧関連
 			request.setCharacterEncoding("UTF-8");
@@ -101,6 +151,7 @@ public class MypageServlet extends HttpServlet {
 
 			//リプライ一覧関連
 			String reply_id = request.getParameter("reply_id");
+<<<<<<< HEAD
 			String review_id = request.getParameter("review_id");
 			String user_id = request.getParameter("user_id");
 			String reply_contents = request.getParameter("reply_contents");
@@ -113,6 +164,20 @@ public class MypageServlet extends HttpServlet {
 //			String stamp_id = request.getParameter("stamp_id");
 //
 //
+=======
+			//String review_id = request.getParameter("review_id");
+			//String user_id = request.getParameter("user_id");
+			String reply_contents = request.getParameter("reply_contents");
+			String reply_date = request.getParameter("reply_date");
+
+			//スタンプを送ったレビュー一覧関連
+			String reaction_id = request.getParameter("reaction_id");
+			//String review_id = request.getParameter("review_id");
+			//String user_id = request.getParameter("user_id");
+			String stamp_id = request.getParameter("stamp_id");
+
+
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			// レビュー編集または削除を行う
 			ReviewDao rDao = new ReviewDao();
   		if (request.getParameter("REVIEWEDIT").equals("編集")) {
@@ -169,7 +234,35 @@ public class MypageServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 
 
+<<<<<<< HEAD
 			// リアクション編集または削除を行う→スタンプはクリックで切り替わるだけだからいらない？
+=======
+			// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
+			if (request.getParameter("STAMP").equals("")) {
+				if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
+					request.setAttribute("result",
+					new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
+				}
+				else {
+					request.setAttribute("result",
+					new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
+				}
+			}
+			else {
+				if (aDao.delete(reaction_id)) {	// 削除成功
+					request.setAttribute("result",
+					new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
+				}
+				else {						// 削除失敗
+					request.setAttribute("result",
+					new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
+				}
+			}
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher.forward(request, response);
+
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 			// 新規リプライ送信を行う
 			ReplyDAO pDao = new pDAO();

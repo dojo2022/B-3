@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.FollowDao;
+import model.Follow;
 import model.LoginUser;
 import model.MasterUser;
 
@@ -43,6 +44,13 @@ public class FollowlistServlet extends HttpServlet {
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("followList", followList);
+
+		// フォロワー一覧を検索する
+		FollowDao  fwDao = new FollowDao();
+		List<Follow> followerList = fwDao.FollowerUser(user.getUser_id());
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("followerList", followerList);
 
 		// フォロー/フォロワー一覧ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/follow_list.jsp");
