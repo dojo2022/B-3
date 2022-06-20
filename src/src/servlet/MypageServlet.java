@@ -31,26 +31,23 @@ public class MypageServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//HttpSession session = request.getSession();
-		//if (session.getAttribute("id") == null) {
-		//	response.sendRedirect("/FLIFRE/LoginServlet");
-		//return;
-		//}
-		//LoginUser user = (LoginUser)session.getAttribute("id");
-		//→書き方分からない★
+//		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
+//		/HttpSession session = request.getSession();
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/FLIFRE/LoginServlet");
+//		return;
+//		}
 
-
-		//★セッションからユーザーIDを取得
-		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
-		//session.getAttribute("xxx")
-		//idをとる
-		//if (session = "id", user) {
-		// セッションスコープにIDを格納する
-		//HttpSession session = request.getSession();
-		//session.setAttribute(user_id);
-		//session.getAttribute("user_id")
-		// }→書き方分からない★
+//		//★セッションからユーザーIDを取得 →書き方分からない
+//		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+//		//session.getAttribute("xxx")
+//		//idをとる
+//		if (session = "id", user) {
+//		// セッションスコープにIDを格納する
+//		HttpSession session = request.getSession();
+//		session.setAttribute(user_id);
+//		session.getAttribute("user_id")
+//		}
 
 		String user_id = "";
 
@@ -71,7 +68,7 @@ public class MypageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 
-		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
+//		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
 //
 //			//★リクエストパラメータを取得する
 //			//マイレビュー投稿一覧関連
@@ -100,17 +97,28 @@ public class MypageServlet extends HttpServlet {
 //			String stamp_id = request.getParameter("stamp_id");
 //
 //
-//			// レビュー編集処理を行う
+//			// レビュー編集または削除を行う
 //			ReviewDao rDao = new ReviewDao();
-//			if (rDao.insert(new Review(,))) {	// 登録成功
-//				request.setAttribute("result",
-//				//new Result("登録成功！", "投稿しました。", "/FLIFRE/PostServlet"));
-//				"success");
+//  		if (request.getParameter("REVIEWEDIT").equals("編集")) {
+//				if (rDao.update(new Review(review_id, user_id, video_id, review_contents,
+//					genre_id, feelcat_name1, feelcat_name2, star, review_date))) {	// 登録成功
+//					request.setAttribute("result",
+//					new Result("更新成功", "新しいレビューを投稿しました。", "/FLIFRE/MypageServlet"));
+//				}
+//				else {
+//					request.setAttribute("result",
+//					new Result("更新失敗", "新しいレビューを投稿できませんでした。", "/FLIFRE/PostServlet"));
+//				}
 //			}
-//			else {	// 登録失敗
-//				request.setAttribute("result",
-//				//new Result("登録失敗！", "投稿できませんでした。", "/FLIFRE/PostServlet"));
-//				"fail");
+//			else {
+//				if (rDao.delete(review_id)) {	// 削除成功
+//					request.setAttribute("result",
+//					new Result("削除成功！", "レビューを削除しました。", "/FLIFRE/MypageServlet"));
+//				}
+//				else {						// 削除失敗
+//					request.setAttribute("result",
+//					new Result("削除失敗！", "レビューを削除できませんでした。", "/FLIFRE/MypageServlet"));
+//				}
 //			}
 //			// 結果ページにフォワードする
 //			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
@@ -118,38 +126,36 @@ public class MypageServlet extends HttpServlet {
 //
 //
 //			// リプライ編集処理を行う
-//			ReplyDao rDao = new ReplyDao();
-//			if (rDao.insert(new Reply(,))) {	// 登録成功
-//			request.setAttribute("result",
-//			//new Result("登録成功！", "投稿しました。", "/FLIFRE/PostServlet"));
-//			"success");
+//			ReplyDao pDao = new ReplyDao();
+//			if (request.getParameter("REPLYWEDIT").equals("編集")) {
+//				if (pDao.update(new Reply(reply_id, review_id, user_id,
+//		  			reply_contents, reply_date))) {	// 登録成功
+//					request.setAttribute("result",
+//					new Result("更新成功", "新しいリプライを送信しました。", "/FLIFRE/MypageServlet"));
+//				}
+//				else {
+//					request.setAttribute("result",
+//					new Result("更新失敗", "新しいリプライを送信できませんでした。", "/FLIFRE/PostServlet"));
+//				}
 //			}
-//			else {	// 登録失敗
-//			request.setAttribute("result",
-//			//new Result("登録失敗！", "投稿できませんでした。", "/FLIFRE/PostServlet"));
-//			"fail");
+//			else {
+//				if (rDao.delete(reply_id)) {	// 削除成功
+//					request.setAttribute("result",
+//					new Result("削除成功！", "リプライを削除しました。", "/FLIFRE/MypageServlet"));
+//				}
+//				else {						// 削除失敗
+//					request.setAttribute("result",
+//					new Result("削除失敗！", "リプライを削除できませんでした。", "/FLIFRE/MypageServlet"));
+//				}
 //			}
 //			// 結果ページにフォワードする
-//		    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
 //			dispatcher.forward(request, response);
 //
 //
 //			// リアクション編集処理を行う
-//			ReactionDao rDao = new ReactionDao();
-//			if (rDao.insert(new Reaction(,))) {	// 登録成功
-//			request.setAttribute("result",
-//			//new Result("登録成功！", "投稿しました。", "/FLIFRE/PostServlet"));
-//			"success");
-//			}
-//			else {	// 登録失敗
-//			request.setAttribute("result",
-//			//new Result("登録失敗！", "投稿できませんでした。", "/FLIFRE/PostServlet"));
-//			"fail");
-//			}
-//			// 結果ページにフォワードする
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
-//			dispatcher.forward(request, response);
-			//→書き方分からない★
+//
+			//→書き方分からない
 	}
 
 }
