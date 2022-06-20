@@ -46,8 +46,10 @@
 
 			<a id="follow" href="/FLIFRE/FollowlistServlet">フォロー・フォロワー</a>
 			<br>
-			<input class="follow" type="text" name="user_id" value="${t_follow.user_id}" readonly>
-			<input class="follow" type="text" name="follow_id" value="${t_follow.follow_id}" readonly>
+			<span>フォロー人数は${followCount}人</span>
+			<span>フォローされている人数は${followedCount}人</span>
+			<input class="follow" type="text" name="user_id" value="${followCount}" readonly>
+			<input class="follow" type="text" name="follow_id" value="${followedCount}" readonly>
 			<!-- t_followのuser_id,follow_idを引用 -->
 		</div>
 		<!-- マイプロフィールボックスここまで -->
@@ -56,9 +58,9 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
-		<!-- <c:forEach var="e" items="${Review}" > -->
-		<!-- <c:forEach var="e" items="${}" > -->
-		<!-- <c:forEach var="e" items="${}" > -->
+		<c:forEach var="e" items="${Review}" >
+			<p>${e.review_id}</p>
+		</c:forEach>
 
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
@@ -242,9 +244,6 @@
 				</tr>
 			</table>
 		</form>
-		<!-- </c:forEach> -->
-		<!-- </c:forEach> -->
-		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 </main>
 <!-- メインここまで -->

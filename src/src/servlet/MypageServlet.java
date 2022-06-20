@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.FollowDao;
 import dao.MasterUserDao;
 import dao.ReplyDao;
 import dao.ReviewDao;
+import model.LoginUser;
 import model.MasterUser;
 import model.Reply;
 import model.Review;
@@ -45,40 +48,29 @@ public class MypageServlet extends HttpServlet {
 
 //		//★セッションからユーザーIDを取得 →書き方分からない
 //		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
-//		//session.getAttribute("xxx")
-//		//idをとる
-//		if (session = "id", user) {
-//		// セッションスコープにIDを格納する
-//		HttpSession session = request.getSession();
-//		session.setAttribute(user_id);
-//		session.getAttribute("user_id")
+		LoginUser user = (LoginUser)session.getAttribute("id");
+		String user_id = user.getUser_id();
 
-//		// ユーザーを検索する?
-//		MasterUserDao  Dao = new Dao(MasterUser);
-//		LoginUser MasterUser = Dao.isLoginOK(user.getId());
-//		request.setAttribute("user", user);
-//		}
 
-		String user_id = "";
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
-		MasterUser user = dao.selectOne(user_id);
-		request.setAttribute("m_user", user);
+		MasterUser userdata = dao.selectOne(user_id);
+		request.setAttribute("m_user", userdata);
 
 //		// フォロー一覧を検索する
-//		FollowDao  fDao = new FollowDao();
-//		List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
-//
+		FollowDao  fDao = new FollowDao();
+		int follow_count = fDao.Followcount(user_id);
+		int followed_count = fDao.Followedcount(user_id);
 //		// 検索結果をリクエストスコープに格納する
-//		request.setAttribute("followList", followList);
-//
+		request.setAttribute("followCount", follow_count);
+		request.setAttribute("followedCount", followed_count);
 //		// 投稿一覧を検索する
-//		ReviewDao  rDao = new ReviewDao();
-//		List<Review> Review = rDao.Review(user.getReview_id());
+		ReviewDao  rDao = new ReviewDao();
+		List<Review> Review = rDao.select(user_id);
 //
 //		// 検索結果をリクエストスコープに格納する
-//		request.setAttribute("Review", Review);
+		request.setAttribute("Review", Review);
 
 
 		// マイページにフォワードする
