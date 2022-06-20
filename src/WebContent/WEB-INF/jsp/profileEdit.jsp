@@ -68,7 +68,7 @@
 		<div class="myprofileEdit">
 			<p id="ic_edit_tag">　　アイコン変更　　</p>
 			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-			<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+			${m_user.user_img}
 			</span>
 			<!-- m_userのuser_img 現在使用中のアイコンを引用 -->
 
@@ -83,7 +83,7 @@
 
 			<p id="hd_edit_tag">　　ヘッダー変更　　</p>
 			<span><!-- <img id="pf_icon" src ="./images/pfEdit_hd.png"> -->
-			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
+			${m_user.user_hd}
 			</span>
 			<!-- m_userのuser_hd 現在使用中のヘッダーを引用 -->
 
@@ -97,8 +97,8 @@
 		<hr>
 
 			<p id="user_edit_tag">　　ユーザー名変更　　</p>
-			<span><!-- 炙りえんがわ  -->
-			<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+			<span id="bf_edit"><!-- 炙りえんがわ  -->
+			${m_user.user_name}
 			</span>
 			<!-- m_userのuser_name 現在使用中のユーザー名を引用 -->
 
@@ -106,8 +106,8 @@
 		<hr>
 
 			<p id="pf_edit_tag">　　プロフィール文変更　　</p>
-			<span><!-- アニメと洋画が好きです。 -->
-			<input class="profile" type="text" name="user_pf" value="${m_user.user_pf}" readonly>
+			<span id="bf_edit"><!-- アニメと洋画が好きです。 -->
+			${m_user.user_pf}
 			</span>
 			<!-- m_userのuser_pf 現在使用中のプロフィール文を引用 -->
 

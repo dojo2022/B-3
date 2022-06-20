@@ -19,8 +19,9 @@
 		<!-- ユーザープロフィールボックスここから -->
 		<div class="userprofile">
 
-		<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
-		<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
+		<span>${m_user.user_hd}
+		<!-- m_userのuser_hd ヘッダーを引用、userprofileクラスの背景に配置したい -->
+		</span>
 
 		<form id = follow_Lift method="POST" action="/FLIFRE/UserpageServlet">
 			<input type="button" name="FOLLOW" value="フォロー">
@@ -30,34 +31,34 @@
 	<br>
 
 		<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-		<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+		${m_user.user_img}
 		</span>
 		<!-- m_userのuser_img アイコンを引用、丸い形にするかは未定 -->
 
 		<span><!-- うに軍艦  -->
-		<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+		${m_user.user_name}
 		</span><!-- m_userのuser_nameを引用 -->
-	<br>
 	<br>
 
 		<span><!-- ジャンル問わず色々見てます。 -->
-		<input class="profile" type="text" name="user_pf" value="${m_user.user_pf}" readonly>
+		${m_user.user_pf}
 		</span><!-- m_userのuser_pfを引用 -->
 	<br>
 	<br>
 
-		<a id="follow" href="/FLIFRE/FollowlistServlet">フォロー・フォロワー</a>
-		<br>
-		<input class="follow" type="text" name="user_id" value="${t_follow.user_id}" readonly>
-		<input class="follow" type="text" name="follow_id" value="${t_follow.follow_id}" readonly>
-		<!-- t_followのuser_id,follow_id -->
+		<a id="follow" href="/FLIFRE/FollowlistServlet">
+			<span>フォロー　${followCount}</span>
+			<span>フォロワー　${followerCount}</span>
+		</a>
 	</div>
 	<!-- ユーザープロフィールボックスここまで -->
 	<hr>
 	<br>
 
 	<!-- ユーザーレビュー投稿一覧ここから -->
-	<!-- <c:forEach var="p" items="${postList}" > -->
+	<c:forEach var="e" items="${Review}" >
+		<p>${e.review_id}</p>
+	</c:forEach>
 	<form id = "userreview" method="POST" action="/FLIFRE/UserpageServlet">
 		<table>
 			<tr>
@@ -149,7 +150,6 @@
 			</tr>
 		</table>
 	</form>
-	<!-- </c:forEach> -->
 	<!-- ユーザーレビュー投稿一覧ここまで -->
 </main>
 <!-- メインここまで -->
