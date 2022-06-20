@@ -57,7 +57,7 @@
 	<br>
 
 	<!-- ユーザーレビュー投稿一覧ここから -->
-	<!-- おそらくc:for eachを使わないといけない部分 -->
+	<!-- <c:forEach var="p" items="${postList}" > -->
 	<form id = "userreview" method="POST" action="/FLIFRE/UserpageServlet">
 		<table>
 			<tr>
@@ -149,7 +149,7 @@
 			</tr>
 		</table>
 	</form>
-	<!-- おそらくc:for eachを使わないといけない部分 -->
+	<!-- </c:forEach> -->
 	<!-- ユーザーレビュー投稿一覧ここまで -->
 </main>
 <!-- メインここまで -->

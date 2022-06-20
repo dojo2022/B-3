@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MasterUserDao;
 import model.MasterUser;
@@ -32,26 +33,24 @@ public class UserpageServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//HttpSession session = request.getSession();
-		//if (session.getAttribute("id") == null) {
-		//	response.sendRedirect("/FLIFRE/LoginServlet");
-		//return;
-		//}
-		//LoginUser user = (LoginUser)session.getAttribute("id");
-		//→書き方分からない★
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/FLIFRE/LoginServlet");
+		return;
+		}
 
+//		//★セッションからユーザーIDを取得 →書き方分からない
+//		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+//		//session.getAttribute("xxx")
+//		//idをとる
+//		if (session = "id", user) {
+//		// セッションスコープにIDを格納する
+//		HttpSession session = request.getSession();
+//		session.setAttribute(user_id);
+//		session.getAttribute("user_id")
+//		}
 
-		//★セッションからユーザーIDを取得
-		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
-		//session.getAttribute("xxx")
-		//idをとる
-		//if (session = "id", user) {
-		// セッションスコープにIDを格納する
-		//HttpSession session = request.getSession();
-		//session.setAttribute(user_id);
-		//session.getAttribute("user_id")
-		// }→書き方分からない★
 
 		String user_id = "";
 
@@ -59,6 +58,16 @@ public class UserpageServlet extends HttpServlet {
 		MasterUserDao dao = new MasterUserDao();
 		MasterUser user = dao.selectOne(user_id);
 		request.setAttribute("m_user", user);
+
+//		// フォロー一覧を検索する
+//		FollowDao  fDao = new FollowDao();
+//		List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
+//
+//		// 検索結果をリクエストスコープに格納する
+//		request.setAttribute("followList", followList);
+//
+
+
 
 		// ユーザーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
@@ -72,10 +81,28 @@ public class UserpageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
-		//フォロー・解除処理
+		//フォロー・解除処理を行う→いらない？
 
 
-		//スタンプ反応・リプライ送信処理
+//		// リアクション編集または削除を行う→スタンプはクリックで切り替わるだけだからいらない？
+//
+//		// 新規リプライ送信を行う
+//		ReplyDAO pDao = new pDAO();
+//		if (pDao.insert(new Reply(reply_id, review_id, user_id,
+//			reply_contents, reply_date))) {	// 登録成功
+//			request.setAttribute("result",
+//			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
+//		}
+//		else {	// 登録失敗
+//			request.setAttribute("result",
+//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
+//		}
+//
+//		// 結果ページにフォワードする
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+//		dispatcher.forward(request, response);
+//
+//
 
 	}
 

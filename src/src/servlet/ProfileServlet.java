@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MasterUserDao;
 import model.MasterUser;
@@ -32,26 +33,24 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//HttpSession session = request.getSession();
-		//if (session.getAttribute("id") == null) {
-		//	response.sendRedirect("/FLIFRE/LoginServlet");
-		//return;
-		//}
-		//LoginUser user = (LoginUser)session.getAttribute("id");
-		//→書き方分からない★
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/FLIFRE/LoginServlet");
+		return;
+		}
 
+//		//★セッションからユーザーIDを取得 →書き方分からない
+//		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+//		//session.getAttribute("xxx")
+//		//idをとる
+//		if (session = "id", user) {
+//		// セッションスコープにIDを格納する
+//		HttpSession session = request.getSession();
+//		session.setAttribute(user_id);
+//		session.getAttribute("user_id")
+//		}
 
-		//★セッションからユーザーIDを取得
-		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
-		//session.getAttribute("xxx")
-		//idをとる
-		//if (session = "id", user) {
-		// セッションスコープにIDを格納する
-		//HttpSession session = request.getSession();
-		//session.setAttribute(user_id);
-		//session.getAttribute("user_id")
-		// }→書き方分からない★
 
 		String user_id = "";
 
