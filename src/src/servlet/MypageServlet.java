@@ -75,6 +75,7 @@ public class MypageServlet extends HttpServlet {
 //
 //			//★リクエストパラメータを取得する
 //			//マイレビュー投稿一覧関連
+//			request.setCharacterEncoding("UTF-8");
 //			String review_id = request.getParameter("review_id");
 //			String user_id = request.getParameter("user_id");
 //			String video_id = request.getParameter("video_id");
