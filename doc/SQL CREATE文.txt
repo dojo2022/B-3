@@ -52,7 +52,7 @@ CREATE TABLE t_review (
 	feelcat_name1 VARCHAR(10) NOT NULL,
 	feelcat_name2 VARCHAR(10),
 	star VARCHAR(1) NOT NULL,
-	review_date DATETIME NOT NULL
+	review_date timestamp DEFAULT CURRENT_TIMESTAMP
 );
 	
 【t_replyテーブルを生成するSQL文】

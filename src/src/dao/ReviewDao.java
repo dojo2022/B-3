@@ -84,7 +84,7 @@ public class ReviewDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 				// SQL文を準備する
-				String sql = "INSERT INTO Review (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "INSERT INTO Review (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) values ( ?, ?, ?, ?, ?, ?, ?, ?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -152,7 +152,7 @@ public class ReviewDao {
 				e.printStackTrace();
 			}
 			catch (ClassNotFoundException e) {
-				e.printStackTrace();
+				e.printStackTrace();//スタックトレースを出力
 			}
 			finally {
 				// データベースを切断
@@ -170,3 +170,5 @@ public class ReviewDao {
 			return result;
 		}
 }
+
+

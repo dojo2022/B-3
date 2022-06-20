@@ -8,7 +8,7 @@
 <title>プロフィール変更 | FLIFRE</title>
 <link rel="stylesheet" href="/FLIFRE/css/common.css">
 <link rel="stylesheet" href="/FLIFRE/css/profile.css">
-<script src="/FLIFRE/js/profile.js"></script>
+<script src="/FLIFRE/js/profile.js"  defer></script>
 </head>
 <body>
 <header>
@@ -56,60 +56,70 @@
 					</ul>
 				</div>
 			</div>
+			<!--ここまでメニュー-->
 	</div>
-	<!--ここまでメニュー-->
 </header>
 
-<!-- メインここから -->
-<main>
-<!-- 画像をフォルダから選んでアップロードできるようにしたい -->
-<!-- レイアウトまだ未定 -->
+	<!-- メインここから -->
+	<main>
+	<!-- 画像をフォルダから選んでアップロードできるようにしたいので、Nyampleを参考にする必要あり -->
 
-<!-- マイプロフィールボックスここから -->
-<div class="myprofileEdit">
-	<p>・アイコン変更</p>
-	<img id="pf_icon" src ="./images/pf_img.png">
-	<!-- <input class="circle" type="" name="" value="" readonly> -->
-	<!-- m_userのuser_img アイコンを引用予定 -->
-	<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-  		<div class="portlate" id="imageframe">
-    		<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
-  		</div>
-	</form>
-<br>
-<hr>
-	<p>・ヘッダー変更</p>
-	<img id="pf_icon" src ="./images/pfEdit_hd.png">
-	<!-- <input class="circle" type="" name="" value="" readonly> -->
-	<!-- m_userのuser_hd ヘッダーを引用予定 -->
-	<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-  		<div class="portlate" id="imageframe">
-    		<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
-  		</div>
-	</form>
-<br>
-<hr>
-	<p>・ユーザー名変更</p>
-	<span id="username">炙りえんがわ　　</span>
-	<!-- <input class="user"type="" name="" value="" readonly> -->
-	<!-- m_userのuser_nameを引用予定 -->
-	<p id="edittext"><input type="text" name="userNameEdit" value="編集"></p>
-<hr>
-	<br>
-	<br>
-	<span id="pf">・プロフィール文変更</span>
-	<br>
-	<br>
-	<span id="pf">アニメと洋画が好きです。</span>
-	<!-- <input class="profile"type="" name="" value="" readonly> -->
-	<!-- m_userのuser_pfを引用予定 -->
-	<p id="edittext"><input type="text" name="profileEdit" value="編集"></p>
-	<br>
-	<br>
-	<p id="confilmButton"><input type="button" name="editConfilm" value="変更内容を確定">
-	<br>
-</div>
-<!-- マイプロフィールボックスここまで -->
+		<!-- プロフィール変更ボックスここから -->
+		<div class="myprofileEdit">
+			<p id="ic_edit_tag">　　アイコン変更　　</p>
+			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+			<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+			</span>
+			<!-- m_userのuser_img 現在使用中のアイコンを引用 -->
+
+			<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+  				<div class="portlate" id="imageframe">
+    			<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
+  				</div>
+			</form>
+			<!-- 画像選択(仮)-->
+		<br>
+		<hr>
+
+			<p id="hd_edit_tag">　　ヘッダー変更　　</p>
+			<span><!-- <img id="pf_icon" src ="./images/pfEdit_hd.png"> -->
+			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
+			</span>
+			<!-- m_userのuser_hd 現在使用中のヘッダーを引用 -->
+
+			<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+  				<div class="portlate" id="imageframe">
+    			<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
+  				</div>
+			</form>
+			<!-- 画像選択(仮) -->
+		<br>
+		<hr>
+
+			<p id="user_edit_tag">　　ユーザー名変更　　</p>
+			<span><!-- 炙りえんがわ  -->
+			<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+			</span>
+			<!-- m_userのuser_name 現在使用中のユーザー名を引用 -->
+
+			<p id="edittext"><input type="text" name="userNameEdit" value="編集"></p>
+		<hr>
+
+			<p id="pf_edit_tag">　　プロフィール文変更　　</p>
+			<span><!-- アニメと洋画が好きです。 -->
+			<input class="profile" type="text" name="user_pf" value="${m_user.user_pf}" readonly>
+			</span>
+			<!-- m_userのuser_pf 現在使用中のプロフィール文を引用 -->
+
+			<p id="edittext"><input type="text" name="profileEdit" value="編集"></p>
+		<br>
+		<br>
+
+		<p id="confilmButton"><input type="button" name="editConfilm" value="変更内容を確定">
+		<!-- 変更内容を確定して反映させるボタン -->
+		<br>
+		</div>
+		<!-- プロフィール変更ボックスここまで -->
 <br>
 <!-- メインここまで -->
 </main>
@@ -117,3 +127,31 @@
 <br>
 </body>
 </html>
+
+<!--プロフィール変更ページ class, id 一覧
+div class="search"
+h1 id="logo" ：FLIFREロゴ
+p class="log" ：ログアウトボタン
+div class="hamburger-menu" ：ハンバーガーメニュー
+label for="menu-btn-check" class="menu-btn" ：ハンバーガーメニューのチェックボタン
+div class="menu-content" ：ハンバーガーメニューのコンテンツ
+
+div class="myprofileEdit"：プロフィール変更ボックス
+p id="ic_edit_tag"：アイコン変更見出し
+input class="circle"：プロフィールのアイコン画像、丸い形にするかは未定
+div class="portlate" id="imageframe"：画像選択(仮)
+
+p id="hd_edit_tag"：ヘッダー変更見出し
+input class="header"：プロフィールのヘッダー画像
+div class="portlate" id="imageframe"：画像選択(仮)
+
+p id="user_edit_tag"：ユーザー名変更見出し
+input class="user"：ユーザー名全般
+p id="edittext"：変更用テキストボックス
+
+p id="pf_edit_tag"：プロフィール文変更見出し
+input class="profile"：プロフィール文
+p id="edittext"：変更用テキストボックス
+
+p id="confilmButton"：変更内容確定ボタン
+-->

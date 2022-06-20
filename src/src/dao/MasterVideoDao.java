@@ -92,4 +92,67 @@ public class MasterVideoDao {
 		// 結果を返す
 		return cardList;
 	}
+
+	public MasterVideo selectOne(String param) {
+		Connection conn = null;
+		MasterVideo cardList = null;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+			// SQL文を準備する
+			String sql = "SELECT video_id, video_name, video_year, video_time, genre_id from m_video WHERE video_id = ? ORDER BY NUMBER";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (param != null) {
+				pStmt.setString(1, param);
+			}
+			else {
+				pStmt.setString(1, null);
+			}
+
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				cardList = new MasterVideo(
+				rs.getString("video_id"),
+				rs.getString("video_name"),
+				rs.getString("video_year"),
+				rs.getString("video_time"),
+				rs.getString("genre_id")
+				);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return cardList;
+	}
 }

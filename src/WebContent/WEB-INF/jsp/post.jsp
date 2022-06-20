@@ -23,69 +23,57 @@
    			<form id="post_form" method="GET" action="/FLIFRE/PostServlet" onsubmit="return post()">
 				<table>
 					<tr>
-		    			<td><input class="circle" type="" name=""  value="${user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
-		   				<td><strong>${user_name}</strong></td>
+		    			<td><input class="circle" type="" name=""  value="${user.user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
+		   				<td><strong>${user.use_name}</strong></td>
 		   				<!-- 			<span>ユーザー名</span>m_userのuser_nameを引用予定 -->
 		   			</tr>
 		   		</table>
 				<div id="btn" class="post-btn"></div>
 	<!--         	<div class="post-contents"> -->
 
-		        <h1>${video_name}</h1><!-- m_videoのvideo_nameを引用 -->
+		    <h1>${video.video_name}</h1><!-- m_videoのvideo_nameを引用 -->
+		    <%
+	    pageContext.setAttribute(
+	        "categories",
+	        new String[] {
+	            "爆笑コメディ", "ポジティブ", "癒される", "スカッとする", "優雅",
+	            "非日常的", "わくわく", "ときめく", "勉強になる", "泣ける", "儚い",
+	            "衝撃的", "ミステリアス", "ダーク", "怖い", "グロテスク",
+	        }
+	    );
+	    %>
 
-		        <h2>${video_time}</h2><!-- m_videoのvideo_timeを引用 -->
-		        <h2>${genre_id}</h2><!-- m_videoのgenre_idを引用 -->
+		    <h2>${vidoe.video_time}</h2><!-- m_videoのvideo_timeを引用 -->
+		    <h2>${video.genre_id}</h2><!-- m_videoのgenre_idを引用 -->
 		    </form>
+
 		    <form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
+			    <input type="hidden" name="video_id" value="${video.video_id}">
+			    <input type="hidden" name="user_id" value="'${video.user_id}">
+			    <input type="hidden" name="genre_id" value="'${video.genre_id}">
 			    <table>
 			        <tr>
 						<td>
 				        	感想カテゴリ１
 				        </td>
 				        <td>
-					        <select name="feelcat_name1" onchange="change(this)">
-					        	<option>選択してください</option>
-					            <option value="1番目">爆笑コメディ</option>
-					            <option value="2番目">ポジティブ</option>
-					            <option value="3番目">癒される</option>
-					            <option value="4番目">スカッとする</option>
-					            <option value="5番目">優雅</option>
-					            <option value="6番目">非日常的</option>
-					            <option value="7番目">わくわく</option>
-					            <option value="8番目">ときめく</option>
-					            <option value="9番目">勉強になる</option>
-					            <option value="10番目">泣ける</option>
-					            <option value="11番目">儚い</option>
-					            <option value="12番目">衝撃的</option>
-					            <option value="13番目">ミステリアス</option>
-					            <option value="14番目">ダークな</option>
-					            <option value="15番目">怖い</option>
-					            <option value="16番目">グロテスク</option>
-					        </select>
+					       <select name="feelcat1" onchange="change(this)">
+				        	<option>選択してください</option>
+				            <core:forEach items="${ categories }" varStatus="status">
+				      			<option value="${ status.current }">${ status.current }</option>
+				            </core:forEach>
+				        </select>
 						</td>
 						<td>
 				         	感想カテゴリ２
 				         </td>
 				         <td>
-				         	<select name="feelcat_name2">
-					            <option>選択してください</option>
-					            <option label="爆笑コメディ"></option>
-					            <option label="ポジティブ"></option>
-					            <option label="癒される"></option>
-					            <option label="スカッとする"></option>
-					            <option label="優雅"></option>
-					            <option label="非日常的"></option>
-					            <option label="わくわく"></option>
-					            <option label="ときめく"></option>
-					            <option label="勉強になる"></option>
-					            <option label="泣ける"></option>
-					            <option label="儚い"></option>
-					            <option label="衝撃的"></option>
-					            <option label="ミステリアス"></option>
-					            <option label="ダークな"></option>
-					            <option label="怖い"></option>
-					            <option label="グロテスク"></option>
-							</select>
+				         	<select name="feelcat2">
+				            <option>選択してください</option>
+				            <core:forEach items="${ categories }" varStatus="status">
+				            	<option value="${ status.current }">${ status.current }</option>
+				            </core:forEach>
+				        </select>
 						</td>
 						<td>
 				        	5段階評価
@@ -93,11 +81,11 @@
 				        <td>
 				        	<select name="star">
 				        		<option>選択してください</option>
-				        		<option>★</option>
-				        		<option>★★</option>
-				        		<option>★★★</option>
-				        		<option>★★★★</option>
-				        		<option>★★★★★</option>
+				        		<option value="1">★</option>
+				        		<option value="2">★★</option>
+				        		<option value="3">★★★</option>
+				        		<option value="4">★★★★</option>
+				        		<option value="5">★★★★★</option>
 				        	</select>
 				        </td>
 				        <td>
@@ -123,6 +111,8 @@
 					    <td>
 					    </td>
 					    <td>
+					    <!-- submitボタンで/FLIFRE/PostServletのpostにデータを渡す -->
+
 					    </td>
 					</tr>
 			    </table>

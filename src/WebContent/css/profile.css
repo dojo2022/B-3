@@ -10,6 +10,7 @@
     width: 1000px;
  }
 
+/* プロフィール変更ページのログアウトロゴ位置 */
 .log {
 	left: 70%;
 }
@@ -23,15 +24,15 @@
 	left:50px;
 	right:50px;
 }
-#username, #reply_username {
+.user {
 	font-weight:bold;
 }
-/*編集ボタンの位置*/
-#pf_edit {
-	padding: 0px 0px 0px 380px;
+
+/*マイページ編集ボタンの位置*/
+.pf_edit {
+	padding: 0px 0px 0px 650px;
 
 }
-
 
 /*マイ・ユーザーページのレビュー投稿等のテーブル、枠線のスタイル*/
 table {
@@ -44,21 +45,15 @@ hr {
 }
 #review_tag, #reply_tag, #stamp_tag, #userreview_tag{
 	margin:0px 50px;
-	background-color: #07964f;
+	background-color: #09b35e;
 	text-align: center;
 }
 #userreview_tag{
-	margin:0px 0px 0px 400px;
+	margin:0px 0px 0px 300px;
 }
 #review_list, #reply_list, #stamp_list, #userreview_list{
 	height: 350px;
 	overflow: auto;
-}
-#review_video, #review_time, #reply_time{
-	background-color: #c6e872;
-}
-#review_genre, #review_feelcat1, #review_feelcat2{
-	border: 1px solid #f8343e;
 }
 
 /*ユーザーページのフォローボタン位置*/
@@ -66,7 +61,7 @@ hr {
 	text-align: right;
 }
 
-/*リプライテーブル(ポップアップ)のスタイル */
+/*リプライポップアップのスタイル */
 .open {
     cursor:pointer;
 }
@@ -111,14 +106,17 @@ hr {
     right: 8px;
     font-size: 20px;
 }
-#image_file {
-	text-align: right;
-}
-
 .window {
 	display: flex;
   flex-direction: column;
 }
+
+/*スタンプ部分のスタイル*/
+#image_file {
+	text-align: right;
+}
+
+/*スタンプとリプライボタンの位置*/
 #image_file,  #reply{
 	display: flex;
   flex-direction: column;
@@ -128,8 +126,13 @@ hr {
  }
 
 
-/*プロフィール変更テーブルのボタン位置*/
-#editbutton, #confilmButton {
+/*プロフィール変更テーブルの位置調整*/
+#confilmButton, #imageframe, #edittext,
+#ic_edit_tag, #hd_edit_tag, #user_edit_tag, #pf_edit_tag {
+	text-align: center;
+}
+
+.circle, .portlate, .header, .user, .profile {
 	text-align: center;
 }
 
