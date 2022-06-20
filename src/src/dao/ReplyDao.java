@@ -12,7 +12,7 @@ import model.Reply;
 
 public class ReplyDao {
 
-	// 引数user_idで検索項目を指定し、検索結果のリストを返す
+	// 引数review_idで検索項目を指定し、検索結果のリストを返す
 		public List<Reply> select(String review_id) {
 			Connection conn = null;
 			List<Reply> Reply = new ArrayList<Reply>();
