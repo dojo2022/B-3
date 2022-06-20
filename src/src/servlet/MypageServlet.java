@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MasterUserDao;
 import model.MasterUser;
@@ -31,12 +32,12 @@ public class MypageServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		/HttpSession session = request.getSession();
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/FLIFRE/LoginServlet");
-//		return;
-//		}
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/FLIFRE/LoginServlet");
+		return;
+		}
 
 //		//★セッションからユーザーIDを取得 →書き方分からない
 //		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
@@ -69,6 +70,7 @@ public class MypageServlet extends HttpServlet {
 		doGet(request, response);
 
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
+//		// Resultページがいるのか？
 //
 //			//★リクエストパラメータを取得する
 //			//マイレビュー投稿一覧関連
@@ -125,7 +127,7 @@ public class MypageServlet extends HttpServlet {
 //			dispatcher.forward(request, response);
 //
 //
-//			// リプライ編集処理を行う
+//			// リプライ編集または削除を行う
 //			ReplyDao pDao = new ReplyDao();
 //			if (request.getParameter("REPLYWEDIT").equals("編集")) {
 //				if (pDao.update(new Reply(reply_id, review_id, user_id,
@@ -153,9 +155,24 @@ public class MypageServlet extends HttpServlet {
 //			dispatcher.forward(request, response);
 //
 //
-//			// リアクション編集処理を行う
+//			// リアクション編集または削除を行う→スタンプはクリックで切り替わるだけだからいらない？
 //
-			//→書き方分からない
+//   		// 新規リプライ送信を行う
+//			ReplyDAO pDao = new pDAO();
+//			if (pDao.insert(new Reply(reply_id, review_id, user_id,
+//				reply_contents, reply_date))) {	// 登録成功
+//				request.setAttribute("result",
+//				new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
+//			}
+//			else {	// 登録失敗
+//				request.setAttribute("result",
+//				new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
+//			}
+//
+//			// 結果ページにフォワードする
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+//			dispatcher.forward(request, response);
+//
+//
 	}
-
 }
