@@ -44,6 +44,13 @@ public class FollowlistServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("followList", followList);
 
+		// フォロワー一覧を検索する
+		FollowDao  fwDao = new FollowDao();
+		List<MasterUser> followerList = fwDao.FollowerUser(user.getUser_id());
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("followerList", followerList);
+
 		// フォロー/フォロワー一覧ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/follow_list.jsp");
 		dispatcher.forward(request, response);
