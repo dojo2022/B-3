@@ -91,22 +91,20 @@ public class FollowDao {
 
 			// SQL文を準備する(pStmtの意味は、コンパイルされた(実行可能な)SQL文)
 			// SQLを使いたいときは必ずpStmtをつけると思っといていい!
-			// 【検索項目】アイコン画像・ユーザー名・プロフィール文
-
 			//フォロー一覧
 			String FollowUser = "SELECT count(id) as counts FROM t_follow  WHERE user_id = ? ";
 
 			PreparedStatement pStmt = conn.prepareStatement(FollowUser);
 
 
-			// SQL文を完成させる　？に入る言葉(paramに入る言葉)をデータベースから取り出す
+			// SQL文を完成させる　？に入る言葉をデータベースから取り出す
 			// 1，2，3は何番目の'？'か
 			pStmt.setString(1, user_id);
 
 			// SQL文を実行し、結果表を取得する(変更なし)
 			ResultSet rs = pStmt.executeQuery();
 
-			// 結果表(rs)をコレクション(followList)にコピーする
+			// 結果表(rs)をコレクションにコピーする
 			rs.next();
 			count = rs.getInt("counts");
 			}
@@ -131,8 +129,8 @@ public class FollowDao {
 		}
 		return count;
 	}
-	//フォローワーの人数を返すメソッドfollowcount
-		public int Followedcount(String user_id) {
+	//フォロワーの人数を返すメソッドfollowercount
+		public int Followercount(String user_id) {
 
 			Connection conn = null;
 			int count=0;
@@ -145,22 +143,20 @@ public class FollowDao {
 
 				// SQL文を準備する(pStmtの意味は、コンパイルされた(実行可能な)SQL文)
 				// SQLを使いたいときは必ずpStmtをつけると思っといていい!
-				// 【検索項目】アイコン画像・ユーザー名・プロフィール文
-
 				//フォロー一覧
 				String FollowUser = "SELECT count(id) as counts FROM t_follow  WHERE follow_id = ? ";
 
 				PreparedStatement pStmt = conn.prepareStatement(FollowUser);
 
 
-				// SQL文を完成させる　？に入る言葉(paramに入る言葉)をデータベースから取り出す
+				// SQL文を完成させる　？に入る言葉をデータベースから取り出す
 				// 1，2，3は何番目の'？'か
 				pStmt.setString(1, user_id);
 
 				// SQL文を実行し、結果表を取得する(変更なし)
 				ResultSet rs = pStmt.executeQuery();
 
-				// 結果表(rs)をコレクション(followList)にコピーする
+				// 結果表(rs)をコレクションにコピーする
 				rs.next();
 				count = rs.getInt("counts");
 				}

@@ -46,31 +46,41 @@ public class MypageServlet extends HttpServlet {
 		return;
 		}
 
-//		//★セッションからユーザーIDを取得 →書き方分からない
-//		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+		//★セッションからユーザーIDを取得
+		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 		LoginUser user = (LoginUser)session.getAttribute("id");
 		String user_id = user.getUser_id();
-
-
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
 		MasterUser userdata = dao.selectOne(user_id);
 		request.setAttribute("m_user", userdata);
 
-//		// フォロー一覧を検索する
+		// フォロー・フォロワーを数える
 		FollowDao  fDao = new FollowDao();
 		int follow_count = fDao.Followcount(user_id);
-		int followed_count = fDao.Followedcount(user_id);
-//		// 検索結果をリクエストスコープに格納する
+		int follower_count = fDao.Followercount(user_id);
+		// 計算結果をリクエストスコープに格納する
 		request.setAttribute("followCount", follow_count);
-		request.setAttribute("followedCount", followed_count);
-//		// 投稿一覧を検索する
+		request.setAttribute("followerCount", follower_count);
+
+		// レビュー一覧を検索する
 		ReviewDao  rDao = new ReviewDao();
 		List<Review> Review = rDao.select(user_id);
-//
-//		// 検索結果をリクエストスコープに格納する
+		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Review", Review);
+
+		// リプライ一覧を検索する
+//		ReplyDao  pDao = new ReplyDao();
+// 		List<Reply> Reply = pDao.select(user_id);
+//		// 検索結果をリクエストスコープに格納する
+//		request.setAttribute("Reply", Reply);
+
+		// リアクション一覧を検索する
+//		ReationDao  aDao = new ReactionDao();
+//		List<Reaction> Reaction = aDao.select(user_id);
+		// 検索結果をリクエストスコープに格納する
+//		request.setAttribute("Reaction", Reaction);
 
 
 		// マイページにフォワードする
@@ -87,7 +97,7 @@ public class MypageServlet extends HttpServlet {
 
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
 //		// Resultページがいるのか？
-//
+
 			//★リクエストパラメータを取得する
 			//マイレビュー投稿一覧関連
 			request.setCharacterEncoding("UTF-8");

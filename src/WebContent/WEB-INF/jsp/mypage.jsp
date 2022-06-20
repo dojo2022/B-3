@@ -19,16 +19,17 @@
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
 
-			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
+			<span>${m_user.user_hd}
 			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
+			</span>
 
 			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-			<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+			${m_user.user_img}
 			</span>
 			<!-- m_userのuser_img アイコンを引用、丸い形にするかは未定 -->
 
 			<span><!-- 炙りえんがわ  -->
-			<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+			${m_user.user_name}
 			</span><!-- m_userのuser_nameを引用 -->
 
 
@@ -36,21 +37,17 @@
 			<a  href="/FLIFRE/ProfileServlet"><img src="./images/pf_edit.png"></a>
 			</span><!-- プロフィール編集ボタン -->
 			<br>
-			<br>
 
 			<span><!-- アニメと洋画が好きです。 -->
-			<input class="profile" type="text" name="user_pf" value="${m_user.user_pf}" readonly>
+			${m_user.user_pf}
 			</span><!-- m_userのuser_pfを引用 -->
 			<br>
 			<br>
 
-			<a id="follow" href="/FLIFRE/FollowlistServlet">フォロー・フォロワー</a>
-			<br>
-			<span>フォロー人数は${followCount}人</span>
-			<span>フォローされている人数は${followedCount}人</span>
-			<input class="follow" type="text" name="user_id" value="${followCount}" readonly>
-			<input class="follow" type="text" name="follow_id" value="${followedCount}" readonly>
-			<!-- t_followのuser_id,follow_idを引用 -->
+			<a id="follow" href="/FLIFRE/FollowlistServlet">
+			<span>フォロー　${followCount}</span>
+			<span>フォロワー　${followerCount}</span>
+			</a>
 		</div>
 		<!-- マイプロフィールボックスここまで -->
 		<br>
@@ -61,7 +58,6 @@
 		<c:forEach var="e" items="${Review}" >
 			<p>${e.review_id}</p>
 		</c:forEach>
-
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
 				<tr>
