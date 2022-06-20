@@ -152,7 +152,7 @@ public class ReviewDao {
 				e.printStackTrace();
 			}
 			catch (ClassNotFoundException e) {
-				e.printStackTrace();
+				e.printStackTrace();//スタックトレースを出力
 			}
 			finally {
 				// データベースを切断
@@ -170,3 +170,5 @@ public class ReviewDao {
 			return result;
 		}
 }
+
+
