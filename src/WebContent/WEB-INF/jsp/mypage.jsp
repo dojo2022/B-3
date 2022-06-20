@@ -56,7 +56,9 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
-		<!-- <c:forEach var="p" items="${postList}" > -->
+		<!-- <c:forEach var="e" items="${Review}" > -->
+		<!-- <c:forEach var="e" items="${}" > -->
+		<!-- <c:forEach var="e" items="${}" > -->
 
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
@@ -240,6 +242,8 @@
 				</tr>
 			</table>
 		</form>
+		<!-- </c:forEach> -->
+		<!-- </c:forEach> -->
 		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 </main>

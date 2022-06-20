@@ -57,7 +57,7 @@
 	<br>
 
 	<!-- ユーザーレビュー投稿一覧ここから -->
-	<!-- <!-- <c:forEach var="p" items="${postList}" > --> -->
+	<!-- <c:forEach var="p" items="${postList}" > -->
 	<form id = "userreview" method="POST" action="/FLIFRE/UserpageServlet">
 		<table>
 			<tr>

@@ -52,6 +52,11 @@ public class MypageServlet extends HttpServlet {
 //		HttpSession session = request.getSession();
 //		session.setAttribute(user_id);
 //		session.getAttribute("user_id")
+
+//		// ユーザーを検索する?
+//		MasterUserDao  Dao = new Dao(MasterUser);
+//		LoginUser MasterUser = Dao.isLoginOK(user.getId());
+//		request.setAttribute("user", user);
 //		}
 
 		String user_id = "";
@@ -62,19 +67,24 @@ public class MypageServlet extends HttpServlet {
 		request.setAttribute("m_user", user);
 
 //		// フォロー一覧を検索する
-//				FollowDao  fDao = new FollowDao();
-//				List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
+//		FollowDao  fDao = new FollowDao();
+//		List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
 //
-//				// 検索結果をリクエストスコープに格納する
-//				request.setAttribute("followList", followList);
+//		// 検索結果をリクエストスコープに格納する
+//		request.setAttribute("followList", followList);
 //
-
+//		// 投稿一覧を検索する
+//		ReviewDao  rDao = new ReviewDao();
+//		List<Review> Review = rDao.Review(user.getReview_id());
+//
+//		// 検索結果をリクエストスコープに格納する
+//		request.setAttribute("Review", Review);
 
 
 		// マイページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
-				dispatcher.forward(request, response);
-				return;
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+		dispatcher.forward(request, response);
+		return;
 	}
 
 	/**
