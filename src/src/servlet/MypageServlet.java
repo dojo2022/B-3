@@ -71,10 +71,10 @@ public class MypageServlet extends HttpServlet {
 		request.setAttribute("Review", Review);
 
 		// リプライ一覧を検索する
-//		ReplyDao  pDao = new ReplyDao();
-// 		List<Reply> Reply = pDao.select(user_id);
-//		// 検索結果をリクエストスコープに格納する
-//		request.setAttribute("Reply", Reply);
+		ReplyDao  pDao = new ReplyDao();
+ 		List<Reply> Reply = pDao.select(user_id);
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("Reply", Reply);
 
 		// リアクション一覧を検索する
 //		ReationDao  aDao = new ReactionDao();
