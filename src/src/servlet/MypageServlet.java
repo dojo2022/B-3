@@ -30,18 +30,27 @@ public class MypageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//セッションからユーザーIDを取得
 
+		// ★もしもログインしていなかったらログインサーブレットにリダイレクトする
+		//HttpSession session = request.getSession();
+		//if (session.getAttribute("id") == null) {
+		//	response.sendRedirect("/FLIFRE/LoginServlet");
+		//return;
+		//}
+		//LoginUser user = (LoginUser)session.getAttribute("id");
+		//→書き方分からない★
+
+
+		//★セッションからユーザーIDを取得
 		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 		//session.getAttribute("xxx")
-		//idをとる →書き方分からない
-
+		//idをとる
 		//if (session = "id", user) {
 		// セッションスコープにIDを格納する
 		//HttpSession session = request.getSession();
 		//session.setAttribute(user_id);
 		//session.getAttribute("user_id")
-		// }
+		// }→書き方分からない★
 
 		String user_id = "";
 
@@ -61,31 +70,33 @@ public class MypageServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+
+		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
 //
-//				//リクエストパラメータを取得する
-//				//マイレビュー投稿一覧関連
-//				String review_id = request.getParameter("review_id");
-//				String user_id = request.getParameter("user_id");
-//				String video_id = request.getParameter("video_id");
-//				String review_contents = request.getParameter("review_contents");
-//				String genre_id = request.getParameter("genre_id");
-//				String feelcat_name1 = request.getParameter("feelcat_name1");
-//				String feelcat_name2 = request.getParameter("feelcat_name2");
-//				String star = request.getParameter("star");
-//				String review_date = request.getParameter("review_date");
+//			//★リクエストパラメータを取得する
+//			//マイレビュー投稿一覧関連
+//			String review_id = request.getParameter("review_id");
+//			String user_id = request.getParameter("user_id");
+//			String video_id = request.getParameter("video_id");
+//			String review_contents = request.getParameter("review_contents");
+//			String genre_id = request.getParameter("genre_id");
+//			String feelcat_name1 = request.getParameter("feelcat_name1");
+//			String feelcat_name2 = request.getParameter("feelcat_name2");
+//			String star = request.getParameter("star");
+//			String review_date = request.getParameter("review_date");
 //
-//				//リプライ一覧関連
-//				String reply_id = request.getParameter("reply_id");
-//				String review_id = request.getParameter("review_id");
-//				String user_id = request.getParameter("user_id");
-//				String reply_contents = request.getParameter("reply_contents");
-//				String reply_date = request.getParameter("reply_date");
+//			//リプライ一覧関連
+//			String reply_id = request.getParameter("reply_id");
+//			String review_id = request.getParameter("review_id");
+//			String user_id = request.getParameter("user_id");
+//			String reply_contents = request.getParameter("reply_contents");
+//			String reply_date = request.getParameter("reply_date");
 //
-//				//スタンプを送ったレビュー一覧関連
-//				String reaction_id = request.getParameter("reaction_id");
-//				String review_id = request.getParameter("review_id");
-//				String user_id = request.getParameter("user_id");
-//				String stamp_id = request.getParameter("stamp_id");
+//			//スタンプを送ったレビュー一覧関連
+//			String reaction_id = request.getParameter("reaction_id");
+//			String review_id = request.getParameter("review_id");
+//			String user_id = request.getParameter("user_id");
+//			String stamp_id = request.getParameter("stamp_id");
 //
 //
 //			// レビュー編集処理を行う
@@ -101,7 +112,7 @@ public class MypageServlet extends HttpServlet {
 //				"fail");
 //			}
 //			// 結果ページにフォワードする
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
 //			dispatcher.forward(request, response);
 //
 //
@@ -137,6 +148,7 @@ public class MypageServlet extends HttpServlet {
 //			// 結果ページにフォワードする
 //			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 //			dispatcher.forward(request, response);
+			//→書き方分からない★
 	}
 
 }
