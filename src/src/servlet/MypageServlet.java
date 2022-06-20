@@ -13,10 +13,12 @@ import javax.servlet.http.HttpSession;
 
 import dao.FollowDao;
 import dao.MasterUserDao;
+import dao.ReactionDao;
 import dao.ReplyDao;
 import dao.ReviewDao;
 import model.LoginUser;
 import model.MasterUser;
+import model.Reaction;
 import model.Reply;
 import model.Review;
 
@@ -77,10 +79,10 @@ public class MypageServlet extends HttpServlet {
 		request.setAttribute("Reply", Reply);
 
 		// リアクション一覧を検索する
-//		ReationDao  aDao = new ReactionDao();
-//		List<Reaction> Reaction = aDao.select(user_id);
+		ReactionDao  aDao = new ReactionDao();
+		List<Reaction> Reaction = aDao.select(user_id);
 		// 検索結果をリクエストスコープに格納する
-//		request.setAttribute("Reaction", Reaction);
+		request.setAttribute("Reaction", Reaction);
 
 
 		// マイページにフォワードする
@@ -96,7 +98,7 @@ public class MypageServlet extends HttpServlet {
 		doGet(request, response);
 
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
-//		// Resultページがいるのか？
+//		// Resultのモデルとページがいるのか？
 
 			//★リクエストパラメータを取得する
 			//マイレビュー投稿一覧関連
@@ -113,18 +115,18 @@ public class MypageServlet extends HttpServlet {
 
 			//リプライ一覧関連
 			String reply_id = request.getParameter("reply_id");
-			String review_id = request.getParameter("review_id");
-			String user_id = request.getParameter("user_id");
+			//String review_id = request.getParameter("review_id");
+			//String user_id = request.getParameter("user_id");
 			String reply_contents = request.getParameter("reply_contents");
 			String reply_date = request.getParameter("reply_date");
 
-//			//スタンプを送ったレビュー一覧関連
-//			String reaction_id = request.getParameter("reaction_id");
-//			String review_id = request.getParameter("review_id");
-//			String user_id = request.getParameter("user_id");
-//			String stamp_id = request.getParameter("stamp_id");
-//
-//
+			//スタンプを送ったレビュー一覧関連
+			String reaction_id = request.getParameter("reaction_id");
+			//String review_id = request.getParameter("review_id");
+			//String user_id = request.getParameter("user_id");
+			String stamp_id = request.getParameter("stamp_id");
+
+
 			// レビュー編集または削除を行う
 			ReviewDao rDao = new ReviewDao();
   		if (request.getParameter("REVIEWEDIT").equals("編集")) {
@@ -181,7 +183,31 @@ public class MypageServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 
 
-			// リアクション編集または削除を行う→スタンプはクリックで切り替わるだけだからいらない？
+			// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
+			if (request.getParameter("STAMP").equals("")) {
+				if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
+					request.setAttribute("result",
+					new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
+				}
+				else {
+					request.setAttribute("result",
+					new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
+				}
+			}
+			else {
+				if (aDao.delete(reaction_id)) {	// 削除成功
+					request.setAttribute("result",
+					new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
+				}
+				else {						// 削除失敗
+					request.setAttribute("result",
+					new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
+				}
+			}
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher.forward(request, response);
+
 
 			// 新規リプライ送信を行う
 			ReplyDAO pDao = new pDAO();

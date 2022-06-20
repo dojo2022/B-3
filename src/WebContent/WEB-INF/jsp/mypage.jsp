@@ -58,6 +58,15 @@
 		<c:forEach var="e" items="${Review}" >
 			<p>${e.review_id}</p>
 		</c:forEach>
+
+		<c:forEach var="e" items="${Reply}" >
+			<p>${e.reply_id}</p>
+		</c:forEach>
+
+		<c:forEach var="e" items="${Reaction}" >
+			<p>${e.reaction_id}</p>
+		</c:forEach>
+
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
 				<tr>
@@ -202,7 +211,7 @@
 							<br>
 
 							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
-							<input class="stamp" type="image" name="stamp_id" value="${t_reaction.stamp_id}" readonly>
+							<input class="stamp" type="image" name="STAMP" value="${t_reaction.stamp_id}" readonly>
 							<!-- スタンプの画像をクリックすると画像が変化 -->
 							<!-- m_stampのstamp_id, stamp_name -->
 							<br>
