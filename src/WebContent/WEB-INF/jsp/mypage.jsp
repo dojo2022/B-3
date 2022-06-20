@@ -56,7 +56,7 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
-		<!-- おそらくc:for eachを使わないといけない部分 -->
+		<!-- <c:forEach var="p" items="${postList}" > -->
 
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
@@ -240,7 +240,7 @@
 				</tr>
 			</table>
 		</form>
-		<!-- おそらくc:for eachを使わないといけない部分 -->
+		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 </main>
 <!-- メインここまで -->

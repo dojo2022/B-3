@@ -59,6 +59,16 @@ public class UserpageServlet extends HttpServlet {
 		MasterUser user = dao.selectOne(user_id);
 		request.setAttribute("m_user", user);
 
+//		// フォロー一覧を検索する
+//		FollowDao  fDao = new FollowDao();
+//		List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
+//
+//		// 検索結果をリクエストスコープに格納する
+//		request.setAttribute("followList", followList);
+//
+
+
+
 		// ユーザーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
 		dispatcher.forward(request, response);
@@ -71,7 +81,7 @@ public class UserpageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
-		//フォロー・解除処理
+		//フォロー・解除処理を行う→いらない？
 
 
 //		// リアクション編集または削除を行う→スタンプはクリックで切り替わるだけだからいらない？

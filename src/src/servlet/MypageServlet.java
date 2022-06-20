@@ -61,6 +61,16 @@ public class MypageServlet extends HttpServlet {
 		MasterUser user = dao.selectOne(user_id);
 		request.setAttribute("m_user", user);
 
+//		// フォロー一覧を検索する
+//				FollowDao  fDao = new FollowDao();
+//				List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
+//
+//				// 検索結果をリクエストスコープに格納する
+//				request.setAttribute("followList", followList);
+//
+
+
+
 		// マイページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 				dispatcher.forward(request, response);
