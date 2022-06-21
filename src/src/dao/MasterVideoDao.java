@@ -155,4 +155,46 @@ public class MasterVideoDao {
 		// 結果を返す
 		return cardList;
 	}
+
+	public List<MasterVideo> selectFromReview(MasterVideo params, String feelcat1, String feelcat2) {
+		return select(params);
+		// Connection conn = null;
+		// List<MasterVideo> videoList = new ArrayList<MasterVideo>();
+
+		// try {
+		// 	// JDBCドライバを読み込む
+		// 	Class.forName("org.h2.Driver");
+
+		// 	// データベースに接続する
+		// 	conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+		// 	// SQL文を準備する
+		// 	String sql = " SELECT *"
+		// 			   + " FROM t_review"
+		// 			   ;
+		// 	PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		// }
+		// catch (SQLException e) {
+		// 	e.printStackTrace();
+		// 	videoList = null;
+		// }
+		// catch (ClassNotFoundException e) {
+		// 	e.printStackTrace();
+		// 	videoList = null;
+		// }
+		// finally {
+		// 	// データベースを切断
+		// 	if (conn != null) {
+		// 		try {
+		// 			conn.close();
+		// 		}
+		// 		catch (SQLException e) {
+		// 			e.printStackTrace();
+		// 			videoList = null;
+		// 		}
+		// 	}
+		// }
+		// return null;
+	}
 }
