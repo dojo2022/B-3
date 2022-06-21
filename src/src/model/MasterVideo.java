@@ -4,12 +4,12 @@ import java.io.Serializable;
 public class MasterVideo implements Serializable{
 	private String video_id;	    // 作品ID
 	private String video_name;		// 作品名
-	private String video_year;      // 年
-	private String video_time;  	// 再生時間
+	private Int video_year;      // 年
+	private Int video_time;  	// 再生時間
 	private String genre_id;		// ジャンルID
 
 	// 引数があるコンストラクタ
-	public MasterVideo(String video_id, String video_name, String video_year, String video_time, String genre_id) {
+	public MasterVideo(String video_id, String video_name, Int video_year, Int video_time, String genre_id) {
 		super();
 		this.video_id = video_id;
 		this.video_name = video_name;
@@ -45,19 +45,19 @@ public class MasterVideo implements Serializable{
 		this.video_name = video_name;
 	}
 
-	public String getVideo_year() {
+	public Int getVideo_year() {
 		return video_year;
 	}
 
-	public void setVideo_year(String video_year) {
+	public void setVideo_year(Int video_year) {
 		this.video_year = video_year;
 	}
 
-	public String getVideo_time() {
+	public Int getVideo_time() {
 		return video_time;
 	}
 
-	public void setVideo_time(String video_time) {
+	public void setVideo_time(Int video_time) {
 		this.video_time = video_time;
 	}
 

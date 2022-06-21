@@ -145,7 +145,7 @@ public class ReviewDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 				// SQL文を準備する
-				String sql = "INSERT INTO Review (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "INSERT INTO Review (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) values (?, ?, ?, ?, ?, ?, ?, ?)";
 				//Date型はどうすればいい？
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -199,12 +199,7 @@ public class ReviewDao {
 				else {
 					pStmt.setString(8, "");
 				}
-				if (card.getReview_date() != null && !card.getReview_date().equals("")) {
-					pStmt.setString(9, card.getReview_date());
-				}
-				else {
-					pStmt.setString(9, "");
-				}
+
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {

@@ -17,8 +17,6 @@ function regist() {
 	}
 
 	document.getElementById('error_message').textContent = '';
-
-	window.alert(res.getAttribute("result"));
 };
 
 

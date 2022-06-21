@@ -35,16 +35,16 @@ public class MasterVideoDao {
 				pStmt.setString(1, "%");
 			}
 			if (param.getVideo_year() != null) {
-				pStmt.setString(2, "%" + param.getVideo_year() + "%");
+				pStmt.setInt(2, param.getVideo_year());
 			}
 			else {
-				pStmt.setString(2, "%");
+				pStmt.setInt(2, "%");
 			}
 			if (param.getVideo_time() != null) {
-				pStmt.setString(3, "%" + param.getVideo_time() + "%");
+				pStmt.setInt(3, "%" + param.getVideo_time() + "%");
 			}
 			else {
-				pStmt.setString(3, "%");
+				pStmt.setInt(3, "%");
 			}
 			if (param.getGenre_id() != null) {
 				pStmt.setString(4, "%" + param.getGenre_id() + "%");

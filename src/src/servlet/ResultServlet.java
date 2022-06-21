@@ -47,7 +47,7 @@ public class ResultServlet extends HttpServlet {
 
 		// 検索処理を行う
 		MasterVideoDao mvDao = new MasterVideoDao();
-		List<MasterVideo> MasterVideoList = mvDao.select(new MasterVideo( "", "", "", "", ""));
+		List<MasterVideo> cardList = mvDao.select(new MasterVideo( "", "", "", "", ""));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);

@@ -71,7 +71,9 @@
       }
       //resultという名前のスコープの中身を取り出す
       //中身がsuccessだったら成功しましたのアラート表示
-
+      if(document.getAttribute("result") != null){
+		window.alert(document.getAttribute("result"));
+      }
 </script>
 
 </body>
