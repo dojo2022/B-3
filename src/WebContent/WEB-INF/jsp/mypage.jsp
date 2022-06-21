@@ -18,53 +18,24 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
-<<<<<<< HEAD
-
-			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
-			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
-
-			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-			<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
-=======
-
 			<span>${m_user.user_hd}
 			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
 			</span>
 
 			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 			${m_user.user_img}
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			</span>
 			<!-- m_userのuser_img アイコンを引用、丸い形にするかは未定 -->
 
 			<span><!-- 炙りえんがわ  -->
-<<<<<<< HEAD
-			<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
-=======
 			${m_user.user_name}
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			</span><!-- m_userのuser_nameを引用 -->
 
 
 			<span class ="pf_edit">
 			<a  href="/FLIFRE/ProfileServlet"><img src="./images/pf_edit.png"></a>
 			</span><!-- プロフィール編集ボタン -->
-<<<<<<< HEAD
 			<br>
-			<br>
-
-			<span><!-- アニメと洋画が好きです。 -->
-			<input class="profile" type="text" name="user_pf" value="${m_user.user_pf}" readonly>
-			</span><!-- m_userのuser_pfを引用 -->
-			<br>
-			<br>
-
-			<a id="follow" href="/FLIFRE/FollowlistServlet">フォロー・フォロワー</a>
-			<br>
-			<input class="follow" type="text" name="user_id" value="${t_follow.user_id}" readonly>
-			<input class="follow" type="text" name="follow_id" value="${t_follow.follow_id}" readonly>
-			<!-- t_followのuser_id,follow_idを引用 -->
-=======
 			<br>
 
 			<span><!-- アニメと洋画が好きです。 -->
@@ -77,7 +48,6 @@
 			<span>フォロー　${followCount}</span>
 			<span>フォロワー　${followerCount}</span>
 			</a>
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 		</div>
 		<!-- マイプロフィールボックスここまで -->
 		<br>
@@ -85,9 +55,6 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
-<<<<<<< HEAD
-		<!-- <c:forEach var="p" items="${postList}" > -->
-=======
 		<c:forEach var="e" items="${Review}" >
 			<p>${e.review_id}</p>
 		</c:forEach>
@@ -99,7 +66,6 @@
 		<c:forEach var="e" items="${Reaction}" >
 			<p>${e.reaction_id}</p>
 		</c:forEach>
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
@@ -283,7 +249,6 @@
 				</tr>
 			</table>
 		</form>
-		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 </main>
 <!-- メインここまで -->
@@ -291,48 +256,3 @@
 <br>
 </body>
 </html>
-
-<!--マイページ class, id, label 一覧
-
-div class="myprofile" ：マイプロフィールボックス
-input class="header" ：プロフィールのヘッダー画像
-input class="circle" ：プロフィールのアイコン画像、丸い形にするかは未定
-input class="user" ：ユーザー名全般
-span class ="pf_edit" ：マイプロフィール編集ボタン
-input class="profile" ：プロフィール文
-a id="follow" ：フォロー・フォロワー一覧へのリンク
-input class="follow" ：フォロー数(t_followのuser_id)とフォロワー数(t_followのfollow_id)
-
-
-form id = "mylist_edit" ：マイレビュー投稿・リプライ・スタンプ履歴一覧フォーム(テーブル)
-span id="review_tag" ：レビュー投稿見出し
-span id= "reply_tag" ：リプライ見出し
-span id= "stamp_tag" ：スタンプを送ったレビュー見出し
-
-div id= "review_list" ：レビュー投稿一覧
-input class="video" ：レビュー作品名
-input class="star" ：レビュー五段階評価
-input class="time" ：レビュー・リプライ時間(日付)
-input class="genre" ：レビュージャンル
-input class="feelcat1" ：レビュー感想カテゴリ1
-input class="feelcat2" ：レビュー感想カテゴリ2
-input class="review" ：レビュー本文
-
-div id= "reply_list" ：リプライ一覧
-input class="reply" ：リプライ本文
-
-input class="delete" ：削除ボタン
-input class="edit" ：編集ボタン
-
-div id= "stamp_list" ：スタンプを送ったレビュー一覧
-img id="image_file" ：変化前のスタンプ
-input class="stamp" ：リアクションをしたスタンプ(t_reactionのstamp_id)
-label class="open" ：リプライエリア
-div class="overlay" ：リプライエリアのオーバーレイ
-div class="window" ：リプライエリアのウィンドウ
-label class="close" ：リプライエリアを閉じる
-div class="example" ：リプライエリアの要素
-label for="namelabel" ：リプライのユーザー名ラベル
-label for="ikenlabel" ：リプライの入力欄ラベル
-textarea id="iken" ：リプライ入力欄
- -->
