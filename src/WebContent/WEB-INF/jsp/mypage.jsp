@@ -72,19 +72,20 @@
 						<!--t_reviewを呼び出したい -->
 						<hr>
 						<br>
-						<c:forEach var="e" items="${Review}" >
+						<c:forEach var="e" items="${Reviewdata}" >
 							<span><!-- アイコン -->
-							${e.user_id.user_img}
+							${e.user_img}
 							</span><!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
 
 							<span><!-- ユーザー名  -->
-							${e.user_id.user_name}
+							${e.user_name}<br>
 							</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
+						</c:forEach>
 						<br>
 						<br>
 
 							<span><!-- 作品名 -->
-							${e.video_id.video_name}
+							${e.video_name}
 							</span><!-- t_reviewのvideo_idを引用 -->
 
 							<span><!-- 5段階評価  -->
@@ -119,7 +120,6 @@
 						<br>
 						<hr>
 						<br>
-						</c:forEach>
 						</div>
 
 						<div id="reply_list">

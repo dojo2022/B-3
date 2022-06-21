@@ -23,6 +23,7 @@ import model.MasterUser;
 import model.Reaction;
 import model.Reply;
 import model.Review;
+import model.Reviewdata;
 
 /**
  * Servlet implementation class MypageServlet
@@ -72,9 +73,9 @@ public class MypageServlet extends HttpServlet {
 
 		// レビュー一覧を検索する
 		ReviewDao  rDao = new ReviewDao();
-		List<Review> Review = rDao.select(user_id);
+		List<Reviewdata> Reviewdata = rDao.selectReview(user_id);
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("Review", Review);
+		request.setAttribute("Reviewdata", Reviewdata);
 
 		// リプライ一覧を検索する
 		ReplyDao  pDao = new ReplyDao();
