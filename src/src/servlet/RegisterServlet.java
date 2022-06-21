@@ -40,5 +40,9 @@ public class RegisterServlet extends HttpServlet {
 
 	// 登録処理を行う
 	RegisterDao rgDao = new RegisterDao();
+
+	//ログインページにリダイレクトする
+	response.sendRedirect("/FLIFRE/LoginServlet");
 	}
+
 }

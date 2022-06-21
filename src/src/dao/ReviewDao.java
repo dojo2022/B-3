@@ -27,7 +27,7 @@ public class ReviewDao {
 			String sql = "SELECT review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date FROM t_review where user_id = ? ";
 			//Date型はどうすればいい？
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(0, user_id);
+			pStmt.setString(1, user_id);
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
@@ -42,7 +42,7 @@ public class ReviewDao {
 				rs.getString("feelcat_name1"),
 				rs.getString("feelcat_name2"),
 				rs.getString("star"),
-				rs.getDate("review_date")
+				rs.getString("review_date")
 				);
 				Review.add(card);
 			}
@@ -102,7 +102,7 @@ public class ReviewDao {
 					rs.getString("feelcat_name1"),
 					rs.getString("feelcat_name2"),
 					rs.getString("star"),
-					rs.getDate("review_date")
+					rs.getString("review_date")
 					);
 					Review.add(card);
 				}
@@ -200,7 +200,7 @@ public class ReviewDao {
 					pStmt.setString(8, "");
 				}
 				if (card.getReview_date() != null && !card.getReview_date().equals("")) {
-					pStmt.setDate(9, card.getReview_date());
+					pStmt.setString(9, card.getReview_date());
 				}
 				else {
 					pStmt.setString(9, "");
@@ -232,6 +232,141 @@ public class ReviewDao {
 			// 結果を返す
 			return result;
 		}
-}
 
 
+			// 引数reviewで指定されたレビューを更新し、成功したらtrueを返す
+			public boolean update(Review review) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+					String sql = "UPDATE Review SET (review_contents=?, genre_id=?, feelcat_name1=?, feelcat_name2=?, star=?, review_date=?) where review_id=?";
+
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (review.getReview_contents() != null && !review.getReview_contents().equals("")) {
+						pStmt.setString(1, review.getReview_contents());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+
+					if (review.getGenre_id() != null && !review.getGenre_id().equals("")) {
+						pStmt.setString(2, review.getGenre_id());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+					if (review.getFeelcat_name1() != null && !review.getFeelcat_name1().equals("")) {
+						pStmt.setString(3, review.getFeelcat_name1());
+					}
+					else {
+						pStmt.setString(3, null);
+					}
+
+					if (review.getFeelcat_name2() != null && !review.getFeelcat_name2().equals("")) {
+						pStmt.setString(4, review.getFeelcat_name2());
+					}
+					else {
+						pStmt.setString(4, null);
+					}
+
+					if (review.getStar() != null && !review.getStar().equals("")) {
+						pStmt.setString(5, review.getStar());
+					}
+					else {
+						pStmt.setString(5, null);
+					}
+
+					if (review.getReview_date() != null && !review.getReview_date().equals("")) {
+						pStmt.setString(6, review.getReview_date());
+					}
+					else {
+						pStmt.setString(6, null);
+					}
+
+					pStmt.setString(7, review.getReview_id());
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+
+			// 引数review_idで指定されたレビューを削除し、成功したらtrueを返す
+			public boolean delete(String review_id) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+					String sql = "DELETE FROM Review where review_id=?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					pStmt.setString(1, review_id);
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+		}

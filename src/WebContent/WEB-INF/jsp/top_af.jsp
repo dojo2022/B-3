@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,6 @@
 <%@ include file="header.jsp" %>
 <h2>レビュー投稿を表示します</h2>
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
-<  c:forEach var="e" items="${ReviewRanking}" >
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
 <div class="border1">
  <table class="table">
@@ -28,8 +28,10 @@
     <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
-    <td><input class="review"type="" name="" value="" readonly></td>
+    <td><input class="review"type="text" name="review_contents" value="${e.review_contents}" readonly></td>
     <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
+    </tr>
+ </table>
      <input type="checkbox" id="popup">
      <div class="overlay">
     <div class="window">
@@ -49,8 +51,7 @@
         </from>
     </div>
 </div>
-</tr>
- </table>
+
   <div class="border-bottom"></div>
 </div>
 <!-- レビュー星表示 -->

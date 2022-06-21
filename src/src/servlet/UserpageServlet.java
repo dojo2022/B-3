@@ -11,10 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-<<<<<<< HEAD
-import dao.MasterUserDao;
-import model.MasterUser;
-=======
 import dao.FollowDao;
 import dao.MasterUserDao;
 import dao.ReviewDao;
@@ -23,7 +19,6 @@ import model.MasterUser;
 import model.Reaction;
 import model.Reply;
 import model.Review;
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 /**
  * Servlet implementation class UserpageServlet
@@ -52,36 +47,6 @@ public class UserpageServlet extends HttpServlet {
 		return;
 		}
 
-<<<<<<< HEAD
-//		//★セッションからユーザーIDを取得 →書き方分からない
-//		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
-//		//session.getAttribute("xxx")
-//		//idをとる
-//		if (session = "id", user) {
-//		// セッションスコープにIDを格納する
-//		HttpSession session = request.getSession();
-//		session.setAttribute(user_id);
-//		session.getAttribute("user_id")
-//		}
-
-
-		String user_id = "";
-
-		//データベースから名前を取得
-		MasterUserDao dao = new MasterUserDao();
-		MasterUser user = dao.selectOne(user_id);
-		request.setAttribute("m_user", user);
-
-//		// フォロー一覧を検索する
-//		FollowDao  fDao = new FollowDao();
-//		List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
-//
-//		// 検索結果をリクエストスコープに格納する
-//		request.setAttribute("followList", followList);
-//
-
-
-=======
 		//★セッションからユーザーIDを取得
 		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 		LoginUser user = (LoginUser)session.getAttribute("id");
@@ -105,7 +70,7 @@ public class UserpageServlet extends HttpServlet {
 		List<Review> Review = rDao.select(user_id);
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Review", Review);
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
+
 
 		// ユーザーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
@@ -119,52 +84,29 @@ public class UserpageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
-<<<<<<< HEAD
-		//フォロー・解除処理を行う→いらない？
 
-
-//		// リアクション編集または削除を行う→スタンプはクリックで切り替わるだけだからいらない？
-//
-//		// 新規リプライ送信を行う
-//		ReplyDAO pDao = new pDAO();
-//		if (pDao.insert(new Reply(reply_id, review_id, user_id,
-//			reply_contents, reply_date))) {	// 登録成功
-//			request.setAttribute("result",
-//			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
-//		}
-//		else {	// 登録失敗
-//			request.setAttribute("result",
-//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
-//		}
-//
-//		// 結果ページにフォワードする
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-//		dispatcher.forward(request, response);
-//
-//
-=======
 		//フォロー・解除処理を行う→どのように表現すればいい？
 
 
 		// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
 		if (request.getParameter("STAMP").equals("")) {
 			if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
-				request.setAttribute("result",
-				new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
+				request.setAttribute("result","success");
+//				new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
 			}
 			else {
-				request.setAttribute("result",
-				new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
+				request.setAttribute("result","fail");
+//				new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
 			}
 		}
 		else {
 			if (aDao.delete(reaction_id)) {	// 削除成功
-				request.setAttribute("result",
-				new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
+				request.setAttribute("result","success");
+//				new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
 			}
 			else {						// 削除失敗
-				request.setAttribute("result",
-				new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
+				request.setAttribute("result","fail");
+//				new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
 			}
 		}
 		// 結果ページにフォワードする
@@ -176,12 +118,12 @@ public class UserpageServlet extends HttpServlet {
 		ReplyDAO pDao = new pDAO();
 		if (pDao.insert(new Reply(reply_id, review_id, user_id,
 			reply_contents, reply_date))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
+			request.setAttribute("result","success");
+//			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
 		}
 		else {	// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
+			request.setAttribute("result","fail");
+//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
 		}
 
 		// 結果ページにフォワードする
@@ -189,7 +131,6 @@ public class UserpageServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 
 
->>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 	}
 
