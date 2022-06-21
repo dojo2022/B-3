@@ -42,7 +42,7 @@ public class ReviewDao {
 				rs.getString("feelcat_name1"),
 				rs.getString("feelcat_name2"),
 				rs.getString("star"),
-				rs.getDate("review_date")
+				rs.getString("review_date")
 				);
 				Review.add(card);
 			}
@@ -102,7 +102,7 @@ public class ReviewDao {
 					rs.getString("feelcat_name1"),
 					rs.getString("feelcat_name2"),
 					rs.getString("star"),
-					rs.getDate("review_date")
+					rs.getString("review_date")
 					);
 					Review.add(card);
 				}
@@ -200,7 +200,7 @@ public class ReviewDao {
 					pStmt.setString(8, "");
 				}
 				if (card.getReview_date() != null && !card.getReview_date().equals("")) {
-					pStmt.setDate(9, card.getReview_date());
+					pStmt.setString(9, card.getReview_date());
 				}
 				else {
 					pStmt.setString(9, "");
