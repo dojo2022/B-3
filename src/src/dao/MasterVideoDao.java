@@ -24,7 +24,7 @@ public class MasterVideoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT video_id, video_name, video_year, video_time, genre_id from m_video WHERE video_name LIKE ? AND video_year LIKE ? AND video_time LIKE ? AND genre_id LIKE ? ORDER BY NUMBER";
+			String sql = "SELECT video_id, video_name, video_year, video_time, genre_id from m_video WHERE video_name LIKE ? AND video_year LIKE ? AND video_time LIKE ? AND genre_id LIKE ? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -105,7 +105,7 @@ public class MasterVideoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT video_id, video_name, video_year, video_time, genre_id from m_video WHERE video_id = ? ORDER BY NUMBER";
+			String sql = "SELECT video_id, video_name, video_year, video_time, genre_id from m_video WHERE video_id = ? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
