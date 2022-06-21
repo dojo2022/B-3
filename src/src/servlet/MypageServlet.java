@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -121,14 +122,22 @@ public class MypageServlet extends HttpServlet {
 			String feelcat_name1 = request.getParameter("feelcat_name1");
 			String feelcat_name2 = request.getParameter("feelcat_name2");
 			String star = request.getParameter("star");
+			//date型に変更「2022-06-20」→date
 			String review_date = request.getParameter("review_date");
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+			String str =sdf.format(review_date);
 
 			//リプライ一覧関連
 			String reply_id = request.getParameter("reply_id");
-			String review_id1 = request.getParameter("review_id");
-			String user_id1 = request.getParameter("user_id");
+			//String review_id = request.getParameter("review_id");
+			//String user_id = request.getParameter("user_id");
 			String reply_contents = request.getParameter("reply_contents");
+			//date型に変更「2022-06-20」→date
 			String reply_date = request.getParameter("reply_date");
+
+			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+			String str1 =sdf1.format(reply_date);
 
 
 			//スタンプを送ったレビュー一覧関連
@@ -141,7 +150,7 @@ public class MypageServlet extends HttpServlet {
 			// レビュー編集または削除を行う
 			ReviewDao rDao = new ReviewDao();
   		if (request.getParameter("REVIEWEDIT").equals("編集")) {
-				if (rDao.update(new Review(review_id1, user_id1, video_id, review_contents,
+				if (rDao.update(new Review(review_id, user_id, video_id, review_contents,
 					genre_id, feelcat_name1, feelcat_name2, star, review_date))) {	// 登録成功
 					request.setAttribute("result","success");
 //					new Result("更新成功", "新しいレビューを投稿しました。", "/FLIFRE/MypageServlet"));
@@ -152,7 +161,7 @@ public class MypageServlet extends HttpServlet {
 				}
 			}
 			else {
-				if (rDao.delete(review_id1)) {	// 削除成功
+				if (rDao.delete(review_id)) {	// 削除成功
 					request.setAttribute("result","success");
 //					new Result("削除成功！", "レビューを削除しました。", "/FLIFRE/MypageServlet"));
 				}
@@ -169,7 +178,7 @@ public class MypageServlet extends HttpServlet {
 			// リプライ編集または削除を行う
 			ReplyDao pDao = new ReplyDao();
 			if (request.getParameter("REPLYWEDIT").equals("編集")) {
-				if (pDao.update(new Reply(reply_id, review_id1, user_id1,
+				if (pDao.update(new Reply(reply_id, review_id, user_id,
 		  			reply_contents, reply_date))) {	// 登録成功
 					request.setAttribute("result","success");
 //					new Result("更新成功", "新しいリプライを送信しました。", "/FLIFRE/MypageServlet"));
@@ -190,13 +199,13 @@ public class MypageServlet extends HttpServlet {
 				}
 			}
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher1 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher1.forward(request, response);
 
 
 			// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
 			if (request.getParameter("STAMP").equals("")) {
-				if (aDao.update(new Reaction(reaction_id, review_id1, user_id1, stamp_id))) {	// 登録成功
+				if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
 					request.setAttribute("result","success");
 //					new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
 				}
@@ -216,13 +225,13 @@ public class MypageServlet extends HttpServlet {
 				}
 			}
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher2 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher2.forward(request, response);
 
 
 			// 新規リプライ送信を行う
 			ReplyDAO pDao = new pDAO();
-			if (pDao.insert(new Reply(reply_id, review_id1, user_id1,
+			if (pDao.insert(new Reply(reply_id, review_id, user_id,
 				reply_contents, reply_date))) {	// 登録成功
 				request.setAttribute("result","success");
 //				new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
@@ -233,7 +242,7 @@ public class MypageServlet extends HttpServlet {
 			}
 
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher3 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher3.forward(request, response);
 	}
 }
