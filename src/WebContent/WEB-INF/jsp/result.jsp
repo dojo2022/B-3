@@ -12,9 +12,6 @@
     <script defer src="js/result.js"></script>
 </head>
 
-<!-- dummy -->
-<core:set var="id">login_user</core:set>
-
 <body>
     <div class="wrapper">
         <!-- header start -->
