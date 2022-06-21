@@ -24,33 +24,52 @@ public class MasterVideoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT video_id, video_name, video_year, video_time, genre_id from m_video WHERE video_name LIKE ? AND video_year LIKE ? AND video_time LIKE ? AND genre_id LIKE ? ORDER BY id";
+			String sql = " SELECT *"
+					   + " FROM m_video"
+					   + " WHERE video_name LIKE ?"
+					   + " AND video_year BETWEEN ? AND ?"
+					   + " AND video_time BETWEEN ? AND ?"
+					   + " AND genre_id LIKE ?"
+					   ;
+
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (param.getVideo_name() != null) {
+			if (param.getVideo_name() != null && !param.getVideo_name().isEmpty()) {
 				pStmt.setString(1, "%" + param.getVideo_name() + "%");
 			}
 			else {
 				pStmt.setString(1, "%");
 			}
-			if (param.getVideo_year() != null) {
-				pStmt.setInt(2, param.getVideo_year());
+
+			int year = param.getVideo_year();
+			if (year > 1970) {
+				pStmt.setInt(2, year - 10);
+				pStmt.setInt(3, year - 1);
+			} else if (year == 1970) {
+				pStmt.setInt(2, 0);
+				pStmt.setInt(3, year - 1);
+			} else {
+				pStmt.setInt(2, 0);
+				pStmt.setInt(3, 3000);
 			}
-			else {
-				pStmt.setInt(2, "%");
-			}
-			if (param.getVideo_time() != null) {
-				pStmt.setInt(3, "%" + param.getVideo_time() + "%");
-			}
-			else {
-				pStmt.setInt(3, "%");
+
+			int time = param.getVideo_time();
+			if (time > 180) {
+				pStmt.setInt(4, 181);
+				pStmt.setInt(5, 1440);
+			} else if (time >= 30) {
+				pStmt.setInt(4, time - 30 + 1);
+				pStmt.setInt(5, time);
+			} else {
+				pStmt.setInt(4, 0);
+				pStmt.setInt(5, 1440);
 			}
 			if (param.getGenre_id() != null) {
-				pStmt.setString(4, "%" + param.getGenre_id() + "%");
+				pStmt.setString(6, param.getGenre_id());
 			}
 			else {
-				pStmt.setString(4, "%");
+				pStmt.setString(6, "%");
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -61,8 +80,8 @@ public class MasterVideoDao {
 				MasterVideo card = new MasterVideo(
 				rs.getString("video_id"),
 				rs.getString("video_name"),
-				rs.getString("video_year"),
-				rs.getString("video_time"),
+				rs.getInt("video_year"),
+				rs.getInt("video_time"),
 				rs.getString("genre_id")
 				);
 				cardList.add(card);
@@ -125,8 +144,8 @@ public class MasterVideoDao {
 				cardList = new MasterVideo(
 				rs.getString("video_id"),
 				rs.getString("video_name"),
-				rs.getString("video_year"),
-				rs.getString("video_time"),
+				rs.getInt("video_year"),
+				rs.getInt("video_time"),
 				rs.getString("genre_id")
 				);
 			}

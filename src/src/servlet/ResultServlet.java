@@ -26,8 +26,8 @@ public class ResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String time = request.getParameter("time");
-		String year = request.getParameter("year");
+		String time = request.getParameter("time") != null ? request.getParameter("time") : "-1";
+		String year = request.getParameter("year") != null ? request.getParameter("year") : "-1";
 		String feelcat1 = request.getParameter("feelcat1");
 		String feelcat2 = request.getParameter("feelcat2");
 		String title = request.getParameter("title");
@@ -36,7 +36,7 @@ public class ResultServlet extends HttpServlet {
 		// 検索処理を行う
 		MasterVideoDao mvDao = new MasterVideoDao();
 		List<MasterVideo> MasterVideoList = null;
-		MasterVideo params = new MasterVideo(/* null, title, year, time, genre_id */);
+		MasterVideo params = new MasterVideo(null, title, Integer.parseInt(year), Integer.parseInt(time), genre_id);
 		if ( (feelcat1 == null || feelcat1.isEmpty()) && (feelcat2 == null || feelcat2.isEmpty()) ) {
 			MasterVideoList = mvDao.select(params);
 		} else {

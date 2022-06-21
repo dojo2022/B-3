@@ -1,14 +1,17 @@
 @charset "UTF-8";
 
 #search-result-container {
-    margin-top: 30px;
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, minmax(min(70% / 3, 100%), 1fr));
     gap: 1rem;
+    background-color: #a6e872;
+    border: 3px double #a3060c;
 }
 
 .search-result-item {
     border: 1px solid black;
+    background-color: #c6e872;
 }
 
 .search-result-item .buttons {
@@ -23,7 +26,7 @@
 }
 
 .video-image {
-    background-color: green;
+    background-color: gray;
     height: 150px;
 }
 
