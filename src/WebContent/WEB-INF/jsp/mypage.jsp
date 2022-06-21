@@ -26,7 +26,7 @@
 			<span><!-- アイコン -->
 			${m_user.user_img}
 			</span>
-			<!-- m_userのuser_imgを引用、丸い形にするかは未定 -->
+			<!-- m_userのuser_imgを引用 -->
 			<br>
 
 			<span><!-- ユーザー名  -->
@@ -79,14 +79,13 @@
 
 							<span><!-- ユーザー名  -->
 							${m_user.user_name}
-							${t_review.user_id}
 							</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
 						<br>
 						<br>
 
 							<span><!-- 作品名 -->
 							${t_review.review_id}
-							${t_review.video_id}
+							<!-- ${e.video_id} -->
 							${m_video.video_name}
 							</span><!-- t_reviewのvideo_idを引用 -->
 
@@ -128,6 +127,7 @@
 						<div id="reply_list">
 						<!-- t_replyを呼び出したい -->
 						<hr>
+						<br>
 						<c:forEach var="e" items="${Reply}" >
 							<!-- <span> 送り先のユーザー名
 							${t_review.user_id}
@@ -192,7 +192,7 @@
 							${t_review.star}
 							</span><!-- t_reviewのstarを引用 --><!-- t_reactionのreview_idを引用？ -->
 
-							<span><!-- 2022年6月12日 16時00分 -->
+							<span><!-- 投稿日時 -->
 							${t_review.review_date}
 							</span><!-- t_reviewのreview_dateを引用 --><!-- t_reactionのreview_idを引用？ -->
 						<br>

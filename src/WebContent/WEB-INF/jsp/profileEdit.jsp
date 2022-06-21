@@ -67,37 +67,37 @@
 		<!-- プロフィール変更ボックスここから -->
 		<div class="myprofileEdit">
 			<p id="ic_edit_tag">　　アイコン変更　　</p>
-			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+			<span>
 			${m_user.user_img}
 			</span>
 			<!-- m_userのuser_img 現在使用中のアイコンを引用 -->
 
+			<!-- 画像選択(仮)-->
 			<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
   				<div class="portlate" id="imageframe">
     			<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
   				</div>
 			</form>
-			<!-- 画像選択(仮)-->
 		<br>
 		<hr>
 
 			<p id="hd_edit_tag">　　ヘッダー変更　　</p>
-			<span><!-- <img id="pf_icon" src ="./images/pfEdit_hd.png"> -->
+			<span>
 			${m_user.user_hd}
 			</span>
 			<!-- m_userのuser_hd 現在使用中のヘッダーを引用 -->
 
+			<!-- 画像選択(仮) -->
 			<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
   				<div class="portlate" id="imageframe">
     			<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
   				</div>
 			</form>
-			<!-- 画像選択(仮) -->
 		<br>
 		<hr>
 
 			<p id="user_edit_tag">　　ユーザー名変更　　</p>
-			<span id="bf_edit"><!-- 炙りえんがわ  -->
+			<span id="bf_edit">
 			${m_user.user_name}
 			</span>
 			<!-- m_userのuser_name 現在使用中のユーザー名を引用 -->
@@ -106,7 +106,7 @@
 		<hr>
 
 			<p id="pf_edit_tag">　　プロフィール文変更　　</p>
-			<span id="bf_edit"><!-- アニメと洋画が好きです。 -->
+			<span id="bf_edit">
 			${m_user.user_pf}
 			</span>
 			<!-- m_userのuser_pf 現在使用中のプロフィール文を引用 -->
