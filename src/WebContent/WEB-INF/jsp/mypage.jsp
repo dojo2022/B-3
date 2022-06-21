@@ -74,44 +74,42 @@
 						<br>
 						<c:forEach var="e" items="${Review}" >
 							<span><!-- アイコン -->
-							${m_user.user_img}
+							${e.user_id.user_img}
 							</span><!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
 
 							<span><!-- ユーザー名  -->
-							${m_user.user_name}
+							${e.user_id.user_name}
 							</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
 						<br>
 						<br>
 
 							<span><!-- 作品名 -->
-							${t_review.review_id}
-							<!-- ${e.video_id} -->
-							${m_video.video_name}
+							${e.video_id.video_name}
 							</span><!-- t_reviewのvideo_idを引用 -->
 
 							<span><!-- 5段階評価  -->
-							${t_review.star}
+							${e.star}
 							</span><!-- t_reviewのstarを引用 -->
 
 							<span><!-- 投稿日時 -->
-							${t_review.review_date}
+							${e.review_date}
 							</span><!-- t_reviewのreview_dateを引用 -->
 						<br>
 
 							<span><!--  ジャンル  -->
-							${t_review.genre_id}
+							${e.genre_id.genre_name}
 							</span><!-- t_reviewのgenre_idを引用 -->
 
 							<span><!-- 感想カテゴリ1 -->
-							${t_review.feelcat_name1}
+							${e.feelcat_name1}
 							</span><!-- t_reviewのfeelcat_name1を引用 -->
 
 							<span><!--  感想カテゴリ2  -->
-							${t_review.feelcat_name2}
+							${e.feelcat_name2}
 							</span><!-- t_reviewのfeelcat_name2を引用 -->
 
 							<span><!-- レビュー本文 -->
-							${t_review.review_contents}
+							${e.review_contents}
 							</span><!-- t_reviewのreview_contentsを引用 -->
 							<br>
 							<br>
@@ -130,29 +128,29 @@
 						<br>
 						<c:forEach var="e" items="${Reply}" >
 							<!-- <span> 送り先のユーザー名
-							${t_review.user_id}
+							${e.review_id.user_id.user_name}
 							</span> -->
 						<br>
 						<br>
 
 							<!-- 自分のアイコン -->
-							${m_user.user_img}
+							${e.user_id.user_img}
 							<!-- m_userのuser_imgを引用 --><!-- t_replyのuser_idを引用? -->
 						<br>
 
 							<span><!-- 自分のユーザー名 -->
-							${m_user.user_name}
+							${e.reply_id.user_id.user_name}
 							</span><!-- m_userのuser_nameを引用 --><!-- t_replyのuser_idを引用? -->
 						<br>
 						<br>
 
 							<span><!-- 投稿日時 -->
-							${t_reply.reply_date}
+							${e.reply_date}
 							</span><!-- t_replyのreply_dateを引用 -->
 							<br>
 
 							<span><!-- リプライ本文 -->
-							${t_reply.reply_contents}
+							${e.reply_contents}
 							</span><!-- t_replyのreply_contentsを引用 -->
 							<br>
 							<br>
@@ -168,16 +166,17 @@
 						<div id="stamp_list">
 						<!--t_reactionを呼び出したい-->
 						<hr>
+						<br>
 						<c:forEach var="e" items="${Reaction}" >
 							<a  href="/FLIFRE/UserpageServlet">
 							<!-- アイコン -->
-							${m_user.user_img}
+							${e.reaction_id.user_id.user_img}
 							</a>
 							<!-- m_userのuser_imgを引用 --> <!-- t_reactionのreview_idを引用？ -->
 
 							<a  href="/FLIFRE/UserpageServlet">
 							<span><!-- ユーザー名 -->
-							${m_user.user_name}
+							${e.reaction_id.user_id.user_name}
 							</span>
 							</a>
 							<!-- t_reviewのuser_nameを引用 --><!-- t_reactionのreview_idを引用？ -->
@@ -185,38 +184,38 @@
 						<br>
 
 							<span><!-- 作品名 -->
-							${t_review.video_id}
+							${e.review_id.video_id.video_name}
 							</span><!-- t_reviewのvideo_idを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!--  5段階評価  -->
-							${t_review.star}
+							${e.review_id.star}
 							</span><!-- t_reviewのstarを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!-- 投稿日時 -->
-							${t_review.review_date}
+							${e.review_id.review_date}
 							</span><!-- t_reviewのreview_dateを引用 --><!-- t_reactionのreview_idを引用？ -->
 						<br>
 
 							<span><!--  ジャンル  -->
-							${t_review.genre_id}
+							${e.review_id.genre_id.genre_name}
 							</span><!-- t_reviewのgenre_idを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!--  感想カテゴリ1 -->
-							${t_review.feelcat_name1}
+							${e.review_id.feelcat_name1}
 							</span><!-- t_reviewのfeelcat_name1を引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!--  感想カテゴリ2 -->
-							${t_review.feelcat_name2}
+							${e.review_id.feelcat_name2}
 							</span><!-- t_reviewのfeelcat_name2を引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!-- レビュー本文 -->
-							${t_review.review_contents}
+							${e.review_id.review_contents}
 							</span><!-- t_reviewのreview_contentsを引用 --><!-- t_reactionのreview_idを引用？ -->
 							<br>
 
 							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
 							<!-- スタンプの画像をクリックすると画像が変化 -->
-							${t_reaction.stamp_id}
+							${e.stamp_id.stamp_name}
 							<!-- m_stampのstamp_id, stamp_name -->
 							<br>
 

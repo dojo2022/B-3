@@ -62,12 +62,13 @@ public class MypageServlet extends HttpServlet {
 		request.setAttribute("m_user", userdata);
 
 		// フォロー・フォロワーを数える
-		FollowDao  fDao = new FollowDao();
-		int follow_count = fDao.Followcount(user_id);
-		int follower_count = fDao.Followercount(user_id);
+		FollowDao  ffDao = new FollowDao();
+		int follow_count = ffDao.Followcount(user_id);
+		int follower_count = ffDao.Followercount(user_id);
 		// 計算結果をリクエストスコープに格納する
 		request.setAttribute("followCount", follow_count);
 		request.setAttribute("followerCount", follower_count);
+
 
 		// レビュー一覧を検索する
 		ReviewDao  rDao = new ReviewDao();
