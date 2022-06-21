@@ -13,9 +13,9 @@
 </head>
 
 <body>
+    <%@ include file="header.jsp" %>
     <div class="wrapper">
         <!-- header start -->
-        <%@ include file="header.jsp" %>
         <!-- header end -->
         
         <!-- 検索結果　一覧 start-->
