@@ -49,9 +49,11 @@ public class UserpageServlet extends HttpServlet {
 		return;
 		}
 
+
 		//パラメーターからユーザーIDを取得
 		request.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("user_id");
+
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
