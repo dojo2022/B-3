@@ -157,7 +157,7 @@ public class MypageServlet extends HttpServlet {
 //					new Result("削除成功！", "レビューを削除しました。", "/FLIFRE/MypageServlet"));
 				}
 				else {						// 削除失敗
-					request.setAttribute("result","success");
+					request.setAttribute("result","fail");
 //					new Result("削除失敗！", "レビューを削除できませんでした。", "/FLIFRE/MypageServlet"));
 				}
 			}
@@ -175,7 +175,7 @@ public class MypageServlet extends HttpServlet {
 //					new Result("更新成功", "新しいリプライを送信しました。", "/FLIFRE/MypageServlet"));
 				}
 				else {
-					request.setAttribute("result","success");
+					request.setAttribute("result","fail");
 //					new Result("更新失敗", "新しいリプライを送信できませんでした。", "/FLIFRE/PostServlet"));
 				}
 			}
@@ -185,7 +185,7 @@ public class MypageServlet extends HttpServlet {
 //					new Result("削除成功！", "リプライを削除しました。", "/FLIFRE/MypageServlet"));
 				}
 				else {						// 削除失敗
-					request.setAttribute("result","success");
+					request.setAttribute("result","fail");
 //					new Result("削除失敗！", "リプライを削除できませんでした。", "/FLIFRE/MypageServlet"));
 				}
 			}
@@ -201,7 +201,7 @@ public class MypageServlet extends HttpServlet {
 //					new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
 				}
 				else {
-					request.setAttribute("result","success");
+					request.setAttribute("result","fail");
 //					new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
 				}
 			}
@@ -211,7 +211,7 @@ public class MypageServlet extends HttpServlet {
 //					new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
 				}
 				else {						// 削除失敗
-					request.setAttribute("result","success");
+					request.setAttribute("result","fail");
 //					new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
 				}
 			}
@@ -228,7 +228,7 @@ public class MypageServlet extends HttpServlet {
 //				new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
 			}
 			else {	// 登録失敗
-				request.setAttribute("result","success");
+				request.setAttribute("result","fail");
 //				new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
 			}
 

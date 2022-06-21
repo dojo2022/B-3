@@ -91,22 +91,22 @@ public class UserpageServlet extends HttpServlet {
 		// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
 		if (request.getParameter("STAMP").equals("")) {
 			if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
-				request.setAttribute("result",
-				new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
+				request.setAttribute("result","success");
+//				new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
 			}
 			else {
-				request.setAttribute("result",
-				new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
+				request.setAttribute("result","fail");
+//				new Result("更新失敗", "新しいスタンプに変更できませんでした。", "/FLIFRE/PostServlet"));
 			}
 		}
 		else {
 			if (aDao.delete(reaction_id)) {	// 削除成功
-				request.setAttribute("result",
-				new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
+				request.setAttribute("result","success");
+//				new Result("削除成功！", "リアクションを削除しました。", "/FLIFRE/MypageServlet"));
 			}
 			else {						// 削除失敗
-				request.setAttribute("result",
-				new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
+				request.setAttribute("result","fail");
+//				new Result("削除失敗！", "リアクションを削除できませんでした。", "/FLIFRE/MypageServlet"));
 			}
 		}
 		// 結果ページにフォワードする
@@ -118,12 +118,12 @@ public class UserpageServlet extends HttpServlet {
 		ReplyDAO pDao = new pDAO();
 		if (pDao.insert(new Reply(reply_id, review_id, user_id,
 			reply_contents, reply_date))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
+			request.setAttribute("result","success");
+//			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
 		}
 		else {	// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
+			request.setAttribute("result","fail");
+//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
 		}
 
 		// 結果ページにフォワードする
