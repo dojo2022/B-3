@@ -120,7 +120,7 @@ public class Ranking_bfServlet extends HttpServlet {
 
 				// 検索処理を行う
 				RankingDAO rDao = new RankingDAO();
-				List<Ranking> ReviewRanking = rDao.select(new Ranking(video_id, video_name));
+				List<Ranking> ReviewRanking = rDao.select(new Ranking(video_id,video_name));
 
 				// 検索結果をリクエストスコープに格納する
 				request.setAttribute("ReviewRanking", ReviewRanking);
