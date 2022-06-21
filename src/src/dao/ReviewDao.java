@@ -27,7 +27,7 @@ public class ReviewDao {
 			String sql = "SELECT review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date FROM t_review where user_id = ? ";
 			//Date型はどうすればいい？
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(0, user_id);
+			pStmt.setString(1, user_id);
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
@@ -234,7 +234,7 @@ public class ReviewDao {
 		}
 
 
-			// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
+			// 引数reviewで指定されたレビューを更新し、成功したらtrueを返す
 			public boolean update(Review review) {
 				Connection conn = null;
 				boolean result = false;
@@ -246,67 +246,54 @@ public class ReviewDao {
 					// データベースに接続する
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
-					// SQL文を準備する☆主キーは別
-					String sql = "update BC set name=?, corpname=?, departmentname=?, postalcode=?, address=?, telephonenumber=?, faxnumber=?, mailaddress=? where number=?";
+					// SQL文を準備する
+					String sql = "UPDATE Review SET (review_contents=?, genre_id=?, feelcat_name1=?, feelcat_name2=?, star=?, review_date=?) where review_id=?";
+
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (card.getName() != null && !card.getName().equals("")) {
-						pStmt.setString(1, card.getName());
+					if (review.getReview_contents() != null && !review.getReview_contents().equals("")) {
+						pStmt.setString(1, review.getReview_contents());
 					}
 					else {
 						pStmt.setString(1, null);
 					}
 
-					if (card.getCorpname() != null && !card.getCorpname().equals("")) {
-						pStmt.setString(2, card.getCorpname());
+					if (review.getGenre_id() != null && !review.getGenre_id().equals("")) {
+						pStmt.setString(2, review.getGenre_id());
 					}
 					else {
 						pStmt.setString(2, null);
 					}
-					if (card.getDepartmentname() != null && !card.getDepartmentname().equals("")) {
-						pStmt.setString(3, card.getDepartmentname());
+					if (review.getFeelcat_name1() != null && !review.getFeelcat_name1().equals("")) {
+						pStmt.setString(3, review.getFeelcat_name1());
 					}
 					else {
 						pStmt.setString(3, null);
 					}
 
-					if (card.getPostalcode() != null && !card.getPostalcode().equals("")) {
-						pStmt.setString(4, card.getPostalcode());
+					if (review.getFeelcat_name2() != null && !review.getFeelcat_name2().equals("")) {
+						pStmt.setString(4, review.getFeelcat_name2());
 					}
 					else {
 						pStmt.setString(4, null);
 					}
 
-					if (card.getAddress() != null && !card.getAddress().equals("")) {
-						pStmt.setString(5, card.getAddress());
+					if (review.getStar() != null && !review.getStar().equals("")) {
+						pStmt.setString(5, review.getStar());
 					}
 					else {
 						pStmt.setString(5, null);
 					}
 
-					if (card.getTelephonenumber() != null && !card.getTelephonenumber().equals("")) {
-						pStmt.setString(6, card.getTelephonenumber());
+					if (review.getReview_date() != null && !review.getReview_date().equals("")) {
+						pStmt.setString(6, review.getReview_date());
 					}
 					else {
 						pStmt.setString(6, null);
 					}
 
-					if (card.getFaxnumber() != null && !card.getFaxnumber().equals("")) {
-						pStmt.setString(7, card.getFaxnumber());
-					}
-					else {
-						pStmt.setString(7, null);
-					}
-
-					if (card.getMailaddress() != null && !card.getMailaddress().equals("")) {
-						pStmt.setString(8, card.getMailaddress());
-					}
-					else {
-						pStmt.setString(8, null);
-					}
-
-					pStmt.setString(9, card.getNumber());
+					pStmt.setString(7, review.getReview_id());
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
@@ -335,8 +322,9 @@ public class ReviewDao {
 				return result;
 			}
 
-			// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-			public boolean delete(String number) {
+
+			// 引数review_idで指定されたレビューを削除し、成功したらtrueを返す
+			public boolean delete(String review_id) {
 				Connection conn = null;
 				boolean result = false;
 
@@ -345,14 +333,14 @@ public class ReviewDao {
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
-					// SQL文を準備する☆済
-					String sql = "delete from BC where number=?";
+					// SQL文を準備する
+					String sql = "DELETE FROM Review where review_id=?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					pStmt.setString(1, number);
+					pStmt.setString(1, review_id);
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {

@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -86,17 +87,6 @@ public class MypageServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Reaction", Reaction);
 
-
-//		// フォロー一覧を検索する
-//				FollowDao  fDao = new FollowDao();
-//				List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
-//
-//				// 検索結果をリクエストスコープに格納する
-//				request.setAttribute("followList", followList);
-//
-
-
-
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
@@ -112,7 +102,6 @@ public class MypageServlet extends HttpServlet {
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
 
 			//★リクエストパラメータを取得する
-			//マイレビュー投稿一覧関連
 			request.setCharacterEncoding("UTF-8");
 			String review_id = request.getParameter("review_id");
 			String user_id = request.getParameter("user_id");
@@ -122,28 +111,21 @@ public class MypageServlet extends HttpServlet {
 			String feelcat_name1 = request.getParameter("feelcat_name1");
 			String feelcat_name2 = request.getParameter("feelcat_name2");
 			String star = request.getParameter("star");
-			//date型に変更「2022-06-20」→date
-			String review_date = request.getParameter("review_date");
-
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
-			String str =sdf.format(review_date);
-
-			//リプライ一覧関連
-			String reply_id = request.getParameter("reply_id");
-			//String review_id = request.getParameter("review_id");
-			//String user_id = request.getParameter("user_id");
-			String reply_contents = request.getParameter("reply_contents");
-			//date型に変更「2022-06-20」→date
-			String reply_date = request.getParameter("reply_date");
-
+			//JAVAで現在時刻を取得する
+			LocalDateTime now_datetime = LocalDateTime.now();
+			//取得したデータを文字列型「"yyyy/MM/dd hh:mm:ss"」に変換する
 			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
-			String str1 =sdf1.format(reply_date);
+			String review_date = sdf1.format(now_datetime);
 
+			String reply_id = request.getParameter("reply_id");
+			String reply_contents = request.getParameter("reply_contents");
+			//JAVAで現在時刻を取得する
+			LocalDateTime now_datetime2 = LocalDateTime.now();
+			//取得したデータを文字列型「"yyyy/MM/dd hh:mm:ss"」に変換する
+			SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+			String reply_date = sdf2.format(now_datetime);
 
-			//スタンプを送ったレビュー一覧関連
 			String reaction_id = request.getParameter("reaction_id");
-			//String review_id = request.getParameter("review_id");
-			//String user_id = request.getParameter("user_id");
 			String stamp_id = request.getParameter("stamp_id");
 
 

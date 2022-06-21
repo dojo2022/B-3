@@ -55,18 +55,6 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
-		<c:forEach var="e" items="${Review}" >
-			<p>${e.review_id}</p>
-		</c:forEach>
-
-		<c:forEach var="e" items="${Reply}" >
-			<p>${e.reply_id}</p>
-		</c:forEach>
-
-		<c:forEach var="e" items="${Reaction}" >
-			<p>${e.reaction_id}</p>
-		</c:forEach>
-
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
 				<tr>
@@ -81,43 +69,44 @@
 						<div id="review_list">
 						<!--t_reviewを呼び出したい -->
 						<hr>
-							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-							<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
-							<!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
+						<c:forEach var="e" items="${Review}" >
+							<span><!-- <アイコン> -->
+							${m_user.user_img}
+							</span><!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
 
-							<span><!-- 炙りえんがわ  -->
-							<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+							<span><!-- ユーザー名  -->
+							${m_user.user_name}
 							</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
 						<br>
 						<br>
 
-							<span><!-- アイアンマン -->
-							<input class="video" type="text" name="video_id" value="${t_review.video_id}" readonly>
+							<span><!-- 作品名 -->
+							${t_review.video_id}
 							</span><!-- t_reviewのvideo_idを引用 -->
 
-							<span><!-- ★★★★★  -->
-							<input class="star" type="text" name="star" value="${t_review.star}" readonly>
+							<span><!-- 5段階評価  -->
+							${t_review.star}
 							</span><!-- t_reviewのstarを引用 -->
 
-							<span id="review_time"><!-- 2022年6月14日 20時30分 -->
-							<input class="time" type="date" name="review_date" value="${t_review.review_date}" readonly>
+							<span><!-- 2022年6月14日 20時30分 -->
+							${t_review.review_date}
 							</span><!-- t_reviewのreview_dateを引用 -->
 						<br>
 
-							<span><!--  ジャンル：アクション  -->
-							<input class="genre" type="text" name="genre_id" value="${t_review.genre_id}" readonly>
+							<span><!--  ジャンル  -->
+							${t_review.genre_id}
 							</span><!-- t_reviewのgenre_idを引用 -->
 
-							<span><!-- 感想カテゴリ1：スカッとする -->
-							<input class="feelcat1" type="text" name="feelcat_name1" value="${t_review.feelcat_name1}" readonly>
+							<span><!-- 感想カテゴリ1 -->
+							${t_review.feelcat_name1}
 							</span><!-- t_reviewのfeelcat_name1を引用 -->
 
-							<span><!--  感想カテゴリ2：わくわく  -->
-							<input class="feelcat2" type="text" name="feelcat_name2" value="${t_review.feelcat_name2}" readonly>
+							<span><!--  感想カテゴリ2  -->
+							${t_review.feelcat_name2}
 							</span><!-- t_reviewのfeelcat_name2を引用 -->
 
-							<span><!-- 面白すぎる。他のアベンジャーズ作品も見てみようと思った。 -->
-							<input class="review" type="text" name="review_contents" value="${t_review.review_contents}" readonly>
+							<span><!-- レビュー本文 -->
+							${t_review.review_contents}
 							</span><!-- t_reviewのreview_contentsを引用 -->
 							<br>
 							<br>
@@ -126,11 +115,13 @@
 							<input class="edit" type="submit" name="REVIEWEDIT" value="編集">
 						<br>
 						<br>
+						</c:forEach>
 						</div>
 
 						<div id="reply_list">
 						<!-- t_replyを呼び出したい -->
-							<hr>
+						<hr>
+						<c:forEach var="e" items="${Reply}" >
 							<!-- <span> To うに軍艦
 							<input class="user" type="text" name="user_id" value="${t_review.user_id}" readonly>
 							</span> -->
@@ -160,11 +151,13 @@
 							<input class="edit" type="submit" name="REPLYWEDIT" value="編集">
 						<br>
 						<br>
+						</c:forEach>
 						</div>
 
 						<div id="stamp_list">
 						<!--t_reactionを呼び出したい-->
 						<hr>
+						<c:forEach var="e" items="${Reaction}" >
 							<a  href="/FLIFRE/UserpageServlet">
 							<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 							<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
@@ -244,6 +237,7 @@
 									</div>
 								</div>
 								<!-- リプライフォームここまで -->
+							</c:forEach>
 							</div>
 						</td>
 				</tr>

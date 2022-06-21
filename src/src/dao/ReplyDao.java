@@ -28,7 +28,7 @@ public class ReplyDao {
 				String sql = "SELECT reply_id, review_id, user_id, reply_contents, reply_date where review_id = ? ";
 				//Date型はどうすればいい？
 				PreparedStatement pStmt = conn.prepareStatement(sql);
-				pStmt.setString(0, review_id);
+				pStmt.setString(1, review_id);
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
 
