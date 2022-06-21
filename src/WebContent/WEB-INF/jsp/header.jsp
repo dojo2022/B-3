@@ -54,7 +54,7 @@
 				    </td>
 				    <td>
 				        <select name="feelcat1" onchange="change(this)">
-				        	<option>選択してください</option>
+				        	<option value="">選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				      			<option value="${ status.current }">${ status.current }</option>
 				            </core:forEach>
@@ -65,7 +65,7 @@
 				    </td>
 				    <td>
 				        <select name="feelcat2">
-				            <option>選択してください</option>
+				            <option value="">選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				            	<option value="${ status.current }">${ status.current }</option>
 				            </core:forEach>
