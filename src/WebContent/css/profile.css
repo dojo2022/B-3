@@ -30,7 +30,11 @@
 
 /*マイページ編集ボタンの位置*/
 .pf_edit {
+<<<<<<< HEAD
+	padding: 0px 0px 0px 650px;
+=======
 	padding: 0px 0px 0px 800px;
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 }
 
@@ -127,12 +131,20 @@ hr {
 
 
 /*プロフィール変更テーブルの位置調整*/
+<<<<<<< HEAD
+#confilmButton, #imageframe, #edittext,
+=======
 #confilmButton, #imageframe, #edittext, #bf_edit,
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 #ic_edit_tag, #hd_edit_tag, #user_edit_tag, #pf_edit_tag {
 	text-align: center;
 }
 
+<<<<<<< HEAD
+.circle, .portlate, .header, .user, .profile {
+=======
 .circle, .portlate, .header, .user, .profile, .portlate {
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 	text-align: center;
 }
 

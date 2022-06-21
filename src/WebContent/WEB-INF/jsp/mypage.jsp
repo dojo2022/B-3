@@ -18,6 +18,14 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
+<<<<<<< HEAD
+
+			<input class="header" type="image" name="user_hd" value="${m_user.user_hd}" readonly>
+			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
+
+			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+			<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+=======
 
 			<span>${m_user.user_hd}
 			<!-- m_userのuser_hd ヘッダーを引用、myprofileクラスの背景に配置したい -->
@@ -25,17 +33,38 @@
 
 			<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
 			${m_user.user_img}
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			</span>
 			<!-- m_userのuser_img アイコンを引用、丸い形にするかは未定 -->
 
 			<span><!-- 炙りえんがわ  -->
+<<<<<<< HEAD
+			<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+=======
 			${m_user.user_name}
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 			</span><!-- m_userのuser_nameを引用 -->
 
 
 			<span class ="pf_edit">
 			<a  href="/FLIFRE/ProfileServlet"><img src="./images/pf_edit.png"></a>
 			</span><!-- プロフィール編集ボタン -->
+<<<<<<< HEAD
+			<br>
+			<br>
+
+			<span><!-- アニメと洋画が好きです。 -->
+			<input class="profile" type="text" name="user_pf" value="${m_user.user_pf}" readonly>
+			</span><!-- m_userのuser_pfを引用 -->
+			<br>
+			<br>
+
+			<a id="follow" href="/FLIFRE/FollowlistServlet">フォロー・フォロワー</a>
+			<br>
+			<input class="follow" type="text" name="user_id" value="${t_follow.user_id}" readonly>
+			<input class="follow" type="text" name="follow_id" value="${t_follow.follow_id}" readonly>
+			<!-- t_followのuser_id,follow_idを引用 -->
+=======
 			<br>
 
 			<span><!-- アニメと洋画が好きです。 -->
@@ -48,6 +77,7 @@
 			<span>フォロー　${followCount}</span>
 			<span>フォロワー　${followerCount}</span>
 			</a>
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 		</div>
 		<!-- マイプロフィールボックスここまで -->
 		<br>
@@ -55,6 +85,9 @@
 		<br>
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
+<<<<<<< HEAD
+		<!-- <c:forEach var="p" items="${postList}" > -->
+=======
 		<c:forEach var="e" items="${Review}" >
 			<p>${e.review_id}</p>
 		</c:forEach>
@@ -66,6 +99,7 @@
 		<c:forEach var="e" items="${Reaction}" >
 			<p>${e.reaction_id}</p>
 		</c:forEach>
+>>>>>>> 700fdc5e999afcc3f450f3d286ac406391c3af14
 
 		<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 			<table>
@@ -249,6 +283,7 @@
 				</tr>
 			</table>
 		</form>
+		<!-- </c:forEach> -->
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 </main>
 <!-- メインここまで -->
