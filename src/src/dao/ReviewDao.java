@@ -42,7 +42,7 @@ public class ReviewDao {
 				rs.getString("feelcat_name1"),
 				rs.getString("feelcat_name2"),
 				rs.getString("star"),
-				rs.getDate("review_date")
+				rs.getString("review_date")
 				);
 				Review.add(card);
 			}
@@ -102,7 +102,7 @@ public class ReviewDao {
 					rs.getString("feelcat_name1"),
 					rs.getString("feelcat_name2"),
 					rs.getString("star"),
-					rs.getDate("review_date")
+					rs.getString("review_date")
 					);
 					Review.add(card);
 				}
@@ -200,7 +200,7 @@ public class ReviewDao {
 					pStmt.setString(8, "");
 				}
 				if (card.getReview_date() != null && !card.getReview_date().equals("")) {
-					pStmt.setDate(9, card.getReview_date());
+					pStmt.setString(9, card.getReview_date());
 				}
 				else {
 					pStmt.setString(9, "");
@@ -232,6 +232,153 @@ public class ReviewDao {
 			// 結果を返す
 			return result;
 		}
-}
 
 
+			// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
+			public boolean update(Review review) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する☆主キーは別
+					String sql = "update BC set name=?, corpname=?, departmentname=?, postalcode=?, address=?, telephonenumber=?, faxnumber=?, mailaddress=? where number=?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (card.getName() != null && !card.getName().equals("")) {
+						pStmt.setString(1, card.getName());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+
+					if (card.getCorpname() != null && !card.getCorpname().equals("")) {
+						pStmt.setString(2, card.getCorpname());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+					if (card.getDepartmentname() != null && !card.getDepartmentname().equals("")) {
+						pStmt.setString(3, card.getDepartmentname());
+					}
+					else {
+						pStmt.setString(3, null);
+					}
+
+					if (card.getPostalcode() != null && !card.getPostalcode().equals("")) {
+						pStmt.setString(4, card.getPostalcode());
+					}
+					else {
+						pStmt.setString(4, null);
+					}
+
+					if (card.getAddress() != null && !card.getAddress().equals("")) {
+						pStmt.setString(5, card.getAddress());
+					}
+					else {
+						pStmt.setString(5, null);
+					}
+
+					if (card.getTelephonenumber() != null && !card.getTelephonenumber().equals("")) {
+						pStmt.setString(6, card.getTelephonenumber());
+					}
+					else {
+						pStmt.setString(6, null);
+					}
+
+					if (card.getFaxnumber() != null && !card.getFaxnumber().equals("")) {
+						pStmt.setString(7, card.getFaxnumber());
+					}
+					else {
+						pStmt.setString(7, null);
+					}
+
+					if (card.getMailaddress() != null && !card.getMailaddress().equals("")) {
+						pStmt.setString(8, card.getMailaddress());
+					}
+					else {
+						pStmt.setString(8, null);
+					}
+
+					pStmt.setString(9, card.getNumber());
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+			// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+			public boolean delete(String number) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+
+					// SQL文を準備する☆済
+					String sql = "delete from BC where number=?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					pStmt.setString(1, number);
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+		}
