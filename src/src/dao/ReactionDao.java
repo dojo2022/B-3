@@ -27,7 +27,7 @@ public class ReactionDao {
 			// SQL文を準備する(件数をカウントし降順で3つ表示)
 			String sql = "SELECT reaction_id, review_id, user_id, stamp_id where review_id = ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(0, review_id);
+			pStmt.setString(1, review_id);
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 

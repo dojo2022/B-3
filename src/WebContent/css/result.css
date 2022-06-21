@@ -19,6 +19,7 @@
 
 .buttons button {
     width: 100%;
+    height: 50px;
 }
 
 .video-image {
@@ -26,7 +27,11 @@
     height: 150px;
 }
 
-table.video-info th {
+.video-info {
+    height: calc(100% - 200px);
+}
+
+.video-info th {
     text-align: end;
     width: 80px;
 }

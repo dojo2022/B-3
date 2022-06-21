@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -85,17 +87,6 @@ public class MypageServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Reaction", Reaction);
 
-
-//		// フォロー一覧を検索する
-//				FollowDao  fDao = new FollowDao();
-//				List<MasterUser> followList = fDao.FollowUser(user.getUser_id());
-//
-//				// 検索結果をリクエストスコープに格納する
-//				request.setAttribute("followList", followList);
-//
-
-
-
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
@@ -111,7 +102,6 @@ public class MypageServlet extends HttpServlet {
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
 
 			//★リクエストパラメータを取得する
-			//マイレビュー投稿一覧関連
 			request.setCharacterEncoding("UTF-8");
 			String review_id = request.getParameter("review_id");
 			String user_id = request.getParameter("user_id");
@@ -121,27 +111,28 @@ public class MypageServlet extends HttpServlet {
 			String feelcat_name1 = request.getParameter("feelcat_name1");
 			String feelcat_name2 = request.getParameter("feelcat_name2");
 			String star = request.getParameter("star");
-			String review_date = request.getParameter("review_date");
+			//JAVAで現在時刻を取得する
+			LocalDateTime now_datetime = LocalDateTime.now();
+			//取得したデータを文字列型「"yyyy/MM/dd hh:mm:ss"」に変換する
+			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+			String review_date = sdf1.format(now_datetime);
 
-			//リプライ一覧関連
 			String reply_id = request.getParameter("reply_id");
-			String review_id1 = request.getParameter("review_id");
-			String user_id1 = request.getParameter("user_id");
 			String reply_contents = request.getParameter("reply_contents");
-			String reply_date = request.getParameter("reply_date");
+			//JAVAで現在時刻を取得する
+			LocalDateTime now_datetime2 = LocalDateTime.now();
+			//取得したデータを文字列型「"yyyy/MM/dd hh:mm:ss"」に変換する
+			SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+			String reply_date = sdf2.format(now_datetime);
 
-
-			//スタンプを送ったレビュー一覧関連
 			String reaction_id = request.getParameter("reaction_id");
-			//String review_id = request.getParameter("review_id");
-			//String user_id = request.getParameter("user_id");
 			String stamp_id = request.getParameter("stamp_id");
 
 
 			// レビュー編集または削除を行う
 			ReviewDao rDao = new ReviewDao();
   		if (request.getParameter("REVIEWEDIT").equals("編集")) {
-				if (rDao.update(new Review(review_id1, user_id1, video_id, review_contents,
+				if (rDao.update(new Review(review_id, user_id, video_id, review_contents,
 					genre_id, feelcat_name1, feelcat_name2, star, review_date))) {	// 登録成功
 					request.setAttribute("result","success");
 //					new Result("更新成功", "新しいレビューを投稿しました。", "/FLIFRE/MypageServlet"));
@@ -152,7 +143,7 @@ public class MypageServlet extends HttpServlet {
 				}
 			}
 			else {
-				if (rDao.delete(review_id1)) {	// 削除成功
+				if (rDao.delete(review_id)) {	// 削除成功
 					request.setAttribute("result","success");
 //					new Result("削除成功！", "レビューを削除しました。", "/FLIFRE/MypageServlet"));
 				}
@@ -169,7 +160,7 @@ public class MypageServlet extends HttpServlet {
 			// リプライ編集または削除を行う
 			ReplyDao pDao = new ReplyDao();
 			if (request.getParameter("REPLYWEDIT").equals("編集")) {
-				if (pDao.update(new Reply(reply_id, review_id1, user_id1,
+				if (pDao.update(new Reply(reply_id, review_id, user_id,
 		  			reply_contents, reply_date))) {	// 登録成功
 					request.setAttribute("result","success");
 //					new Result("更新成功", "新しいリプライを送信しました。", "/FLIFRE/MypageServlet"));
@@ -190,13 +181,13 @@ public class MypageServlet extends HttpServlet {
 				}
 			}
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher1 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher1.forward(request, response);
 
 
 			// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
 			if (request.getParameter("STAMP").equals("")) {
-				if (aDao.update(new Reaction(reaction_id, review_id1, user_id1, stamp_id))) {	// 登録成功
+				if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
 					request.setAttribute("result","success");
 //					new Result("更新成功", "新しいスタンプに変更しました。", "/FLIFRE/MypageServlet"));
 				}
@@ -216,13 +207,13 @@ public class MypageServlet extends HttpServlet {
 				}
 			}
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher2 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher2.forward(request, response);
 
 
 			// 新規リプライ送信を行う
 			ReplyDAO pDao = new pDAO();
-			if (pDao.insert(new Reply(reply_id, review_id1, user_id1,
+			if (pDao.insert(new Reply(reply_id, review_id, user_id,
 				reply_contents, reply_date))) {	// 登録成功
 				request.setAttribute("result","success");
 //				new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
@@ -233,7 +224,7 @@ public class MypageServlet extends HttpServlet {
 			}
 
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-			dispatcher.forward(request, response);
+			RequestDispatcher dispatcher3 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
+			dispatcher3.forward(request, response);
 	}
 }

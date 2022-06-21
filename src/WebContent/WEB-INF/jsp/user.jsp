@@ -20,7 +20,7 @@
 		<div class="userprofile">
 
 		<span>${m_user.user_hd}
-		<!-- m_userのuser_hd ヘッダーを引用、userprofileクラスの背景に配置したい -->
+		<!-- m_userのuser_hdを引用、userprofileクラスの背景に配置したい -->
 		</span>
 
 
@@ -31,23 +31,18 @@
 		</form>
 	<br>
 
-		<span><!-- <img id="pf_icon" src="./images/pf_img.png"> -->
+		<span><!-- アイコン -->
 		${m_user.user_img}
 		</span>
-		<!-- m_userのuser_img アイコンを引用、丸い形にするかは未定 -->
+		<!-- m_userのuser_imgを引用 -->
 
-		<span><!-- うに軍艦  -->
+		<span><!-- ユーザー名  -->
 		${m_user.user_name}
 		</span><!-- m_userのuser_nameを引用 -->
 	<br>
 	<br>
 
-		<span><!-- ジャンル問わず色々見てます。 -->
-		${m_user.user_name}
-		</span><!-- m_userのuser_nameを引用 -->
-	<br>
-
-		<span><!-- ジャンル問わず色々見てます。 -->
+		<span><!-- プロフィール文 -->
 		${m_user.user_pf}
 		</span><!-- m_userのuser_pfを引用 -->
 	<br>
@@ -57,17 +52,13 @@
 			<span>フォロー　${followCount}</span>
 			<span>フォロワー　${followerCount}</span>
 		</a>
-
 	</div>
 	<!-- ユーザープロフィールボックスここまで -->
+	<br>
 	<hr>
 	<br>
 
 	<!-- ユーザーレビュー投稿一覧ここから -->
-	<c:forEach var="e" items="${Review}" >
-		<p>${e.review_id}</p>
-	</c:forEach>
-
 	<form id = "userreview" method="POST" action="/FLIFRE/UserpageServlet">
 		<table>
 			<tr>
@@ -80,50 +71,52 @@
 					<div id= "userreview_list" >
 					<!--t_reviewを呼び出したい -->
 					<hr>
-						<!-- <img id="pf_icon" src="./images/pf_img.png"> -->
-						<input class="circle" type="image" name="user_img" value="${m_user.user_img}" readonly>
+					<br>
+					<c:forEach var="e" items="${Review}" >
+						<!-- アイコン -->
+						${m_user.user_img}" readonly
 						<!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
 
-						<span><!-- うに軍艦  -->
-						<input class="user" type="text" name="user_name" value="${m_user.user_name}" readonly>
+						<span><!-- ユーザー名  -->
+						${m_user.user_name}
 						</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
 					<br>
 					<br>
 
-						<span><!-- アイアンマン -->
-						<input class="video" type="text" name="video_id" value="${t_review.video_id}" readonly>
+						<span><!-- 作品名 -->
+						${t_review.video_id}
 						</span><!-- t_reviewのvideo_idを引用 -->
 
-						<span><!--  ★★★★★  -->
-						<input class="star" type="text" name="star" value="${t_review.star}" readonly>
+						<span><!--  5段階評価  -->
+						${t_review.star}
 						</span><!-- t_reviewのstarを引用 -->
 
-						<span><!-- 2022年6月12日 16時00分 -->
-						<input class= "time" type="date" name="review_date" value="${t_review.review_date}" readonly>
+						<span><!-- 投稿日時 -->
+						${t_review.review_date}
 						</span><!-- t_reviewのreview_dateを引用 -->
 					<br>
 
-						<span><!--  ジャンル：アクション  -->
-						<input class="genre" type="text" name="genre_id" value="${t_review.genre_id}" readonly>
+						<span><!--  ジャンル  -->
+						${t_review.genre_id}
 						</span><!-- t_reviewのgenre_idを引用 -->
 
-						<span><!--  感想カテゴリ1：スカッとする  -->
-						<input class="feelcat1" type="text" name="feelcat_name1" value="${t_review.feelcat_name1}" readonly>
+						<span><!--  感想カテゴリ1  -->
+						${t_review.feelcat_name1}
 						</span><!-- t_reviewのfeelcat_name1を引用 -->
 
-						<span><!--  感想カテゴリ2：非日常的  -->
-						<input class="feelcat2" type="text" name="feelcat_name2" value="${t_review.feelcat_name2}" readonly>
+						<span><!--  感想カテゴリ2  -->
+						${t_review.feelcat_name2}
 						</span><!-- t_reviewのfeelcat_name2を引用 -->
 
-						<span><!-- 始まりにして頂点。全てが最高。 -->
-						<input class="review" type="text" name="review_contents" value="${t_review.review_contents}" readonly>
+						<span><!-- レビュー本文 -->
+						${t_review.review_contents}
 						</span><!-- t_reviewのreview_contentsを引用 -->
 
 						<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
-						<input class="stamp" type="image" name="stamp_id" value="${t_reaction.stamp_id}" readonly>
-						<!-- スタンプの画像をクリックすると画像が変化 -->
-						<!-- m_stampのstamp_id, stamp_name -->
 						<!-- マイページではちゃんと動作するのにユーザーページでは動かない！！確認が必要 -->
+						<!-- スタンプの画像をクリックすると画像が変化 -->
+						${t_reaction.stamp_id}
+						<!-- m_stampのstamp_id, stamp_name -->
 					<br>
 
 						<!-- リプライフォームここから ここのデータ格納方法が分からない-->
@@ -154,6 +147,7 @@
 							</div>
 						</div>
 						<!-- リプライフォームここまで -->
+						</c:forEach>
 					</div>
 				</td>
 			</tr>

@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* ページの長さ */
+.fbody {
+	height: 1300px;
+}
+
 /* フォロー/フォロワー一覧を横並びに */
 .flex {
 	display: flex;
@@ -10,8 +15,17 @@
 	text-align: right;
 }
 
+/* フォローボタンの上枠線を消す */
+#deleteTopBorder {
+	border-top: none;
+}
+
+#deleteBottomBorder {
+	border-bottom: none;
+}
+
 /* フォロー一覧 */
-#follow_table{
+.follow_table{
 	border-collapse: collapse;
 	margin: auto;
 	height: 450px;
@@ -28,23 +42,28 @@ div#table {
 	height: 450px;
 }
 
-#follow_table th, #follow_table td{
+.follow_table th, .follow_table td{
 	border: 1px solid #715c1f;
 	text-align: left;
 }
 
-#follow_table th{
+.follow_table th{
 	background-color: #c1e4e9;
 	color: #726d40;
 	vertical-align: top;
 	text-align: center;
 }
 
-table#follow_table tr.data_row:hover {
+/*
+#follow_table tr{
+	border: 4px solid #715c1f;
+}
+*/
+table.follow_table tr.data_row:hover {
 	 	background-color: #e9efd5;
 	}
 
-#follow_table #bottun {
+.follow_table #bottun {
 	text-align: right;
 }
 
@@ -76,6 +95,10 @@ div#table {
 	color: #726d40;
 	vertical-align: top;
 	text-align: center;
+}
+
+#follower_table tr{
+	border: 4px solid #715c1f;
 }
 
 table#follower_table tr.data_row:hover {

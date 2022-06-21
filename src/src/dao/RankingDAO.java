@@ -66,7 +66,7 @@ public class RankingDAO {
 		return ReviewRanking;
 	}
 	// 引数paramで検索項目を指定し、検索結果のリストを返す(アニメ)
-		public List<Ranking> selectnime() {
+		public List<Ranking> selectAnime() {
 			Connection conn = null;
 			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 
@@ -78,7 +78,7 @@ public class RankingDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 				// SQL文を準備する(件数をカウントし降順で3つ表示)
-				String sql = "SELECT t_review.video_id,M_VIDEO.video_name,count(t_review.video_id) FROM t_review LEFT JOIN M_VIDEO ON t_review.video_id=M_VIDEO.video_id GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC WHERE genre_id = 'g000000001' limit 3";
+				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC WHERE genre_id = 'g000000001' limit 3";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を実行し、結果表を取得する
@@ -117,7 +117,7 @@ public class RankingDAO {
 			return ReviewRanking;
 		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(国内)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectLocal() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -170,7 +170,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(欧米)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectUs() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -223,7 +223,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(韓国)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectKorea() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -276,7 +276,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(華流)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectChina() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -329,7 +329,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(アクション)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectAction() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -382,7 +382,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(コメディ)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectComedy() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -435,7 +435,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(キッズ・ファミリー)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectFamily() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -488,7 +488,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(ヒューマンドラマ)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectHuman() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -541,7 +541,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(サスペンス)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectSuspense() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -594,7 +594,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(ラブロマンス)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectRomance() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -647,7 +647,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(ホラー)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectHorror() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -700,7 +700,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(ファンタジー)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectFantasy() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -753,7 +753,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(SF)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectSf() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
@@ -806,7 +806,7 @@ public class RankingDAO {
 //			return ReviewRanking;
 //		}
 //		// 引数paramで検索項目を指定し、検索結果のリストを返す(バラエティ)
-//		public List<Ranking> select(Ranking param) {
+//		public List<Ranking> selectBariety() {
 //			Connection conn = null;
 //			List<Ranking> ReviewRanking = new ArrayList<Ranking>();
 //
