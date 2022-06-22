@@ -208,12 +208,23 @@ public class ReviewDao {
 				if (pStmt.executeUpdate() == 1) {
 					result = true;
 				}
+
+				String sql2 = "UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null";
+				PreparedStatement pStmt2 = conn.prepareStatement(sql2);
+				// SQL文を実行する
+				if (pStmt2.executeUpdate() == 1) {
+					result = true;
+				}
+
+
+
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
 			}
 			catch (ClassNotFoundException e) {
 				e.printStackTrace();//スタックトレースを出力
+
 			}
 			finally {
 				// データベースを切断

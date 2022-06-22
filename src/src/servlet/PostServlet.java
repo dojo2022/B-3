@@ -10,12 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.MasterGenreDao;
 import dao.MasterUserDao;
 import dao.MasterVideoDao;
 import dao.ReviewDao;
 import model.LoginUser;
-import model.MasterGenre;
 import model.MasterUser;
 import model.MasterVideo;
 import model.Review;
@@ -64,13 +62,13 @@ public class PostServlet extends HttpServlet {
 
 
 		//ジャンルのidなどをもらう
-		String genre_id=
-		request.getParameter("video_id");
-
-		MasterGenreDao gDao = new MasterGenreDao();
-		MasterGenre genre = gDao.selectOne(genre_id);
-
-		request.setAttribute("genre",genre);
+//		String genre_id=
+//		request.getParameter("video_id");
+//
+//		MasterGenreDao gDao = new MasterGenreDao();
+//		MasterGenre genre = gDao.selectOne(genre_id);
+//
+//		request.setAttribute("genre",genre);
 
 		// 投稿ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/post.jsp");

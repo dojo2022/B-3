@@ -23,14 +23,18 @@
 					<td id="name"><a href="/FLIFRE/UserpageServlet?user_id=${e.user_id}">${e.user_name}</a></td>
 	   			</tr>
 	   			<tr>
-	    			<td><input class="user" type="text" name="user_name" value="${e.user_name}" readonly></td>
-				    <td><input class="video" type="text" name="video_name" value="${e.video_name}" readonly></td>
-				    <td><input class="time" type="text" name="video_time" value="${e.video_time}" readonly></td>
-				    <td><input class="date" type="text" name="" value="${e.review_date}" readonly></td>
+				    <td>${e.video_name}</td>
+				    <td>${e.star}</td>
+				    <td>${e.review_date}</td>
+				    <td>${e.genre_name}</td>
+				    <td>${e.feelcat_name1}</td>
+				    <td>${e.feelcat_name2}</td>
+				    <td>${e.video_time}</td>
+
 				    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
 	   			</tr>
 	   			<tr>
-				    <td><input class="review" type="text" name="review_contents" value="${e.review_contents}" readonly></td>
+				    <td>${e.review_contents}</td>
 				    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
 	   				<input type="checkbox" id="popup">
 						<div class="overlay">

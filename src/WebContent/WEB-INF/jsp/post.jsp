@@ -23,8 +23,8 @@
    			<form id="post_form" method="GET" action="/FLIFRE/PostServlet" onsubmit="return post()">
 				<table>
 					<tr>
-		    			<td><input class="circle" type="text" name="user_img"  value="${user.user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
-		   				<td><strong>${user.user_name}</strong></td>
+		    			<td><input class="circle" type="text" name="user_img"  value="${m_user.user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
+		   				<td><strong>${m_user.user_name}</strong></td>
 		   				<!-- 			<span>ユーザー名</span>m_userのuser_nameを引用予定 -->
 		   			</tr>
 		   		</table>
@@ -44,13 +44,13 @@
 		    	%>
 
 			    <h2>${vidoe.video_time}</h2><!-- m_videoのvideo_timeを引用 -->
-<%-- 			    <h2>${video.genre_name}</h2><!-- m_videoのgenre_idを引用 --> --%>
+			    <h2>${video.genre_name}</h2><!-- m_videoのgenre_idを引用 -->
 		    </form>
 
 		    <form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
 			    <input type="hidden" name="video_id" value="${video.video_id}">
 			    <input type="hidden" name="user_id" value="'${id.user_id}">
-			    <input type="hidden" name="genre_id" value="'${video.genre_id}">
+			    <input type="hidden" name="genre_name" value="'${video.genre_name}">
 			    <table>
 			        <tr>
 						<td>
