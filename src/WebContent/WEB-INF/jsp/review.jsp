@@ -18,7 +18,9 @@
 		<table class="table">
 			<c:forEach var="e" items="${cardList}" >
 				<tr>
-	    			<td><input class="circle" type="text" name="user_img" value="${e.user_img}" readonly></td>
+<%-- 	    			<td><input class="circle" type="text" name="user_img" value="${e.user_img}" readonly></td> --%>
+	    			<td id="icon"><img src="images/${e.user_img}" width="75" height="75"></td>
+					<td id="name"><a href="/FLIFRE/UserpageServlet?user_id=${e.user_id}">${e.user_name}</a></td>
 	   			</tr>
 	   			<tr>
 	    			<td><input class="user" type="text" name="user_name" value="${e.user_name}" readonly></td>
