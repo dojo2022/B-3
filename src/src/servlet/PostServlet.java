@@ -70,6 +70,8 @@ public class PostServlet extends HttpServlet {
 		MasterGenreDao gDao = new MasterGenreDao();
 		MasterGenre genre = gDao.selectOne(genre_id);
 
+		request.setAttribute("genre",genre);
+
 		// 投稿ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/post.jsp");
 		dispatcher.forward(request, response);

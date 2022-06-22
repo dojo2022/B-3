@@ -44,7 +44,7 @@
 		    	%>
 
 			    <h2>${vidoe.video_time}</h2><!-- m_videoのvideo_timeを引用 -->
-			    <h2>${video.genre_name}</h2><!-- m_videoのgenre_idを引用 -->
+<%-- 			    <h2>${video.genre_name}</h2><!-- m_videoのgenre_idを引用 --> --%>
 		    </form>
 
 		    <form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
