@@ -27,7 +27,8 @@
 .count {
 	float:right;
 	color:#056334;
-	margin-right:10px;
+	margin-right:40px;
 	margin-top:5px;
 	font-family:impact;
+	font-size:120%;
 }

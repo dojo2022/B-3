@@ -32,6 +32,7 @@ public class ReviewServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		// 検索処理を行う
 			ReviewDao rDao = new ReviewDao();
 			List<Review> cardList = rDao.select(new Review("", "", "", "", "", "", "", "", ""));
