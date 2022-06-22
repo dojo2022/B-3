@@ -19,16 +19,16 @@
 <div class="border1">
  <table class="table">
    <tr>
-    <td><input class="circle" type="" name="" value="" readonly></td>
+    <td><input class="circle" type="" name="" value="${user_img}" readonly></td>
    </tr>
    <tr>
-    <td><input class="user"type="" name="" value="" readonly></td>
-    <td><input class="video"type="" name="" value="" readonly></td>
-    <td><input class="time"type="" name="" value="" readonly></td>
+    <td><input class="user"type="" name="" value="${user_name}" readonly></td>
+    <td><input class="video"type="" name="" value="${video_name}" readonly></td>
+    <td><input class="time"type="" name="" value="${rewiew_date}" readonly></td>
     <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
-    <td><input class="review"type="text" name="review_contents" value="${e.review_contents}" readonly></td>
+    <td><input class="review"type="text" name="review_contents" value="${review_contents}" readonly></td>
     <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
  </table>

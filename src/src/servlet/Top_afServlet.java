@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ReviewDao;
-import model.Review;
+import model.Top;
 
 /**
  * Servlet implementation class Top_afServlet
@@ -31,25 +31,21 @@ public class Top_afServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/FLIFRE/LoginServlet");
-			return;
-		}
+		/*		if (session.getAttribute("id") == null) {
+					response.sendRedirect("/FLIFRE/Top_bfServlet");
+					return;
+				}*/
 
 
-       //リクエストパラメーター取得
-		request.setCharacterEncoding("UTF-8");
 
-
-		//検索処理を行う
 		ReviewDao rDao = new ReviewDao();
-		List<Review> ReviewRanking = rDao.select(new Review());//<改造>検索無関係はからにする
+		List<Top> Reviewlist = rDao.select1();
 
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("ReviewRanking", ReviewRanking);
+		request.setAttribute("Review", Reviewlist);
 
 	// ログイン後トップページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_bf.jsp");
 		dispatcher.forward(request, response);
 	}
 }

@@ -21,7 +21,7 @@ public class Top_bfServlet extends HttpServlet {
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//ログイン前トップページに遷移
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_bf.jsp");
 		dispatcher.forward(request, response);
 	}
 
