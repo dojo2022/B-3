@@ -292,6 +292,21 @@ INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, f
 実際に行った事も無い街の、会った事も無い人たちの息の匂いまで「ムワッ」とスクリーンから溢れて来る
 ドラマティックなのにすごく生々しい','g000000004', '怖い', 'ミステリアアス', '4');
 
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000012', 'u000000002',
+'ジアとわんちゃんは可愛い
+髭とソヨンはなんだかんだ似た者でお似合い
+シフン、、、
+イェウォン健康食品の分量よ
+途中参加は日数足らなすぎ
+最後くらいキスシーンないんか
+シーズン２も作ってね','g000000004', 'ときめく', '優雅', '5');
+
+
+
+
+
+
+
 
 
 【t_replyの挿入】
