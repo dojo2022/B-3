@@ -46,11 +46,14 @@ public class UserpageServlet extends HttpServlet {
 			response.sendRedirect("/FLIFRE/LoginServlet");
 		return;
 		}
-
+/*
 		//★セッションからユーザーIDを取得
 		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
 		LoginUser user = (LoginUser)session.getAttribute("id");
 		String user_id = user.getUser_id();
+*/
+		request.setCharacterEncoding("UTF-8");
+		String user_id = request.getParameter("user_id");
 
 		//データベースから名前を取得
 		MasterUserDao dao = new MasterUserDao();
