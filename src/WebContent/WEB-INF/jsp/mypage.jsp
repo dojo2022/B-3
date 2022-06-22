@@ -18,10 +18,9 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
-			<span><!-- ヘッダー -->
-			${m_user.user_hd}
+			<!-- ヘッダー -->
+			<!--${m_user.user_hd} -->
 			<!-- m_userのuser_hdを引用、myprofileクラスの背景に配置したい -->
-			</span>
 
 			<span><!-- アイコン -->
 			<img src="images/${m_user.user_img}" width="75" height="75">
@@ -73,16 +72,14 @@
 						<hr>
 						<br>
 						<c:forEach var="e" items="${Reviewdata}" >
-<!-- 							<span>アイコン -->
-<%-- 							${e.user_img} --%>
-<!-- 							</span>m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
-
-<!-- 							<span>ユーザー名  -->
-<%-- 							${e.user_name}<br> --%>
-<!-- 							</span>m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
 						<br>
-						<span><img src="images/${e.user_img}" width="75" height="75"></span>
-					    <span>${e.user_name}</span>
+						<span><!-- アイコン -->
+						<img src="images/${e.user_img}" width="75" height="75">
+						</span>
+
+					    <span><!-- ユーザー名  -->
+					    ${e.user_name}
+					    </span>
 						<br>
 
 							<span><!-- 作品名 -->
