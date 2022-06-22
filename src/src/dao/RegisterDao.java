@@ -22,8 +22,8 @@ public class RegisterDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する
-			String sql = "INSERT INTO m_user (user_mail,user_pw,user_pw,user_name) "
-					+ "VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO m_user (user_mail,user_pw,user_name) "
+					+ "VALUES (?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる 空文字列ではなくnullを入れることになってる
@@ -39,17 +39,11 @@ public class RegisterDao {
 			} else {
 				pStmt.setString(2, null);
 			}
-			//user_pw
-			if (newUser.getUser_pw() != null && !newUser.getUser_pw().equals("")) {
-				pStmt.setString(3, newUser.getUser_pw());
-			} else {
-				pStmt.setString(3, null);
-			}
 			//user_name
 			if (newUser.getUser_name() != null && !newUser.getUser_name().equals("")) {
-				pStmt.setString(4, newUser.getUser_name());
+				pStmt.setString(3, newUser.getUser_name());
 			} else {
-				pStmt.setString(4, null);
+				pStmt.setString(3, null);
 			}
 
 			// SQL文を実行する　何行登録されたか（1じゃなきゃおかしい）

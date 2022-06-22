@@ -12,9 +12,11 @@
 	<div class="wrapper">
 <!-- ロゴ -->
 	<header>
+	<div id="logo">
 		<a href="/FLIFRE/Top_afServlet">
-			<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
+			<img src="images/logo.png" width="240" height="140" alt="FLIFRE">
 		</a>
+	</div>
 	</header>
 <!-- 新規会員登録 -->
 	<main>
@@ -35,6 +37,7 @@
 				</label>
 				</td>
 			</tr>
+<!--
 			<tr>
 				<td>
 				<label>パスワード（再入力）<br>
@@ -42,6 +45,7 @@
 				</label>
 				</td>
 			</tr>
+-->
 			<tr>
 				<td>
 				<label>ユーザー名<br>
@@ -56,6 +60,11 @@
           		<span id="error_message"></span>
 		        <td>
 		    </tr>
+		    <tr>
+			    <td>
+			    <a href="/FLIFRE/LoginServlet">ログイン</a>
+			    </td>
+			</tr>
 		</table>
 	</form>
 	</main>
