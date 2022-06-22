@@ -22,6 +22,7 @@ import model.LoginUser;
 import model.MasterUser;
 import model.Reaction;
 import model.Reply;
+import model.Replydata;
 import model.Review;
 import model.Reviewdata;
 
@@ -79,15 +80,15 @@ public class MypageServlet extends HttpServlet {
 
 		// リプライ一覧を検索する
 		ReplyDao  pDao = new ReplyDao();
- 		List<Reply> Reply = pDao.select(user_id);
+ 		List<Replydata> Replydata = pDao.select2(user_id);
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("Reply", Reply);
+		request.setAttribute("Replydata", Replydata);
 
 		// リアクション一覧を検索する
 		ReactionDao  aDao = new ReactionDao();
-		List<Reaction> Reaction = aDao.select(user_id);
+		List<Reactiondata> Reactiondata = aDao.select2(user_id);
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("Reaction", Reaction);
+		request.setAttribute("Reactiondata", Reactiondata);
 
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");

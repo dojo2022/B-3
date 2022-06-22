@@ -1,17 +1,16 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class Reply implements Serializable {
 	private String reply_id;
 	private String review_id;
 	private String user_id;
 	private String reply_contents;
-	private Date reply_date;
+	private String reply_date;
 
 	//引数があるコンストラクタ
-	public Reply(String reply_id, String review_id, String user_id, String reply_contents, Date reply_date) {
+	public Reply(String reply_id, String review_id, String user_id, String reply_contents, String reply_date) {
 		super();
 		this.reply_id = reply_id;
 		this.review_id = review_id;
@@ -27,7 +26,7 @@ public class Reply implements Serializable {
 		this.review_id = "";
 		this.user_id = "";
 		this.reply_contents = "";
-		this.reply_date = null ;
+		this.reply_date = "" ;
 	}
 
 	//getter/setter
@@ -63,11 +62,11 @@ public class Reply implements Serializable {
 		this.reply_contents = reply_contents;
 	}
 
-	public Date getReply_date() {
+	public String getReply_date() {
 		return reply_date;
 	}
 
-	public void setReply_date(Date reply_date) {
+	public void setReply_date(String reply_date) {
 		this.reply_date = reply_date;
 	}
 
