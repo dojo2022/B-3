@@ -12,9 +12,11 @@
 <body id="login_body">
 	<div class="wrapper">
 <!-- ロゴ -->
+	<div id="logo">
 		<a href="/FLIFRE/Top_afServlet">
-			<img src="images/logo.png" width="480" height="281" alt="FLIFRE">
+			<img src="images/logo.png" width="240" height="140" alt="FLIFRE">
 		</a>
+	</div>
 <!-- ログイン -->
 	<main>
 		<h2 id="explain">ログイン</h2>
@@ -43,7 +45,7 @@
 			    </tr>
 			    <tr>
 			    	<td>
-			    	<a href="register.jsp">新規会員登録</a>
+			    	<a href="/FLIFRE/RegisterServlet">新規会員登録</a>
 			    	</td>
 			    </tr>
 			</table>
