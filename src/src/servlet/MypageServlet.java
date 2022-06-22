@@ -73,7 +73,7 @@ public class MypageServlet extends HttpServlet {
 
 		// レビュー一覧を検索する
 		ReviewDao  rDao = new ReviewDao();
-		List<Reviewdata> Reviewdata = rDao.selectReview(user_id);
+		List<Reviewdata> Reviewdata = rDao.select2(user_id);
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Reviewdata", Reviewdata);
 

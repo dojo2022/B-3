@@ -18,13 +18,12 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
-			<span><!-- ヘッダー -->
-			${m_user.user_hd}
+			<!-- ヘッダー -->
+			<!--${m_user.user_hd} -->
 			<!-- m_userのuser_hdを引用、myprofileクラスの背景に配置したい -->
-			</span>
 
 			<span><!-- アイコン -->
-			${m_user.user_img}
+			<img src="images/${m_user.user_img}" width="75" height="75">
 			</span>
 			<!-- m_userのuser_imgを引用 -->
 			<br>
@@ -73,15 +72,14 @@
 						<hr>
 						<br>
 						<c:forEach var="e" items="${Reviewdata}" >
-							<span><!-- アイコン -->
-							${e.user_img}
-							</span><!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
-
-							<span><!-- ユーザー名  -->
-							${e.user_name}<br>
-							</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
-						</c:forEach>
 						<br>
+						<span><!-- アイコン -->
+						<img src="images/${e.user_img}" width="75" height="75">
+						</span>
+
+					    <span><!-- ユーザー名  -->
+					    ${e.user_name}
+					    </span>
 						<br>
 
 							<span><!-- 作品名 -->
@@ -115,11 +113,13 @@
 							<br>
 							<br>
 
+
 							<input class="delete" type="submit" name="REVIEWDELETET" value="削除">
 							<input class="edit" type="submit" name="REVIEWEDIT" value="編集">
 						<br>
 						<hr>
 						<br>
+						</c:forEach>
 						</div>
 
 						<div id="reply_list">
