@@ -21,7 +21,9 @@ import dao.ReviewDao;
 import model.LoginUser;
 import model.MasterUser;
 import model.Reaction;
+import model.Reactiondata;
 import model.Reply;
+import model.Replydata;
 import model.Review;
 import model.Reviewdata;
 
@@ -79,15 +81,15 @@ public class MypageServlet extends HttpServlet {
 
 		// リプライ一覧を検索する
 		ReplyDao  pDao = new ReplyDao();
- 		List<Reply> Reply = pDao.select(user_id);
+ 		List<Replydata> Replydata = pDao.select2(user_id);
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("Reply", Reply);
+		request.setAttribute("Replydata", Replydata);
 
 		// リアクション一覧を検索する
 		ReactionDao  aDao = new ReactionDao();
-		List<Reaction> Reaction = aDao.select(user_id);
+		List<Reactiondata> Reactiondata = aDao.select2(user_id);
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("Reaction", Reaction);
+		request.setAttribute("Reactiondata", Reactiondata);
 
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
@@ -188,6 +190,7 @@ public class MypageServlet extends HttpServlet {
 
 
 			// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
+			ReactionDao aDao = new ReactionDao();
 			if (request.getParameter("STAMP").equals("")) {
 				if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
 					request.setAttribute("result","success");
@@ -214,7 +217,7 @@ public class MypageServlet extends HttpServlet {
 
 
 			// 新規リプライ送信を行う
-			ReplyDAO pDao = new pDAO();
+			//ReplyDAO pDao = new ReplyDAO();
 			if (pDao.insert(new Reply(reply_id, review_id, user_id,
 				reply_contents, reply_date))) {	// 登録成功
 				request.setAttribute("result","success");

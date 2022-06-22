@@ -19,9 +19,8 @@
 		<!-- ユーザープロフィールボックスここから -->
 		<div class="userprofile">
 
-		<span>${m_user.user_hd}
+		<!-- ${m_user.user_hd} -->
 		<!-- m_userのuser_hdを引用、userprofileクラスの背景に配置したい -->
-		</span>
 
 
 		<form id = follow_Lift method="POST" action="/FLIFRE/UserpageServlet">
@@ -32,7 +31,7 @@
 	<br>
 
 		<span><!-- アイコン -->
-		${m_user.user_img}
+		<img src="images/${m_user.user_img}" width="75" height="75">
 		</span>
 		<!-- m_userのuser_imgを引用 -->
 
@@ -72,51 +71,54 @@
 					<!--t_reviewを呼び出したい -->
 					<hr>
 					<br>
-					<c:forEach var="e" items="${Review}" >
+					<c:forEach var="e" items="${Reviewdata}" >
+					<br>
 						<!-- アイコン -->
-						${m_user.user_img}" readonly
-						<!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
+						<img src="images/${e.user_img}" width="75" height="75">
+
 
 						<span><!-- ユーザー名  -->
-						${m_user.user_name}
-						</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
-					<br>
+						${e.user_name}
+						</span>
 					<br>
 
 						<span><!-- 作品名 -->
-						${t_review.video_id}
+						${e.video_name}
 						</span><!-- t_reviewのvideo_idを引用 -->
 
 						<span><!--  5段階評価  -->
-						${t_review.star}
+						${e.star}
 						</span><!-- t_reviewのstarを引用 -->
 
 						<span><!-- 投稿日時 -->
-						${t_review.review_date}
+						${e.review_date}
 						</span><!-- t_reviewのreview_dateを引用 -->
 					<br>
 
 						<span><!--  ジャンル  -->
-						${t_review.genre_id}
+						${e.genre_name}
 						</span><!-- t_reviewのgenre_idを引用 -->
 
 						<span><!--  感想カテゴリ1  -->
-						${t_review.feelcat_name1}
+						${e.feelcat_name1}
 						</span><!-- t_reviewのfeelcat_name1を引用 -->
 
 						<span><!--  感想カテゴリ2  -->
-						${t_review.feelcat_name2}
+						${e.feelcat_name2}
 						</span><!-- t_reviewのfeelcat_name2を引用 -->
 
 						<span><!-- レビュー本文 -->
-						${t_review.review_contents}
+						${e.review_contents}
 						</span><!-- t_reviewのreview_contentsを引用 -->
+					</c:forEach>
 
+					<c:forEach var="e" items="${Reactiondata}" >
 						<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
 						<!-- マイページではちゃんと動作するのにユーザーページでは動かない！！確認が必要 -->
 						<!-- スタンプの画像をクリックすると画像が変化 -->
-						${t_reaction.stamp_id}
+						${e.stamp_name}
 						<!-- m_stampのstamp_id, stamp_name -->
+					</c:forEach>
 					<br>
 
 						<!-- リプライフォームここから ここのデータ格納方法が分からない-->
@@ -147,7 +149,6 @@
 							</div>
 						</div>
 						<!-- リプライフォームここまで -->
-						</c:forEach>
 					</div>
 				</td>
 			</tr>

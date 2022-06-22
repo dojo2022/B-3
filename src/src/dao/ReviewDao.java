@@ -260,6 +260,7 @@ public class ReviewDao {
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
+
 					// SQL文を完成させる
 					if (review.getReview_contents() != null && !review.getReview_contents().equals("")) {
 						pStmt.setString(1, review.getReview_contents());
