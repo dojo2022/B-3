@@ -15,39 +15,41 @@
 	<h2>レビュー投稿を表示します</h2>
 	<div class="border1">
 		<table class="table">
-			<tr>
-    			<td><input class="circle" type="" name="" value="" readonly></td>
-   			</tr>
-   			<tr>
-    			<td><input class="user" type="" name="" value="${video.user_name}" readonly></td>
-			    <td><input class="video" type="" name="" value="${vidoe.video_time}" readonly></td>
-			    <td><input class="time" type="" name="" value="${video.video_time}" readonly></td>
-			    <td><input class="date" type="" name="" value="${review.review_date}" readonly></td>
-			    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
-   			</tr>
-   			<tr>
-			    <td><input class="review" type="" name="" value="${review.review_contents}" readonly></td>
-			    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
-   				<input type="checkbox" id="popup">
-					<div class="overlay">
-    					<div class="window">
-        					<label class="close" for="popup">×</label>
-        					<from>
-            					<div class="example">
-    								<label for="namelabel">ユーザー名</label>
-    								<input type="text" name="name" id="namelabel" placeholder="匿名">
-  								</div>
-   								<div class="example">
-								    <label for="ikenlabel" >リプライ内容</label>
-								    <textarea id="iken" placeholder="内容を入力してください"></textarea>
-								</div>
-								<div class="example">
-								    <input type="submit" value="送信する">
-								</div>
-        					</from>
-    					</div>
-					</div>
-			</tr>
+			<c:forEach var="e" items="${cardList}" >
+				<tr>
+	    			<td><input class="circle" type="text" name="user_img" value="${e.user_img}" readonly></td>
+	   			</tr>
+	   			<tr>
+	    			<td><input class="user" type="text" name="user_name" value="${e.user_name}" readonly></td>
+				    <td><input class="video" type="text" name="video_name" value="${e.video_name}" readonly></td>
+				    <td><input class="time" type="text" name="video_time" value="${e.video_time}" readonly></td>
+				    <td><input class="date" type="text" name="" value="${e.review_date}" readonly></td>
+				    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
+	   			</tr>
+	   			<tr>
+				    <td><input class="review" type="text" name="review_contents" value="${e.review_contents}" readonly></td>
+				    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
+	   				<input type="checkbox" id="popup">
+						<div class="overlay">
+	    					<div class="window">
+	        					<label class="close" for="popup">×</label>
+	        					<from>
+	            					<div class="example">
+	    								<label for="namelabel">ユーザー名</label>
+	    								<input type="text" name="name" id="namelabel" placeholder="匿名">
+	  								</div>
+	   								<div class="example">
+									    <label for="ikenlabel" >リプライ内容</label>
+									    <textarea id="iken" placeholder="内容を入力してください"></textarea>
+									</div>
+									<div class="example">
+									    <input type="submit" value="送信する">
+									</div>
+	        					</from>
+	    					</div>
+						</div>
+				</tr>
+			</c:forEach>
  		</table>
   		<div class="border-bottom"></div>
 	</div>

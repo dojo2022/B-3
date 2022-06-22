@@ -28,7 +28,7 @@ public class RankingDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-
+			
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
@@ -78,7 +78,7 @@ public class RankingDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 				// SQL文を準備する(件数をカウントし降順で3つ表示)
-				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC WHERE genre_id = 'g000000001' limit 3";
+				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000001'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を実行し、結果表を取得する
@@ -129,9 +129,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000002'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000002'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -182,9 +180,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000003'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000003'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -235,9 +231,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000004'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000004'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -288,9 +282,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000005'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000005'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -341,9 +333,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000006'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000006'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -394,9 +384,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000007'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000007'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -447,9 +435,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000008'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000008'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3 ";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -500,9 +486,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000009'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000009'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -553,9 +537,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000010'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000010'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -606,9 +588,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000011'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000011'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -659,9 +639,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000012'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000012'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -712,9 +690,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000013'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000013'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -765,9 +741,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000014'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000014'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する
@@ -818,9 +792,7 @@ public class RankingDAO {
 //				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 //
 //				// SQL文を準備する(件数をカウントし降順で3つ表示)
-//				String sql = "SELECT video_id count(video_id) FROM t_review "
-//						+ "GROUP BY video_id ORDER BY count(video_id) DESC"
-//						+ "WHERE genre_id='g000000015'";
+//				String sql = "SELECT t_review.video_id,m_video.video_name,count(t_review.video_id) FROM t_review LEFT JOIN m_video ON t_review.video_id=m_video.video_id WHERE t_review.genre_id = 'g000000015'  GROUP BY t_review.video_id ORDER BY count(t_review.video_id) DESC LIMIT 3";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //
 //				// SQL文を実行し、結果表を取得する

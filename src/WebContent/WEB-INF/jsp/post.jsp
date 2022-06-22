@@ -23,7 +23,7 @@
    			<form id="post_form" method="GET" action="/FLIFRE/PostServlet" onsubmit="return post()">
 				<table>
 					<tr>
-		    			<td><input class="circle" type="" name=""  value="${user.user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
+		    			<td><input class="circle" type="text" name="user_img"  value="${user.user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
 		   				<td><strong>${user.use_name}</strong></td>
 		   				<!-- 			<span>ユーザー名</span>m_userのuser_nameを引用予定 -->
 		   			</tr>
@@ -57,7 +57,7 @@
 				        	感想カテゴリ１
 				        </td>
 				        <td>
-					       <select name="feelcat1" onchange="change(this)">
+					       <select name="feelcat_name1" onchange="change(this)">
 				        	<option>選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				      			<option value="${ status.current }">${ status.current }</option>
@@ -68,7 +68,7 @@
 				         	感想カテゴリ２
 				         </td>
 				         <td>
-				         	<select name="feelcat2">
+				         	<select name="feelcat_name2">
 				            <option>選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				            	<option value="${ status.current }">${ status.current }</option>

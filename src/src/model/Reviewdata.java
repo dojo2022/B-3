@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Review implements Serializable{
+public class Reviewdata implements Serializable{
 	private String review_id;
 	private String video_id;
 	private String user_id;
@@ -12,9 +12,11 @@ public class Review implements Serializable{
 	private String feelcat_name2;
 	private String star;
 	private String review_date;
+	private String user_name;
+	private String user_img;
 
 	//引数があるコンストラクタ
-	public Review(String review_id, String video_id, String user_id, String review_contents, String genre_id,String feelcat_name1, String feelcat_name2, String star, String review_date) {
+	public Reviewdata(String review_id, String video_id, String user_id, String review_contents, String genre_id,String feelcat_name1, String feelcat_name2, String star, String review_date) {
 		super();
 		this.review_id = review_id;
 		this.video_id = video_id;
@@ -26,7 +28,7 @@ public class Review implements Serializable{
 		this.star = star;
 		this.review_date = review_date;
 	}
-	public Review( String video_id, String user_id, String review_contents, String genre_id,String feelcat_name1, String feelcat_name2, String star) {
+	public Reviewdata( String video_id, String user_id, String review_contents, String genre_id,String feelcat_name1, String feelcat_name2, String star) {
 		super();
 		this.video_id = video_id;
 		this.user_id = user_id;
@@ -36,9 +38,13 @@ public class Review implements Serializable{
 		this.feelcat_name2 = feelcat_name2;
 		this.star = star;
 	}
-
+	public Reviewdata(String user_name,String user_img) {
+		super();
+		this.user_name = user_name;
+		this.user_img = user_img;
+	}
 	//引数がないコンストラクタ
-	public Review() {
+	public Reviewdata() {
 		super();
 		this.review_id = "";
 		this.video_id = "";
@@ -123,5 +129,17 @@ public class Review implements Serializable{
 
 	public void setReview_date(String review_date) {
 		this.review_date = review_date;
+	}
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+	public String getUser_img() {
+		return user_img;
+	}
+	public void setUser_img(String user_img) {
+		this.user_img = user_img;
 	}
 }

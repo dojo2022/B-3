@@ -22,7 +22,7 @@ INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VAL
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000008', 'The Shining', '1980', '119', 'g000000003');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000009', 'Suiside Squad', '2016', '132', 'g000000003');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000010', '梨泰院クラス', '2020', '70', 'g000000004');
-INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000011', '愛の不時着', '2019', '70', 'g000000004');
+INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000011', 'パラサイト　半地下の家族', '2019', '131', 'g000000004');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000012', '脱出おひとり島', '2022', '60', 'g000000004');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000013', '少林サッカー', '2001', '112', 'g000000005');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000014', '華麗なるスパイス', '2017', '70', 'g000000005');
@@ -105,7 +105,7 @@ INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, f
 あとメチャクチャかわいいねぇ。',
 'g000000001', '癒される', 'わくわく', '5');
 
-INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000002', 'v000000001', 'u000000001',
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000002', 'v000000001', 'u000000002',
 'すばらしい！非の打ち所がありませんでした！
 原作の時点で凄まじく完成度の高い作品ですが、
 アニメのクオリティもひとつの映像作品としてのレベルが高い！','g000000001', '癒される', '爆笑コメディ', '5');
@@ -232,7 +232,65 @@ BYEがかわいかった。
 こちらのジョーカーも期待通り狂っていたな。
 だけど少し物足りない。','g000000003', '衝撃的', 'ダークな', '4');
 
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000019', 'v000000010', 'u000000007',
+'中盤から、次の話を見たくて我慢するのが大変だった。
+物語の主軸は、主人公のセロイの成長を15年くらいかけて見せてくれる。
+バカ息子のグンウォンが現れると大体、殴り合いになるので少し冷める。
+他のキャラクター達の物語もちゃんとやってくれる。
+面白い','g000000004', '泣ける', '儚い', '4');
 
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000020', 'v000000010', 'u000000008',
+'ちょこちょこ見て後半一気に観ました
+名言も多く、　
+俺の価値は俺が決める。
+俺の人生はこれからだ。
+必ず成功してやる。
+ってのが1番好きでした
+どのキャラクターも良くて何気に14話が1番ほろっと来たかも
+セロイの言葉を引き継いでるの良かったなぁ
+日本版も楽しみ
+香川さんは絶対土下座でキャスティングされてそう笑
+料理も美味しそうで何度Uber頼んだか
+セロイもいいけどやっぱり愛の不時着のジョンヒョクさんですね
+一途な人は素敵
+スアはなんか綺麗になった指原莉乃って感じに見えた
+最近仕事前は梨泰院クラスのstart over聞いてます','g000000004', '泣ける', '儚い', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000021', 'v000000010', 'u000000009',
+'韓国のエンタメに沼るきっかけとなった特別な作品。
+何度心が震え、勇気づけられたか、受けた影響は計り知れない。
+今まで見たドラマの中で圧倒的No. 1。','g000000004', '泣ける', '儚い', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000022', 'v000000010', 'u000000010',
+'日本のリメイクスタートするので改めて見直し。
+韓ドラは苦手という男性にもこのドラマはハマれるのでは？
+男が惚れる男ってこういう人だろうな。
+男気に溢れ、熱く真っ直ぐな信念を貫く人間の復讐劇と成り上がりストーリー。
+パクソジュンはとても当たり役だし、脇を固める役者もキャラ立ちしてて皆さん素晴らしいです。
+OSTがさらに作品を盛り上げてるし、映像、全ての役者の魅力も満載で、長く人気を誇る作品なのは至極納得。
+この上質な作品を、日本がどうリメイクするのか少し心配でもありますが、楽しみにしたいと思います。','g000000004', '泣ける', '儚い', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000023', 'v000000011', 'u000000011',
+'めちゃめちゃ興味深い。考えさせられる
+埋められない貧富の差
+消せない差別
+色濃く描いた家族の絆
+しかし刺された娘置いて去っていくなよ父ちゃん','g000000004', '怖い', '勉強になる', '4');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000024', 'v000000011', 'u000000012',
+'ふとした事がキッカケで富裕層家庭にどんどん寄生していく展開は面白かったし 
+バレないと高を括ってどんちゃん騒ぎからの息を潜めるギリギリのラインは見応えがあった。
+モールス信号がもう少し活躍すると思ったのにそうでもなかったかな？
+どうやっても取れない 半地下の臭いがあの行動を引き起こしたとあって
+皮肉でもあり尊厳でもあり。。','g000000004', '怖い', 'ミステリアアス', '5');
+
+INSERT INTO t_review (review_id, video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('rv00000025', 'v000000011', 'u000000001',
+'登場人物が隣に居るんじゃないか？
+って位「におい」を感じる作品
+「におい」と言っても香水の華やかな香りでも野に咲く花の微かな香りではなく
+「非日常的なクサイ」だったり「生活臭」だったり…
+実際に行った事も無い街の、会った事も無い人たちの息の匂いまで「ムワッ」とスクリーンから溢れて来る
+ドラマティックなのにすごく生々しい','g000000004', '怖い', 'ミステリアアス', '4');
 
 
 
