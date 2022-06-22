@@ -18,9 +18,16 @@
 .list {
     border: 3px double #a3060c;
     list-style: none;
-
+    margin:0 auto;
 }
 .rank {
     height: 30px;
     width: 30px;
+}
+.count {
+	float:right;
+	color:#056334;
+	margin-right:10px;
+	margin-top:5px;
+	font-family:impact;
 }
