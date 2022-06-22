@@ -217,7 +217,7 @@ public class MypageServlet extends HttpServlet {
 
 
 			// 新規リプライ送信を行う
-			ReplyDAO pDao = new pDAO();
+			//ReplyDAO pDao = new ReplyDAO();
 			if (pDao.insert(new Reply(reply_id, review_id, user_id,
 				reply_contents, reply_date))) {	// 登録成功
 				request.setAttribute("result","success");
