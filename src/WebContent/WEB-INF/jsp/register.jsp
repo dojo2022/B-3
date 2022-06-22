@@ -25,27 +25,20 @@
 		<table id="register_table">
 			<tr>
 				<td>
-				<label>メールアドレス(ID)<br>
-				<input type="text" name="ID">
+				<label>メールアドレス<br>
+				<input type="text" name="user_mail">
 				</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<label>パスワード<br>
-				<input type="password" name="PW">
+				<input type="password" name="user_pw" id="password"><br>
+				<input type="checkbox" id="password-check">
+				パスワードを表示
 				</label>
 				</td>
 			</tr>
-<!--
-			<tr>
-				<td>
-				<label>パスワード（再入力）<br>
-				<input type="password" name="PW">
-				</label>
-				</td>
-			</tr>
--->
 			<tr>
 				<td>
 				<label>ユーザー名<br>
@@ -68,6 +61,17 @@
 		</table>
 	</form>
 	</main>
+	<script>
+		    const pwd = document.getElementById('password');
+		    const pwdCheck = document.getElementById('password-check');
+		    pwdCheck.addEventListener('change', function() {
+		        if(pwdCheck.checked) {
+		            pwd.setAttribute('type', 'text');
+		        } else {
+		            pwd.setAttribute('type', 'password');
+		        }
+		    }, false);
+	</script>
 	</div>
 </body>
 </html>

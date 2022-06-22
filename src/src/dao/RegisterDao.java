@@ -50,6 +50,12 @@ public class RegisterDao {
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
 			}
+			String sql2 = "UPDATE M_USER SET  user_id =(SELECT concat('u',right(concat('000000000',CAST( (SELECT id FROM M_USER where user_id is null) AS VARCHAR)),9) )from M_USER where user_id is null ) where user_id is null";
+			PreparedStatement pStmt2 = conn.prepareStatement(sql2);
+			// SQL文を実行する
+			if (pStmt2.executeUpdate() == 1) {
+				result = true;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {

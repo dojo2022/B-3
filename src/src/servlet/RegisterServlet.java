@@ -35,17 +35,13 @@ public class RegisterServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String user_id = request.getParameter("user_id");
 		String user_mail = request.getParameter("user_mail");
 		String user_pw = request.getParameter("user_pw");
 		String user_name = request.getParameter("user_name");
-		String user_pf = request.getParameter("user_pf");
-		String user_img = request.getParameter("user_img");
-		String user_hd = request.getParameter("user_hd");
 
 		// 登録処理を行う
 		RegisterDao rgDao = new RegisterDao();
-		if (rgDao.insert(new MasterUser(user_id,user_mail,user_pw,user_name,user_pf,user_img,user_hd))) {
+		if (rgDao.insert(new MasterUser("",user_mail,user_pw,user_name,"","",""))) {
 			// 登録成功
 			request.setAttribute("error_message", "登録に成功しました。ログイン画面からログインしてください。");
 		} else {
