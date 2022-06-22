@@ -9,16 +9,16 @@
 		    	<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
 		    </h1>
 
-		     <%
-	    pageContext.setAttribute(
-	        "categories",
-	        new String[] {
-	            "爆笑コメディ", "ポジティブ", "癒される", "スカッとする", "優雅",
-	            "非日常的", "わくわく", "ときめく", "勉強になる", "泣ける", "儚い",
-	            "衝撃的", "ミステリアス", "ダーク", "怖い", "グロテスク",
-	        }
-	    );
-	    %>
+		    <%
+				pageContext.setAttribute(
+					"categories",
+					new String[] {
+						"爆笑コメディ", "ポジティブ", "癒される", "スカッとする", "優雅",
+						"非日常的", "わくわく", "ときめく", "勉強になる", "泣ける", "儚い",
+						"衝撃的", "ミステリアス", "ダーク", "怖い", "グロテスク",
+					}
+				);
+			%>
 	    <div class="search1">
 	    	<table>
 		    	<tr>
@@ -27,12 +27,12 @@
 			    	</td>
 			    	<td>
 				        <select name="time">
-				            <option label=""></option>
-				            <option label="～30分"></option>
+				            <option label="" value="-1"></option>
+				            <option label="～30分" value="30"></option>
 				            <core:forEach var="i" begin="30" end="150" step="30">
-				            	<option label="${ i + 1 }～${ i + 30 }分"></option>
+				            	<option label="${ i + 1 }～${ i + 30 }分" value="${ i + 30 }"></option>
 				            </core:forEach>
-				            <option label="181分～"></option>
+				            <option label="181分～" value="1440"></option>
 				        </select>
 			        </td>
 			        <td>
@@ -40,10 +40,10 @@
 			        </td>
 			        <td>
 				        <select name="year">
-				            <option label=""></option>
-				            <option label="～1960年代"></option>
+				            <option label="" value="-1"></option>
+				            <option label="～1960年代" value="1970"></option>
 				            <core:forEach var="year" begin="1970" end="2020" step="10">
-				            	<option label="${ year }年代"></option>
+				            	<option label="${ year }年代" value="${ year + 10 }"></option>
 				            </core:forEach>
 				        </select>
 			        </td>
@@ -54,7 +54,7 @@
 				    </td>
 				    <td>
 				        <select name="feelcat1" onchange="change(this)">
-				        	<option>選択してください</option>
+				        	<option value="">選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				      			<option value="${ status.current }">${ status.current }</option>
 				            </core:forEach>
@@ -65,7 +65,7 @@
 				    </td>
 				    <td>
 				        <select name="feelcat2">
-				            <option>選択してください</option>
+				            <option value="">選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				            	<option value="${ status.current }">${ status.current }</option>
 				            </core:forEach>
@@ -111,21 +111,21 @@
 	        <label for="menu-btn-check" class="menu-btn"><span></span></label>
 	        <div class="menu-content">
 	            <ul>
-	                <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-	                <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">アニメ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">国内</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">欧米</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">韓国</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">華流</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">アクション</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">コメディ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">キッズ・ファミリー</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">ヒューマンドラマ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">サスペンス</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">ラブロマンス</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">ホラー</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">ファンタジー</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">SF</a></li>
+	                <li><a href="/FLIFRE/ResultServlet">バラエティ</a></li>
 	                <li><a href="/FLIFRE/Ranking_bfServlet">レビューランキング</a></li>
 	                <core:if test="${ not empty id }">
 	                    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>

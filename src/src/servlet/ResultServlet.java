@@ -24,37 +24,32 @@ public class ResultServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 検索結果ページにフォワードする
-
-		// 投稿ページにフォワードする
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-		dispatcher.forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String time = request.getParameter("time");
-		String year = request.getParameter("year");
+		String time = request.getParameter("time") != null ? request.getParameter("time") : "-1";
+		String year = request.getParameter("year") != null ? request.getParameter("year") : "-1";
 		String feelcat1 = request.getParameter("feelcat1");
 		String feelcat2 = request.getParameter("feelcat2");
 		String title = request.getParameter("title");
+		String genre_id = request.getParameter("genre_id");
 
 		// 検索処理を行う
 		MasterVideoDao mvDao = new MasterVideoDao();
-		List<MasterVideo> MasterVideoList = mvDao.select(new MasterVideo( "", "", "", "", ""));
+		List<MasterVideo> MasterVideoList = null;
+		MasterVideo params = new MasterVideo(null, title, Integer.parseInt(year), Integer.parseInt(time), genre_id);
+		if ( (feelcat1 == null || feelcat1.isEmpty()) && (feelcat2 == null || feelcat2.isEmpty()) ) {
+			MasterVideoList = mvDao.select(params);
+		} else {
+			MasterVideoList = mvDao.selectFromReview(params, feelcat1, feelcat2);
+		}
 
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
+		request.setAttribute("videoList", MasterVideoList);
 
-		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 		dispatcher.forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 }

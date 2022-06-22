@@ -12,38 +12,35 @@
     <script defer src="js/result.js"></script>
 </head>
 
-<!-- dummy -->
-<core:set var="id">login_user</core:set>
-
 <body>
+    <%@ include file="header.jsp" %>
     <div class="wrapper">
         <!-- header start -->
-        <%@ include file="header.jsp" %>
         <!-- header end -->
         
         <!-- 検索結果　一覧 start-->
         <main>
             <div id="search-result-container">
-                <core:forEach var="i" begin="1" end="9" step="1">
+                <core:forEach var="video" items="${ videoList }">
                 <div class="search-result-item">
                     <div class="video-image">
                     </div>
                     <table class="video-info">
                         <tr>
                             <th>作品名：</th>
-                            <td>スターウォーズ - シーズン${i} -</td>
+                            <td>${ video.video_name }</td>
                         </tr>
                         <tr>
                             <th>年代：</th>
-                            <td>2000</td>
+                            <td>${ video.video_year }</td>
                         </tr>
                     </table>
                     <div class="buttons">
-                        <button type="button" title="write-review" onclick="navigateTo('write-review', 'video_id')" ${empty id? 'disabled' : ''}>
+                        <button type="button" title="write-review" onclick="navigateTo('write-review', '${ video.video_id }')" ${empty id? 'disabled' : ''}>
                             レビューを<br>
                             書く
                         </button>
-                        <button type="button" title="read-review" onclick="navigateTo('read-review', 'video_id')">
+                        <button type="button" title="read-review" onclick="navigateTo('read-review', '${ video.video_id }')">
                             レビューを<br>
                             見る
                         </button>

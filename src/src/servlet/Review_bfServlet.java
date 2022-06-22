@@ -33,14 +33,14 @@ public class Review_bfServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 検索処理を行う
-			ReviewDao rDao = new rDAO();
-			List<Review> reviewList = rDao.select(new Review("", "", "", "", "", "", "", "", ""));
+			ReviewDao rDao = new ReviewDao();
+			List<Review> cardList = rDao.select(new Review("", "", "", "", "", "", "", "", ""));
 
 		// 検索結果をリクエストスコープに格納する
-			request.setAttribute("reviewList", reviewList);
+			request.setAttribute("reviewList", cardList);
 
 		// レビュー一覧ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/review_bf.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/review.jsp");
 			dispatcher.forward(request, response);
 	}
 }

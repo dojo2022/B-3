@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -67,25 +66,22 @@ public class PostServlet extends HttpServlet {
 		String feelcat_name1 = request.getParameter("feelcat_name1");
 		String feelcat_name2 = request.getParameter("feelcat_name2");
 		String star = request.getParameter("star");
-		//date型に変更「2022-06-20」→date
-		String review_date = request.getParameter("review_date");
-
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
-		String str =sdf.format(review_date);
 
 
 		// 投稿処理を行う
 		ReviewDao rDao = new ReviewDao();
-		if (rDao.insert(new Review(video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star, review_date))) {	// 登録成功
-			request.setAttribute("result","success");
+
+
+		if (rDao.insert(new Review(video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star))) {	// 登録成功
+			request.setAttribute("result","投稿しました。");
 //			new Result("登録成功！", "投稿しました。", "/simpleBC/PostServlet"));
 		}
 		else {	// 登録失敗
-			request.setAttribute("result","fail");
+			request.setAttribute("result","投稿できませんでした。");
 //			new Result("登録失敗！", "投稿できませんでした。", "/simpleBC/PostServlet"));
 		}
 
-		// 結果ページにフォワードする
+		// トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
 	}

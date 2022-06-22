@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 .border1{
- border: solid 3px #000000;
- position:relative;
- left:50px;
- width:85%;
+ 	background-color: #ffffff;
+    border: 3px double #a3060c;
+	position:relative;
+	left:50px;
+	width:85%;
 }
 
 
