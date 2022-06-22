@@ -14,6 +14,7 @@
 
 	<h2>レビュー投稿を表示します</h2>
 	<div class="border1">
+	<form id="review_form" method="GET" action="/FLIFRE/ReviewServlet" onsubmit="return post()">
 		<table class="table">
 			<c:forEach var="e" items="${cardList}" >
 				<tr>
@@ -52,6 +53,7 @@
 			</c:forEach>
  		</table>
   		<div class="border-bottom"></div>
+  	</form>
 	</div>
   <!--label class="label" for="name">名前</label>
   <input id="name" type="text" name="name">
