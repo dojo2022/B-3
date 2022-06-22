@@ -21,6 +21,7 @@ import dao.ReviewDao;
 import model.LoginUser;
 import model.MasterUser;
 import model.Reaction;
+import model.Reactiondata;
 import model.Reply;
 import model.Replydata;
 import model.Review;
@@ -189,6 +190,7 @@ public class MypageServlet extends HttpServlet {
 
 
 			// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？
+			ReactionDao aDao = new ReactionDao();
 			if (request.getParameter("STAMP").equals("")) {
 				if (aDao.update(new Reaction(reaction_id, review_id, user_id, stamp_id))) {	// 登録成功
 					request.setAttribute("result","success");
