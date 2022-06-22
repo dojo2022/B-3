@@ -48,7 +48,7 @@ public class Review implements Serializable{
 		this.feelcat_name1 = "";
 		this.feelcat_name2 = "";
 		this.star = "";
-		this.review_date = null;
+		this.review_date = "";
 
 
 	}

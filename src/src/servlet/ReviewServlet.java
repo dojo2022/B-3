@@ -16,14 +16,14 @@ import model.Review;
 /**
  * Servlet implementation class Review_bfServlet
  */
-@WebServlet("/Review_bfServlet")
-public class Review_bfServlet extends HttpServlet {
+@WebServlet("/ReviewServlet")
+public class ReviewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Review_bfServlet() {
+    public ReviewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

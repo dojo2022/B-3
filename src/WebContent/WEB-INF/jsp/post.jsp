@@ -31,20 +31,20 @@
 				<div id="btn" class="post-btn"></div>
 	<!--         	<div class="post-contents"> -->
 
-		    <h1>${video.video_name}</h1><!-- m_videoのvideo_nameを引用 -->
-		    <%
-	    pageContext.setAttribute(
-	        "categories",
-	        new String[] {
-	            "爆笑コメディ", "ポジティブ", "癒される", "スカッとする", "優雅",
-	            "非日常的", "わくわく", "ときめく", "勉強になる", "泣ける", "儚い",
-	            "衝撃的", "ミステリアス", "ダーク", "怖い", "グロテスク",
-	        }
-	    );
-	    %>
+		    	<h1>${video.video_name}</h1><!-- m_videoのvideo_nameを引用 -->
+			    <%
+			    	pageContext.setAttribute(
+			        "categories",
+				        new String[] {
+				            "爆笑コメディ", "ポジティブ", "癒される", "スカッとする", "優雅",
+				            "非日常的", "わくわく", "ときめく", "勉強になる", "泣ける", "儚い",
+				            "衝撃的", "ミステリアス", "ダーク", "怖い", "グロテスク",
+				        }
+				    );
+		    	%>
 
-		    <h2>${vidoe.video_time}</h2><!-- m_videoのvideo_timeを引用 -->
-		    <h2>${video.genre_id}</h2><!-- m_videoのgenre_idを引用 -->
+			    <h2>${vidoe.video_time}</h2><!-- m_videoのvideo_timeを引用 -->
+			    <h2>${video.genre_id}</h2><!-- m_videoのgenre_idを引用 -->
 		    </form>
 
 		    <form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
