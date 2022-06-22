@@ -8,10 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import dao.MasterGenreDao;
 import dao.MasterUserDao;
 import dao.MasterVideoDao;
 import dao.ReviewDao;
+import model.LoginUser;
+import model.MasterGenre;
 import model.MasterUser;
 import model.MasterVideo;
 import model.Review;
@@ -27,6 +31,18 @@ public class PostServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/FLIFRE/LoginServlet");
+		return;
+		}
+
+		//★セッションからユーザーIDを取得
+		//sessionスコープにいるのならそれを取ってきて変数user_idに代入する
+		LoginUser user = (LoginUser)session.getAttribute("id");
+		String user_id = user.getUser_id();
+
 		//作品のidなどをもらう
 		String video_id=
 		request.getParameter("video_id");
@@ -39,12 +55,22 @@ public class PostServlet extends HttpServlet {
 		request.setAttribute("video", video);
 
 		//今だけ本番はセッションスコープの「id」を使う
-		request.setAttribute("id", "test");
+//		request.setAttribute("id");
 
 		MasterUserDao uDao = new MasterUserDao();
-		MasterUser user = uDao.selectOne("test");
+		MasterUser user2 = uDao.selectOne(user_id);
 
-		request.setAttribute("user",user);
+		request.setAttribute("user",user2);
+
+
+		//ジャンルのidなどをもらう
+		String genre_id=
+		request.getParameter("video_id");
+
+		MasterGenreDao gDao = new MasterGenreDao();
+		MasterGenre genre = gDao.selectOne(genre_id);
+
+		request.setAttribute("genre",genre);
 
 		// 投稿ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/post.jsp");

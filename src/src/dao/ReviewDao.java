@@ -13,59 +13,7 @@ import model.Reviewdata;
 import model.Top;
 
 public class ReviewDao {
-	public List<Reviewdata> selectReview(String user_id) {
-		Connection conn = null;
-		List<Reviewdata> Review = new ArrayList<Reviewdata>();
 
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
-
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
-
-			// SQL文を準備する(件数をカウントし降順で3つ表示)
-			String sql = "SELECT  m_user.user_name ,m_user.user_img FROM t_review left join m_user on t_review.user_id = m_user.user_id  where m_user.user_id = ? ";
-			//Date型はどうすればいい？
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, user_id);
-			// SQL文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
-
-			// 結果表をコレクションにコピーする
-			while (rs.next()) {
-				Reviewdata card = new Reviewdata(
-				rs.getString("user_name"),
-				rs.getString("user_img")
-
-				);
-				Review.add(card);
-			}
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-			Review = null;
-		}
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			Review = null;
-		}
-		finally {
-			// データベースを切断
-			if (conn != null) {
-				try {
-					conn.close();
-				}
-				catch (SQLException e) {
-					e.printStackTrace();
-					Review = null;
-				}
-			}
-		}
-
-		// 結果を返す
-		return Review;
-	}
 	// 引数user_idで検索項目を指定し、検索結果のリストを返す
 	public List<Review> select(String user_id) {
 		Connection conn = null;
@@ -477,7 +425,7 @@ public class ReviewDao {
 			}
 
 			//マイページレビュー一覧表示
-			public List<Reviewdata> select2() {
+			public List<Reviewdata> select2(String user_id) {
 				Connection conn = null;
 				List<Reviewdata> Reviewdata = new ArrayList<Reviewdata>();
 
@@ -486,13 +434,14 @@ public class ReviewDao {
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6", "sa", "");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
 
 					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id WHERE \r\n"
 							+ "m_user.user_id = ?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
+					pStmt.setString(1,user_id);
 
 					// SQL文を実行し、結果表を取得する
 					ResultSet rs = pStmt.executeQuery();

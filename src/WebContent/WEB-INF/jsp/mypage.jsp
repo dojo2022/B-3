@@ -18,13 +18,12 @@
 
 		<!-- マイプロフィールボックスここから -->
 		<div class="myprofile">
-			<span><!-- ヘッダー -->
-			${m_user.user_hd}
+			<!-- ヘッダー -->
+			<!--${m_user.user_hd} -->
 			<!-- m_userのuser_hdを引用、myprofileクラスの背景に配置したい -->
-			</span>
 
 			<span><!-- アイコン -->
-			${m_user.user_img}
+			<img src="images/${m_user.user_img}" width="75" height="75">
 			</span>
 			<!-- m_userのuser_imgを引用 -->
 			<br>
@@ -73,15 +72,14 @@
 						<hr>
 						<br>
 						<c:forEach var="e" items="${Reviewdata}" >
-							<span><!-- アイコン -->
-							${e.user_img}
-							</span><!-- m_userのuser_imgを引用 --><!-- t_reviewのuser_idを引用? -->
-
-							<span><!-- ユーザー名  -->
-							${e.user_name}<br>
-							</span><!-- m_userのuser_nameを引用 --><!-- t_reviewのuser_idを引用? -->
-						</c:forEach>
 						<br>
+						<span><!-- アイコン -->
+						<img src="images/${e.user_img}" width="75" height="75">
+						</span>
+
+					    <span><!-- ユーザー名  -->
+					    ${e.user_name}
+					    </span>
 						<br>
 
 							<span><!-- 作品名 -->
@@ -98,7 +96,7 @@
 						<br>
 
 							<span><!--  ジャンル  -->
-							${e.genre_id.genre_name}
+							${e.genre_name}
 							</span><!-- t_reviewのgenre_idを引用 -->
 
 							<span><!-- 感想カテゴリ1 -->
@@ -115,18 +113,20 @@
 							<br>
 							<br>
 
+
 							<input class="delete" type="submit" name="REVIEWDELETET" value="削除">
 							<input class="edit" type="submit" name="REVIEWEDIT" value="編集">
 						<br>
 						<hr>
 						<br>
+						</c:forEach>
 						</div>
 
 						<div id="reply_list">
 						<!-- t_replyを呼び出したい -->
 						<hr>
 						<br>
-						<c:forEach var="e" items="${Reply}" >
+						<c:forEach var="e" items="${Replydata}" >
 							<!-- <span> 送り先のユーザー名
 							${e.review_id.user_id.user_name}
 							</span> -->
@@ -134,12 +134,12 @@
 						<br>
 
 							<!-- 自分のアイコン -->
-							${e.user_id.user_img}
+							${e.user_img}
 							<!-- m_userのuser_imgを引用 --><!-- t_replyのuser_idを引用? -->
 						<br>
 
 							<span><!-- 自分のユーザー名 -->
-							${e.reply_id.user_id.user_name}
+							${e.user_name}
 							</span><!-- m_userのuser_nameを引用 --><!-- t_replyのuser_idを引用? -->
 						<br>
 						<br>
@@ -167,16 +167,16 @@
 						<!--t_reactionを呼び出したい-->
 						<hr>
 						<br>
-						<c:forEach var="e" items="${Reaction}" >
+						<c:forEach var="e" items="${Reactiondata}" >
 							<a  href="/FLIFRE/UserpageServlet">
 							<!-- アイコン -->
-							${e.reaction_id.user_id.user_img}
+							${e.user_img}
 							</a>
 							<!-- m_userのuser_imgを引用 --> <!-- t_reactionのreview_idを引用？ -->
 
 							<a  href="/FLIFRE/UserpageServlet">
 							<span><!-- ユーザー名 -->
-							${e.reaction_id.user_id.user_name}
+							${e.user_name}
 							</span>
 							</a>
 							<!-- t_reviewのuser_nameを引用 --><!-- t_reactionのreview_idを引用？ -->
@@ -184,38 +184,38 @@
 						<br>
 
 							<span><!-- 作品名 -->
-							${e.review_id.video_id.video_name}
+							${e.video_name}
 							</span><!-- t_reviewのvideo_idを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!--  5段階評価  -->
-							${e.review_id.star}
+							${e.star}
 							</span><!-- t_reviewのstarを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!-- 投稿日時 -->
-							${e.review_id.review_date}
+							${e.review_date}
 							</span><!-- t_reviewのreview_dateを引用 --><!-- t_reactionのreview_idを引用？ -->
 						<br>
 
 							<span><!--  ジャンル  -->
-							${e.review_id.genre_id.genre_name}
+							${e.genre_name}
 							</span><!-- t_reviewのgenre_idを引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!--  感想カテゴリ1 -->
-							${e.review_id.feelcat_name1}
+							${e.feelcat_name1}
 							</span><!-- t_reviewのfeelcat_name1を引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!--  感想カテゴリ2 -->
-							${e.review_id.feelcat_name2}
+							${e.feelcat_name2}
 							</span><!-- t_reviewのfeelcat_name2を引用 --><!-- t_reactionのreview_idを引用？ -->
 
 							<span><!-- レビュー本文 -->
-							${e.review_id.review_contents}
+							${e.review_contents}
 							</span><!-- t_reviewのreview_contentsを引用 --><!-- t_reactionのreview_idを引用？ -->
 							<br>
 
 							<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
 							<!-- スタンプの画像をクリックすると画像が変化 -->
-							${e.stamp_id.stamp_name}
+							${e.stamp_name}
 							<!-- m_stampのstamp_id, stamp_name -->
 							<br>
 
