@@ -21,15 +21,18 @@
 
 		<!-- ${m_user.user_hd} -->
 		<!-- m_userのuser_hdを引用、userprofileクラスの背景に配置したい -->
-
+		<form method="POST" action="/FLIFRE/UserpageServlet">
+		<input type="hidden" name="user_id" value="${id.user_id}">
+		<input type="hidden" name="follow_id" value="${id.user_id}">
 		<c:choose>
-		<c:when test = "${i.follow_exchange}">
+		<c:when test = "${flwDao.follow_exchange}">
 			<input type="submit" name="followBottun" value="フォロー解除">
 		</c:when>
 		<c:otherwise>
 		<input type="submit" name="followBottun" value="フォロー">
 		</c:otherwise>
 		</c:choose>
+		</form>
 	<br>
 
 		<span><!-- アイコン -->
