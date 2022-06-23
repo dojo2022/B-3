@@ -13,6 +13,58 @@ import model.Reviewdata;
 import model.Top;
 
 public class ReviewDao {
+	//public List<Reviewdata> selectReview(String user_id) {
+		//Connection conn = null;
+		//List<Reviewdata> Review = new ArrayList<Reviewdata>();
+
+		//try {
+			// JDBCドライバを読み込む
+			//Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			//conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+			// SQL文を準備する(件数をカウントし降順で3つ表示)
+			//String sql = "SELECT  m_user.user_name ,m_user.user_img FROM t_review left join m_user on t_review.user_id = m_user.user_id  where m_user.user_id = ? ";
+			//Date型はどうすればいい？
+			//PreparedStatement pStmt = conn.prepareStatement(sql);
+			//pStmt.setString(1, user_id);
+			// SQL文を実行し、結果表を取得する
+			//ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			//while (rs.next()) {
+				//Reviewdata card = new Reviewdata(
+				//rs.getString("user_name"),
+				//rs.getString("user_img")
+				//);
+				//Review.add(card);
+			//}
+		//}
+		//catch (SQLException e) {
+			//e.printStackTrace();
+			//Review = null;
+		//}
+		//catch (ClassNotFoundException e) {
+			//e.printStackTrace();
+			//Review = null;
+		//}
+		//finally {
+			// データベースを切断
+			//if (conn != null) {
+				//try {
+					//conn.close();
+				//}
+				//catch (SQLException e) {
+					//e.printStackTrace();
+					//Review = null;
+				//}
+			//}
+		//}
+
+		//// 結果を返す
+		//return Review;
+	//}
 
 	// 引数user_idで検索項目を指定し、検索結果のリストを返す
 	public List<Review> select(String user_id) {
@@ -208,23 +260,12 @@ public class ReviewDao {
 				if (pStmt.executeUpdate() == 1) {
 					result = true;
 				}
-
-				String sql2 = "UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null";
-				PreparedStatement pStmt2 = conn.prepareStatement(sql2);
-				// SQL文を実行する
-				if (pStmt2.executeUpdate() == 1) {
-					result = true;
-				}
-
-
-
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
 			}
 			catch (ClassNotFoundException e) {
 				e.printStackTrace();//スタックトレースを出力
-
 			}
 			finally {
 				// データベースを切断
@@ -259,7 +300,6 @@ public class ReviewDao {
 					String sql = "UPDATE Review SET (review_contents=?, genre_id=?, feelcat_name1=?, feelcat_name2=?, star=?, review_date=?) where review_id=?";
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
-
 
 					// SQL文を完成させる
 					if (review.getReview_contents() != null && !review.getReview_contents().equals("")) {
@@ -389,7 +429,7 @@ public class ReviewDao {
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6", "sa", "");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
 
@@ -498,6 +538,61 @@ public class ReviewDao {
 				// 結果を返す
 				return Reviewdata;
 			}
+			//ログイン後topレビュー一覧表示
+			public List<Top> select3(String user_id) {
+				Connection conn = null;
+				List<Top> Reviewlist2 = new ArrayList<Top>();
 
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
 
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+
+					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.review_contents,t_review.review_date FROM (t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id ) LEFT JOIN m_video ON t_review.video_id = m_video.video_id WHERE m_user.user_id = ?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+							pStmt.setString(1,user_id);
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+						Top card = new Top(
+						rs.getString("user_name"),
+						rs.getString("user_img"),
+						rs.getString("video_name"),
+						rs.getString("review_contents"),
+						rs.getString("review_date")
+						);
+						Reviewlist2.add(card);
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					Reviewlist2 = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					Reviewlist2 = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							Reviewlist2 = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return Reviewlist2;
+			}
 		}
