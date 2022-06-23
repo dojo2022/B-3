@@ -105,14 +105,20 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 あとメチャクチャかわいいねぇ。',
 'g000000001', '癒される', 'わくわく', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000001', 'u000000002',
 'すばらしい！非の打ち所がありませんでした！
 原作の時点で凄まじく完成度の高い作品ですが、
 アニメのクオリティもひとつの映像作品としてのレベルが高い！','g000000001', '癒される', '爆笑コメディ', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000001', 'u000000003',
 'キャラと声優がすごくマッチしていてまるで本物だなと思うくらい完成度が高い！
 ヨルさん私と結婚してください！','g000000001', 'わくわく', '爆笑コメディ', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000002', 'u000000004',
 '全国民が知ってるであろうベッタベタの名シーン 
@@ -120,12 +126,16 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 「何が起こっても左腕のこれが仲間の印だ！」
 くぅ〜〜 おもれえ〜〜かっくぃ〜〜','g000000001', 'わくわく', '泣ける', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000002', 'u000000005',
 'クロコダイル、ボンちゃん、イワ様、Mr.だがね、バギー、ジンベエなどなどすごいメンツ出てくるし、
 そんなメンツでも倒せないマゼランに後から乗り込んできた黒ひげ、アツすぎるよな。
 とにかくぼんちゃん…。大好き。涙止まんなかった。
 顔馴染みメンツ出てき過ぎてほぼ同窓会。
 ジンベエさんいいやつ過ぎんかい？','g000000001', '泣ける', 'わくわく', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000003', 'u000000006',
 '学生のこの頃に、こんなに熱くなれるものに出逢えることがどれほど幸せなことか。
@@ -136,6 +146,8 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 死ぬほど自分もやってみたくなるところ。そして古典は美しい。日本の美に触れられる。
 本当に秀悦な青春作品だと思います','g000000001', '泣ける', 'スカッとする', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000004', 'u000000007', 
 '「決して前情報無しで観て下さい」タイプの映画。
 キャストさえも、主役以外はチェックしない方がいい。
@@ -145,10 +157,14 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 長澤まさみもこういう役が似合う。そしてあの人の演技のお見事さに拍手だ。
 目立たない演技っていうのも難しいんだな。きっと。大満足だろう。','g000000002', 'わくわく', 'ミステリアス', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000005', 'u000000008',
 '発声も演技も全く力まず最小限のもので成立させる松重さんの演技と凝りすぎない演出。
 こういうのでいいんだよ。いや、こういうのがいいんだよ。
 しかし腹の減る作品やなぁ。カフェ飯おでんの回が印象的でした。','g000000002', '優雅', '勉強になる', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000005', 'u000000009',
 '久々に原作漫画を読み返したらもう松重豊さんヴォイスでしか再生されなくなってしまった。
@@ -157,11 +173,15 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 親父ギャグも口に出してないからこそクスリと笑えてしまう。
 井之頭五郎さんを見習い「正解」の食事を叩き出し続けたいものである。','g000000002', '優雅', '勉強になる', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000006', 'u000000010',
 '後に全裸監督と呼ばれる、村西とおるの実話を元にできたドラマ
 どんなことがあっても、常に規制と戦いエロと向き合った男
 たかがエロ、されどエロ
 やっぱり何事にも全力で取り組む男はかっこいい','g000000002', '衝撃的', 'ダークな', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000006', 'u000000011',
 '言うなれば下品な梨泰院クラス
@@ -169,11 +189,15 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 前科8犯、懲役370年、借金50億でありながら、人々を魅了し続ける営業トークと企画力。
 新しいことをするならどんな手段も厭わない姿勢は真似できませんが、とても感化される熱量のある作品でした','g000000002', '非日常', 'ダークな', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000006', 'u000000012',
 '村西とおるも黒木香もぶっ飛んでて超狂っててめちゃくちゃかっこいい。
 結局最後まで見た。平成生まれからすると新境地。ほぼ実話とは全然知らなかった。
 新しい世界に足を踏み入れてしまった感。
 でも確かに恥じるべきでは無いと思う。','g000000002', '非日常', '衝撃的', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000007', 'u000000001',
 '本当にアニメみたいな世界観！
@@ -182,6 +206,8 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 ナイトクラブでのダンスシーンも
 警官たち踊らされるシーンもすき
 マイロは good boy すぎるのでいっぱいおやつあげたい','g000000003', '爆笑コメディ', '非日常', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000007', 'u000000002',
 'ジムキャリー若くてイケメンだ！
@@ -193,12 +219,16 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 マイロは今作MVP級の活躍
 最初の方は目ん玉飛び出すシーンとかがキツく感じたけど、慣れてくると大丈夫だった','g000000003', '爆笑コメディ', '非日常', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000008', 'u000000003',
 'ちょいホラーだけどそこまでガッツリじゃないので見やすい。
 何か起こりそうな雰囲気が永遠に続くからドキドキしっぱなし。
 露骨に怖い表現なくても不気味に感じるのはさすがキューブリック。
 見た後に考察サイト見るとさらに面白い
 記憶に残るシーンが多くて面白いし、音楽がいい感じ。','g000000003', 'ミステリアス', '怖い', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000009', 'u000000004',
 '何も考えずにスカッと観れる。
@@ -209,6 +239,8 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 いうて引き立て役よもはやヒーローより
 主演レベルよ。','g000000003', 'わくわく', 'ダーク', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000009', 'u000000005',
 'まあまあかな。
 CG感強くて引いちゃったのと
@@ -216,6 +248,8 @@ CG感強くて引いちゃったのと
 よく分からんまま終わった。
 ハーレークインの誕生も
 知れてそこは面白かった。','g000000003', 'わくわく', 'ダーク', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000009', 'u000000006',
 'はちゃめちゃな映画だった
@@ -232,12 +266,16 @@ BYEがかわいかった。
 こちらのジョーカーも期待通り狂っていたな。
 だけど少し物足りない。','g000000003', '衝撃的', 'ダーク', '★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000010', 'u000000007',
 '中盤から、次の話を見たくて我慢するのが大変だった。
 物語の主軸は、主人公のセロイの成長を15年くらいかけて見せてくれる。
 バカ息子のグンウォンが現れると大体、殴り合いになるので少し冷める。
 他のキャラクター達の物語もちゃんとやってくれる。
 面白い','g000000004', '泣ける', '儚い', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000010', 'u000000008',
 'ちょこちょこ見て後半一気に観ました
@@ -256,10 +294,14 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 スアはなんか綺麗になった指原莉乃って感じに見えた
 最近仕事前は梨泰院クラスのstart over聞いてます','g000000004', '泣ける', '儚い', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000010', 'u000000009',
 '韓国のエンタメに沼るきっかけとなった特別な作品。
 何度心が震え、勇気づけられたか、受けた影響は計り知れない。
 今まで見たドラマの中で圧倒的No. 1。','g000000004', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000010', 'u000000010',
 '日本のリメイクスタートするので改めて見直し。
@@ -270,12 +312,16 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 OSTがさらに作品を盛り上げてるし、映像、全ての役者の魅力も満載で、長く人気を誇る作品なのは至極納得。
 この上質な作品を、日本がどうリメイクするのか少し心配でもありますが、楽しみにしたいと思います。','g000000004', '泣ける', '儚い', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000011', 'u000000011',
 'めちゃめちゃ興味深い。考えさせられる
 埋められない貧富の差
 消せない差別
 色濃く描いた家族の絆
 しかし刺された娘置いて去っていくなよ父ちゃん','g000000004', '怖い', '勉強になる', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000011', 'u000000012',
 'ふとした事がキッカケで富裕層家庭にどんどん寄生していく展開は面白かったし 
@@ -284,6 +330,8 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 どうやっても取れない 半地下の臭いがあの行動を引き起こしたとあって
 皮肉でもあり尊厳でもあり。。','g000000004', '怖い', 'ミステリアアス', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000011', 'u000000001',
 '登場人物が隣に居るんじゃないか？
 って位「におい」を感じる作品
@@ -291,6 +339,8 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 「非日常的なクサイ」だったり「生活臭」だったり…
 実際に行った事も無い街の、会った事も無い人たちの息の匂いまで「ムワッ」とスクリーンから溢れて来る
 ドラマティックなのにすごく生々しい','g000000004', '怖い', 'ミステリアアス', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000012', 'u000000002',
 'ジアとわんちゃんは可愛い
@@ -301,8 +351,34 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 最後くらいキスシーンないんか
 シーズン２も作ってね','g000000004', 'ときめく', '優雅', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000013', 'u000000003',
+'バカやってそうに見えて真面目に面白い映画
+20年ぶりくらいに見たけど超おもろい
+設定からしてトンデモ映画だけど、感動要素もあり、2時間飽きずに見られた。サッカーの別軸として、ファンが立ち直る物語もあってしっかり本筋と絡んでくるのが見事である。
+スキンヘッドでも似合う顔って強すぎる。
+あと、キーパーは服がはだけないといけない決まりでもあんのか。','g000000005', '爆笑コメディ', '衝撃的', '★★★★★');
 
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000013', 'u000000004',
+'15年振り位の再視聴
+思い出の補正もあると思うがやはり面白かった
+正直、サッカーとしてはルールが曖昧で「？」ってなるようなツッコミ所はあるがアクション娯楽映画としては十分に楽しめる。コメディ要素も良かった。
+アクションシーン以外にも、王道の成り上がりストーリーは変に気を衒ったりしておらずに素直に楽しめた。
+深く考えず、スカッと観れる良作。','g000000005', '非日常', 'スカッとする', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000013', 'u000000005',
+'中学の頃友達とDVD擦れるほど観て台詞も動きも全部覚えたなあ。今でも少し覚えてた。懐かしい。
+思い出補正もあるけど、いつまで経っても青春ベストおバカムービー。
+「そうはならんやろ笑」って展開しか起きない逆安心感。中毒性あるんよな。
+でもラストかっこよすぎ。ムイに泣く。男の憧れだぜ。
+少林拳はさいこーー','g000000005', '非日常', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 
 

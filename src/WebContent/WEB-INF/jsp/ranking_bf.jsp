@@ -16,7 +16,7 @@
     <%@ include file="header.jsp" %>
     <main>
         <div class="ranking-box">
-            <h1 class="ranking">項目別ランキング</h1>
+            <h1 class="ranking">項目別レビュー数ランキング</h1>
 			<%
 	    pageContext.setAttribute(
 	        "genre",
@@ -54,8 +54,8 @@
 				<p class="ranking">通算</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li ><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${totalRank[i].video_id}">${ totalRank[i].video_name}</a>
-					<span class="count">${ totalRank[i].count}</span></li>
+					<li ><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id= ${totalRank[i].video_id}">${ totalRank[i].video_name}</a>
+					<span class="count">${ totalRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -65,7 +65,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${animeRank[i].video_id}">${ animeRank[i].video_name}</a>
-					<span class="count">${ animeRank[i].count}</span></li>
+					<span class="count">${ animeRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -75,7 +75,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${localRank[i].video_id}">${ localRank[i].video_name}</a>
-					<span class="count">${ localRank[i].count}</span></li>
+					<span class="count">${ localRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -85,7 +85,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${usRank[i].video_id}">${ usRank[i].video_name}</a>
-					<span class="count">${ usRank[i].count}</span></li>
+					<span class="count">${ usRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -94,7 +94,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${koreaRank[i].video_id}">${ koreaRank[i].video_name}</a>
-					<span class="count">${ koreaRank[i].count}</span></li>
+					<span class="count">${ koreaRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -104,7 +104,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${chinaRank[i].video_id}">${ chinaRank[i].video_name}</a>
-					<span class="count">${ chinaRank[i].count}</span></li>
+					<span class="count">${ chinaRank[i].count}post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -114,7 +114,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${actionRank[i].video_id}">${ actionRank[i].video_name}</a>
-					<span class="count">${ actionRank[i].count}</span></li>
+					<span class="count">${ actionRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -124,7 +124,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${comedyRank[i].video_id}">${ comedyRank[i].video_name}</a>
-					<span class="count">${ comedyRank[i].count}</span></li>
+					<span class="count">${ comedyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -134,7 +134,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${familyRank[i].video_id}">${ familyRank[i].video_name}</a>
-					<span class="count">${ familyRank[i].count}</span></li>
+					<span class="count">${ familyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -144,7 +144,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${humanRank[i].video_id}">${ humanRank[i].video_name}</a>
-					<span class="count">${ humanRank[i].count}</span></li>
+					<span class="count">${ humanRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -154,7 +154,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${suspenseRank[i].video_id}">${ suspenseRank[i].video_name}</a>
-					<span class="count">${ suspenseRank[i].count}</span></li>
+					<span class="count">${ suspenseRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -165,7 +165,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${romanceRank[i].video_id}">${ romanceRank[i].video_name}</a>
-					<span class="count">${ romanceRank[i].count}</span></li>
+					<span class="count">${ romanceRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -175,7 +175,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${horrorRank[i].video_id}">${ horrorRank[i].video_name}</a>
-					<span class="count">${ horrorRank[i].count}</span></li>
+					<span class="count">${ horrorRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -185,7 +185,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${fantasyRank[i].video_id}">${ fantasyRank[i].video_name}</a>
-					<span class="count">${ fantasyRank[i].count}</span></li>
+					<span class="count">${ fantasyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -195,7 +195,7 @@
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${sfRank[i].video_id}">${ sfRank[i].video_name}</a>
-					<span class="count">${ sfRank[i].count}</span></li>
+					<span class="count">${ sfRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -204,8 +204,8 @@
 				<p class="ranking">バラエティ</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${barietyRank[i].video_id}">${ barietyRank[i].video_name}</a>
-					<span class="count">${ barietyRank[i].count}</span></li>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ResultServlet?video_id= ${barietyRank[i].video_id}">${ barietyRank[i].video_name}</a>
+					<span class="count">${ barietyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
 			</div>

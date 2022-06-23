@@ -8,14 +8,14 @@
     max-width:1000px;
 }
 
-.circle{
-  position: relative;
+/* .circle{ */
+/*   position: relative; */
 /*   top: px; */
-  width: 80px;
-  height: 80px;
-  border-radius:50%;
-  backgroung-color:#fff;
-}
+/*   width: 80px; */
+/*   height: 80px; */
+/*   border-radius:50%; */
+/*   backgroung-color:#fff; */
+/* } */
 
 .post-btn {
     position: relative;

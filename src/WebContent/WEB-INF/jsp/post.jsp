@@ -23,8 +23,8 @@
    			<form id="post_form" method="GET" action="/FLIFRE/PostServlet" onsubmit="return post()">
 				<table>
 					<tr>
-		    			<td><input class="circle" type="text" name="user_img"  value="${m_user.user_img}" readonly></td><!-- m_userのuser_img アイコンを引用予定 -->
-		   				<td><strong>${m_user.user_name}</strong></td>
+		    			<td><img src="images/${user.user_img}" width="75" height="75"></td><!-- m_userのuser_img アイコンを引用予定 -->
+		   				<td><strong>${user.user_name}</strong></td>
 		   				<!-- 			<span>ユーザー名</span>m_userのuser_nameを引用予定 -->
 		   			</tr>
 		   		</table>
