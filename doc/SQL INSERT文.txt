@@ -1,43 +1,43 @@
 【m_userの挿入】
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000001', 'a@gmail.com', 'abcde', '伊藤慶秀', '今日も元気に行ってみよっ！', 'icon1.png' );
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000002', 'b@gmail.com', 'abcde', '石田夏帆', 'ドラマが好き', 'icon2.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000003', 'c@gmail.com', 'abcde', '橋本美玖', '韓流が好き', 'icon3.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000004', 'd@gmail.com', 'abcde', '高山芳久', 'ミステリーが好き', 'icon4.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000005', 'e@gmail.com', 'abcde', '菊地航大', 'ファンタジーが好き', 'icon5.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000006', 'f@gmail.com', 'abcde', '遠藤洋渡', 'アニメが好き', 'icon6.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000007', 'g@gmail.com', 'abcde', 'よっしー', '時代劇が好き', 'icon7.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000008', 'h@gmail.com', 'abcde', 'かほりん', 'ラブロマンスが好き', 'icon8.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000009', 'i@gmail.com', 'abcde', 'みくさん', 'SFが好き', 'icon9.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000010', 'j@gmail.com', 'abcde', 'たかちゃん', 'バラエティが好き', 'icon10.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000011', 'k@gmail.com', 'abcde', 'こうちゃん', 'ホラーが好き', 'icon11.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000012', 'l@gmail.com', 'abcde', 'ひろと', 'ドキュメンタリーが好き', 'icon12.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000013', 'm@gmail.com', 'abcde', 'Ito Yoshihide', '元気になりたい', 'icon13.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000014', 'n@gmail.com', 'abcde', 'Ishida Kaho', '天下を取る', 'icon14.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000015', 'o@gmail.com', 'abcde', 'Hashimoto Miku', 'カフェ行きたい', 'icon15.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000016', 'p@gmail.com', 'abcde', 'Takayama Yoshihisa', '海が好き', 'icon16.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000017', 'q@gmail.com', 'abcde', 'Kikuchi Kota', '勉強したくない', 'icon17.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000018', 'r@gmail.com', 'abcde', 'Endo Hiroto', '橋本環奈が出てるやつ全部見る', 'icon18.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000019', 's@gmail.com', 'abcde', '渥美馨介', 'アメリカ行きたい', 'icon19.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000020', 't@gmail.com', 'abcde', '越智穂乃香', '泳ぐの得意です', 'icon20.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000021', 'u@gmail.com', 'abcde', '榎本航希', '早起き大好き', 'icon21.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000022', 'v@gmail.com', 'abcde', '吉村大樹', 'ドキュメンタリーと時代劇見ます', 'icon22.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000023', 'w@gmail.com', 'abcde', '吉田啓悟', 'SEです！', 'icon23.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000024', 'x@gmail.com', 'abcde', '橋間友香', 'バラエティとホラーが好きです', 'icon24.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000025', 'y@gmail.com', 'abcde', '江口和那', 'ホワイトチョコ食べたい', 'icon25.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000026', 'z@gmail.com', 'abcde', '佐久間ひとみ', '千鳥のバラエティが好き', 'icon26.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000027', 'A@gmail.com', 'abcde', '山田美奈', '夏フェス行きたい', 'icon27.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000028', 'B@gmail.com', 'abcde', '小坂大樹', '和菓子が好きです。おススメ教えてください。', 'icon28.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000029', 'C@gmail.com', 'abcde', '森はるき', 'SFは全部見ました', 'icon29.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000030', 'D@gmail.com', 'abcde', '森脇亮介', 'バラエティだけ見ます', 'icon30.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000031', 'E@gmail.com', 'abcde', '澄川陽紀', 'ミステリーサークルに入ってました。ミステリー好きです。', 'icon31.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000032', 'F@gmail.com', 'abcde', '清水勇太', 'ネトフリでサッカー見たい', 'icon32.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000033', 'G@gmail.com', 'abcde', '川上柚', '増田君が出てるやつ全部見た', 'icon33.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000034', 'H@gmail.com', 'abcde', '竹田彩乃', 'ファンタジーのおススメ教えてください。', 'icon34.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000035', 'I@gmail.com', 'abcde', '長崎将貴', '韓国行きたい', 'icon35.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000036', 'J@gmail.com', 'abcde', '田邊瑛久', '心霊スポット行きたい。', 'icon36.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000037', 'K@gmail.com', 'abcde', '渡邊龍哉', 'イタリア行きたい', 'icon37.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000038', 'L@gmail.com', 'abcde', '板垣佐和子', '出汁が効いた和食が好きです！', 'icon38.png');
-INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img, user_hd) VALUES ('u000000039', 'M@gmail.com', 'abcde', '澤航希', '何もしたくない', 'icon39.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000001', 'a@gmail.com', 'abcde', '伊藤慶秀', '今日も元気に行ってみよっ！', 'icon1.png' );
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000002', 'b@gmail.com', 'abcde', '石田夏帆', 'ドラマが好き', 'icon2.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000003', 'c@gmail.com', 'abcde', '橋本美玖', '韓流が好き', 'icon3.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000004', 'd@gmail.com', 'abcde', '高山芳久', 'ミステリーが好き', 'icon4.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000005', 'e@gmail.com', 'abcde', '菊地航大', 'ファンタジーが好き', 'icon5.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000006', 'f@gmail.com', 'abcde', '遠藤洋渡', 'アニメが好き', 'icon6.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000007', 'g@gmail.com', 'abcde', 'よっしー', '時代劇が好き', 'icon7.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000008', 'h@gmail.com', 'abcde', 'かほりん', 'ラブロマンスが好き', 'icon8.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000009', 'i@gmail.com', 'abcde', 'みくさん', 'SFが好き', 'icon9.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000010', 'j@gmail.com', 'abcde', 'たかちゃん', 'バラエティが好き', 'icon10.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000011', 'k@gmail.com', 'abcde', 'こうちゃん', 'ホラーが好き', 'icon11.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000012', 'l@gmail.com', 'abcde', 'ひろと', 'ドキュメンタリーが好き', 'icon12.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000013', 'm@gmail.com', 'abcde', 'Ito Yoshihide', '元気になりたい', 'icon13.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000014', 'n@gmail.com', 'abcde', 'Ishida Kaho', '天下を取る', 'icon14.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000015', 'o@gmail.com', 'abcde', 'Hashimoto Miku', 'カフェ行きたい', 'icon15.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000016', 'p@gmail.com', 'abcde', 'Takayama Yoshihisa', '海が好き', 'icon16.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000017', 'q@gmail.com', 'abcde', 'Kikuchi Kota', '勉強したくない', 'icon17.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000018', 'r@gmail.com', 'abcde', 'Endo Hiroto', '橋本環奈が出てるやつ全部見る', 'icon18.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000019', 's@gmail.com', 'abcde', '渥美馨介', 'アメリカ行きたい', 'icon19.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000020', 't@gmail.com', 'abcde', '越智穂乃香', '泳ぐの得意です', 'icon20.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000021', 'u@gmail.com', 'abcde', '榎本航希', '早起き大好き', 'icon21.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000022', 'v@gmail.com', 'abcde', '吉村大樹', 'ドキュメンタリーと時代劇見ます', 'icon22.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000023', 'w@gmail.com', 'abcde', '吉田啓悟', 'SEです！', 'icon23.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000024', 'x@gmail.com', 'abcde', '橋間友香', 'バラエティとホラーが好きです', 'icon24.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000025', 'y@gmail.com', 'abcde', '江口和那', 'ホワイトチョコ食べたい', 'icon25.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000026', 'z@gmail.com', 'abcde', '佐久間ひとみ', '千鳥のバラエティが好き', 'icon26.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000027', 'A@gmail.com', 'abcde', '山田美奈', '夏フェス行きたい', 'icon27.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000028', 'B@gmail.com', 'abcde', '小坂大樹', '和菓子が好きです。おススメ教えてください。', 'icon28.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000029', 'C@gmail.com', 'abcde', '森はるき', 'SFは全部見ました', 'icon29.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000030', 'D@gmail.com', 'abcde', '森脇亮介', 'バラエティだけ見ます', 'icon30.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000031', 'E@gmail.com', 'abcde', '澄川陽紀', 'ミステリーサークルに入ってました。ミステリー好きです。', 'icon31.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000032', 'F@gmail.com', 'abcde', '清水勇太', 'ネトフリでサッカー見たい', 'icon32.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000033', 'G@gmail.com', 'abcde', '川上柚', '増田君が出てるやつ全部見た', 'icon33.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000034', 'H@gmail.com', 'abcde', '竹田彩乃', 'ファンタジーのおススメ教えてください。', 'icon34.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000035', 'I@gmail.com', 'abcde', '長崎将貴', '韓国行きたい', 'icon35.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000036', 'J@gmail.com', 'abcde', '田邊瑛久', '心霊スポット行きたい。', 'icon36.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000037', 'K@gmail.com', 'abcde', '渡邊龍哉', 'イタリア行きたい', 'icon37.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000038', 'L@gmail.com', 'abcde', '板垣佐和子', '出汁が効いた和食が好きです！', 'icon38.png');
+INSERT INTO m_user (user_id, user_mail, user_pw, user_name, user_pf, user_img) VALUES ('u000000039', 'M@gmail.com', 'abcde', '澤航希', '何もしたくない', 'icon39.png');
 【m_videoの挿入】
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000001', 'SPY×FAMILY', '2022', '30', 'g000000001');
 INSERT INTO m_video (video_id, video_name, video_year, video_time, genre_id) VALUES ('v000000002', 'ONE PIECE', '1999', '30', 'g000000001');
@@ -125,6 +125,7 @@ INSERT INTO M_FEELCAT (feelcat_id, feelcat_name) VALUES ('f000000016', 'グロ�
 【m_stampの挿入】
 
 【t_reviewの挿入】
+
 INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000001', 'u000000001',
 'スパイファミリー1話みました。
 軽く泣いてます...期待の上を行くアニメ化でした！家族に血の繋がりなど必要なし。
@@ -451,6 +452,703 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 
 UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000016', 'u000000009',
+'スパイファミリー1話みました。
+軽く泣いてます...期待の上を行くアニメ化でした！家族に血の繋がりなど必要なし。
+これからも応援していきたいと素直に思ったのはスタッフの力量によるものだと思いますアーニャ良かったねぇ。
+あとメチャクチャかわいいねぇ。',
+'g000000006', '癒される', 'わくわく', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000016', 'u000000010',
+'すばらしい！非の打ち所がありませんでした！
+原作の時点で凄まじく完成度の高い作品ですが、
+アニメのクオリティもひとつの映像作品としてのレベルが高い！','g000000006', '癒される', '爆笑コメディ', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000016', 'u000000011',
+'キャラと声優がすごくマッチしていてまるで本物だなと思うくらい完成度が高い！
+ヨルさん私と結婚してください！','g000000006', 'わくわく', '爆笑コメディ', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000016', 'u000000012',
+'全国民が知ってるであろうベッタベタの名シーン 
+ちゃんと感動した。 
+「何が起こっても左腕のこれが仲間の印だ！」
+くぅ〜〜 おもれえ〜〜かっくぃ〜〜','g000000006', 'わくわく', '泣ける', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000017', 'u000000013',
+'クロコダイル、ボンちゃん、イワ様、Mr.だがね、バギー、ジンベエなどなどすごいメンツ出てくるし、
+そんなメンツでも倒せないマゼランに後から乗り込んできた黒ひげ、アツすぎるよな。
+とにかくぼんちゃん…。大好き。涙止まんなかった。
+顔馴染みメンツ出てき過ぎてほぼ同窓会。
+ジンベエさんいいやつ過ぎんかい？','g000000007', '泣ける', 'わくわく', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000017', 'u000000014',
+'学生のこの頃に、こんなに熱くなれるものに出逢えることがどれほど幸せなことか。
+身に染みて思う。曇りなく何かに夢中になる。悔しくて泣くこと。貴重な経験。
+眩しすぎて泣けてくる。
+そんなスポーツアニメ沢山あると思う、ちはやふるのすごいところは
+競技カルタという一見地味で目立たない競技の魅力を最大限に引き出していて
+死ぬほど自分もやってみたくなるところ。そして古典は美しい。日本の美に触れられる。
+本当に秀悦な青春作品だと思います','g000000006', '泣ける', 'スカッとする', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000018', 'u000000015', 
+'「決して前情報無しで観て下さい」タイプの映画。
+キャストさえも、主役以外はチェックしない方がいい。
+木村拓哉がいかにもキムタクで、それが似合った役柄で、思った以上にいいんじゃない？と感じたのだが
+東野圭吾が本作執筆の際に主人公の人物イメージを木村拓哉に想定していたというからまさにハマり役だった訳。
+作家としても役者のいいお仕事。それがこの映画の一番の長所。
+長澤まさみもこういう役が似合う。そしてあの人の演技のお見事さに拍手だ。
+目立たない演技っていうのも難しいんだな。きっと。大満足だろう。','g000000006', 'わくわく', 'ミステリアス', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000018', 'u000000016',
+'発声も演技も全く力まず最小限のもので成立させる松重さんの演技と凝りすぎない演出。
+こういうのでいいんだよ。いや、こういうのがいいんだよ。
+しかし腹の減る作品やなぁ。カフェ飯おでんの回が印象的でした。','g000000006', '優雅', '勉強になる', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000018', 'u000000017',
+'久々に原作漫画を読み返したらもう松重豊さんヴォイスでしか再生されなくなってしまった。
+心の声がダダ漏れで良い。
+素晴らしいハマり役だし、
+親父ギャグも口に出してないからこそクスリと笑えてしまう。
+井之頭五郎さんを見習い「正解」の食事を叩き出し続けたいものである。','g000000006', '優雅', '勉強になる', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000019', 'u000000018',
+'後に全裸監督と呼ばれる、村西とおるの実話を元にできたドラマ
+どんなことがあっても、常に規制と戦いエロと向き合った男
+たかがエロ、されどエロ
+やっぱり何事にも全力で取り組む男はかっこいい','g000000007', '衝撃的', 'ダーク', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000019',
+'言うなれば下品な梨泰院クラス
+エロ抜きにしても面白かったです
+前科8犯、懲役370年、借金50億でありながら、人々を魅了し続ける営業トークと企画力。
+新しいことをするならどんな手段も厭わない姿勢は真似できませんが、とても感化される熱量のある作品でした','g000000007', '非日常', 'ダーク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000020',
+'村西とおるも黒木香もぶっ飛んでて超狂っててめちゃくちゃかっこいい。
+結局最後まで見た。平成生まれからすると新境地。ほぼ実話とは全然知らなかった。
+新しい世界に足を踏み入れてしまった感。
+でも確かに恥じるべきでは無いと思う。','g000000007', '非日常', '衝撃的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000021',
+'本当にアニメみたいな世界観！
+マスクを被った時の最強度合いがぶっ飛んでるから、思いっきり非日常な感じを楽しめた！
+弱点がないここまで最強なキャラって珍しい気がする
+ナイトクラブでのダンスシーンも
+警官たち踊らされるシーンもすき
+マイロは good boy すぎるのでいっぱいおやつあげたい','g000000007', '爆笑コメディ', '非日常', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000022',
+'ジムキャリー若くてイケメンだ！
+マイロが賢くて可愛いし可愛い。
+ほんまに面白くて大好き
+今日は字幕で見たけど
+山ちゃんの吹き替えも最高
+マスクが無い時にイプキスの真価が発揮され、本当の自分を好いてくれる人が見つかるっていうのが素敵
+マイロは今作MVP級の活躍
+最初の方は目ん玉飛び出すシーンとかがキツく感じたけど、慣れてくると大丈夫だった','g000000007', '爆笑コメディ', '非日常', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000023',
+'ちょいホラーだけどそこまでガッツリじゃないので見やすい。
+何か起こりそうな雰囲気が永遠に続くからドキドキしっぱなし。
+露骨に怖い表現なくても不気味に感じるのはさすがキューブリック。
+見た後に考察サイト見るとさらに面白い
+記憶に残るシーンが多くて面白いし、音楽がいい感じ。','g000000007', 'ミステリアス', '怖い', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000024',
+'何も考えずにスカッと観れる。
+ヴィランズでいいよね。
+だって、ヴィランがいなかったら
+ヒーローは輝かない。
+ディズニーとかアニメや映画ドラマ
+いうて引き立て役よもはやヒーローより
+主演レベルよ。','g000000007', 'わくわく', 'ダーク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000020', 'u000000025',
+'まあまあかな。
+CG感強くて引いちゃったのと
+話が上手く掴めなくて
+よく分からんまま終わった。
+ハーレークインの誕生も
+知れてそこは面白かった。','g000000007', 'わくわく', 'ダーク', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000021', 'u000000026',
+'はちゃめちゃな映画だった
+ウィル・スミスが出てるの観るまで知らなくてびっくりした！
+最初のメンバー紹介のところが
+いちばん面白かったかな。
+ちょっとあっさりだったけど。
+火の人ずっとかわいそう。
+BYEがかわいかった。
+ハーレイ・クインがどんなキャラクターで、
+スーサイドスクワッドのジョーカーは
+どんななのか知りたかったので
+その点は充分満足でした。
+こちらのジョーカーも期待通り狂っていたな。
+だけど少し物足りない。','g000000007', '衝撃的', 'ダーク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000021', 'u000000027',
+'中盤から、次の話を見たくて我慢するのが大変だった。
+物語の主軸は、主人公のセロイの成長を15年くらいかけて見せてくれる。
+バカ息子のグンウォンが現れると大体、殴り合いになるので少し冷める。
+他のキャラクター達の物語もちゃんとやってくれる。
+面白い','g000000007', '泣ける', '儚い', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000022', 'u000000028',
+'ちょこちょこ見て後半一気に観ました
+名言も多く、　
+俺の価値は俺が決める。
+俺の人生はこれからだ。
+必ず成功してやる。
+ってのが1番好きでした
+どのキャラクターも良くて何気に14話が1番ほろっと来たかも
+セロイの言葉を引き継いでるの良かったなぁ
+日本版も楽しみ
+香川さんは絶対土下座でキャスティングされてそう笑
+料理も美味しそうで何度Uber頼んだか
+セロイもいいけどやっぱり愛の不時着のジョンヒョクさんですね
+一途な人は素敵
+スアはなんか綺麗になった指原莉乃って感じに見えた
+最近仕事前は梨泰院クラスのstart over聞いてます','g000000008', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000022', 'u000000029',
+'韓国のエンタメに沼るきっかけとなった特別な作品。
+何度心が震え、勇気づけられたか、受けた影響は計り知れない。
+今まで見たドラマの中で圧倒的No. 1。','g000000008', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000023', 'u000000030',
+'日本のリメイクスタートするので改めて見直し。
+韓ドラは苦手という男性にもこのドラマはハマれるのでは？
+男が惚れる男ってこういう人だろうな。
+男気に溢れ、熱く真っ直ぐな信念を貫く人間の復讐劇と成り上がりストーリー。
+パクソジュンはとても当たり役だし、脇を固める役者もキャラ立ちしてて皆さん素晴らしいです。
+OSTがさらに作品を盛り上げてるし、映像、全ての役者の魅力も満載で、長く人気を誇る作品なのは至極納得。
+この上質な作品を、日本がどうリメイクするのか少し心配でもありますが、楽しみにしたいと思います。','g000000008', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000023', 'u000000031',
+'めちゃめちゃ興味深い。考えさせられる
+埋められない貧富の差
+消せない差別
+色濃く描いた家族の絆
+しかし刺された娘置いて去っていくなよ父ちゃん','g000000008', '怖い', '勉強になる', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000023', 'u000000032',
+'ふとした事がキッカケで富裕層家庭にどんどん寄生していく展開は面白かったし 
+バレないと高を括ってどんちゃん騒ぎからの息を潜めるギリギリのラインは見応えがあった。
+モールス信号がもう少し活躍すると思ったのにそうでもなかったかな？
+どうやっても取れない 半地下の臭いがあの行動を引き起こしたとあって
+皮肉でもあり尊厳でもあり。。','g000000008', '怖い', 'ミステリアス', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000023', 'u000000033',
+'登場人物が隣に居るんじゃないか？
+って位「におい」を感じる作品
+「におい」と言っても香水の華やかな香りでも野に咲く花の微かな香りではなく
+「非日常的なクサイ」だったり「生活臭」だったり…
+実際に行った事も無い街の、会った事も無い人たちの息の匂いまで「ムワッ」とスクリーンから溢れて来る
+ドラマティックなのにすごく生々しい','g000000008', '怖い', 'ミステリアス', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000023', 'u000000034',
+'ジアとわんちゃんは可愛い
+髭とソヨンはなんだかんだ似た者でお似合い
+シフン、、、
+イェウォン健康食品の分量よ
+途中参加は日数足らなすぎ
+最後くらいキスシーンないんか
+シーズン２も作ってね','g000000008', 'ときめく', '優雅', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000023', 'u000000035',
+'バカやってそうに見えて真面目に面白い映画
+20年ぶりくらいに見たけど超おもろい
+設定からしてトンデモ映画だけど、感動要素もあり、2時間飽きずに見られた。サッカーの別軸として、ファンが立ち直る物語もあってしっかり本筋と絡んでくるのが見事である。
+スキンヘッドでも似合う顔って強すぎる。
+あと、キーパーは服がはだけないといけない決まりでもあんのか。','g000000008', '爆笑コメディ', '衝撃的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000024', 'u000000036',
+'15年振り位の再視聴
+思い出の補正もあると思うがやはり面白かった
+正直、サッカーとしてはルールが曖昧で「？」ってなるようなツッコミ所はあるがアクション娯楽映画としては十分に楽しめる。コメディ要素も良かった。
+アクションシーン以外にも、王道の成り上がりストーリーは変に気を衒ったりしておらずに素直に楽しめた。
+深く考えず、スカッと観れる良作。','g000000008', '非日常', 'スカッとする', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000025', 'u000000037',
+'中学の頃友達とDVD擦れるほど観て台詞も動きも全部覚えたなあ。今でも少し覚えてた。懐かしい。
+思い出補正もあるけど、いつまで経っても青春ベストおバカムービー。
+「そうはならんやろ笑」って展開しか起きない逆安心感。中毒性あるんよな。
+でもラストかっこよすぎ。ムイに泣く。男の憧れだぜ。
+少林拳はさいこーー','g000000009', '非日常', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000025', 'u000000038',
+'王道のラブコメ、料理ものではありますが、主役2人のキャラがとても可愛くて楽しめます。
+フランス料理店なのになぜかカレーがメインという不思議。でもカレーも夜市の料理も美味しそうでした。夜市って楽しそうだな。台湾行ったことないですけど、観光が味わえる感じ。
+メインのティンエンとフェンチンの関係については、いつ2人が自分の想いを自覚するのかっていうところにドキドキでした。師弟関係から婚約者と関係が変わっていくのもいいですね。
+ライバルたちも、根はいい人ばっかりなので嫌な気分になることもなく見れるっていうのも良かったです。','g000000005', '怖い', 'グロテスク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000025', 'u000000039',
+'少林サッカーで主演を演じたチャウ・シンチーが今度は西遊記の孫悟空を演じられている。
+誰もが知っている西遊記を違う視点で描いた作品。
+今でも中国で再放送されるぐらいの人気さ。
+これはね、人気なだけある、観たほうがいいぞ？
+今までで一番好きな映画は？と聞かれたらこの映画を答えよう。','g000000009', 'わくわく', '刺激的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000026', 'u000000001',
+'これは文句無しの名作
+中国人のバイブス
+西遊記が原作となっていて、それのパロディ作品
+ジャンルはコメディラブロマンス？と言えば良いか
+かなり古い映画だが、画質が荒いくらいで特段気にせず見て良いし、買えるチャンスがあるなら買った方が良い
+たまにワイヤーアクションのワイヤーが見えるがそれくらいがちょうど良い
+香港映画だし。
+少林サッカーやカンフーハッスル主人公のチャウ・シンチーが主役の孫悟空を演じている
+かなり古い香港映画だが、上映当時人気すぎて社会現象を巻き起こしたのだとか
+チャウ・シンチーは中国のコメディキングと言われるくらいの大御所ではあるものの、間違いなくその地位を築き上げた作品となる
+映画自体は前編後編で分かれていて、今レビューを書いているこの作品は、前編の位置付けとなる
+前編はとりあえず伏線張りまくりのコメディ映画だが、後編は打って変わってラブロマンス要素が強くなる。
+しかもコメディからのラブロマンスと聞くとなんか、軽いものに聞こえるが、結構見終わった後も心にじーんと残るような、余韻がある。
+最後に見終わった感想は、きっと「はぁ、良かったなぁ」となるだろう。
+文句無しの100点です。','g000000009', '勉強になる', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000026', 'u000000002',
+'るろうに剣心、一作目。
+現代版時代劇って感じですね。
+要所要所に良い役者さんを揃えているので、なかなか内容が締まった感じはします。
+漫画は読んだことはありませんが、面白かったです。','g000000009', '刺激的', 'ときめく', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000027', 'u000000003',
+'バカやってそうに見えて真面目に面白い映画
+20年ぶりくらいに見たけど超おもろい
+設定からしてトンデモ映画だけど、感動要素もあり、2時間飽きずに見られた。サッカーの別軸として、ファンが立ち直る物語もあってしっかり本筋と絡んでくるのが見事である。
+スキンヘッドでも似合う顔って強すぎる。
+あと、キーパーは服がはだけないといけない決まりでもあんのか。','g000000009', '爆笑コメディ', '衝撃的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000028', 'u000000004',
+'15年振り位の再視聴
+思い出の補正もあると思うがやはり面白かった
+正直、サッカーとしてはルールが曖昧で「？」ってなるようなツッコミ所はあるがアクション娯楽映画としては十分に楽しめる。コメディ要素も良かった。
+アクションシーン以外にも、王道の成り上がりストーリーは変に気を衒ったりしておらずに素直に楽しめた。
+深く考えず、スカッと観れる良作。','g000000010', '非日常', 'スカッとする', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000028', 'u000000005',
+'中学の頃友達とDVD擦れるほど観て台詞も動きも全部覚えたなあ。今でも少し覚えてた。懐かしい。
+思い出補正もあるけど、いつまで経っても青春ベストおバカムービー。
+「そうはならんやろ笑」って展開しか起きない逆安心感。中毒性あるんよな。
+でもラストかっこよすぎ。ムイに泣く。男の憧れだぜ。
+少林拳はさいこーー','g000000010', '非日常', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000028', 'u000000006',
+'王道のラブコメ、料理ものではありますが、主役2人のキャラがとても可愛くて楽しめます。
+フランス料理店なのになぜかカレーがメインという不思議。でもカレーも夜市の料理も美味しそうでした。夜市って楽しそうだな。台湾行ったことないですけど、観光が味わえる感じ。
+メインのティンエンとフェンチンの関係については、いつ2人が自分の想いを自覚するのかっていうところにドキドキでした。師弟関係から婚約者と関係が変わっていくのもいいですね。
+ライバルたちも、根はいい人ばっかりなので嫌な気分になることもなく見れるっていうのも良かったです。','g000000011', '', '', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000028', 'u000000007',
+'少林サッカーで主演を演じたチャウ・シンチーが今度は西遊記の孫悟空を演じられている。
+誰もが知っている西遊記を違う視点で描いた作品。
+今でも中国で再放送されるぐらいの人気さ。
+これはね、人気なだけある、観たほうがいいぞ？
+今までで一番好きな映画は？と聞かれたらこの映画を答えよう。','g000000010', 'わくわく', '刺激的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000028', 'u000000008',
+'これは文句無しの名作
+中国人のバイブス
+西遊記が原作となっていて、それのパロディ作品
+ジャンルはコメディラブロマンス？と言えば良いか
+かなり古い映画だが、画質が荒いくらいで特段気にせず見て良いし、買えるチャンスがあるなら買った方が良い
+たまにワイヤーアクションのワイヤーが見えるがそれくらいがちょうど良い
+香港映画だし。
+少林サッカーやカンフーハッスル主人公のチャウ・シンチーが主役の孫悟空を演じている
+かなり古い香港映画だが、上映当時人気すぎて社会現象を巻き起こしたのだとか
+チャウ・シンチーは中国のコメディキングと言われるくらいの大御所ではあるものの、間違いなくその地位を築き上げた作品となる
+映画自体は前編後編で分かれていて、今レビューを書いているこの作品は、前編の位置付けとなる
+前編はとりあえず伏線張りまくりのコメディ映画だが、後編は打って変わってラブロマンス要素が強くなる。
+しかもコメディからのラブロマンスと聞くとなんか、軽いものに聞こえるが、結構見終わった後も心にじーんと残るような、余韻がある。
+最後に見終わった感想は、きっと「はぁ、良かったなぁ」となるだろう。
+文句無しの100点です。','g000000010', '勉強になる', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000029', 'u000000008',
+'るろうに剣心、一作目。
+現代版時代劇って感じですね。
+要所要所に良い役者さんを揃えているので、なかなか内容が締まった感じはします。
+漫画は読んだことはありませんが、面白かったです。','g000000010', '刺激的', 'ときめく', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000029', 'u000000009',
+'スパイファミリー1話みました。
+軽く泣いてます...期待の上を行くアニメ化でした！家族に血の繋がりなど必要なし。
+これからも応援していきたいと素直に思ったのはスタッフの力量によるものだと思いますアーニャ良かったねぇ。
+あとメチャクチャかわいいねぇ。',
+'g000000010', '癒される', 'わくわく', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000010',
+'すばらしい！非の打ち所がありませんでした！
+原作の時点で凄まじく完成度の高い作品ですが、
+アニメのクオリティもひとつの映像作品としてのレベルが高い！','g000000010', '癒される', '爆笑コメディ', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000011',
+'キャラと声優がすごくマッチしていてまるで本物だなと思うくらい完成度が高い！
+ヨルさん私と結婚してください！','g000000010', 'わくわく', '爆笑コメディ', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000012',
+'全国民が知ってるであろうベッタベタの名シーン 
+ちゃんと感動した。 
+「何が起こっても左腕のこれが仲間の印だ！」
+くぅ〜〜 おもれえ〜〜かっくぃ〜〜','g000000010', 'わくわく', '泣ける', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000013',
+'クロコダイル、ボンちゃん、イワ様、Mr.だがね、バギー、ジンベエなどなどすごいメンツ出てくるし、
+そんなメンツでも倒せないマゼランに後から乗り込んできた黒ひげ、アツすぎるよな。
+とにかくぼんちゃん…。大好き。涙止まんなかった。
+顔馴染みメンツ出てき過ぎてほぼ同窓会。
+ジンベエさんいいやつ過ぎんかい？','g000000010', '泣ける', 'わくわく', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000014',
+'学生のこの頃に、こんなに熱くなれるものに出逢えることがどれほど幸せなことか。
+身に染みて思う。曇りなく何かに夢中になる。悔しくて泣くこと。貴重な経験。
+眩しすぎて泣けてくる。
+そんなスポーツアニメ沢山あると思う、ちはやふるのすごいところは
+競技カルタという一見地味で目立たない競技の魅力を最大限に引き出していて
+死ぬほど自分もやってみたくなるところ。そして古典は美しい。日本の美に触れられる。
+本当に秀悦な青春作品だと思います','g000000010', '泣ける', 'スカッとする', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000015', 
+'「決して前情報無しで観て下さい」タイプの映画。
+キャストさえも、主役以外はチェックしない方がいい。
+木村拓哉がいかにもキムタクで、それが似合った役柄で、思った以上にいいんじゃない？と感じたのだが
+東野圭吾が本作執筆の際に主人公の人物イメージを木村拓哉に想定していたというからまさにハマり役だった訳。
+作家としても役者のいいお仕事。それがこの映画の一番の長所。
+長澤まさみもこういう役が似合う。そしてあの人の演技のお見事さに拍手だ。
+目立たない演技っていうのも難しいんだな。きっと。大満足だろう。','g000000010', 'わくわく', 'ミステリアス', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000030', 'u000000016',
+'発声も演技も全く力まず最小限のもので成立させる松重さんの演技と凝りすぎない演出。
+こういうのでいいんだよ。いや、こういうのがいいんだよ。
+しかし腹の減る作品やなぁ。カフェ飯おでんの回が印象的でした。','g000000010', '優雅', '勉強になる', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000031', 'u000000017',
+'久々に原作漫画を読み返したらもう松重豊さんヴォイスでしか再生されなくなってしまった。
+心の声がダダ漏れで良い。
+素晴らしいハマり役だし、
+親父ギャグも口に出してないからこそクスリと笑えてしまう。
+井之頭五郎さんを見習い「正解」の食事を叩き出し続けたいものである。','g000000011', '優雅', '勉強になる', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000032', 'u000000018',
+'後に全裸監督と呼ばれる、村西とおるの実話を元にできたドラマ
+どんなことがあっても、常に規制と戦いエロと向き合った男
+たかがエロ、されどエロ
+やっぱり何事にも全力で取り組む男はかっこいい','g000000011', '衝撃的', 'ダーク', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000032', 'u000000019',
+'言うなれば下品な梨泰院クラス
+エロ抜きにしても面白かったです
+前科8犯、懲役370年、借金50億でありながら、人々を魅了し続ける営業トークと企画力。
+新しいことをするならどんな手段も厭わない姿勢は真似できませんが、とても感化される熱量のある作品でした','g000000011', '非日常', 'ダーク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000032', 'u000000020',
+'村西とおるも黒木香もぶっ飛んでて超狂っててめちゃくちゃかっこいい。
+結局最後まで見た。平成生まれからすると新境地。ほぼ実話とは全然知らなかった。
+新しい世界に足を踏み入れてしまった感。
+でも確かに恥じるべきでは無いと思う。','g000000011', '非日常', '衝撃的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000032', 'u000000021',
+'本当にアニメみたいな世界観！
+マスクを被った時の最強度合いがぶっ飛んでるから、思いっきり非日常な感じを楽しめた！
+弱点がないここまで最強なキャラって珍しい気がする
+ナイトクラブでのダンスシーンも
+警官たち踊らされるシーンもすき
+マイロは good boy すぎるのでいっぱいおやつあげたい','g000000011', '爆笑コメディ', '非日常', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000032', 'u000000022',
+'ジムキャリー若くてイケメンだ！
+マイロが賢くて可愛いし可愛い。
+ほんまに面白くて大好き
+今日は字幕で見たけど
+山ちゃんの吹き替えも最高
+マスクが無い時にイプキスの真価が発揮され、本当の自分を好いてくれる人が見つかるっていうのが素敵
+マイロは今作MVP級の活躍
+最初の方は目ん玉飛び出すシーンとかがキツく感じたけど、慣れてくると大丈夫だった','g000000011', '爆笑コメディ', '非日常', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000032', 'u000000023',
+'ちょいホラーだけどそこまでガッツリじゃないので見やすい。
+何か起こりそうな雰囲気が永遠に続くからドキドキしっぱなし。
+露骨に怖い表現なくても不気味に感じるのはさすがキューブリック。
+見た後に考察サイト見るとさらに面白い
+記憶に残るシーンが多くて面白いし、音楽がいい感じ。','g000000011', 'ミステリアス', '怖い', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000033', 'u000000024',
+'何も考えずにスカッと観れる。
+ヴィランズでいいよね。
+だって、ヴィランがいなかったら
+ヒーローは輝かない。
+ディズニーとかアニメや映画ドラマ
+いうて引き立て役よもはやヒーローより
+主演レベルよ。','g000000011', 'わくわく', 'ダーク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000033', 'u000000025',
+'まあまあかな。
+CG感強くて引いちゃったのと
+話が上手く掴めなくて
+よく分からんまま終わった。
+ハーレークインの誕生も
+知れてそこは面白かった。','g000000011', 'わくわく', 'ダーク', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000034', 'u000000026',
+'はちゃめちゃな映画だった
+ウィル・スミスが出てるの観るまで知らなくてびっくりした！
+最初のメンバー紹介のところが
+いちばん面白かったかな。
+ちょっとあっさりだったけど。
+火の人ずっとかわいそう。
+BYEがかわいかった。
+ハーレイ・クインがどんなキャラクターで、
+スーサイドスクワッドのジョーカーは
+どんななのか知りたかったので
+その点は充分満足でした。
+こちらのジョーカーも期待通り狂っていたな。
+だけど少し物足りない。','g000000012', '衝撃的', 'ダーク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000035', 'u000000027',
+'中盤から、次の話を見たくて我慢するのが大変だった。
+物語の主軸は、主人公のセロイの成長を15年くらいかけて見せてくれる。
+バカ息子のグンウォンが現れると大体、殴り合いになるので少し冷める。
+他のキャラクター達の物語もちゃんとやってくれる。
+面白い','g000000012', '泣ける', '儚い', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000035', 'u000000028',
+'ちょこちょこ見て後半一気に観ました
+名言も多く、　
+俺の価値は俺が決める。
+俺の人生はこれからだ。
+必ず成功してやる。
+ってのが1番好きでした
+どのキャラクターも良くて何気に14話が1番ほろっと来たかも
+セロイの言葉を引き継いでるの良かったなぁ
+日本版も楽しみ
+香川さんは絶対土下座でキャスティングされてそう笑
+料理も美味しそうで何度Uber頼んだか
+セロイもいいけどやっぱり愛の不時着のジョンヒョクさんですね
+一途な人は素敵
+スアはなんか綺麗になった指原莉乃って感じに見えた
+最近仕事前は梨泰院クラスのstart over聞いてます','g000000012', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000035', 'u000000029',
+'韓国のエンタメに沼るきっかけとなった特別な作品。
+何度心が震え、勇気づけられたか、受けた影響は計り知れない。
+今まで見たドラマの中で圧倒的No. 1。','g000000012', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000036', 'u000000030',
+'日本のリメイクスタートするので改めて見直し。
+韓ドラは苦手という男性にもこのドラマはハマれるのでは？
+男が惚れる男ってこういう人だろうな。
+男気に溢れ、熱く真っ直ぐな信念を貫く人間の復讐劇と成り上がりストーリー。
+パクソジュンはとても当たり役だし、脇を固める役者もキャラ立ちしてて皆さん素晴らしいです。
+OSTがさらに作品を盛り上げてるし、映像、全ての役者の魅力も満載で、長く人気を誇る作品なのは至極納得。
+この上質な作品を、日本がどうリメイクするのか少し心配でもありますが、楽しみにしたいと思います。','g000000012', '泣ける', '儚い', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000036', 'u000000031',
+'めちゃめちゃ興味深い。考えさせられる
+埋められない貧富の差
+消せない差別
+色濃く描いた家族の絆
+しかし刺された娘置いて去っていくなよ父ちゃん','g000000012', '怖い', '勉強になる', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000036', 'u000000032',
+'ふとした事がキッカケで富裕層家庭にどんどん寄生していく展開は面白かったし 
+バレないと高を括ってどんちゃん騒ぎからの息を潜めるギリギリのラインは見応えがあった。
+モールス信号がもう少し活躍すると思ったのにそうでもなかったかな？
+どうやっても取れない 半地下の臭いがあの行動を引き起こしたとあって
+皮肉でもあり尊厳でもあり。。','g000000012', '怖い', 'ミステリアス', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000037', 'u000000033',
+'登場人物が隣に居るんじゃないか？
+って位「におい」を感じる作品
+「におい」と言っても香水の華やかな香りでも野に咲く花の微かな香りではなく
+「非日常的なクサイ」だったり「生活臭」だったり…
+実際に行った事も無い街の、会った事も無い人たちの息の匂いまで「ムワッ」とスクリーンから溢れて来る
+ドラマティックなのにすごく生々しい','g000000013', '怖い', 'ミステリアス', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000038', 'u000000034',
+'ジアとわんちゃんは可愛い
+髭とソヨンはなんだかんだ似た者でお似合い
+シフン、、、
+イェウォン健康食品の分量よ
+途中参加は日数足らなすぎ
+最後くらいキスシーンないんか
+シーズン２も作ってね','g000000013', 'ときめく', '優雅', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000038', 'u000000035',
+'バカやってそうに見えて真面目に面白い映画
+20年ぶりくらいに見たけど超おもろい
+設定からしてトンデモ映画だけど、感動要素もあり、2時間飽きずに見られた。サッカーの別軸として、ファンが立ち直る物語もあってしっかり本筋と絡んでくるのが見事である。
+スキンヘッドでも似合う顔って強すぎる。
+あと、キーパーは服がはだけないといけない決まりでもあんのか。','g000000013', '爆笑コメディ', '衝撃的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000039', 'u000000036',
+'15年振り位の再視聴
+思い出の補正もあると思うがやはり面白かった
+正直、サッカーとしてはルールが曖昧で「？」ってなるようなツッコミ所はあるがアクション娯楽映画としては十分に楽しめる。コメディ要素も良かった。
+アクションシーン以外にも、王道の成り上がりストーリーは変に気を衒ったりしておらずに素直に楽しめた。
+深く考えず、スカッと観れる良作。','g000000013', '非日常', 'スカッとする', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000039', 'u000000037',
+'中学の頃友達とDVD擦れるほど観て台詞も動きも全部覚えたなあ。今でも少し覚えてた。懐かしい。
+思い出補正もあるけど、いつまで経っても青春ベストおバカムービー。
+「そうはならんやろ笑」って展開しか起きない逆安心感。中毒性あるんよな。
+でもラストかっこよすぎ。ムイに泣く。男の憧れだぜ。
+少林拳はさいこーー','g000000013', '非日常', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000039', 'u000000038',
+'王道のラブコメ、料理ものではありますが、主役2人のキャラがとても可愛くて楽しめます。
+フランス料理店なのになぜかカレーがメインという不思議。でもカレーも夜市の料理も美味しそうでした。夜市って楽しそうだな。台湾行ったことないですけど、観光が味わえる感じ。
+メインのティンエンとフェンチンの関係については、いつ2人が自分の想いを自覚するのかっていうところにドキドキでした。師弟関係から婚約者と関係が変わっていくのもいいですね。
+ライバルたちも、根はいい人ばっかりなので嫌な気分になることもなく見れるっていうのも良かったです。','g000000013', '怖い', 'グロテスク', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000039', 'u000000039',
+'少林サッカーで主演を演じたチャウ・シンチーが今度は西遊記の孫悟空を演じられている。
+誰もが知っている西遊記を違う視点で描いた作品。
+今でも中国で再放送されるぐらいの人気さ。
+これはね、人気なだけある、観たほうがいいぞ？
+今までで一番好きな映画は？と聞かれたらこの映画を答えよう。','g000000013', 'わくわく', '刺激的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
 
 
