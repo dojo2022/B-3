@@ -52,9 +52,8 @@ public class PostServlet extends HttpServlet {
 		//作品の情報をリクエストスコープに入れる
 		request.setAttribute("video", video);
 
-		//今だけ本番はセッションスコープの「id」を使う
-//		request.setAttribute("id");
 
+		//データベースからユーザーデータを取得
 		MasterUserDao uDao = new MasterUserDao();
 		MasterUser user2 = uDao.selectOne(user_id);
 

@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.MasterVideoDao;
 import dao.ReviewDao;
-import model.Review;
+import model.MasterVideo;
+import model.Reviewdata;
 
 /**
  * Servlet implementation class Review_bfServlet
@@ -32,10 +34,21 @@ public class ReviewServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		//作品のidなどをもらう
+		String video_id=
+		request.getParameter("video_id");
+
+		//daoを使って抽出したデータをリストに格納する
+		MasterVideoDao vDao = new MasterVideoDao();
+		MasterVideo video = vDao.selectOne(video_id);
+
+		//作品の情報をリクエストスコープに入れる
+		request.setAttribute("video", video);
 
 		// 検索処理を行う
 			ReviewDao rDao = new ReviewDao();
-			List<Review> cardList = rDao.select(new Review("", "", "", "", "", "", "", "", ""));
+			List<Reviewdata> cardList = rDao.select(new Reviewdata());
 
 		// 検索結果をリクエストスコープに格納する
 			request.setAttribute("reviewList", cardList);
