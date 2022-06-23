@@ -17,7 +17,7 @@
     <div class="wrapper">
         <!-- header start -->
         <!-- header end -->
-        
+
         <!-- 検索結果　一覧 start-->
         <main>
             <div id="search-result-container">

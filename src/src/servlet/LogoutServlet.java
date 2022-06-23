@@ -26,6 +26,6 @@ public class LogoutServlet extends HttpServlet {
 		session.invalidate();
 
 		// ログインページにリダイレクトする
-		response.sendRedirect("/FLIFRE/LoginServlet");
+		response.sendRedirect("/FLIFRE/Top_bfServlet");
 	}
 }

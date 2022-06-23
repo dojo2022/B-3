@@ -59,21 +59,21 @@
 				        <td>
 					       <select name="feelcat_name1" onchange="change(this)">
 				        	<option>選択してください</option>
-				            <core:forEach items="${ categories }" varStatus="status">
-				      			<option value="${ status.current }">${ status.current }</option>
-				            </core:forEach>
-				        </select>
+					            <core:forEach items="${ categories }" varStatus="status">
+					      			<option value="${ status.current }">${ status.current }</option>
+					            </core:forEach>
+				        	</select>
 						</td>
 						<td>
 				         	感想カテゴリ２
 				         </td>
 				         <td>
 				         	<select name="feelcat_name2">
-				            <option>選択してください</option>
-				            <core:forEach items="${ categories }" varStatus="status">
-				            	<option value="${ status.current }">${ status.current }</option>
-				            </core:forEach>
-				        </select>
+					            <option>選択してください</option>
+					            <core:forEach items="${ categories }" varStatus="status">
+					            	<option value="${ status.current }">${ status.current }</option>
+					            </core:forEach>
+					        </select>
 						</td>
 						<td>
 				        	5段階評価
@@ -91,13 +91,15 @@
 				        <td>
 				        </td>
 				    </tr>
+				</table>
+				<table>
 					<tr>
 						<td>
 					    	本文
 					    </td>
 					</tr>
 					<tr>
-					    <td colspan="6">
+					    <td colspan="8">
 					         <div class="text">
 					        	<textarea name="review_contents" cols="100" rows="10"></textarea>
 				        	</div>
@@ -111,6 +113,7 @@
 					    <td>
 					    </td>
 					    <td>
+					    </td>
 					    <!-- submitボタンで/FLIFRE/PostServletのpostにデータを渡す -->
 
 					    </td>
