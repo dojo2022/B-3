@@ -54,7 +54,7 @@
 				<p class="ranking">通算</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li ><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${totalRank[i].video_id}">${ totalRank[i].video_name}</a>
+					<li ><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id= ${totalRank[i].video_id}">${ totalRank[i].video_name}</a>
 					<span class="count">${ totalRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -204,7 +204,7 @@
 				<p class="ranking">バラエティ</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${barietyRank[i].video_id}">${ barietyRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ResultServlet?video_id= ${barietyRank[i].video_id}">${ barietyRank[i].video_name}</a>
 					<span class="count">${ barietyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
