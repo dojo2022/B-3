@@ -124,7 +124,6 @@ public class ReactionDao {
 		}
 
 		// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-		//→スタンプも登録処理が必要か？
 		public boolean insert(Reaction card) {
 			Connection conn = null;
 			boolean result = false;
@@ -257,6 +256,108 @@ public class ReactionDao {
 			// 結果を返す
 			return Reactiondata;
 		}
+
+		// 引数reactionで指定されたリアクションを更新し、成功したらtrueを返す
+		public boolean update(Reaction reaction) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+				// SQL文を準備する
+				String sql = "UPDATE T_REACTION SET (stamp_name=?) WHERE review_id=?";
+
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				if (reaction.getReaction_id() != null && !reaction.getReaction_id().equals("")) {
+					pStmt.setString(1, reaction.getReaction_id());
+				}
+				else {
+					pStmt.setString(1, null);
+				}
+
+				pStmt.setString(2, reaction.getReview_id());
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
+
+
+		// 引数reaction_idで指定されたレビューを削除し、成功したらtrueを返す
+		public boolean delete(String reaction_id) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+				// SQL文を準備する
+				String sql = "DELETE FROM T_REACTION where review_id=?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				pStmt.setString(1, reaction_id);
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
+
 
 }
 
