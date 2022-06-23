@@ -23,9 +23,9 @@
 		<!-- m_userのuser_hdを引用、userprofileクラスの背景に配置したい -->
 		<form method="POST" action="/FLIFRE/UserpageServlet">
 		<input type="hidden" name="user_id" value="${id.user_id}">
-		<input type="hidden" name="follow_id" value="${id.user_id}">
+		<input type="hidden" name="follow_id" value="${m_user.user_id}">
 		<c:choose>
-		<c:when test = "${flwDao.follow_exchange}">
+		<c:when test = "${check}">
 			<input type="submit" name="followBottun" value="フォロー解除">
 		</c:when>
 		<c:otherwise>
@@ -154,6 +154,7 @@
 							</div>
 						</div>
 						<!-- リプライフォームここまで -->
+						<hr>
 						</c:forEach>
 					</div>
 				</td>
