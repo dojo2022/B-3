@@ -179,7 +179,7 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 '後に全裸監督と呼ばれる、村西とおるの実話を元にできたドラマ
 どんなことがあっても、常に規制と戦いエロと向き合った男
 たかがエロ、されどエロ
-やっぱり何事にも全力で取り組む男はかっこいい','g000000002', '衝撃的', 'ダークな', '★★★★★');
+やっぱり何事にも全力で取り組む男はかっこいい','g000000002', '衝撃的', 'ダーク', '★★★★★');
 
 UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
@@ -187,7 +187,7 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 '言うなれば下品な梨泰院クラス
 エロ抜きにしても面白かったです
 前科8犯、懲役370年、借金50億でありながら、人々を魅了し続ける営業トークと企画力。
-新しいことをするならどんな手段も厭わない姿勢は真似できませんが、とても感化される熱量のある作品でした','g000000002', '非日常', 'ダークな', '★★★★');
+新しいことをするならどんな手段も厭わない姿勢は真似できませんが、とても感化される熱量のある作品でした','g000000002', '非日常', 'ダーク', '★★★★');
 
 UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
 
@@ -379,6 +379,55 @@ INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name
 少林拳はさいこーー','g000000005', '非日常', 'わくわく', '★★★★★');
 
 UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000014', 'u000000006',
+'王道のラブコメ、料理ものではありますが、主役2人のキャラがとても可愛くて楽しめます。
+フランス料理店なのになぜかカレーがメインという不思議。でもカレーも夜市の料理も美味しそうでした。夜市って楽しそうだな。台湾行ったことないですけど、観光が味わえる感じ。
+メインのティンエンとフェンチンの関係については、いつ2人が自分の想いを自覚するのかっていうところにドキドキでした。師弟関係から婚約者と関係が変わっていくのもいいですね。
+ライバルたちも、根はいい人ばっかりなので嫌な気分になることもなく見れるっていうのも良かったです。','g000000005', '', '', '★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000015', 'u000000007',
+'少林サッカーで主演を演じたチャウ・シンチーが今度は西遊記の孫悟空を演じられている。
+誰もが知っている西遊記を違う視点で描いた作品。
+今でも中国で再放送されるぐらいの人気さ。
+これはね、人気なだけある、観たほうがいいぞ？
+今までで一番好きな映画は？と聞かれたらこの映画を答えよう。','g000000005', 'わくわく', '刺激的', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000015', 'u000000008',
+'これは文句無しの名作
+中国人のバイブス
+西遊記が原作となっていて、それのパロディ作品
+ジャンルはコメディラブロマンス？と言えば良いか
+かなり古い映画だが、画質が荒いくらいで特段気にせず見て良いし、買えるチャンスがあるなら買った方が良い
+たまにワイヤーアクションのワイヤーが見えるがそれくらいがちょうど良い
+香港映画だし。
+少林サッカーやカンフーハッスル主人公のチャウ・シンチーが主役の孫悟空を演じている
+かなり古い香港映画だが、上映当時人気すぎて社会現象を巻き起こしたのだとか
+チャウ・シンチーは中国のコメディキングと言われるくらいの大御所ではあるものの、間違いなくその地位を築き上げた作品となる
+映画自体は前編後編で分かれていて、今レビューを書いているこの作品は、前編の位置付けとなる
+前編はとりあえず伏線張りまくりのコメディ映画だが、後編は打って変わってラブロマンス要素が強くなる。
+しかもコメディからのラブロマンスと聞くとなんか、軽いものに聞こえるが、結構見終わった後も心にじーんと残るような、余韻がある。
+最後に見終わった感想は、きっと「はぁ、良かったなぁ」となるだろう。
+文句無しの100点です。','g000000005', '勉強になる', 'わくわく', '★★★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+INSERT INTO t_review (video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) VALUES ('v000000016', 'u000000008',
+'るろうに剣心、一作目。
+現代版時代劇って感じですね。
+要所要所に良い役者さんを揃えているので、なかなか内容が締まった感じはします。
+漫画は読んだことはありませんが、面白かったです。','g000000005', '刺激的', 'ときめく', '★★★');
+
+UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+
+
+
+
 
 
 

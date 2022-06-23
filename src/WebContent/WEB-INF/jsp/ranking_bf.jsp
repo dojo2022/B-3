@@ -54,7 +54,7 @@
 				<p class="ranking">通算</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li ><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id= ${totalRank[i].video_id}">${ totalRank[i].video_name}</a>
+					<li ><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${totalRank[i].video_id}">${ totalRank[i].video_name}</a>
 					<span class="count">${ totalRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -64,7 +64,7 @@
 				<p class="ranking">アニメ</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${animeRank[i].video_id}">${ animeRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${animeRank[i].video_id}">${ animeRank[i].video_name}</a>
 					<span class="count">${ animeRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -74,7 +74,7 @@
 				<p class="ranking">国内</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${localRank[i].video_id}">${ localRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${localRank[i].video_id}">${ localRank[i].video_name}</a>
 					<span class="count">${ localRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -84,7 +84,7 @@
 				<p class="ranking">欧米</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${usRank[i].video_id}">${ usRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${usRank[i].video_id}">${ usRank[i].video_name}</a>
 					<span class="count">${ usRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -93,7 +93,7 @@
 				<p class="ranking">韓国</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${koreaRank[i].video_id}">${ koreaRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${koreaRank[i].video_id}">${ koreaRank[i].video_name}</a>
 					<span class="count">${ koreaRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -103,7 +103,7 @@
 				<p class="ranking">華流</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${chinaRank[i].video_id}">${ chinaRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${chinaRank[i].video_id}">${ chinaRank[i].video_name}</a>
 					<span class="count">${ chinaRank[i].count}post</span></li>
 				</c:forEach>
 				</ul>
@@ -113,7 +113,7 @@
 				<p class="ranking">アクション</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${actionRank[i].video_id}">${ actionRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${actionRank[i].video_id}">${ actionRank[i].video_name}</a>
 					<span class="count">${ actionRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -123,7 +123,7 @@
 				<p class="ranking">コメディ</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${comedyRank[i].video_id}">${ comedyRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${comedyRank[i].video_id}">${ comedyRank[i].video_name}</a>
 					<span class="count">${ comedyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -133,7 +133,7 @@
 				<p class="ranking">キッズ・ファミリー</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${familyRank[i].video_id}">${ familyRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${familyRank[i].video_id}">${ familyRank[i].video_name}</a>
 					<span class="count">${ familyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -143,7 +143,7 @@
 				<p class="ranking">ヒューマンドラマ</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${humanRank[i].video_id}">${ humanRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${humanRank[i].video_id}">${ humanRank[i].video_name}</a>
 					<span class="count">${ humanRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -153,7 +153,7 @@
 				<p class="ranking">サスペンス</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${suspenseRank[i].video_id}">${ suspenseRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${suspenseRank[i].video_id}">${ suspenseRank[i].video_name}</a>
 					<span class="count">${ suspenseRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -164,7 +164,7 @@
 				<p class="ranking">ラブロマンス</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${romanceRank[i].video_id}">${ romanceRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${romanceRank[i].video_id}">${ romanceRank[i].video_name}</a>
 					<span class="count">${ romanceRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -174,7 +174,7 @@
 				<p class="ranking">ホラー</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${horrorRank[i].video_id}">${ horrorRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${horrorRank[i].video_id}">${ horrorRank[i].video_name}</a>
 					<span class="count">${ horrorRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -184,7 +184,7 @@
 				<p class="ranking">ファンタジー</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${fantasyRank[i].video_id}">${ fantasyRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${fantasyRank[i].video_id}">${ fantasyRank[i].video_name}</a>
 					<span class="count">${ fantasyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -194,7 +194,7 @@
 				<p class="ranking">SF</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/Result_afServlet?video_id= ${sfRank[i].video_id}">${ sfRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${sfRank[i].video_id}">${ sfRank[i].video_name}</a>
 					<span class="count">${ sfRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
@@ -204,7 +204,7 @@
 				<p class="ranking">バラエティ</p>
 				<ul class="list">
 				<c:forEach begin="0" end="2" var="i">
-					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ResultServlet?video_id= ${barietyRank[i].video_id}">${ barietyRank[i].video_name}</a>
+					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${barietyRank[i].video_id}">${ barietyRank[i].video_name}</a>
 					<span class="count">${ barietyRank[i].count} post</span></li>
 				</c:forEach>
 				</ul>
