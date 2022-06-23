@@ -6,8 +6,7 @@ CREATE TABLE m_user (
 	user_pw VARCHAR(20) NOT NULL,
 	user_name VARCHAR(20) NOT NULL,
 	user_pf VARCHAR(160),
-	user_img VARCHAR(50),
-	user_hd VARCHAR(50)
+	user_img VARCHAR(50)
 );
 UPDATE M_USER SET  user_id =(SELECT concat('u',right(concat('000000000',CAST( (SELECT id FROM M_USER where user_id is null) AS VARCHAR)),9) )from M_USER where user_id is null ) where user_id is null;
 
