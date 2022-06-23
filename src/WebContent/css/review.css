@@ -10,11 +10,12 @@
 }
 
 
-.table{
-  position: relative;
-  left: 90px;
-  bottom: 30px;
-  border-bottom: 3px dotted #056334;
+.table {
+	text-align: left;
+	 position: relative;
+	 left: 90px;
+	 bottom: 30px;
+	 border-bottom: 1px dotted #056334;
 }
 
 
