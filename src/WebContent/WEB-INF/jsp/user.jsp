@@ -21,12 +21,17 @@
 
 		<!-- ${m_user.user_hd} -->
 		<!-- m_userのuser_hdを引用、userprofileクラスの背景に配置したい -->
-
-
-		<form id = follow_Lift method="POST" action="/FLIFRE/UserpageServlet">
-			<input type="button" name="FOLLOW" value="フォロー">
-			<!-- 既にフォローしている場合は「フォロー中」と表示する。jsで動きを付ける
-			FollowlistServletとFollowDaoの処理も必要 -->
+		<form method="POST" action="/FLIFRE/UserpageServlet">
+		<input type="hidden" name="user_id" value="${id.user_id}">
+		<input type="hidden" name="follow_id" value="${id.user_id}">
+		<c:choose>
+		<c:when test = "${flwDao.follow_exchange}">
+			<input type="submit" name="followBottun" value="フォロー解除">
+		</c:when>
+		<c:otherwise>
+		<input type="submit" name="followBottun" value="フォロー">
+		</c:otherwise>
+		</c:choose>
 		</form>
 	<br>
 
@@ -110,7 +115,7 @@
 						<span><!-- レビュー本文 -->
 						${e.review_contents}
 						</span><!-- t_reviewのreview_contentsを引用 -->
-					</c:forEach>
+
 
 					<c:forEach var="e" items="${Reactiondata}" >
 						<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
@@ -149,6 +154,7 @@
 							</div>
 						</div>
 						<!-- リプライフォームここまで -->
+						</c:forEach>
 					</div>
 				</td>
 			</tr>
