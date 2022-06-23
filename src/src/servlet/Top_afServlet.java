@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ReviewDao;
+import model.LoginUser;
 import model.Top;
 
 /**
@@ -31,21 +32,24 @@ public class Top_afServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*		if (session.getAttribute("id") == null) {
-					response.sendRedirect("/FLIFRE/Top_bfServlet");
+            		if (session.getAttribute("id") == null) {
+					response.sendRedirect("/FLIFRE/LoginServlet");
 					return;
-				}*/
+            		}
 
+		//ユーザーIDを取得
+				LoginUser user = (LoginUser)session.getAttribute("id");
+				String user_id = user.getUser_id();
 
-
-		ReviewDao rDao = new ReviewDao();
-		List<Top> Reviewlist = rDao.select1();
-
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("Review", Reviewlist);
+		// レビュー一覧を検索する
+				ReviewDao  rDao = new ReviewDao();
+				List<Top> Reviewlist2 = rDao.select3(user_id);
+				// 検索結果をリクエストスコープに格納する
+				request.setAttribute("Reviewdata", Reviewlist2);
 
 	// ログイン後トップページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_bf.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
 	}
+
 }

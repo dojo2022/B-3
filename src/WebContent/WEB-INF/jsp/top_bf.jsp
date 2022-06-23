@@ -21,16 +21,16 @@
  <table class="table">
  <c:forEach var="e" items="${Review}">
    <tr>
-    <td><span class="circle" type="" name="" value="${e.user_img}" readonly>${e.user_img}</span></td>
+    <td><span class="circle" >${e.user_img}</span></td>
    </tr>
    <tr>
-    <td><span class="user"type="" name="" value="${e.user_name}" readonly>${e.user_name}</span></td>
-    <td><span class="video"type="" name="" value="${e.video_name}" readonly>${e.video_name}</span></td>
-    <td><span class="time"type="" name="" value="${e.review_date}" readonly>${e.review_date}</span></td>
+    <td><span class="user">${e.user_name}</span></td>
+    <td><span class="video">${e.video_name}</span></td>
+    <td><span class="time">${e.review_date}</span></td>
     <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
-    <td><textarea class="review"type="text" name="review_contents" value="${e.review_contents}" readonly>${e.review_contents}</textarea></td>
+    <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
     <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
     </c:forEach>
