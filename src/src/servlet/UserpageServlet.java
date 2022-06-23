@@ -15,6 +15,7 @@ import dao.FollowDao;
 import dao.MasterUserDao;
 import dao.ReviewDao;
 import model.Follow;
+import model.LoginUser;
 import model.MasterUser;
 import model.Reviewdata;
 
@@ -81,6 +82,11 @@ public class UserpageServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Reviewdata", Reviewdata);
 
+		FollowDao flwDao = new FollowDao();
+		LoginUser loginUser = (LoginUser)session.getAttribute("id");
+		String loginId = loginUser.getUser_id();
+		boolean check = flwDao.check(loginId,user_id);
+		request.setAttribute("check", check);
 
 		// ユーザーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
@@ -124,8 +130,8 @@ public class UserpageServlet extends HttpServlet {
 		}
 
 		//フォロー/フォロワー一覧ページにリダイレクトする
-		response.sendRedirect("/FLIFRE/UserpagetServlet");
-		}
+		response.sendRedirect("/FLIFRE/MypageServlet?user_id=${id.user_id}");
+	}
 
 
 		/*		// リアクション編集または削除を行う→スタンプはクリックで切り替わるけどどう表現すればいい？☆
