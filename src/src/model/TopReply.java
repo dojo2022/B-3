@@ -20,16 +20,16 @@ public class TopReply implements Serializable {
 			this.reply_contents = "";
 		}
 
-	public String getUser_name() {
-		return user_name;
-	}
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
-	}
-	public String getReply_contents() {
-		return reply_contents;
-	}
-	public void setReply_contents(String reply_contents) {
-		this.reply_contents = reply_contents;
-	}
+		public String getUser_name() {
+			return user_name;
+		}
+		public void setUser_name(String user_name) {
+			this.user_name = user_name;
+		}
+		public String getReply_contents() {
+			return reply_contents;
+		}
+		public void setReply_contents(String reply_contents) {
+			this.reply_contents = reply_contents;
+		}
 }
