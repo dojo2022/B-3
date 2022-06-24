@@ -291,11 +291,14 @@ public class ReviewDao {
 
 
 			// 引数reviewで指定されたレビューを更新し、成功したらtrueを返す
-			public boolean update(Review review) {
+			public boolean update(Review review,Reviewdata now_review) {
 				Connection conn = null;
 				boolean result = false;
 
 				try {
+					//現在のデータを取得
+
+
 					// JDBCドライバを読み込む
 					Class.forName("org.h2.Driver");
 
@@ -303,8 +306,7 @@ public class ReviewDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
-					String sql = "UPDATE T_REVIEW SET (review_contents=?, genre_id=?, feelcat_name1=?, feelcat_name2=?, star=?, review_date=?) where review_id=?";
-
+					String sql = "UPDATE T_REVIEW SET (review_contents=?, feelcat_name1=?, feelcat_name2=?, star=?) where review_id=? ";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -315,41 +317,28 @@ public class ReviewDao {
 						pStmt.setString(1, null);
 					}
 
-					if (review.getGenre_id() != null && !review.getGenre_id().equals("")) {
-						pStmt.setString(2, review.getGenre_id());
-					}
-					else {
-						pStmt.setString(2, null);
-					}
+
 					if (review.getFeelcat_name1() != null && !review.getFeelcat_name1().equals("")) {
-						pStmt.setString(3, review.getFeelcat_name1());
+						pStmt.setString(2, review.getFeelcat_name1());
 					}
 					else {
-						pStmt.setString(3, null);
+						pStmt.setString(2, now_review.getFeelcat_name1());
 					}
 
 					if (review.getFeelcat_name2() != null && !review.getFeelcat_name2().equals("")) {
-						pStmt.setString(4, review.getFeelcat_name2());
+						pStmt.setString(3, review.getFeelcat_name2());
 					}
 					else {
-						pStmt.setString(4, null);
+						pStmt.setString(3, now_review.getFeelcat_name2());
 					}
 
 					if (review.getStar() != null && !review.getStar().equals("")) {
-						pStmt.setString(5, review.getStar());
+						pStmt.setString(4, review.getStar());
 					}
 					else {
-						pStmt.setString(5, null);
+						pStmt.setString(4, now_review.getStar());
 					}
-
-					if (review.getReview_date() != null && !review.getReview_date().equals("")) {
-						pStmt.setString(6, review.getReview_date());
-					}
-					else {
-						pStmt.setString(6, null);
-					}
-
-					pStmt.setString(7, review.getReview_id());
+					pStmt.setString(5, review.getReview_id());
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
@@ -496,7 +485,7 @@ public class ReviewDao {
 
 					// SQL文を準備する
 
-					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id WHERE \r\n"
+					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star, t_review.review_id ,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id WHERE \r\n"
 							+ "m_user.user_id = ?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					pStmt.setString(1,user_id);
@@ -515,7 +504,8 @@ public class ReviewDao {
 						rs.getString("genre_name"),
 						rs.getString("feelcat_name1"),
 						rs.getString("feelcat_name2"),
-						rs.getString("review_contents")
+						rs.getString("review_contents"),
+						rs.getString("review_id")
 						);
 						Reviewdata.add(card);
 					}
@@ -600,5 +590,64 @@ public class ReviewDao {
 
 				// 結果を返す
 				return Reviewlist2;
+			}
+			public Review select4(String review_id) {
+				Connection conn = null;
+				Review card =null;
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+
+					String sql = "SELECT * FROM t_review  WHERE review_id = ?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+							pStmt.setString(1,review_id);
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					rs.next();
+					 card = new Review(
+							rs.getString("review_id"),
+							rs.getString("video_id"),
+							rs.getString("user_id"),
+							rs.getString("star"),
+							rs.getString("review_contents"),
+							rs.getString("genre_id"),
+							rs.getString("feelcat_name1"),
+							rs.getString("feelcat_name2"),
+							rs.getString("star"),
+							rs.getString("review_date")
+						);
+
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					card = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					card = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							card = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return card;
 			}
 		}

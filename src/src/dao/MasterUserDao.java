@@ -94,7 +94,7 @@ public class MasterUserDao extends HttpServlet {
 				rs.getString("user_name"),
 				rs.getString("user_pf"),
 				rs.getString("user_img"),
-				rs.getString("user_hd")
+				rs.getString("user_img") //ueda
 				);
 
 		}
