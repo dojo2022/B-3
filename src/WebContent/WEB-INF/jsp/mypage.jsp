@@ -135,12 +135,11 @@
 						<hr>
 						<br>
 						<c:forEach var="e" items="${Replydata}">
-							<!-- <span> 送り先のユーザー名
-							${e.review_id.user_id.user_name}
-							</span> -->
+
 
 							<!-- 自分のアイコン -->
-							${e.user_img}
+							 <img src="images/${e.user_img}" width="75"
+								height="75">
 							<!-- m_userのuser_imgを引用 -->
 							<!-- t_replyのuser_idを引用? -->
 							<br>
@@ -167,9 +166,7 @@
 							<br>
 							<br>
 							<input type="hidden" name="reply_date" value="${e.reply_date}">
-							<input class="delete" type="submit" name="REPLYDELETET"
-								value="削除">
-							<input class="edit" type="submit" name="REPLYWEDIT" value="編集">
+
 							<br>
 							<br>
 						</c:forEach>
