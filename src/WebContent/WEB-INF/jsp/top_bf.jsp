@@ -27,36 +27,26 @@
     <td><span class="user">${e.user_name}</span></td>
     <td><span class="video">${e.video_name}</span></td>
     <td><span class="time">${e.review_date}</span></td>
-    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
+    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="25" hight="25"></td>
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
-    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
     </c:forEach>
  </table>
-     <input type="checkbox" id="popup">
-     <div class="overlay">
-    <div class="window">
-        <label class="close" for="popup">×</label>
-        <from>
-            <div class="example">
-    <label for="namelabel">ユーザー名</label>
-    <input type="text" name="name" id="namelabel" placeholder="匿名">
-  </div>
-   <div class="example">
-    <label for="ikenlabel" >リプライ内容</label>
-    <textarea id="iken" placeholder="内容を入力してください"></textarea>
-  </div>
-  <div class="example">
-    <input type="submit" value="送信する">
-  </div>
-        </from>
-    </div>
+  <div class="target">
+   <span class="circle2">a</span>
+   <span class="user2">b</span>
+   <span class="time2">c</span>
+   <textarea class="reply2" readonly>e</textarea>
+ </div>
+   <img id="reply"class="button" src="images/reply.png" onclick=""width="50" hight="50">
+
+
+
 </div>
 
-  <div class="border-bottom"></div>
-</div>
+
 <!-- レビュー星表示 -->
     <script>
 //スタンプクリックで変化ループ
@@ -76,6 +66,16 @@
       //中身がsuccessだったら成功しましたのアラート表示
 
 </script>
+<script>
+//replyを表示、非表示切り替え
+var $target = document.querySelector('.target')
+var $button = document.querySelector('.button')
+$target.classList.toggle('is-hidden')
+$button.addEventListener('click', function() {
+  $target.classList.toggle('is-hidden')
+})
+</script>
+
 
 </body>
 </html>

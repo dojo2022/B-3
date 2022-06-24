@@ -129,7 +129,7 @@ public class ReviewDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 		public List<Reviewdata> select(String video_id) {
 			Connection conn = null;
-			List<Reviewdata> Review = new ArrayList<Reviewdata>();
+			List<Review> Review = new ArrayList<Review>();
 
 			try {
 				// JDBCドライバを読み込む
@@ -154,16 +154,16 @@ public class ReviewDao {
 
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
-					Reviewdata card = new Reviewdata(
-					rs.getString("user_name"),
-					rs.getString("user_img"),
-					rs.getString("video_name"),
-					rs.getString("star"),
-					rs.getString("review_date"),
-					rs.getString("genre_name"),
+					Review card = new Review(
+					rs.getString("review_id"),
+					rs.getString("video_id"),
+					rs.getString("user_id"),
+					rs.getString("review_contents"),
+					rs.getString("genre_id"),
 					rs.getString("feelcat_name1"),
 					rs.getString("feelcat_name2"),
-					rs.getString("review_contents")
+					rs.getString("star"),
+					rs.getString("review_date")
 					);
 					Review.add(card);
 				}
@@ -206,7 +206,7 @@ public class ReviewDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 				// SQL文を準備する
-				String sql = "INSERT INTO T_REVIEW (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) values (?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "INSERT INTO Review (review_id,  video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star) values (?, ?, ?, ?, ?, ?, ?, ?)";
 				//Date型はどうすればいい？
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -291,14 +291,11 @@ public class ReviewDao {
 
 
 			// 引数reviewで指定されたレビューを更新し、成功したらtrueを返す
-			public boolean update(Review review,Reviewdata now_review) {
+			public boolean update(Review review) {
 				Connection conn = null;
 				boolean result = false;
 
 				try {
-					//現在のデータを取得
-
-
 					// JDBCドライバを読み込む
 					Class.forName("org.h2.Driver");
 
@@ -306,7 +303,8 @@ public class ReviewDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
-					String sql = "UPDATE T_REVIEW SET (review_contents=?, feelcat_name1=?, feelcat_name2=?, star=?) where review_id=? ";
+					String sql = "UPDATE Review SET (review_contents=?, genre_id=?, feelcat_name1=?, feelcat_name2=?, star=?, review_date=?) where review_id=?";
+
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -317,28 +315,41 @@ public class ReviewDao {
 						pStmt.setString(1, null);
 					}
 
-
-					if (review.getFeelcat_name1() != null && !review.getFeelcat_name1().equals("")) {
-						pStmt.setString(2, review.getFeelcat_name1());
+					if (review.getGenre_id() != null && !review.getGenre_id().equals("")) {
+						pStmt.setString(2, review.getGenre_id());
 					}
 					else {
-						pStmt.setString(2, now_review.getFeelcat_name1());
+						pStmt.setString(2, null);
+					}
+					if (review.getFeelcat_name1() != null && !review.getFeelcat_name1().equals("")) {
+						pStmt.setString(3, review.getFeelcat_name1());
+					}
+					else {
+						pStmt.setString(3, null);
 					}
 
 					if (review.getFeelcat_name2() != null && !review.getFeelcat_name2().equals("")) {
-						pStmt.setString(3, review.getFeelcat_name2());
+						pStmt.setString(4, review.getFeelcat_name2());
 					}
 					else {
-						pStmt.setString(3, now_review.getFeelcat_name2());
+						pStmt.setString(4, null);
 					}
 
 					if (review.getStar() != null && !review.getStar().equals("")) {
-						pStmt.setString(4, review.getStar());
+						pStmt.setString(5, review.getStar());
 					}
 					else {
-						pStmt.setString(4, now_review.getStar());
+						pStmt.setString(5, null);
 					}
-					pStmt.setString(5, review.getReview_id());
+
+					if (review.getReview_date() != null && !review.getReview_date().equals("")) {
+						pStmt.setString(6, review.getReview_date());
+					}
+					else {
+						pStmt.setString(6, null);
+					}
+
+					pStmt.setString(7, review.getReview_id());
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
@@ -381,7 +392,7 @@ public class ReviewDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
-					String sql = "DELETE FROM T_REVIEW where review_id=?";
+					String sql = "DELETE FROM Review where review_id=?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -485,7 +496,7 @@ public class ReviewDao {
 
 					// SQL文を準備する
 
-					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star, t_review.review_id ,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id WHERE \r\n"
+					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id WHERE \r\n"
 							+ "m_user.user_id = ?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					pStmt.setString(1,user_id);
@@ -504,8 +515,7 @@ public class ReviewDao {
 						rs.getString("genre_name"),
 						rs.getString("feelcat_name1"),
 						rs.getString("feelcat_name2"),
-						rs.getString("review_contents"),
-						rs.getString("review_id")
+						rs.getString("review_contents")
 						);
 						Reviewdata.add(card);
 					}
@@ -548,7 +558,7 @@ public class ReviewDao {
 
 					// SQL文を準備する
 
-					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.review_contents,t_review.review_date FROM (t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id ) LEFT JOIN m_video ON t_review.video_id = m_video.video_id WHERE m_user.user_id = ?";
+					String sql = "select m_user.user_name, m_user.user_img, t_review.review_date, t_review.review_contents, m_video.video_name from t_review inner join t_follow on T_review.user_id = t_follow.follow_id inner join m_user ON t_review.user_id = m_user.user_id  inner join m_video ON t_review.video_id = m_video.video_id where t_follow.user_id =  ?   ";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 							pStmt.setString(1,user_id);
 
