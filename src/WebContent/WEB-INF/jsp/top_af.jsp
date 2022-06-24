@@ -6,17 +6,16 @@
     <meta charset="UTF-8">
     <title>レビュー投稿 | FLIFRE</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/top.css">
 </head>
 
 
 <body>
 <%@ include file="header.jsp" %>
+<div class="top-box">
 <h2>レビュー投稿を表示します</h2>
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
-<div class="border1">
 
  <table class="table">
  <c:forEach var="e" items="${Reviewlist2}">
@@ -66,6 +65,7 @@
 </div>
 
   <div class="border-bottom"></div>
+
 </div>
 <!-- レビュー星表示 -->
     <script>

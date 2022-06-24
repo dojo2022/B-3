@@ -6,17 +6,17 @@
     <meta charset="UTF-8">
     <title>レビュー投稿 | FLIFRE</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/top.css">
 </head>
 
 
 <body>
 <%@ include file="header.jsp" %>
+<div class="top-box">
 <h2>レビュー投稿を表示します</h2>
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
-<div class="border1">
+
 
  <table class="table">
  <c:forEach var="e" items="${Review}">
@@ -34,19 +34,29 @@
     </tr>
     </c:forEach>
  </table>
-  <div class="target">
-   <span class="circle2">a</span>
-   <span class="user2">b</span>
-   <span class="time2">c</span>
-   <textarea class="reply2" readonly>e</textarea>
- </div>
-   <img id="reply"class="button" src="images/reply.png" onclick=""width="50" hight="50">
-
-
+     <input type="checkbox" id="popup">
+     <div class="overlay">
+    <div class="window">
+        <label class="close" for="popup">×</label>
+        <from>
+            <div class="example">
+    <label for="namelabel">ユーザー名</label>
+    <input type="text" name="name" id="namelabel" placeholder="匿名">
+  </div>
+   <div class="example">
+    <label for="ikenlabel" >リプライ内容</label>
+    <textarea id="iken" placeholder="内容を入力してください"></textarea>
+  </div>
+  <div class="example">
+    <input type="submit" value="送信する">
+  </div>
+        </from>
 
 </div>
 
-
+  <div class="border-bottom"></div>
+</div>
+</div>
 <!-- レビュー星表示 -->
     <script>
 //スタンプクリックで変化ループ
