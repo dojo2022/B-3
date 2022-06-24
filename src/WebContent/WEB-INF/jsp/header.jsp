@@ -22,12 +22,12 @@
 	    <div class="search1">
 	    	<table>
 		    	<tr>
-		    		<td>
+		    		<th>
 			    		再生時間
-			    	</td>
+			    	</th>
 			    	<td>
 				        <select name="time">
-				            <option label="" value="-1"></option>
+				            <option label="選択してください" value="-1"></option>
 				            <option label="～30分" value="30"></option>
 				            <core:forEach var="i" begin="30" end="150" step="30">
 				            	<option label="${ i + 1 }～${ i + 30 }分" value="${ i + 30 }"></option>
@@ -35,12 +35,14 @@
 				            <option label="181分～" value="1440"></option>
 				        </select>
 			        </td>
-			        <td>
+              </tr>
+              <tr>
+			        <th>
 			        	年代
-			        </td>
+			        </th>
 			        <td>
 				        <select name="year">
-				            <option label="" value="-1"></option>
+				            <option label="選択してください" value="-1"></option>
 				            <option label="～1960年代" value="1970"></option>
 				            <core:forEach var="year" begin="1970" end="2020" step="10">
 				            	<option label="${ year }年代" value="${ year + 10 }"></option>
@@ -49,41 +51,24 @@
 			        </td>
 				</tr>
 				<tr>
-					<td>
-				        感想カテゴリ１
-				    </td>
+					<th>
+				        感想カテゴリ
+				    </th>
 				    <td>
-				        <select name="feelcat1" onchange="change(this)">
+				        <select name="feelcat">
 				        	<option value="">選択してください</option>
 				            <core:forEach items="${ categories }" varStatus="status">
 				      			<option value="${ status.current }">${ status.current }</option>
 				            </core:forEach>
 				        </select>
 			        </td>
-			        <td>
-				        感想カテゴリ２
-				    </td>
-				    <td>
-				        <select name="feelcat2">
-				            <option value="">選択してください</option>
-				            <core:forEach items="${ categories }" varStatus="status">
-				            	<option value="${ status.current }">${ status.current }</option>
-				            </core:forEach>
-				        </select>
-					</td>
 		    	</tr>
 		    	<tr>
-		    		<td>
+		    		<th>
 				         作品名
-				    </td>
-				    <td colspan="3">
+				    </th>
+				    <td colspan="1">
 				    	<input type="text" name="title" placeholder="タイトル入力">
-				    </td>
-				    <td>
-				    </td>
-				    <td>
-				    </td>
-				    <td>
 				    	<input type="submit" name="submit" value="検索">
 				    </td>
 				</tr>
@@ -92,18 +77,20 @@
 
 		<div class="search2">
 			<p class="roulette">
-				<input type="image" src="images/roulette.png" name="ROULETTE" value="ルーレット">
+				<button type="button" onclick="console.log('roulette fire')">
+					<img src="images/roulette.png" name="ROULETTE" alt="ルーレット">
+				</button>
 			</p>
 		</div>
 
 
-	    <p class="log">
+	    <div class="log">
 	        <a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
 	            <img src="images/${ empty id ? 'login' : 'logout' }.png"
 	                 width="97" height="29"
 	                 alt="${ empty id ? 'ログイン' : 'ログアウト' }">
 	        </a>
-	    </p>
+	    </div>
 
 	    <!--ここからメニュー-->
 	    <div class="hamburger-menu">
@@ -111,21 +98,21 @@
 	        <label for="menu-btn-check" class="menu-btn"><span></span></label>
 	        <div class="menu-content">
 	            <ul>
-	                <li><a href="/FLIFRE/ResultServlet">アニメ</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">国内</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">欧米</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">韓国</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">華流</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">アクション</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">コメディ</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">キッズ・ファミリー</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">ヒューマンドラマ</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">サスペンス</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">ラブロマンス</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">ホラー</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">ファンタジー</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">SF</a></li>
-	                <li><a href="/FLIFRE/ResultServlet">バラエティ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000001">アニメ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000002">国内</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000003">欧米</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000004">韓国</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000005">華流</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000006">アクション</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000007">コメディ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000008">キッズ・ファミリー</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000009">ヒューマンドラマ</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000010">サスペンス</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000011">ラブロマンス</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000012">ホラー</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000013">ファンタジー</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000014">SF</a></li>
+	                <li><a href="/FLIFRE/ResultServlet?genre_id=g000000015">バラエティ</a></li>
 	                <li><a href="/FLIFRE/Ranking_bfServlet">レビューランキング</a></li>
 	                <core:if test="${ not empty id }">
 	                    <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>

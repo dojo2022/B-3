@@ -28,8 +28,7 @@ public class ResultServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String time = request.getParameter("time") != null ? request.getParameter("time") : "-1";
 		String year = request.getParameter("year") != null ? request.getParameter("year") : "-1";
-		String feelcat1 = request.getParameter("feelcat1");
-		String feelcat2 = request.getParameter("feelcat2");
+		String feelcat = request.getParameter("feelcat");
 		String title = request.getParameter("title");
 		String genre_id = request.getParameter("genre_id");
 
@@ -37,10 +36,10 @@ public class ResultServlet extends HttpServlet {
 		MasterVideoDao mvDao = new MasterVideoDao();
 		List<MasterVideo> MasterVideoList = null;
 		MasterVideo params = new MasterVideo(null, title, Integer.parseInt(year), Integer.parseInt(time), genre_id);
-		if ( (feelcat1 == null || feelcat1.isEmpty()) && (feelcat2 == null || feelcat2.isEmpty()) ) {
+		if (feelcat == null || feelcat.isEmpty()) {
 			MasterVideoList = mvDao.select(params);
 		} else {
-			MasterVideoList = mvDao.selectFromReview(params, feelcat1, feelcat2);
+			MasterVideoList = mvDao.selectFromReview(params, feelcat);
 		}
 
 		request.setAttribute("videoList", MasterVideoList);

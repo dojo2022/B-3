@@ -7,17 +7,15 @@
     <meta charset="UTF-8">
     <title> 検索結果 | FLIFRE </title>
     <link rel="stylesheet" href="css/common.css">
-    <!-- <script defer src="js/common.js"></script> -->
     <link rel="stylesheet" href="css/result.css">
-    <script defer src="js/result.js"></script>
 </head>
 
 <body>
+    <!-- header start -->
     <%@ include file="header.jsp" %>
-    <div class="wrapper">
-        <!-- header start -->
-        <!-- header end -->
+    <!-- header end -->
 
+    <div class="wrapper">
         <!-- 検索結果　一覧 start-->
         <main>
             <div id="search-result-container">
@@ -36,11 +34,14 @@
                         </tr>
                     </table>
                     <div class="buttons">
-                        <button type="button" title="write-review" onclick="navigateTo('write-review', '${ video.video_id }')" ${empty id? 'disabled' : ''}>
+                        <button type="button" title="write-review"
+                                onclick="location.href='/FLIFRE/PostServlet?video_id=${ video.video_id }'"
+                                ${empty id? 'disabled' : ''}>
                             レビューを<br>
                             書く
                         </button>
-                        <button type="button" title="read-review" onclick="navigateTo('read-review', '${ video.video_id }')">
+                        <button type="button" title="read-review"
+                                onclick="location.href='/FLIFRE/ReviewServlet?video_id=${ video.video_id }'" >
                             レビューを<br>
                             見る
                         </button>

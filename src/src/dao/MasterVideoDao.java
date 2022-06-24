@@ -175,7 +175,7 @@ public class MasterVideoDao {
 		return cardList;
 	}
 
-	public List<MasterVideo> selectFromReview(MasterVideo params, String feelcat1, String feelcat2) {
+	public List<MasterVideo> selectFromReview(MasterVideo params, String feelcat) {
 
 		Connection conn = null;
 		List<MasterVideo> videoList = new ArrayList<MasterVideo>();
@@ -191,8 +191,7 @@ public class MasterVideoDao {
 			String sql = " SELECT V.*"
 					   + " FROM t_review as R, m_video as V"
 					   + " WHERE R.video_id = V.video_id"
-					   + " AND R.feelcat_name1 LIKE ?"
-					   + " AND R.feelcat_name2 LIKE ?"
+					   + " AND ( R.feelcat_name1 LIKE ? OR  R.feelcat_name2 LIKE ? )"
 					   + " AND V.video_name LIKE ?"
 					   + " AND V.video_year BETWEEN ? AND ?"
 					   + " AND V.video_time BETWEEN ? AND ?"
@@ -201,15 +200,11 @@ public class MasterVideoDao {
 					   ;
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			if (feelcat1 != null && !feelcat1.isEmpty()) {
-				pStmt.setString(1, "%" + feelcat1 + "%");
+			if (feelcat != null && !feelcat.isEmpty()) {
+				pStmt.setString(1, "%" + feelcat + "%");
+				pStmt.setString(2, "%" + feelcat + "%");
 			} else {
 				pStmt.setString(1, "%");
-			}
-
-			if (feelcat2 != null && !feelcat2.isEmpty()) {
-				pStmt.setString(2, "%" + feelcat2 + "%");
-			} else {
 				pStmt.setString(2, "%");
 			}
 
