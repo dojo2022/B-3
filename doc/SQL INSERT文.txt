@@ -1409,6 +1409,7 @@ UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST
 
 【t_replyの挿入】
 
+insert into t_reply (reply_id, review_id, user_id, reply_contents, reply_date) VALUES ('rp00000001', 'rv00000002', 'u00000001', 'それなぁわかるぅ');
 【t_reactionの挿入】
 
 【t_followの挿入】

@@ -64,7 +64,7 @@ CREATE TABLE t_reply (
 	review_id VARCHAR(10) NOT NULL,
 	user_id VARCHAR(10) NOT NULL,
 	reply_contents VARCHAR(140) NOT NULL,
-	reply_date DATETIME NOT NULL
+	reply_date  timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
 【t_reactionテーブルを生成するSQL文】
