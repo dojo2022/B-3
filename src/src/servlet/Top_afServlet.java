@@ -16,6 +16,7 @@ import dao.ReviewDao;
 import model.LoginUser;
 import model.Replydata;
 import model.Top;
+import model.TopReply;
 
 /**
  * Servlet implementation class Top_afServlet
@@ -66,18 +67,11 @@ public class Top_afServlet extends HttpServlet {
 				String user_name = request.getParameter("user_name");
 				String Reply_contents = request.getParameter("Reply_contents");
 
-
-		/*		// 登録処理を行う
+				// reply送信
 				ReplyDao bDao = new ReplyDao();
-				if (bDao.insert(new TopReply(user_name, reply_contents))) {	// 登録成功
-					request.setAttribute("result",
-					new Result("登録成功！", "レコードを登録しました。", "/simpleBC/MenuServlet"));
-				}
-				else {												// 登録失敗
-					request.setAttribute("result",
-					new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/MenuServlet"));
-				}
-*/
+				boolean result = bDao.insert(new TopReply(user_name, Reply_contents));
+					request.setAttribute("result",result);
+
 
 	// ログイン後トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
