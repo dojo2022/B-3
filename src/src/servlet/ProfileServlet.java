@@ -62,13 +62,24 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 
-		//リクエストパラメータを取得する
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String user_id = request.getParameter("user_id");
+		String user_img = request.getParameter("user_img");
+		String user_name = request.getParameter("user_name");
+		String user_pf = request.getParameter("user_pf");
 
-		//プロフィール更新(変更)処理
+		//レビューの内容を変更する
+		MasterUser prof_af = new MasterUser(user_id,"","",user_name,user_pf,user_img,"");
+		MasterUserDao mDao = new MasterUserDao();
 
+		//現在のプロフィールの内容
+		MasterUser prof_bf = mDao.selectOne(user_id);
 
+		mDao.update(prof_bf,prof_af);
+
+		// マイページにリダイレクトする
+		response.sendRedirect("/FLIFRE/MypageServlet");
 	}
-
 }

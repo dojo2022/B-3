@@ -38,7 +38,6 @@
 			  display: none;
 			  width: 100%;
 			  background-color: white;
-			  overflow: auto;
 			}
 					/* 選択されたタブのコンテンツを表示 */
 			input:checked + .tab_class + .content_class {
@@ -53,6 +52,7 @@
 	height: 450px;
 	width: 650px;
 	background-color: #e9efd5;
+	overflow: auto;
 }
 
 div#table {
@@ -71,7 +71,7 @@ div#table {
 	}
 
 #table.follow_table tr.data_row:hover {
-	 	background-color: #e9efd5;
+	 	background-color: darkgrey;
 	}
 
 .follow_table #icon {

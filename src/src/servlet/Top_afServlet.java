@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.ReviewDao;
 import model.LoginUser;
+import model.Review;
 import model.Top;
 
 /**
@@ -41,11 +42,21 @@ public class Top_afServlet extends HttpServlet {
 				LoginUser user = (LoginUser)session.getAttribute("id");
 				String user_id = user.getUser_id();
 
+		//review_id取得
+				Review use = (Review)session.getAttribute("id");
+				String Review_id = use.getReview_id();
+
 		// レビュー一覧を検索する
 				ReviewDao  rDao = new ReviewDao();
 				List<Top> Reviewlist2 = rDao.select3(user_id);
 				// 検索結果をリクエストスコープに格納する
 				request.setAttribute("Reviewdata", Reviewlist2);
+
+	/*	//それぞれのレビューに紐づけてリプライ表示
+				ReplyDao  tDao = new ReplyDao();
+				List<TopReply> TopReply = rDao.select7(review_id);
+				// 検索結果をリクエストスコープに格納する
+				request.setAttribute("Review", TopReply);*/
 
 	// ログイン後トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
