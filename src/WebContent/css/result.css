@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#search-result-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(min(70% / 3, 100%), 1fr));
+    gap: 1rem;
+    background-color: #ffffff;
+    border: 3px double #a3060c;
+}
+
+.search-result-item {
+    border: 1px solid black;
+    background-color: #a6e872;
+}
+
+.search-result-item .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 100%;
+    height: 50px;
+    background-color: #056334;
+	color: #ffffff;
+}
+
+button:hover{
+	background-color: #09a858;
+	color: #ffffff;
+}
+
+button:active{
+	background-color: #ffffff;
+	color: #09a858;
+}
+
+.video-image {
+    background-color: gray;
+    height: 150px;
+}
+
+.video-info {
+    height: calc(100% - 200px);
+}
+
+.video-info th {
+    text-align: end;
+    width: 80px;
+}
+
+
