@@ -1,8 +1,9 @@
-const btn=document.getElementById("btn");
+const btn=document.getElementById("post-btn");
 
 // btn.addEventListener("click",window.location.href="./header.jsp");
 function btn_click(){
-  window.location.href="/FLIFRE/PostServlet";
+  /*window.location.href="/FLIFRE/PostServlet";*/
+  document.form_post.submit();
 }
 btn.addEventListener("click",btn_click);
 

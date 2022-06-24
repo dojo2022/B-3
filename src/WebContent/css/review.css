@@ -13,8 +13,8 @@
 .table {
 	text-align: left;
 	 position: relative;
-	 left: 90px;
-	 bottom: 30px;
+/* 	 left: 90px; */
+/* 	 bottom: 30px; */
 }
 
 hr {
@@ -64,7 +64,7 @@ top: 15px;
 
 #reply{
 position: relative;
-left: 745px;
+/* left: 745px; */
 top: 15px;
 }
 /*星表示*/

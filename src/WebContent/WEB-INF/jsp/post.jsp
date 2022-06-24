@@ -28,7 +28,7 @@
 		   				<!-- 			<span>ユーザー名</span>m_userのuser_nameを引用予定 -->
 		   			</tr>
 		   		</table>
-				<div id="btn" class="post-btn"></div>
+
 	<!--         	<div class="post-contents"> -->
 
 		    	<h1>${video.video_name}</h1><!-- m_videoのvideo_nameを引用 -->
@@ -47,7 +47,11 @@
 			    <h2>${video.genre_name}</h2><!-- m_videoのgenre_idを引用 -->
 		    </form>
 
-		    <form id="post_form" method="POST" action="/FLIFRE/PostServlet" onsubmit="return post()">
+		    <form name="form_post" id="post_form" method="POST" action="/FLIFRE/PostServlet" >
+
+			    <div id="post-btn" class="post-btn" ></div>
+			    <input  type="submit" value="submit">
+
 			    <input type="hidden" name="video_id" value="${video.video_id}">
 			    <input type="hidden" name="user_id" value="'${id.user_id}">
 			    <input type="hidden" name="genre_name" value="'${video.genre_name}">
@@ -115,7 +119,7 @@
 					    <td>
 					    </td>
 					    <!-- submitボタンで/FLIFRE/PostServletのpostにデータを渡す -->
-
+<td>
 					    </td>
 					</tr>
 			    </table>
