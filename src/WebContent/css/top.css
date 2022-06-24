@@ -12,8 +12,8 @@
 
 .table{
   position: relative;
-  left: 90px;
-  bottom: 30px;
+  left: 120px;
+  bottom: 10px;
 }
 
 
@@ -35,13 +35,13 @@
 .video{
   position: relative;
   top: 10px;
-  left: 100px;
+  left: 50px;
 }
 
 .time{
   position: relative;
   top: 10px;
-  left: 370px;
+  left: 270px;
 }
 
 .review{
@@ -49,21 +49,27 @@ display: inline-block;
 position: relative;
 left:90px;
 width: 463%;
-height: 50px;
+height: 70px;
 }
 
 #image_file{
 position:relative;
-left: 380px;
-top: 15px;
+right: auto;
+top: 10px;
 }
 
 #reply{
 position: relative;
-left: 745px;
-top: 15px;
+left: 685px;
+top: 20px;
 }
 /*星表示*/
+
+.abcd{
+position: relative;
+bottom:10px;
+}
+
 .open {
     cursor:pointer;
 }
@@ -107,4 +113,40 @@ top: 15px;
     top: 8px;
     right: 8px;
     font-size: 20px;
+}
+
+/*リプライ内容ツリー表示*/
+
+
+.target.is-hidden {
+  display: none;
+}
+
+.reply2{
+display: inline-block;
+position: relative;
+top:40px;
+width: 80%;
+height: 50px;
+}
+
+.user2{
+display: inline-block;
+position: relative;
+bottom: 25px;
+left:100px;
+}
+
+.time2{
+display: inline-block;
+position: relative;
+bottom: 25px;
+left:700px;
+}
+
+.circle2{
+display: inline-block;
+position: relative;
+bottom: -10px;
+left:30px;
 }

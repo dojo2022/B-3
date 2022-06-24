@@ -27,11 +27,10 @@
     <td><span class="user">${e.user_name}</span></td>
     <td><span class="video">${e.video_name}</span></td>
     <td><span class="time">${e.review_date}</span></td>
-    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
+    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="25" hight="25"></td>
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
-    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
     </c:forEach>
  </table>
@@ -77,6 +76,16 @@
       //中身がsuccessだったら成功しましたのアラート表示
 
 </script>
+<script>
+//replyを表示、非表示切り替え
+var $target = document.querySelector('.target')
+var $button = document.querySelector('.button')
+$target.classList.toggle('is-hidden')
+$button.addEventListener('click', function() {
+  $target.classList.toggle('is-hidden')
+})
+</script>
+
 
 </body>
 </html>
