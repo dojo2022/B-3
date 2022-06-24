@@ -16,7 +16,6 @@ import dao.ReviewDao;
 import model.LoginUser;
 import model.Replydata;
 import model.Top;
-import model.TopReply;
 
 /**
  * Servlet implementation class Top_afServlet
@@ -62,16 +61,16 @@ public class Top_afServlet extends HttpServlet {
 				// 検索結果をリクエストスコープに格納する
 				request.setAttribute("Replyname", Replyname);
 
-				// リクエストパラメータを取得する
+		/*		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				String user_name = request.getParameter("user_name");
 				String Reply_contents = request.getParameter("Reply_contents");
 
-				// reply送信
+			// reply送信
 				ReplyDao bDao = new ReplyDao();
 				boolean result = bDao.insert(new TopReply(user_name, Reply_contents));
 					request.setAttribute("result",result);
-
+*/
 
 	// ログイン後トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");

@@ -46,7 +46,7 @@
      <div class="overlay">
     <div class="window">
         <label class="close" for="popup">×</label>
-        <from>
+        <form method="POST" action="/FLIFRE/Top_afServlet">
             <div class="example">
     <label for="namelabel">ユーザー名</label>
      <c:forEach var="e" items="${Replyname}">

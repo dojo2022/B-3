@@ -11,7 +11,6 @@ import java.util.List;
 import model.Reply;
 import model.Replydata;
 import model.Top;
-import model.TopReply;
 
 public class ReplyDao {
 
@@ -375,7 +374,7 @@ public class ReplyDao {
 			// 結果を返す
 			return Replyname;
 		}
-		//reply送信
+	/*	//reply送信
 		public boolean insert(TopReply card) {
 			Connection conn = null;
 			boolean result = false;
@@ -430,6 +429,6 @@ public class ReplyDao {
 
 			// 結果を返す
 			return result;
-		}
+		}*/
 	}
 
