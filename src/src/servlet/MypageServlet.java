@@ -123,7 +123,17 @@ public class MypageServlet extends HttpServlet {
 						SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
 
 						String review_date = sdf1.format(now_datetime);*/
-
+		if(("レビュー削除").equals(subm)) {
+			//review_idの合致するデータをreviewテーブルから削除する
+			String review_id = request.getParameter("review_id");
+			ReviewDao rDao = new ReviewDao();
+			boolean result = rDao.delete(review_id);
+			if(result==true) {
+				response.sendRedirect("/FLIFRE/MypageServlet");
+			}else {
+				response.sendRedirect("/FLIFRE/MypageServlet");
+			}
+		}
 
 
 

@@ -291,7 +291,7 @@ public class ReviewDao {
 
 
 			// 引数reviewで指定されたレビューを更新し、成功したらtrueを返す
-			public boolean update(Review review,Reviewdata now_review) {
+			public boolean update(Review review,Review now_review) {
 				Connection conn = null;
 				boolean result = false;
 
@@ -306,7 +306,7 @@ public class ReviewDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
-					String sql = "UPDATE T_REVIEW SET (review_contents=?, feelcat_name1=?, feelcat_name2=?, star=?) where review_id=? ";
+					String sql = "UPDATE T_REVIEW SET review_contents=?, feelcat_name1=?, feelcat_name2=?, star=?  where review_id=? ";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる

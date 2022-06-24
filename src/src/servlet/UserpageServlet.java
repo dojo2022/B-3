@@ -99,7 +99,7 @@ public class UserpageServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+
 
 
 		//リクエストパラメータを取得する☆
@@ -130,7 +130,9 @@ public class UserpageServlet extends HttpServlet {
 		}
 
 		//フォロー/フォロワー一覧ページにリダイレクトする
-		response.sendRedirect("/FLIFRE/MypageServlet?user_id=${id.user_id}");
+		/*	response.sendRedirect("/FLIFRE/MypageServlet?user_id=${id.user_id}");*/
+		response.sendRedirect("/FLIFRE/MypageServlet");
+
 	}
 
 
