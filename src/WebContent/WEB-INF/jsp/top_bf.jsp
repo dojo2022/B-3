@@ -18,8 +18,9 @@
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
 <div class="border1">
 
- <table class="table">
+
  <c:forEach var="e" items="${Review}">
+  <table class="table">
    <tr>
     <td><span class="circle" >${e.user_img}</span></td>
    </tr>
@@ -33,27 +34,31 @@
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
     <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
+    </table>
+    <br>
+    <hr>
+    <br>
     </c:forEach>
- </table>
+
      <input type="checkbox" id="popup">
      <div class="overlay">
-    <div class="window">
-        <label class="close" for="popup">×</label>
-        <from>
-            <div class="example">
-    <label for="namelabel">ユーザー名</label>
-    <input type="text" name="name" id="namelabel" placeholder="匿名">
-  </div>
-   <div class="example">
-    <label for="ikenlabel" >リプライ内容</label>
-    <textarea id="iken" placeholder="内容を入力してください"></textarea>
-  </div>
-  <div class="example">
-    <input type="submit" value="送信する">
-  </div>
-        </from>
-    </div>
-</div>
+    	<div class="window">
+        	<label class="close" for="popup">×</label>
+        	<from>
+            	<div class="example">
+    				<label for="namelabel">ユーザー名</label>
+    				<input type="text" name="name" id="namelabel" placeholder="匿名">
+  				</div>
+   				<div class="example">
+				    <label for="ikenlabel" >リプライ内容</label>
+				    <textarea id="iken" placeholder="内容を入力してください"></textarea>
+  				</div>
+  				<div class="example">
+    				<input type="submit" value="送信する">
+  				</div>
+        	</from>
+    	</div>
+	</div>
 
   <div class="border-bottom"></div>
 </div>

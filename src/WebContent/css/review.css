@@ -15,9 +15,11 @@
 	 position: relative;
 	 left: 90px;
 	 bottom: 30px;
-	 border-bottom: 1px dotted #056334;
 }
 
+hr {
+	border: 1px solid #a3060c;
+}
 
 /* .circle{ */
 /*   position: relative; */
