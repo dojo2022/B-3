@@ -12,55 +12,58 @@
 <body>
 	<%@ include file="header.jsp" %>
 
-	<h2>レビュー投稿を表示します</h2>
-	<div class="border1">
-	<form id="review_form" method="GET" action="/FLIFRE/ReviewServlet" onsubmit="return post()">
-		<table class="table">
-			<c:forEach var="e" items="${cardList}" >
-				<tr>
-<%-- 	    			<td><input class="circle" type="text" name="user_img" value="${e.user_img}" readonly></td> --%>
-	    			<td id="icon"><img src="images/${e.user_img}" width="75" height="75"></td>
-					<td id="name"><a href="/FLIFRE/UserpageServlet?user_id=${e.user_id}">${e.user_name}</a></td>
-	   			</tr>
-	   			<tr>
-				    <td>${e.video_name}</td>
-				    <td>${e.star}</td>
-				    <td>${e.review_date}</td>
-				    <td>${e.genre_name}</td>
-				    <td>${e.feelcat_name1}</td>
-				    <td>${e.feelcat_name2}</td>
-				    <td>${e.video_time}</td>
 
-				    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
-	   			</tr>
-	   			<tr>
-				    <td>${e.review_contents}</td>
-				    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
-	   				<input type="checkbox" id="popup">
-						<div class="overlay">
-	    					<div class="window">
-	        					<label class="close" for="popup">×</label>
-	        					<from>
-	            					<div class="example">
-	    								<label for="namelabel">ユーザー名</label>
-	    								<input type="text" name="name" id="namelabel" placeholder="匿名">
-	  								</div>
-	   								<div class="example">
-									    <label for="ikenlabel" >リプライ内容</label>
-									    <textarea id="iken" placeholder="内容を入力してください"></textarea>
-									</div>
-									<div class="example">
-									    <input type="submit" value="送信する">
-									</div>
-	        					</from>
-	    					</div>
-						</div>
-				</tr>
-			</c:forEach>
- 		</table>
-  		<div class="border-bottom"></div>
-  	</form>
-	</div>
+	<!-- 投稿フォーム-->
+	<main>
+		<div class="review-box">
+			<h2>${video.video_name}</h2>
+			<h3>${video.genre_name}</h3>
+			<form id="review_form" method="GET" action="/FLIFRE/ReviewServlet" onsubmit="return post()">
+<!-- 				<table class="table"> -->
+					<c:forEach var="e" items="${reviewList}" >
+						<table class="table">
+							<tr class="review">
+				    			<td id="icon"><img src="images/${e.user_img}" width="75" height="75"></td>
+								<td id="name"><a href="/FLIFRE/UserpageServlet?user_id=${e.user_name}">${e.user_name}</a></td>
+							    <td>${e.star}</td>
+							    <td>感想カテゴリー：</td>
+							    <td>${e.feelcat_name1}</td>
+							    <td>${e.feelcat_name2}</td>
+							    <td>${e.review_date}</td>
+							    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
+				   			</tr>
+				   			<tr>
+							    <td colspan="7">${e.review_contents}</td>
+							    <td>
+							    	<label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label>
+							    </td>
+							    <td>
+							    </td>
+				   				<input type="checkbox" id="popup">
+								<div class="overlay">
+			    					<div class="window">
+			        					<label class="close" for="popup">×</label>>
+			           					<div class="example">
+			   								<label for="namelabel">ユーザー名</label>
+			   								<input type="text" name="name" id="namelabel" placeholder="匿名">
+			 							</div>
+			  							<div class="example">
+										    <label for="ikenlabel" >リプライ内容</label>
+										    <textarea id="iken" placeholder="内容を入力してください"></textarea>
+										</div>
+										<div class="example">
+										    <input type="submit" value="送信する">
+										</div>
+			    					</div>
+								</div>
+							</tr>
+						</table>
+					</c:forEach>
+<!-- 		 		</table> -->
+		  		<div class="border-bottom"></div>
+		  	</form>
+		</div>
+	</main>
   <!--label class="label" for="name">名前</label>
   <input id="name" type="text" name="name">
   <label class="label" for="message">コメント</label>

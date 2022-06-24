@@ -203,6 +203,115 @@ public class ReplyDao {
 				return result;
 			}
 
+			// 引数replyで指定されたリプライを更新し、成功したらtrueを返す
+			public boolean update(Reply reply) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+					String sql = "UPDATE T_REPLY SET (reply_contents, reply_date) where review_id=?";
+
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (reply.getReply_contents() != null && !reply.getReply_contents().equals("")) {
+						pStmt.setString(1, reply.getReply_contents());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+
+					if (reply.getReply_date() != null && !reply.getReply_date().equals("")) {
+						pStmt.setString(2, reply.getReply_date());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+
+					pStmt.setString(7, reply.getReview_id());
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+
+			// 引数replyで指定されたリプライを削除し、成功したらtrueを返す
+			public boolean delete(String reply_id) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+					String sql = "DELETE FROM T_REPLY where reply_id=?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					pStmt.setString(1, reply_id);
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+
 			//マイページリプライ一覧表示
 			public List<Replydata> select2(String user_id) {
 				Connection conn = null;

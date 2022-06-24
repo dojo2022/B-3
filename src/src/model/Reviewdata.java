@@ -12,6 +12,7 @@ public class Reviewdata implements Serializable{
 	private String feelcat_name1;
 	private String feelcat_name2;
 	private String review_contents;
+	private String review_id;
 
 	//引数があるコンストラクタ
 	public Reviewdata(String user_name, String user_img, String video_name, String star, String review_date, String genre_name, String feelcat_name1, String feelcat_name2, String review_contents) {
@@ -25,6 +26,19 @@ public class Reviewdata implements Serializable{
 		this.feelcat_name1 = feelcat_name1;
 		this.feelcat_name2 = feelcat_name2;
 		this.review_contents = review_contents;
+	}
+	public Reviewdata(String user_name, String user_img, String video_name, String star, String review_date, String genre_name, String feelcat_name1, String feelcat_name2, String review_contents,String review_id) {
+		super();
+		this.user_name = user_name;
+		this.user_img = user_img;
+		this.video_name = video_name;
+		this.star = star;
+		this.review_date = review_date;
+		this.genre_name = genre_name;
+		this.feelcat_name1 = feelcat_name1;
+		this.feelcat_name2 = feelcat_name2;
+		this.review_contents = review_contents;
+		this.review_id = review_id;
 	}
 
 	//引数がないコンストラクタ
@@ -112,6 +126,15 @@ public class Reviewdata implements Serializable{
 
 	public void setReview_contents(String review_contents) {
 		this.review_contents = review_contents;
+	}
+	public String getReview_id() {
+		return review_id;
+	}
+	public void setReview_id(String review_id) {
+		this.review_id = review_id;
+	}
+	public void setUser_img(String user_img) {
+		this.user_img = user_img;
 	}
 
 }
