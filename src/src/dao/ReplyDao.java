@@ -10,6 +10,7 @@ import java.util.List;
 
 import model.Reply;
 import model.Replydata;
+import model.TopReply;
 
 public class ReplyDao {
 
@@ -369,7 +370,60 @@ public class ReplyDao {
 				// 結果を返す
 				return Replydata;
 			}
+			//Topリプライ一覧表示
+			public List<TopReply> select7(String review_id) {
+				Connection conn = null;
+				List<TopReply> TopReply = new ArrayList<TopReply>();
 
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+
+					String sql = "SELECT m_user.user_name, t_reply.reply_contents, FROM t_reply  INNER JOIN m_user ON m_user.user_id = t_reply.user_id INNER JOIN t_review ON t_reply.review_id = t_review.review_id WHERE t_review.review_id = ? ";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+					pStmt.setString(1,review_id);
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+						TopReply card = new TopReply(
+						rs.getString("user_name"),
+						rs.getString("reply_contents")
+						);
+						TopReply.add(card);
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					TopReply = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					TopReply = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							TopReply = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return TopReply;
+			}
 
 	}
 

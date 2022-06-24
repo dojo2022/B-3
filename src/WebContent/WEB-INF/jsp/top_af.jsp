@@ -17,21 +17,26 @@
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
 <div class="border1">
- <table class="table">
+ <c:forEach var="e" items="${Reviewdata}">
+  <table class="table">
    <tr>
-    <td><input class="circle" type="" name="" value="${user_img}" readonly></td>
+    <td><span class="circle" >${e.user_img}</span></td>
    </tr>
    <tr>
-    <td><input class="user"type="" name="" value="${user_name}" readonly></td>
-    <td><input class="video"type="" name="" value="${video_name}" readonly></td>
-    <td><input class="time"type="" name="" value="${rewiew_date}" readonly></td>
+    <td><span class="user">${e.user_name}</span></td>
+    <td><span class="video">${e.video_name}</span></td>
+    <td><span class="time">${e.review_date}</span></td>
     <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
-    <td><input class="review"type="text" name="review_contents" value="${review_contents}" readonly></td>
+    <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
     <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
- </table>
+    </table>
+    <br>
+    <hr>
+    <br>
+    </c:forEach>
      <input type="checkbox" id="popup">
      <div class="overlay">
     <div class="window">
@@ -52,7 +57,7 @@
     </div>
 </div>
 
-  <div class="border-bottom"></div>
+
 </div>
 <!-- レビュー星表示 -->
     <script>
