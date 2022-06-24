@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* メインブロック */
+ main {
+    background-color: #ffffff;
+    border: 3px double #a3060c;
+    margin: auto;
+    padding: 20px;
+    width: 1000px;
+    height: 500px;
+ }
+
+/* h2 */
+#explain {
+	text-align: center;
+}
+
+/* ログアウトボタン */
+.log {
+	text-align: right;
+}
+
+/* プロフィール変更テーブル */
+.pE_table {
+	border-collapse: collapse;
+	margin: auto;
+	height: 450px;
+	width: 650px;
+	background-color: #e9efd5;
+}
+
+.pE_table tbody {
+	margin: auto;
+}
+
+.pE_table th, .pE_table td {
+	border: 1px solid #715c1f;
+	text-align: center;
+}
+
+

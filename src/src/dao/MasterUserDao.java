@@ -17,6 +17,8 @@ import model.MasterUser;
  */
 @WebServlet("/MasterUserDao")
 public class MasterUserDao extends HttpServlet {
+
+//ログイン処理
 	public LoginUser isLoginOK(String id,String pw) {
 		Connection conn = null;
 		LoginUser user = null;
@@ -66,6 +68,7 @@ public class MasterUserDao extends HttpServlet {
 		return user;
 	}
 
+//プロフィール情報を取得する処理
 	public MasterUser selectOne(String user_id) {
 		MasterUser user = null;
 		//ここで上のログイン同様、１行のMasterUserデータを取得する
@@ -122,4 +125,68 @@ public class MasterUserDao extends HttpServlet {
 		// 結果を返す
 		return user;
 	}
+
+//プロフィールを変更する処理
+	public boolean update(MasterUser prof_bf ,MasterUser prof_af) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
+
+			// SQL文を準備する
+			String sql = "UPDATE m_user SET user_img = ?, user_name = ?, user_pf = ? WHERE user_id = ? ";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+
+			//number
+			if (prof_af.getUser_img() != null && !prof_af.getUser_img().equals("")) {
+				pStmt.setString(1, prof_af.getUser_img());
+			} else {
+				pStmt.setString(1, prof_bf.getUser_img());
+			}
+			//name
+			if (prof_af.getUser_name() != null && !prof_af.getUser_name().equals("")) {
+				pStmt.setString(2, prof_af.getUser_name());
+			} else {
+				pStmt.setString(2, prof_bf.getUser_name());
+			}
+			//kana
+			if (prof_af.getUser_pf() != null && !prof_af.getUser_pf().equals("")) {
+				pStmt.setString(3, prof_af.getUser_pf());
+			} else {
+				pStmt.setString(3, prof_bf.getUser_pf());
+			}
+
+			pStmt.setString(4, prof_af.getUser_id());
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 }

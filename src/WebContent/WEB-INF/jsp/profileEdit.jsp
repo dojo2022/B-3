@@ -7,60 +7,123 @@
 <meta charset="UTF-8">
 <title>プロフィール変更 | FLIFRE</title>
 <link rel="stylesheet" href="/FLIFRE/css/common.css">
-<link rel="stylesheet" href="/FLIFRE/css/profile.css">
+<link rel="stylesheet" href="/FLIFRE/css/profile_edit.css">
 <script src="/FLIFRE/js/profile.js"  defer></script>
 </head>
 <body>
 <header>
-<!-- <form method="POST" action="/FLIFRE/ResultServlet"> -->
-	<div class="search">
 
-			<h1 id="logo">
-		    	<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
-		    </h1>
+<!-- ロゴ -->
+	<h1 id="logo">
+    	<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
+    </h1>
 
-		    <p class="log">
-		        <a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
-		            <img src="images/${ empty id ? 'login' : 'logout' }.png"
-		                 width="97" height="29"
-		                 alt="${ empty id ? 'ログイン' : 'ログアウト' }">
-		        </a>
-	    	</p>
+<!-- ログアウトボタン -->
+	<p class="log">
+		<a href="/FLIFRE/LogoutServlet">
+		<img src="images/logout.png"  width="120" height="29" alt="ログアウト">
+		</a>
+	</p>
 
-			<!--ここからメニュー-->
-			<div class="hamburger-menu">
-				<input type="checkbox" id="menu-btn-check">
-				<label for="menu-btn-check" class="menu-btn"><span></span></label>
-				<div class="menu-content">
-					<ul>
-				    <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-				    <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-				    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-				    	<core:if test="${ not empty id }">
-				        <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-				        </core:if>
-				    <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
-					</ul>
-				</div>
+<!--ここからメニュー-->
+		<div class="hamburger-menu">
+			<input type="checkbox" id="menu-btn-check">
+			<label for="menu-btn-check" class="menu-btn"><span></span></label>
+			<div class="menu-content">
+				<ul>
+			    <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
+			    <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
+			    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
+			    	<core:if test="${ not empty id }">
+			        <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
+			        </core:if>
+			    <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
+				</ul>
 			</div>
-			<!--ここまでメニュー-->
-	</div>
+		</div>
+<!--ここまでメニュー-->
 </header>
 
-	<!-- メインここから -->
+
+<h2 id="explain">プロフィール変更</h2>
+
+<br>
+<br>
+
+<main>
+	<form method="POST" action="/FLIFRE/ProfileServlet">
+	<input type="hidden" name="user_id" value="${id.user_id}">
+		<table class="pE_table">
+		<tbody>
+			<tr>
+				<th>変更項目</th><th>変更前</th><th>変更後</th>
+			</tr>
+			<tr>
+				<td>
+					アイコン画像
+				</td>
+				<td>
+					<img src="images/${m_user.user_img}" width="75" height="75">
+				</td>
+				<td>
+					<select name="iconSelect">
+						<optgroup label="icon">
+							<option value="icon1">icon1.png</option>
+							<option value="icon2">icon2.png</option>
+						</optgroup>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					ユーザー名
+				</td>
+				<td>
+					${m_user.user_name}
+				</td>
+				<td>
+					<input type="text" name="user_name" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					プロフィール文
+				</td>
+				<td>
+					${m_user.user_pf}
+				</td>
+				<td>
+					<input type="text" name="user_pf" value="">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<input type="reset" name="reset" value="リセット">
+					<input type="submit" name="profEditBottun" value="変更">
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</form>
+</main>
+
+<br>
+<br>
+
+<%-- 	<!-- メインここから -->
 	<main>
 	<!-- 画像をフォルダから選んでアップロードできるようにしたいので、Nyampleを参考にする必要あり -->
 
@@ -73,21 +136,6 @@
 			<!-- m_userのuser_img 現在使用中のアイコンを引用 -->
 
 			<!-- 画像選択(仮)-->
-			<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-  				<div class="portlate" id="imageframe">
-    			<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
-  				</div>
-			</form>
-		<br>
-		<hr>
-
-			<p id="hd_edit_tag">　　ヘッダー変更　　</p>
-			<span>
-			${m_user.user_hd}
-			</span>
-			<!-- m_userのuser_hd 現在使用中のヘッダーを引用 -->
-
-			<!-- 画像選択(仮) -->
 			<form action="hoge.html" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
   				<div class="portlate" id="imageframe">
     			<input type="file" name="imgfile" value="" accept="image/png,image/jpeg,image/gif" multiple>
@@ -124,6 +172,7 @@
 <!-- メインここまで -->
 </main>
 <br>
-<br>
+<br> --%>
+
 </body>
 </html>
