@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ReviewDao;
 import model.Review;
+import model.Reviewdata;
 
 /**
  * Servlet implementation class PostEditServlet
@@ -63,18 +65,19 @@ public class ReviewEditServlet extends HttpServlet {
 					}String review_id = request.getParameter("review_id");
 
 					//レビューの内容を変更する
-
-					Review review_data = new Review(review_id,"video_id","user_id",review_contents,"genre_id",feelcat_name1,feelcat_name2,star,"review_date");
+					Review review_data = new Review(review_id,"","",review_contents,"",feelcat_name1,feelcat_name2,star,"");
 					ReviewDao rDao = new ReviewDao();
-
+					
 					//現在のレビューの内容
-					Review now_review = rDao.select4(review_id);
+					Reviewdata now_review = rDao.select4(review_id);
 
 					if (rDao.update(review_data,now_review)) {	// 更新成功
-						response.sendRedirect("/FLIFRE/MypageServlet");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+						dispatcher.forward(request, response);
 					}
 					else {												// 更新失敗
-						response.sendRedirect("/FLIFRE/MypageServlet");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+						dispatcher.forward(request, response);
 					}
 					// 結果ページにフォワードする
 

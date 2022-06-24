@@ -6,55 +6,43 @@
     <meta charset="UTF-8">
     <title>レビュー投稿 | FLIFRE</title>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/top.css">
 </head>
 
 
 <body>
 <%@ include file="header.jsp" %>
-<div class="top-box">
 <h2>レビュー投稿を表示します</h2>
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
-
+<div class="border1">
  <table class="table">
- <c:forEach var="e" items="${Reviewlist2}">
    <tr>
-    <td><span class="circle" >${e.user_img}</span></td>
+    <td><input class="circle" type="" name="" value="${user_img}" readonly></td>
    </tr>
    <tr>
-    <td><span class="user">${e.user_name}</span></td>
-    <td><span class="video">${e.video_name}</span></td>
-    <td><span class="time">${e.review_date}</span></td>
-    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="30" hight="30"></td>
+    <td><input class="user"type="" name="" value="${user_name}" readonly></td>
+    <td><input class="video"type="" name="" value="${video_name}" readonly></td>
+    <td><input class="time"type="" name="" value="${rewiew_date}" readonly></td>
+    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
-    <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
-    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="30" hight="30"></label></td>
+    <td><input class="review"type="text" name="review_contents" value="${review_contents}" readonly></td>
+    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
-    </c:forEach>
  </table>
-  <div class="target">
-   <span class="user2">b</span>
-   <span class="time2">c</span>
-   <textarea class="reply2" readonly>e</textarea>
- </div>
-   <img id="reply"class="button" src="images/reply.png" onclick=""width="50" hight="50">
-
-
      <input type="checkbox" id="popup">
      <div class="overlay">
     <div class="window">
         <label class="close" for="popup">×</label>
-        <form method="POST" action="/FLIFRE/Top_afServlet">
+        <from>
             <div class="example">
     <label for="namelabel">ユーザー名</label>
-     <c:forEach var="e" items="${Replyname}">
-    <input type="text" name="name" id="namelabel" value="${e.user_name}" readonly>
+    <input type="text" name="name" id="namelabel" placeholder="匿名">
   </div>
-  </c:forEach>
    <div class="example">
-    <label for="ikenlabel" class="abcd">リプライ内容</label>
+    <label for="ikenlabel" >リプライ内容</label>
     <textarea id="iken" placeholder="内容を入力してください"></textarea>
   </div>
   <div class="example">
@@ -65,7 +53,6 @@
 </div>
 
   <div class="border-bottom"></div>
-
 </div>
 <!-- レビュー星表示 -->
     <script>
@@ -84,18 +71,10 @@
       }
       //resultという名前のスコープの中身を取り出す
       //中身がsuccessだったら成功しましたのアラート表示
-
+      if(document.getAttribute("result") != null){
+		window.alert(document.getAttribute("result"));
+      }
 </script>
-<script>
-//replyを表示、非表示切り替え
-var $target = document.querySelector('.target')
-var $button = document.querySelector('.button')
-$target.classList.toggle('is-hidden')
-$button.addEventListener('click', function() {
-  $target.classList.toggle('is-hidden')
-})
-</script>
-
 
 </body>
 </html>

@@ -11,10 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.ReplyDao;
 import dao.ReviewDao;
 import model.LoginUser;
-import model.Replydata;
 import model.Top;
 
 /**
@@ -47,30 +45,7 @@ public class Top_afServlet extends HttpServlet {
 				ReviewDao  rDao = new ReviewDao();
 				List<Top> Reviewlist2 = rDao.select3(user_id);
 				// 検索結果をリクエストスコープに格納する
-				request.setAttribute("Reviewlist2", Reviewlist2);
-
-				// reply一覧取得
-				ReplyDao  rpDao = new ReplyDao();
-				List<Replydata> TopReply = rpDao.select3();
-				// 検索結果をリクエストスコープに格納する
-				request.setAttribute("TopReply", TopReply);
-
-				// name
-				ReplyDao  rnDao = new ReplyDao();
-				List<Top> Replyname = rnDao.select4(user_id);
-				// 検索結果をリクエストスコープに格納する
-				request.setAttribute("Replyname", Replyname);
-
-		/*		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String user_name = request.getParameter("user_name");
-				String Reply_contents = request.getParameter("Reply_contents");
-
-			// reply送信
-				ReplyDao bDao = new ReplyDao();
-				boolean result = bDao.insert(new TopReply(user_name, Reply_contents));
-					request.setAttribute("result",result);
-*/
+				request.setAttribute("Reviewdata", Reviewlist2);
 
 	// ログイン後トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");

@@ -6,17 +6,17 @@
     <meta charset="UTF-8">
     <title>レビュー投稿 | FLIFRE</title>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/top.css">
 </head>
 
 
 <body>
 <%@ include file="header.jsp" %>
-<div class="top-box">
 <h2>レビュー投稿を表示します</h2>
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
-
+<div class="border1">
 
  <table class="table">
  <c:forEach var="e" items="${Review}">
@@ -27,10 +27,11 @@
     <td><span class="user">${e.user_name}</span></td>
     <td><span class="video">${e.video_name}</span></td>
     <td><span class="time">${e.review_date}</span></td>
-    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="25" hight="25"></td>
+    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
+    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
     </c:forEach>
  </table>
@@ -51,11 +52,10 @@
     <input type="submit" value="送信する">
   </div>
         </from>
-
+    </div>
 </div>
 
   <div class="border-bottom"></div>
-</div>
 </div>
 <!-- レビュー星表示 -->
     <script>
@@ -76,16 +76,6 @@
       //中身がsuccessだったら成功しましたのアラート表示
 
 </script>
-<script>
-//replyを表示、非表示切り替え
-var $target = document.querySelector('.target')
-var $button = document.querySelector('.button')
-$target.classList.toggle('is-hidden')
-$button.addEventListener('click', function() {
-  $target.classList.toggle('is-hidden')
-})
-</script>
-
 
 </body>
 </html>
