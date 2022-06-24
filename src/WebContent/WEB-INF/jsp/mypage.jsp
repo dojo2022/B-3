@@ -49,12 +49,13 @@
 		<hr>
 		<br>
 
-		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここから -->
+		<!-- マイレビュー投稿・リプライ・※スタンプを送ったレビュー一覧ここから -->
 
 		<table>
 			<tr>
-				<td><span id="review_tag"> レビュー投稿 </span> <span id="reply_tag">
-						リプライ </span> <span id="stamp_tag">スタンプを送ったレビュー </span></td>
+				<td><span id="review_tag">　　レビュー投稿　　</span>
+				<span id="reply_tag">　　リプライ　　</span> </td>
+						<!-- <span id="stamp_tag">スタンプを送ったレビュー </span> -->
 			</tr>
 			<tr>
 				<td>
@@ -65,7 +66,6 @@
 
 						<c:forEach var="e" items="${Reviewdata}">
 
-							<br>
 							<span>
 								<!-- アイコン --> <img src="images/${e.user_img}" width="75"
 								height="75">
@@ -75,9 +75,10 @@
 								<!-- ユーザー名  --> ${e.user_name}
 							</span>
 							<br>
+							<br>
 
 							<span>
-								<!-- 作品名 --> ${e.video_name}
+								<!-- 作品名 -->【 ${e.video_name} 】
 							</span>
 							<!-- t_reviewのvideo_idを引用 -->
 							<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
@@ -108,6 +109,7 @@
 								</span>
 								<!-- t_reviewのfeelcat_name2を引用 -->
 
+								<br>
 								<span>
 									<!-- レビュー本文 --> ${e.review_contents} <input type="hidden"
 									name="review_contents" value="${e.review_contents}">
@@ -119,6 +121,7 @@
 									value="${e.review_date}"><input class="delete"
 									type="submit" name="submit" value="レビュー削除"> <input
 									class="edit" type="submit" name="submit" value="レビュー編集">
+								<br>
 								<br>
 								<hr>
 								<br>
@@ -135,8 +138,6 @@
 							<!-- <span> 送り先のユーザー名
 							${e.review_id.user_id.user_name}
 							</span> -->
-							<br>
-							<br>
 
 							<!-- 自分のアイコン -->
 							${e.user_img}
@@ -174,12 +175,14 @@
 						</c:forEach>
 						<hr>
 					</div>
-
-					<div id="stamp_list">
+				</td>
+			</tr>
+		</table>
+					<%-- <div id="stamp_list">
 						<!--t_reactionを呼び出したい-->
 						<hr>
 						<br>
-						<%-- <c:forEach var="e" items="${Reactiondata}">
+						 <cforEach>
 							<a href="/FLIFRE/UserpageServlet"> <!-- アイコン -->
 								${e.user_img}
 							</a>
@@ -272,12 +275,10 @@
 								</div>
 							</div>
 							<!-- リプライフォームここまで -->
-						</c:forEach> --%>
+
 						<hr>
-					</div>
-				</td>
-			</tr>
-		</table>
+					</div> --%>
+
 
 		<!-- マイレビュー投稿・リプライ・スタンプを送ったレビュー一覧ここまで -->
 	</main>
