@@ -31,13 +31,7 @@ public class MypageServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MypageServlet() {
-        super();
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
@@ -95,7 +89,6 @@ public class MypageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 
 //		//レビュー投稿編集・リプライ編集・スタンプ反応・リプライ送信処理
 
@@ -105,19 +98,19 @@ public class MypageServlet extends HttpServlet {
 		if(("レビュー編集").equals(subm)) {
 
 			//★リクエストパラメータを取得する
-			request.setCharacterEncoding("UTF-8");
-			/*		String review_id = request.getParameter("review_id");
+					/*String review_id = request.getParameter("review_id");
 					String user_id = request.getParameter("user_id");
-					String video_id = request.getParameter("video_id");*/
-			/*String genre_id = request.getParameter("genre_id");*/
+					String video_id = request.getParameter("video_id");
+			String genre_id = request.getParameter("genre_id");*/
 			String review_contents = request.getParameter("review_contents");
 			String feelcat_name1 = request.getParameter("feelcat_name1");
 			String feelcat_name2 = request.getParameter("feelcat_name2");
 			String star = request.getParameter("star");
+			String review_id = request.getParameter("review_id");
 			String review_date = request.getParameter("review_date");
 
 			//リクエストスコープreviewに格納
-			Review review_data = new Review(review_contents,feelcat_name1,feelcat_name2,star,review_date);
+			Review review_data = new Review(review_id,"","",review_contents,"",feelcat_name1,feelcat_name2,star,review_date);
 			request.setAttribute("review_edit", review_data);
 
 			// 結果ページにフォワードする

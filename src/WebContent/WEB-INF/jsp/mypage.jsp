@@ -80,8 +80,7 @@
 								<!-- 作品名 --> ${e.video_name}
 							</span>
 							<!-- t_reviewのvideo_idを引用 -->
-							<form id="mylist_edit" method="POST"
-								action="/FLIFRE/MypageServlet">
+							<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 								<span>
 									<!-- 5段階評価  --> ${e.star} <input type="hidden" name="star"
 									value="${e.star}">
@@ -114,8 +113,10 @@
 									name="review_contents" value="${e.review_contents}">
 								</span>
 								<!-- t_reviewのreview_contentsを引用 -->
-								<br> <br> <input type="hidden" name="review_date"
-									value="${e.review_date}"> <input class="delete"
+								<br> <br> <input type="hidden" name="review_id"
+									value="${e.review_id}">
+									<input type="hidden" name="review_id"
+									value="${e.review_date}"><input class="delete"
 									type="submit" name="submit" value="レビュー削除"> <input
 									class="edit" type="submit" name="submit" value="レビュー編集">
 								<br>
