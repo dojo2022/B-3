@@ -66,6 +66,8 @@
 				<c:forEach begin="0" end="2" var="i">
 					<li><img class="rank" src="images/${ rank[i] }.png"><a href="/FLIFRE/ReviewServlet?video_id=${animeRank[i].video_id}"><strong>${ animeRank[i].video_name}</strong></a>
 					<span class="count">${ animeRank[i].count} post</span></li>
+				</c:forEach>
+				</ul>
 			<div class="ranklist">
 				<h3 class="ranking">国内</h3>
 				<ul class="list">
