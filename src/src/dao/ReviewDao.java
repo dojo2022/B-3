@@ -129,7 +129,7 @@ public class ReviewDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 		public List<Reviewdata> select(String video_id) {
 			Connection conn = null;
-			List<Review> Review = new ArrayList<Review>();
+			List<Reviewdata> Review = new ArrayList<Reviewdata>();
 
 			try {
 				// JDBCドライバを読み込む
@@ -139,7 +139,7 @@ public class ReviewDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 				// SQL文を準備する(件数をカウントし降順で3つ表示)
-				String sql = " SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents"
+				String sql = " SELECT t_review.review_id,m_user.user_name,m_user.user_img,m_video.video_name,t_review.star,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents"
 						   + " FROM t_review "
 						   + " LEFT JOIN m_user ON t_review.user_id = m_user.user_id"
 						   + " LEFT JOIN m_video ON t_review.video_id = m_video.video_id"
@@ -154,16 +154,17 @@ public class ReviewDao {
 
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
-					Review card = new Review(
-					rs.getString("review_id"),
-					rs.getString("video_id"),
-					rs.getString("user_id"),
-					rs.getString("review_contents"),
-					rs.getString("genre_id"),
+					Reviewdata card = new Reviewdata(
+					rs.getString("user_name"),
+					rs.getString("user_img"),
+					rs.getString("video_name"),
+					rs.getString("star"),
+					rs.getString("review_date"),
+					rs.getString("genre_name"),
 					rs.getString("feelcat_name1"),
 					rs.getString("feelcat_name2"),
-					rs.getString("star"),
-					rs.getString("review_date")
+					rs.getString("review_contents"),
+					rs.getString("review_id")
 					);
 					Review.add(card);
 				}
