@@ -42,13 +42,15 @@ table {
 hr {
 	border: 1px solid #a3060c;
 }
-#review_tag, #reply_tag, #stamp_tag, #userreview_tag{
-	margin:0px 50px;
+#review_tag, #reply_tag{
+	margin:0px 130px;
 	background-color: #09b35e;
 	text-align: center;
 }
 #userreview_tag{
 	margin:0px 0px 0px 300px;
+	background-color: #09b35e;
+	text-align: center;
 }
 #review_list, #reply_list, #stamp_list, #userreview_list{
 	height: 350px;

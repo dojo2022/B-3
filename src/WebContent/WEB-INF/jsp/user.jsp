@@ -77,7 +77,6 @@
 					<hr>
 					<br>
 					<c:forEach var="e" items="${Reviewdata}" >
-					<br>
 						<!-- アイコン -->
 						<img src="images/${e.user_img}" width="75" height="75">
 
@@ -86,10 +85,12 @@
 						${e.user_name}
 						</span>
 					<br>
+					<br>
 
 						<span><!-- 作品名 -->
-						${e.video_name}
+						【 ${e.video_name} 】
 						</span><!-- t_reviewのvideo_idを引用 -->
+					<br>
 
 						<span><!--  5段階評価  -->
 						${e.star}
@@ -112,18 +113,19 @@
 						${e.feelcat_name2}
 						</span><!-- t_reviewのfeelcat_name2を引用 -->
 
+						<br>
 						<span><!-- レビュー本文 -->
 						${e.review_contents}
 						</span><!-- t_reviewのreview_contentsを引用 -->
 
 
-					<c:forEach var="e" items="${Reactiondata}" >
+					<%-- <cforEach >
 						<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
 						<!-- マイページではちゃんと動作するのにユーザーページでは動かない！！確認が必要 -->
 						<!-- スタンプの画像をクリックすると画像が変化 -->
 						${e.stamp_name}
-						<!-- m_stampのstamp_id, stamp_name -->
-					</c:forEach>
+						<!-- m_stampのstamp_id, stamp_name --> --%>
+
 					<br>
 
 						<!-- リプライフォームここから ここのデータ格納方法が分からない-->
@@ -137,13 +139,13 @@
 								<div class="example">
 									<label for="namelabel">ユーザー名</label>
 									<br>
-									<input type="text" name="name" id="namelabel" placeholder="">
+									<input type="text" name="name" id="namelabel" placeholder="匿名">
 									<br>
 								</div>
 								<div class="example">
 									<label for="ikenlabel">リプライ内容</label>
 									<br>
-									<textarea id="iken"></textarea>
+									<textarea id="iken" placeholder="内容を入力してください"></textarea>
 									<br>
 								</div>
 								<div class="example">

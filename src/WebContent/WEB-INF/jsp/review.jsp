@@ -15,9 +15,9 @@
 
 	<!-- 投稿フォーム-->
 	<main>
+		<h2>${video.video_name}</h2>
+		<h3>${video.genre_name}</h3>
 		<div class="review-box">
-			<h2>${video.video_name}</h2>
-			<h3>${video.genre_name}</h3>
 			<form id="review_form" method="GET" action="/FLIFRE/ReviewServlet" onsubmit="return post()">
 <!-- 				<table class="table"> -->
 					<c:forEach var="e" items="${reviewList}" >
@@ -34,32 +34,32 @@
 				   			</tr>
 				   			<tr>
 							    <td colspan="7">${e.review_contents}</td>
-							    <td>
-							    	<label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label>
-							    </td>
-							    <td>
-							    </td>
-				   				<input type="checkbox" id="popup">
-								<div class="overlay">
-			    					<div class="window">
-			        					<label class="close" for="popup">×</label>>
-			           					<div class="example">
-			   								<label for="namelabel">ユーザー名</label>
-			   								<input type="text" name="name" id="namelabel" placeholder="匿名">
-			 							</div>
-			  							<div class="example">
-										    <label for="ikenlabel" >リプライ内容</label>
-										    <textarea id="iken" placeholder="内容を入力してください"></textarea>
-										</div>
-										<div class="example">
-										    <input type="submit" value="送信する">
-										</div>
-			    					</div>
-								</div>
+							    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
 							</tr>
 						</table>
+						<br>
+						<hr>
+						<br>
 					</c:forEach>
-<!-- 		 		</table> -->
+	   				<input type="checkbox" id="popup">
+				    <div class="overlay">
+					   	<div class="window">
+					       	<label class="close" for="popup">×</label>
+					       	<form>
+					           	<div class="example">
+					   				<label for="namelabel">ユーザー名</label>
+					   				<input type="text" name="name" id="namelabel" placeholder="匿名">
+					 			</div>
+					  			<div class="example">
+								    <label for="ikenlabel" >リプライ内容</label>
+								    <textarea id="iken" placeholder="内容を入力してください"></textarea>
+					 			</div>
+					 			<div class="example">
+					   				<input type="submit" value="送信する">
+					 			</div>
+					       	</form>
+					   	</div>
+					</div>
 		  		<div class="border-bottom"></div>
 		  	</form>
 		</div>
