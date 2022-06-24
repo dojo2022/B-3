@@ -616,7 +616,6 @@ public class ReviewDao {
 							rs.getString("review_id"),
 							rs.getString("video_id"),
 							rs.getString("user_id"),
-							rs.getString("star"),
 							rs.getString("review_contents"),
 							rs.getString("genre_id"),
 							rs.getString("feelcat_name1"),
