@@ -595,4 +595,4 @@ public class ReviewDao {
 				// 結果を返す
 				return Reviewlist2;
 			}
-		}
+}
