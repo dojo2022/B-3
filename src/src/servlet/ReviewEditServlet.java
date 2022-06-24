@@ -78,6 +78,12 @@ public class ReviewEditServlet extends HttpServlet {
 					// 結果ページにフォワードする
 
 				}
+				if(("レビュー編集中止").equals(subm)) {
+
+					response.sendRedirect("/FLIFRE/MypageServlet");
+
+
+				}
 	}
 
 }
