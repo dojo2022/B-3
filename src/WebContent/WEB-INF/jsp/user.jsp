@@ -26,10 +26,10 @@
 		<input type="hidden" name="follow_id" value="${m_user.user_id}">
 		<c:choose>
 		<c:when test = "${check}">
-			<input type="submit" name="followBottun" value="フォロー解除">
+			<input type="submit" name="submit" value="フォロー解除">
 		</c:when>
 		<c:otherwise>
-		<input type="submit" name="followBottun" value="フォロー">
+		<input type="submit" name="submit" value="フォロー">
 		</c:otherwise>
 		</c:choose>
 		</form>
@@ -63,7 +63,7 @@
 	<br>
 
 	<!-- ユーザーレビュー投稿一覧ここから -->
-	<form id = "userreview" method="POST" action="/FLIFRE/UserpageServlet">
+
 		<table>
 			<tr>
 				<td>
@@ -77,6 +77,7 @@
 					<hr>
 					<br>
 					<c:forEach var="e" items="${Reviewdata}" >
+	<form id = "userreview" method="POST" action="/FLIFRE/UserpageServlet">
 						<!-- アイコン -->
 						<img src="images/${e.user_img}" width="75" height="75">
 
@@ -117,8 +118,10 @@
 						<span><!-- レビュー本文 -->
 						${e.review_contents}
 						</span><!-- t_reviewのreview_contentsを引用 -->
-
-
+<!-- ueda -->
+<!-- リプライの本文追加。書いた人の名前　日時　リプライした本文 -->
+<%-- <c:forEach var="reply" items="${}" >
+</c:forEach> --%>
 					<%-- <cforEach >
 						<img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50">
 						<!-- マイページではちゃんと動作するのにユーザーページでは動かない！！確認が必要 -->
@@ -137,19 +140,22 @@
 							<div class="window">
 								<label class="close" for="popup">× </label>
 								<div class="example">
-									<label for="namelabel">ユーザー名</label>
+							<%-- 		<label for="namelabel">ユーザー名</label>
 									<br>
-									<input type="text" name="name" id="namelabel" placeholder="匿名">
-									<br>
+									<p>${e.user_name}</p> --%>
+								<!-- 	<input type="text" name="replyname" id="namelabel" placeholder="匿名">
+								 -->	<br>
 								</div>
 								<div class="example">
 									<label for="ikenlabel">リプライ内容</label>
 									<br>
-									<textarea id="iken" placeholder="内容を入力してください"></textarea>
+									<textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
 									<br>
 								</div>
 								<div class="example">
-									<input type="submit" value="送信する">
+								<input type=hidden name="review_id" value="${e.review_id }" >
+									<input type="hidden" name="user_id" value="${id.user_id}">
+									<input type="submit" name="submit" value="リプライを送信する">
 									<!-- リプライボタンをクリックするとリプライ入力フォームが開く。
 							  		入力後、送信ボタンを押す。 -->
 								</div>
@@ -157,12 +163,13 @@
 						</div>
 						<!-- リプライフォームここまで -->
 						<hr>
+							</form>
 						</c:forEach>
 					</div>
 				</td>
 			</tr>
 		</table>
-	</form>
+
 	<!-- ユーザーレビュー投稿一覧ここまで -->
 </main>
 <!-- メインここまで -->

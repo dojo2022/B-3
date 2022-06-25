@@ -140,47 +140,39 @@ public class ReplyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
-					String sql = "INSERT INTO Reply (reply_id, review_id, user_id, reply_contents, reply_date) values (?, ?, ?, ?, ?)";
+					String sql = "INSERT INTO T_Reply (review_id, user_id, reply_contents) values (?, ?, ?)";
 					//Date型はどうすればいい？
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (card.getReply_id() != null && !card.getReply_id().equals("")) {
-						pStmt.setString(1, card.getReply_id());
+					if (card.getReview_id() != null && !card.getReview_id().equals("")) {
+						pStmt.setString(1, card.getReview_id());
 					}
 					else {
 						pStmt.setString(1, "");
 					}
-					if (card.getReview_id() != null && !card.getReview_id().equals("")) {
-						pStmt.setString(2, card.getReview_id());
+					if (card.getUser_id() != null && !card.getUser_id().equals("")) {
+						pStmt.setString(2, card.getUser_id());
 					}
 					else {
 						pStmt.setString(2, "");
 					}
-					if (card.getUser_id() != null && !card.getUser_id().equals("")) {
-						pStmt.setString(3, card.getUser_id());
+					if (card.getReply_contents() != null && !card.getReply_contents().equals("")) {
+						pStmt.setString(3, card.getReply_contents());
 					}
 					else {
 						pStmt.setString(3, "");
-					}
-					if (card.getReply_contents() != null && !card.getReply_contents().equals("")) {
-						pStmt.setString(4, card.getReply_contents());
-					}
-					else {
-						pStmt.setString(4, "");
-					}
-
-					if (card.getReply_date() != null && !card.getReply_date().equals("")) {
-						pStmt.setString(5, card.getReply_date());
-					}
-					else {
-						pStmt.setString(5, "");
 					}
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
 						result = true;
 					}
+
+					//review_idを追加するｓqlを実行するか？
+					//UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
