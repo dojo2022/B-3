@@ -105,7 +105,7 @@ public class PostServlet extends HttpServlet {
 		}
 
 		// トップページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_bf.jsp");
 		dispatcher.forward(request, response);
 	}
 }

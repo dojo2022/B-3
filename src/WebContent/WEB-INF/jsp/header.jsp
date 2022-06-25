@@ -68,9 +68,11 @@
 		    		<th>
 				         作品名
 				    </th>
-				    <td colspan="1">
+				    <td colspan="2">
 				    	<input type="text" name="title" placeholder="タイトル入力">
 				    	<input type="submit" name="submit" value="検索">
+				    </td>
+				    <td>
 				    </td>
 				</tr>
 		    </table>
