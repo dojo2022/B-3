@@ -49,7 +49,6 @@
 
 			<form name="form_post" id="post_form" method="POST" action="/FLIFRE/PostServlet" >
 			   <div ><input class="post-btn" type="submit" id="post-btn" value=""></div>
-			    <!-- <input  type="submit" value="submit"> -->
 <!-- 			    <div id="post-btn" class="post-btn" ></div> -->
 			    <input  type="submit" value="submit">
 
