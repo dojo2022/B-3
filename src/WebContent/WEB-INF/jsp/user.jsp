@@ -67,7 +67,7 @@
 						<hr>
 						<br>
 						<c:forEach var="e" items="${Reviewdata}" varStatus="status">
-							<form id="userreview" method="POST"
+							<form id="userreview${status.index}" method="POST"
 								action="/FLIFRE/UserpageServlet">
 								<!-- アイコン -->
 								<img src="images/${e.user_img}" width="75" height="75"> <span>
@@ -112,7 +112,7 @@
 								<br>
 
 								<!-- リプライフォームここから ここのデータ格納方法が分からない-->
-								<p>${e.review_id}</p>
+
 								<c:set var="e_review_id" value="${e.review_id}" />
 								<c:forEach var="i" begin="0" end="${replyLists.size()}" step="1">
 									<c:forEach var="reply" items="${replyLists[i] }">
@@ -128,6 +128,7 @@
 
 									</c:forEach>
 								</c:forEach>
+
 								<input type="hidden" id="status_index" value="${status.index}">
 								<img id="reply${status.index}" src="./images/reply.png"  width="50" height="50">
 								<div id="reply_submit${status.index}">
@@ -142,11 +143,12 @@
 							</form>
 
 						</c:forEach>
+
 					</div>
 				</td>
 			</tr>
 		</table>
-
+<p id="reviewdata_size" style="display:none;">${Reviewdata.size()}</p>
 		<!-- ユーザーレビュー投稿一覧ここまで -->
 	</main>
 	<!-- メインここまで -->
