@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -51,6 +52,7 @@ public class UserpageServlet extends HttpServlet {
 
 		//パラメーターからユーザーIDを取得
 		request.setCharacterEncoding("UTF-8");
+		//このユーザーIDはフォローしている人のID
 		String user_id = request.getParameter("user_id");
 
 		//データベースから名前を取得
@@ -127,6 +129,7 @@ public class UserpageServlet extends HttpServlet {
 			flwDao.insert(user_id, follow_id);
 		} else if (bottun.equals("フォロー解除")) {
 			flwDao.delete(user_id, follow_id);
+			//リプライの送信処理
 		} else if (bottun.equals("リプライを送信する")) {
 
 			String reply_contents = request.getParameter("textarea");
@@ -142,8 +145,25 @@ public class UserpageServlet extends HttpServlet {
 				request.setAttribute("result", "fail");
 				//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
 			}
+			//ueda
 			//reviewデータ（replyのデータ）のデータを取得する
-//ueda
+			//取得したデータをセッションスコープに格納する
+			//user_idからreview_idを取得する（だれがどのレビューを書いたか一覧）
+			//
+
+			ReplyDao rDao = new ReplyDao();
+			List<String> Reviews = rDao.select_review_user_id(user_id);
+			//リプライがあったレビューの一覧を取得
+			List<List<Reply>>replyLists = new ArrayList<List<Reply>>();
+			for(String Review_id: Reviews) {
+				List<Reply> replyList = rDao.select_name_contents_date(Review_id);
+				replyLists.add(replyList);
+			}
+			HttpSession session = request.getSession();
+			session.setAttribute("replyLists", replyLists);
+
+
+
 		}
 		// 結果ページにフォワードする
 		//				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
