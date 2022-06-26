@@ -428,7 +428,9 @@ public class ReplyDao {
 
 					// SQL文を準備する
 
-					String sql = "SELECT distinct review_id FROM t_reply  WHERE user_id = ?";
+//					String sql = "SELECT distinct review_id FROM t_reply  WHERE user_id = ?";
+
+					String sql = "SELECT review_id FROM t_review  WHERE user_id = ?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 							pStmt.setString(1,user_id);
 

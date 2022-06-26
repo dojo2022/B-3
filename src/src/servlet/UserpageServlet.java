@@ -92,6 +92,24 @@ public class UserpageServlet extends HttpServlet {
 		boolean check = flwDao.check(loginId, user_id);
 		request.setAttribute("check", check);
 
+//loginしているユーザーのid
+//		LoginUser user_sessiondata=(LoginUser)session.getAttribute("id");
+//		String login_user_id=user_sessiondata.getUser_id();
+		ReplyDao rpDao = new ReplyDao();
+		List<String> Reviews = rpDao.select_review_user_id(user_id);
+		//リプライがあったレビューの一覧を取得
+
+			List<List<Reply>>replyLists = new ArrayList<List<Reply>>();
+			for(String Review_id: Reviews) {
+				List<Reply> replyList = rpDao.select_name_contents_date(Review_id);
+				replyLists.add(replyList);
+			}
+			session.setAttribute("replyLists", replyLists);
+
+
+
+
+
 		// ユーザーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
 		dispatcher.forward(request, response);
@@ -119,7 +137,9 @@ public class UserpageServlet extends HttpServlet {
 		//		String stamp_id = request.getParameter("stamp_id");
 
 		// リクエストパラメータを取得する
+		//ログインしているID
 		String user_id = request.getParameter("user_id");
+		//リンクで飛んだユーザーID
 		String follow_id = request.getParameter("follow_id");
 		String bottun = request.getParameter("submit");
 
@@ -150,25 +170,28 @@ public class UserpageServlet extends HttpServlet {
 			//取得したデータをセッションスコープに格納する
 			//user_idからreview_idを取得する（だれがどのレビューを書いたか一覧）
 			//
-
-			ReplyDao rDao = new ReplyDao();
-			List<String> Reviews = rDao.select_review_user_id(user_id);
-			//リプライがあったレビューの一覧を取得
-			List<List<Reply>>replyLists = new ArrayList<List<Reply>>();
-			for(String Review_id: Reviews) {
-				List<Reply> replyList = rDao.select_name_contents_date(Review_id);
-				replyLists.add(replyList);
-			}
-			HttpSession session = request.getSession();
-			session.setAttribute("replyLists", replyLists);
+			//表示するマイページのユーザーIDのレビューを一覧表示
+//			ReplyDao rDao = new ReplyDao();
+//			List<String> Reviews = rDao.select_review_user_id(follow_id);
+//			//リプライがあったレビューの一覧を取得
+//			List<List<Reply>>replyLists = new ArrayList<List<Reply>>();
+//			for(String Review_id: Reviews) {
+//				List<Reply> replyList = rDao.select_name_contents_date(Review_id);
+//				replyLists.add(replyList);
+//			}
+//			HttpSession session = request.getSession();
+//			session.setAttribute("replyLists", replyLists);
 
 
 
 		}
 		// 結果ページにフォワードする
-		//				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/FLIFRE/jsp/mypage.jsp");
-		response.sendRedirect("/FLIFRE/MypageServlet");
 
+//		response.sendRedirect("/FLIFRE/MypageServlet");
+		// ユーザーページにフォワードする
+		String userurl="/FLIFRE/UserpageServlet?user_id="+follow_id;
+		response.sendRedirect(userurl);
+		return;
 	}
 
 }
