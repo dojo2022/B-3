@@ -576,7 +576,9 @@ public class ReviewDao {
 						rs.getString("user_img"),
 						rs.getString("video_name"),
 						rs.getString("review_contents"),
-						rs.getString("review_date")
+						rs.getString("review_date"),
+						"",
+						""
 						);
 						Reviewlist2.add(card);
 					}
