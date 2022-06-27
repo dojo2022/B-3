@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/top.css">
+    <script src="/FLIFRE/js/profile.js" defer></script>
+<script src="/FLIFRE/js/reply.js" defer></script>
 </head>
 
 
@@ -25,12 +27,15 @@
    <tr>
     <td><span class="user">${e.user_name}</span></td>
     <td><span class="video">${e.video_name}</span></td>
-        <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="30" hight="30"></label></td>
+    <input type="hidden" id="status_index" value="${status.index}">
+        <td><label class="open" for="popup"><img id="reply${status.index}" src="images/reply.png" onclick="replyfrom()"width="30" hight="30"></label></td>
     <td><span class="time">${e.review_date}</span></td>
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
+
     </tr>
+
     </table>
     <br>
     <hr>
@@ -42,16 +47,20 @@
         <label class="close" for="popup">×</label>
         <from>
             <div class="example">
-    <label for="namelabel">ユーザー名</label>
-    <input type="text" name="name" id="namelabel" placeholder="匿名">
+
+<div id="user_reply">
+                                    <input type="hidden" id="status_index" value="${status.index}">
+                                    <div id="reply_submit${status.index}">
+                                    <input type="hidden" name="review_id" value="${e.review_id}">
+                                    <input type="hidden" name="user_id" value="${id.user_id}">
+                                    <input type="hidden" name="follow_id" value="${m_user.user_id}">
+                                    <textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
+                                    <input type="submit" name="submit" value="リプライを送信する">
+                                    <!-- リプライフォームここまで -->
+                                    </div>
+                                </div>
   </div>
-   <div class="example">
-    <label for="ikenlabel" >リプライ内容</label>
-    <textarea id="iken" placeholder="内容を入力してください"></textarea>
-  </div>
-  <div class="example">
-    <input type="submit" value="送信する">
-  </div>
+
         </from>
     </div>
 </div>
