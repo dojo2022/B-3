@@ -37,9 +37,10 @@ public class Top_bfServlet extends HttpServlet {
 				}*/
 
 
-
+		// レビュー一覧を検索する☆
 		ReviewDao rDao = new ReviewDao();
 		List<Top> Reviewlist = rDao.select1();
+
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Review", Reviewlist);

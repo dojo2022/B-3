@@ -48,6 +48,11 @@
 			    	<a href="/FLIFRE/RegisterServlet">新規会員登録</a>
 			    	</td>
 			    </tr>
+			     <tr>
+			    	<td>
+			    	<a href="/FLIFRE/Top_bfServlet">トップページ</a>
+			    	</td>
+			    </tr>
 			</table>
 		</form>
 		<br>
