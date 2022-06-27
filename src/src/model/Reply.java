@@ -8,6 +8,7 @@ public class Reply implements Serializable {
 	private String user_id;
 	private String reply_contents;
 	private String reply_date;
+	private String user_name;
 
 	//引数があるコンストラクタ
 	public Reply(String reply_id, String review_id, String user_id, String reply_contents, String reply_date) {
@@ -18,6 +19,15 @@ public class Reply implements Serializable {
 		this.reply_contents = reply_contents;
 		this.reply_date = reply_date;
 	}
+	public Reply(String reply_id, String review_id, String user_id, String reply_contents, String reply_date,String user_name) {
+		super();
+		this.reply_id = reply_id;
+		this.review_id = review_id;
+		this.user_id = user_id;
+		this.reply_contents = reply_contents;
+		this.reply_date = reply_date;
+		this.user_name = user_name;
+	}
 
 	//引数がないコンストラクタ
 	public Reply() {
@@ -27,6 +37,7 @@ public class Reply implements Serializable {
 		this.user_id = "";
 		this.reply_contents = "";
 		this.reply_date = "" ;
+		this.user_name = "";
 	}
 
 	//getter/setter
@@ -68,6 +79,12 @@ public class Reply implements Serializable {
 
 	public void setReply_date(String reply_date) {
 		this.reply_date = reply_date;
+	}
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 }

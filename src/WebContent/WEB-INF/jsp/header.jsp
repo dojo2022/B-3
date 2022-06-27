@@ -80,7 +80,6 @@
 
 		<div class="search2">
 			<p class="roulette">
-				<button type="button" onclick="console.log('roulette fire')">
 				<button type="button" onclick="roulette()">
 					<img src="images/roulette.png" name="ROULETTE" alt="ルーレット">
 				</button>

@@ -140,47 +140,39 @@ public class ReplyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 					// SQL文を準備する
-					String sql = "INSERT INTO Reply (reply_id, review_id, user_id, reply_contents, reply_date) values (?, ?, ?, ?, ?)";
+					String sql = "INSERT INTO T_Reply (review_id, user_id, reply_contents) values (?, ?, ?)";
 					//Date型はどうすればいい？
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (card.getReply_id() != null && !card.getReply_id().equals("")) {
-						pStmt.setString(1, card.getReply_id());
+					if (card.getReview_id() != null && !card.getReview_id().equals("")) {
+						pStmt.setString(1, card.getReview_id());
 					}
 					else {
 						pStmt.setString(1, "");
 					}
-					if (card.getReview_id() != null && !card.getReview_id().equals("")) {
-						pStmt.setString(2, card.getReview_id());
+					if (card.getUser_id() != null && !card.getUser_id().equals("")) {
+						pStmt.setString(2, card.getUser_id());
 					}
 					else {
 						pStmt.setString(2, "");
 					}
-					if (card.getUser_id() != null && !card.getUser_id().equals("")) {
-						pStmt.setString(3, card.getUser_id());
+					if (card.getReply_contents() != null && !card.getReply_contents().equals("")) {
+						pStmt.setString(3, card.getReply_contents());
 					}
 					else {
 						pStmt.setString(3, "");
-					}
-					if (card.getReply_contents() != null && !card.getReply_contents().equals("")) {
-						pStmt.setString(4, card.getReply_contents());
-					}
-					else {
-						pStmt.setString(4, "");
-					}
-
-					if (card.getReply_date() != null && !card.getReply_date().equals("")) {
-						pStmt.setString(5, card.getReply_date());
-					}
-					else {
-						pStmt.setString(5, "");
 					}
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
 						result = true;
 					}
+
+					//review_idを追加するｓqlを実行するか？
+					//UPDATE T_REVIEW SET  review_id =(SELECT concat('rv',right(concat('00000000',CAST( (SELECT id FROM T_REVIEW where review_id is null) AS VARCHAR)),8) )from T_REVIEW where review_id is null ) where review_id is null;
+
+
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
@@ -423,6 +415,116 @@ public class ReplyDao {
 
 				// 結果を返す
 				return TopReply;
+			}
+			public List<String> select_review_user_id(String user_id) {
+				Connection conn = null;
+				List<String> reviews =new ArrayList<String>();
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+
+//					String sql = "SELECT distinct review_id FROM t_reply  WHERE user_id = ?";
+
+					String sql = "SELECT review_id FROM t_review  WHERE user_id = ?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+							pStmt.setString(1,user_id);
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while(rs.next()) {
+						reviews.add(rs.getString("review_id"));
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					reviews = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					reviews = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							reviews = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return reviews;
+			}
+			public List<Reply> select_name_contents_date(String review_id) {
+				Connection conn = null;
+				List<Reply> reviews =new ArrayList<Reply>();
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/Dojo6Data/dojo6Data", "sa", "");
+
+					// SQL文を準備する
+//					String sql = "SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star, t_review.review_id ,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id WHERE \r\n"
+//							+ "m_user.user_id = ?";
+					String sql = "SELECT reply_id,review_id,T_Reply.user_id,reply_contents ,reply_date, M_USER.user_name FROM T_REPLY LEFT JOIN M_USER ON T_REPLY.user_id = M_USER.USER_ID where review_id = ?";
+					//String sql = "SELECT m_user.user_name as review_user_name,m_user.user_img,m_video.video_name,t_review.star, t_review.review_id ,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents ,reply_name FROM t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id LEFT JOIN m_video ON t_review.video_id = m_video.video_id LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id left join (SELECT reply_id,review_id,T_Reply.user_id,reply_contents ,reply_date, M_USER.user_name as reply_name FROM T_REPLY LEFT JOIN M_USER ON T_REPLY.user_id = M_USER.USER_ID) as reply_data  on t_review .review_id = reply_data.review_id WHERE m_user.user_id = ? ";
+
+
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+					pStmt.setString(1,review_id);
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while(rs.next()) {
+						Reply replydata= new Reply(
+								rs.getString("reply_id"),
+								rs.getString("review_id"),
+								rs.getString("user_id"),
+								rs.getString("reply_contents"),
+								rs.getString("reply_date"),
+								rs.getString("user_name")
+								);
+						reviews.add(replydata);
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					reviews = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					reviews = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							reviews = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return reviews;
 			}
 
 	}

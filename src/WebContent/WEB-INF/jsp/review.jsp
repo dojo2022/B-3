@@ -32,6 +32,7 @@
 							    <td>${e.review_date}</td>
 <!-- 							    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" height="50"></td> -->
 				   			</tr>
+
 				   			<tr>
 							    <td colspan="7">${e.review_contents}</td>
 							    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" height="50"></label></td>
@@ -41,6 +42,7 @@
 						<hr>
 						<br>
 					</c:forEach>
+
 	   				<input type="checkbox" id="popup">
 				    <div class="overlay">
 					   	<div class="window">
