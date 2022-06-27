@@ -128,6 +128,7 @@
 								<br>
 								<br>
 								<hr>
+								<div id="user_reply">
 								<c:set var="e_review_id" value="${e.review_id}" />
 								<c:forEach var="i" begin="0" end="${replyLists.size()}" step="1">
 									<c:forEach var="reply" items="${replyLists[i] }">
@@ -144,6 +145,7 @@
 
 									</c:forEach>
 								</c:forEach>
+								</div>
 								<hr>
 								<%-- <input type="hidden" id="status_index" value="${status.index}">
 								<img id="reply${status.index}" src="./images/reply.png"  width="50" height="50">
@@ -198,10 +200,10 @@
 							<br>
 							<input type="hidden" name="reply_date" value="${e.reply_date}">
 
-							<br>
+							<hr>
 							<br>
 						</c:forEach>
-						<hr>
+
 					</div>
 				</td>
 			</tr>

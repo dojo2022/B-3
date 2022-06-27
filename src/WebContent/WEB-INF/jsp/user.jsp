@@ -113,6 +113,7 @@
 
 								<!-- リプライフォームここから ここのデータ格納方法が分からない-->
 								<hr>
+								<div id="user_reply">
 								<c:set var="e_review_id" value="${e.review_id}" />
 								<c:forEach var="i" begin="0" end="${replyLists.size()}" step="1">
 									<c:forEach var="reply" items="${replyLists[i] }">
@@ -129,16 +130,19 @@
 
 									</c:forEach>
 								</c:forEach>
+								</div>
 
-								<input type="hidden" id="status_index" value="${status.index}">
-								<img id="reply${status.index}" src="./images/reply.png"  width="50" height="50">
-								<div id="reply_submit${status.index}">
-								<input type="hidden" name="review_id" value="${e.review_id}">
-								<input type="hidden" name="user_id" value="${id.user_id}">
-								<input type="hidden" name="follow_id" value="${m_user.user_id}">
-								<textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
-								<input type="submit" name="submit" value="リプライを送信する">
-								<!-- リプライフォームここまで -->
+								<div id="user_reply">
+									<input type="hidden" id="status_index" value="${status.index}">
+									<img id="reply${status.index}" src="./images/reply.png"  width="50" height="50">
+									<div id="reply_submit${status.index}">
+									<input type="hidden" name="review_id" value="${e.review_id}">
+									<input type="hidden" name="user_id" value="${id.user_id}">
+									<input type="hidden" name="follow_id" value="${m_user.user_id}">
+									<textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
+									<input type="submit" name="submit" value="リプライを送信する">
+									<!-- リプライフォームここまで -->
+									</div>
 								</div>
 								<hr>
 

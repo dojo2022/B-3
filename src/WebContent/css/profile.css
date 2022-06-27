@@ -62,90 +62,9 @@ hr {
 	text-align: right;
 }
 
-/*リプライポップアップのスタイル */
-.open {
-    cursor:pointer;
-}
-#popup {
-    display: none;
-}
-.overlay {
-    display: none;
-}
-#popup:checked + .overlay {
-    display: block;
-    background-color: #00000070;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-}
-.window {
-    width: 90vw;
-    max-width: 380px;
-    height: 200px;
-    background-color: #7fff7f;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.text {
-    font-size: 25px;
-    margin: 0;
-    color: #fcfff9;
-}
-.close {
-    cursor:pointer;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    font-size: 20px;
-}
-.window {
-	display: flex;
-  flex-direction: column;
-}
 
-/*スタンプ部分のスタイル*/
-#image_file {
+#user_reply {
 	text-align: right;
+	margin:0px 30px 0px 200px;
 }
 
-/*スタンプとリプライボタンの位置*/
-#image_file,  #reply{
-	display: flex;
-  flex-direction: column;
-}
- #image_file, #reply {
- 	margin:0px 0px 0px 650px;
- }
-
-
-/*プロフィール変更テーブルの位置調整*/
-#confilmButton, #imageframe, #edittext, #bf_edit,
-#ic_edit_tag, #hd_edit_tag, #user_edit_tag, #pf_edit_tag {
-	text-align: center;
-}
-
-.circle, .portlate, .header, .user, .profile, .portlate {
-	text-align: center;
-}
-
-
-/*プロフィール変更ページの画像選択部分。
-個人サイトからのコピペなので画像読み込みはできても、保存と反映ができない。
-実装するなら矢沢講師のNyampleを参考に作り直す必要がある。*/
-#imageframe{
-    width: 800px;
-    height: 250px;
-    border: 1px solid #07964f;
-    background-image: url(./hogehoge.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-}
