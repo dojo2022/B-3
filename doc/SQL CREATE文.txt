@@ -66,6 +66,7 @@ CREATE TABLE t_reply (
 	reply_contents VARCHAR(140) NOT NULL,
 	reply_date  timestamp DEFAULT CURRENT_TIMESTAMP
 );
+UPDATE T_Reply SET  reply_id =(SELECT concat('rp',right(concat('00000000',CAST( (SELECT id FROM T_Reply where reply_id is null) AS VARCHAR)),8) )from T_Reply where reply_id is null ) where reply_id is null
 
 【t_reactionテーブルを生成するSQL文】
 CREATE TABLE t_reaction (

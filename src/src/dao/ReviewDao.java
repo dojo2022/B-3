@@ -211,12 +211,10 @@ public class ReviewDao {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (card.getReview_id() != null && !card.getReview_id().equals("")) {
-					pStmt.setString(1, card.getReview_id());
-				}
-				else {
-					pStmt.setString(1, "");
-				}
+
+
+				pStmt.setString(1, null);
+
 				if (card.getVideo_id() != null && !card.getVideo_id().equals("")) {
 					pStmt.setString(2, card.getVideo_id());
 				}

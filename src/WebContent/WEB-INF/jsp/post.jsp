@@ -54,7 +54,7 @@
 
 			    <input type="hidden" name="video_id" value="${video.video_id}">
 			    <input type="hidden" name="user_id" value="${id.user_id}">
-			    <input type="hidden" name="genre_name" value="${video.genre_name}">
+			    <input type="hidden" name="genre_id" value="${video.genre_id}">
 			    <table>
 			        <tr>
 						<td>

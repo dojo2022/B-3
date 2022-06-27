@@ -35,7 +35,7 @@ public class ResultServlet extends HttpServlet {
 		// 検索処理を行う
 		MasterVideoDao mvDao = new MasterVideoDao();
 		List<MasterVideo> MasterVideoList = null;
-		MasterVideo params = new MasterVideo(null, title, Integer.parseInt(year), Integer.parseInt(time), genre_id);
+		MasterVideo params = new MasterVideo(null, title, Integer.parseInt(year), Integer.parseInt(time), genre_id, null);
 		if (feelcat == null || feelcat.isEmpty()) {
 			MasterVideoList = mvDao.select(params);
 		} else {

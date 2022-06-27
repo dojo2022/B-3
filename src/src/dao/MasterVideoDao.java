@@ -65,8 +65,8 @@ public class MasterVideoDao {
 				pStmt.setInt(4, 0);
 				pStmt.setInt(5, 1440);
 			}
-			if (param.getGenre_name() != null) {
-				pStmt.setString(6, param.getGenre_name());
+			if (param.getGenre_id() != null) {
+				pStmt.setString(6, param.getGenre_id());
 			}
 			else {
 				pStmt.setString(6, "%");
@@ -82,7 +82,8 @@ public class MasterVideoDao {
 				rs.getString("video_name"),
 				rs.getInt("video_year"),
 				rs.getInt("video_time"),
-				rs.getString("genre_id")
+				rs.getString("genre_id"),
+				null
 				);
 				cardList.add(card);
 			}
@@ -124,7 +125,7 @@ public class MasterVideoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/dojo6Data", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT video_id, video_name, video_year, video_time, genre_name from m_video INNER JOIN m_genre ON m_video.genre_id = m_genre.genre_id WHERE video_id = ?";
+			String sql = "SELECT video_id, video_name, video_year, video_time, m_genre.genre_id, genre_name from m_video INNER JOIN m_genre ON m_video.genre_id = m_genre.genre_id WHERE video_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -146,6 +147,7 @@ public class MasterVideoDao {
 				rs.getString("video_name"),
 				rs.getInt("video_year"),
 				rs.getInt("video_time"),
+				rs.getString("genre_id"),
 				rs.getString("genre_name")
 				);
 			}
@@ -238,8 +240,8 @@ public class MasterVideoDao {
 				pStmt.setInt(6, 0);
 				pStmt.setInt(7, 1440);
 			}
-			if (params.getGenre_name() != null) {
-				pStmt.setString(8, params.getGenre_name());
+			if (params.getGenre_id() != null) {
+				pStmt.setString(8, params.getGenre_id());
 			}
 			else {
 				pStmt.setString(8, "%");
@@ -255,7 +257,8 @@ public class MasterVideoDao {
 				rs.getString("video_name"),
 				rs.getInt("video_year"),
 				rs.getInt("video_time"),
-				rs.getString("genre_id")
+				rs.getString("genre_id"),
+				null
 				);
 				videoList.add(video);
 			}

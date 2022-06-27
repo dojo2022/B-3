@@ -85,7 +85,7 @@ public class PostServlet extends HttpServlet {
 		String video_id = request.getParameter("video_id");
 		String user_id = request.getParameter("user_id");
 		String review_contents = request.getParameter("review_contents");
-		String genre_name = request.getParameter("genre_name");
+		String genre_id = request.getParameter("genre_id");
 		String feelcat_name1 = request.getParameter("feelcat_name1");
 		String feelcat_name2 = request.getParameter("feelcat_name2");
 		String star = request.getParameter("star");
@@ -93,7 +93,7 @@ public class PostServlet extends HttpServlet {
 
 		// 投稿処理を行う
 		ReviewDao rDao = new ReviewDao();
-		if (rDao.insert(new Review(video_id, user_id, review_contents, genre_name, feelcat_name1, feelcat_name2, star))) {	// 登録成功
+		if (rDao.insert(new Review(video_id, user_id, review_contents, genre_id, feelcat_name1, feelcat_name2, star))) {	// 登録成功
 			request.setAttribute("result","投稿しました。");
 //			new Result("登録成功！", "投稿しました。", "/simpleBC/PostServlet"));
 		}

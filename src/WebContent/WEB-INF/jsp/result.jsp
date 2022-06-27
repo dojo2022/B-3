@@ -36,7 +36,7 @@
                     <div class="buttons">
                         <button type="button" title="write-review"
                                 onclick="location.href='/FLIFRE/PostServlet?video_id=${ video.video_id }'"
-                                ${empty id? 'disabled' : ''}>
+                                ${empty id? 'hidden' : ''}>
                             レビューを<br>
                             書く
                         </button>
