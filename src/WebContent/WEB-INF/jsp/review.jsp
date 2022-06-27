@@ -8,6 +8,7 @@
 	<title>レビュー一覧 | FLIFRE</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/review.css">
+	<script src="/FLIFRE/js/reply.js" defer></script>
 </head>
 <body>
 	<%@ include file="header.jsp" %>
@@ -29,9 +30,7 @@
 						</span>
 						<!-- t_reviewのstarを引用 -->
 
-						<span> <!-- 投稿日時 --> ${e.review_date}
-						</span>
-						<!-- t_reviewのreview_dateを引用 -->
+
 
 						<br>感想カテゴリ： <span> <!--  感想カテゴリ1  --> ${e.feelcat_name1}
 						</span>
@@ -44,7 +43,13 @@
 						<br><br> <span> <!-- レビュー本文 --> ${e.review_contents}
 						</span>
 						<!-- t_reviewのreview_contentsを引用 -->
-						<!-- ueda -->
+
+						<br>
+						<br><span>
+							<!-- 投稿日時 --> ${e.review_date}
+						</span>
+						<!-- t_reviewのreview_dateを引用 -->
+
 						<!-- リプライの本文追加。書いた人の名前　日時　リプライした本文 -->
 						<%-- <c:forEach var="reply" items="${}" >
 </c:forEach> --%>

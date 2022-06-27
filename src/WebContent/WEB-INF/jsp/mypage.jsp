@@ -28,8 +28,8 @@
 				height="75">
 			</span>
 			<!-- m_userのuser_imgを引用 -->
-			<br> <span>
-				<!-- ユーザー名  --> ${m_user.user_name}
+			<span>
+				<!-- ユーザー名  --> <strong>${m_user.user_name}</strong>
 			</span>
 			<!-- m_userのuser_nameを引用 -->
 
@@ -73,7 +73,7 @@
 							</span>
 
 							<span>
-								<!-- ユーザー名  --> ${e.user_name}
+								<!-- ユーザー名  --> <strong>${e.user_name}</strong>
 							</span>
 							<br>
 							<br>
@@ -92,11 +92,6 @@
 									value="${e.star}">
 								</span>
 								<!-- t_reviewのstarを引用 -->
-
-								<span>
-									<!-- 投稿日時 --> ${e.review_date}
-								</span>
-								<!-- t_reviewのreview_dateを引用 -->
 								<br>
 								感想カテゴリ：
 								<span>
@@ -118,6 +113,10 @@
 									name="review_contents" value="${e.review_contents}">
 								</span>
 								<!-- t_reviewのreview_contentsを引用 -->
+								<br>
+								<br><span>
+									<!-- 投稿日時 --> ${e.review_date}
+								</span>
 
 								<br>
 								<br>
