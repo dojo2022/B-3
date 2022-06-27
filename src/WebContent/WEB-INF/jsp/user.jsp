@@ -112,7 +112,7 @@
 								<br>
 
 								<!-- リプライフォームここから ここのデータ格納方法が分からない-->
-
+								<hr>
 								<c:set var="e_review_id" value="${e.review_id}" />
 								<c:forEach var="i" begin="0" end="${replyLists.size()}" step="1">
 									<c:forEach var="reply" items="${replyLists[i] }">
@@ -121,7 +121,8 @@
 
 
 										<c:if test="${reply_review_id == e_review_id}">
-											<p>${reply.user_name}</p>
+											<p><a href="/FLIFRE/UserpageServlet?user_id=${reply.user_id}">
+											${reply.user_name}</a></p>
 											<p>${reply.reply_contents}</p>
 											<p>${reply.reply_date}</p>
 										</c:if>

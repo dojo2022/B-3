@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -17,6 +18,7 @@ import dao.ReplyDao;
 import dao.ReviewDao;
 import model.LoginUser;
 import model.MasterUser;
+import model.Reply;
 import model.Replydata;
 import model.Review;
 import model.Reviewdata;
@@ -72,6 +74,21 @@ public class MypageServlet extends HttpServlet {
  		List<Replydata> Replydata = pDao.select2(user_id);
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("Replydata", Replydata);
+
+		//loginしているユーザーのid
+//		LoginUser user_sessiondata=(LoginUser)session.getAttribute("id");
+//		String login_user_id=user_sessiondata.getUser_id();
+		ReplyDao rpDao = new ReplyDao();
+		List<String> Reviews = rpDao.select_review_user_id(user_id);
+		//リプライがあったレビューの一覧を取得
+
+			List<List<Reply>>replyLists = new ArrayList<List<Reply>>();
+			for(String Review_id: Reviews) {
+				List<Reply> replyList = rpDao.select_name_contents_date(Review_id);
+				replyLists.add(replyList);
+			}
+			session.setAttribute("replyLists", replyLists);
+
 //
 //		// リアクション一覧を検索する
 //		ReactionDao  aDao = new ReactionDao();
@@ -134,20 +151,6 @@ public class MypageServlet extends HttpServlet {
 				response.sendRedirect("/FLIFRE/MypageServlet");
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 			/*
 

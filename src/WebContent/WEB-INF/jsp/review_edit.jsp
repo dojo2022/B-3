@@ -54,11 +54,11 @@
 				        <p>${review_edit.star}</p>
  				        	<select name="star">
 				        		<option>選択してください</option>
-				        		<option value="1">★</option>
-				        		<option value="2">★★</option>
-				        		<option value="3">★★★</option>
-				        		<option value="4">★★★★</option>
-				        		<option value="5">★★★★★</option>
+				        		<option value="★">★</option>
+				        		<option value="★★">★★</option>
+				        		<option value="★★★">★★★</option>
+				        		<option value="★★★★">★★★★</option>
+				        		<option value="★★★★★">★★★★★</option>
 				        	</select>
 				        <td>
 				        </td>
