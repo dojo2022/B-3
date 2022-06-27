@@ -21,9 +21,10 @@
 		<div class="review-box">
 			<form id="review_form" method="GET" action="/FLIFRE/ReviewServlet" onsubmit="return post()">
 <!-- 				<table class="table"> -->
-					<c:forEach var="e" items="${reviewList}" >
+					<c:forEach var="e" items="${reviewList}"  varStatus="status">
 						<!-- アイコン -->
-						<img src="images/${e.user_img}" width="75" height="75"> <span>
+						<img src="images/${e.user_img}" width="75" height="75">
+						<span>
 							<!-- ユーザー名  --> <strong>${e.user_name}</strong>
 						</span>
 						<br> <span> <!--  5段階評価  --> ${e.star}
@@ -32,7 +33,9 @@
 
 
 
-						<br>感想カテゴリ： <span> <!--  感想カテゴリ1  --> ${e.feelcat_name1}
+						<br>感想カテゴリ： <span> <!--  感想カテゴリ1  -->
+						<a href="/FLIFRE/UserpageServlet?user_id=${reply.user_id}">
+											${reply.user_name}</a>
 						</span>
 						<!-- t_reviewのfeelcat_name1を引用 -->
 
@@ -141,6 +144,7 @@
 		  		<div class="border-bottom"></div>
 		  	</form>
 		</div>
+		<p id="reviewdata_size" style="display:none;">${reviewList.size()}</p>
 	</main>
   <!--label class="label" for="name">名前</label>
   <input id="name" type="text" name="name">

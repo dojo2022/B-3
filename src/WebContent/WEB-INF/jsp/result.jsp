@@ -32,6 +32,10 @@
                             <th>年代：</th>
                             <td>${ video.video_year }</td>
                         </tr>
+                        <tr>
+                            <th>時間：</th>
+                            <td>${ video.video_time }分</td>
+                        </tr>
                     </table>
                     <div class="buttons">
                         <button type="button" title="write-review"

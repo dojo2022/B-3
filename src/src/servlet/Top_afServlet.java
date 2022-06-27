@@ -60,6 +60,7 @@ public class Top_afServlet extends HttpServlet {
 	// ログイン後トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
+		return;
 	}
 
 }

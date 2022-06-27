@@ -97,10 +97,10 @@ public class PostServlet extends HttpServlet {
 			request.setAttribute("result","投稿しました。");
 //			new Result("登録成功！", "投稿しました。", "/simpleBC/PostServlet"));
 		}
-//		else {	// 登録失敗
-//			request.setAttribute("result","投稿できませんでした。");
-////			new Result("登録失敗！", "投稿できませんでした。", "/simpleBC/PostServlet"));
-//		}
+		else {	// 登録失敗
+			request.setAttribute("result","投稿できませんでした。");
+//			new Result("登録失敗！", "投稿できませんでした。", "/simpleBC/PostServlet"));
+		}
 
 		// トップページにフォワードする
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("Top_afServlet");

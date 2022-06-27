@@ -82,8 +82,8 @@
 								<!-- 作品名 -->【 ${e.video_name} 】
 							</span>
 							<span>
-									<!--  ジャンル  --> ${e.genre_name}
-								</span>
+								<!--  ジャンル  --> ${e.genre_name}
+							</span>
 								<!-- t_reviewのgenre_idを引用 -->
 							<!-- t_reviewのvideo_idを引用 -->
 							<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
