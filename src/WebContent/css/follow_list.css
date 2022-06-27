@@ -58,21 +58,23 @@
 div#table {
 	height: 500px;
 	margin: auto;
+	overflow: auto;
 }
 
 #follow_body{
 	width: 700px;
 	height: 450px;
+	overflow: auto;
 }
 
 .follow_table th, .follow_table td{
 	border: 1px solid #715c1f;
 	text-align: center;
-	}
+}
 
 #table.follow_table tr.data_row:hover {
-	 	background-color: darkgrey;
-	}
+	 background-color: darkgrey;
+}
 
 .follow_table #icon {
 	width: 120px;

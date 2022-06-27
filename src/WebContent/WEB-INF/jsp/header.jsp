@@ -88,7 +88,7 @@
 		</div>
 
 
-	    <div class="log">
+	    <div id="log" class="${ empty id ? 'login' : 'logout' }">
 	        <a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
 	            <img src="images/${ empty id ? 'login' : 'logout' }.png"
 	                 width="97" height="29"
@@ -128,5 +128,14 @@
 	    <!--ここまでメニュー-->
 	</div>
 </form>
-
+<script>
+	let logout = document.getElementById('log');
+	if (logout.classList.contains('logout')) {
+		logout.addEventListener('click', (e) => {
+			if (!window.confirm('ログアウトしますか？')) {
+				e.preventDefault();
+			}
+		});
+	}
+</script>
 </header>

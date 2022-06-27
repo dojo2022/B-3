@@ -26,7 +26,7 @@
 	margin: auto;
 	height: 450px;
 	width: 650px;
-	background-color: #e9efd5;
+	background-color: #c1e4e9;
 }
 
 .pE_table tbody {
@@ -36,6 +36,10 @@
 .pE_table th, .pE_table td {
 	border: 1px solid #715c1f;
 	text-align: center;
+	padding: 0;
 }
 
+.pE_table tr #icon_tr {
+	height: 150px;
+}
 
