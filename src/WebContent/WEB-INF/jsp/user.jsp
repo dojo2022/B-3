@@ -71,7 +71,7 @@
 								action="/FLIFRE/UserpageServlet">
 								<!-- アイコン -->
 								<img src="images/${e.user_img}" width="75" height="75"> <span>
-									<!-- ユーザー名  --> ${e.user_name}
+									<!-- ユーザー名  --><strong>${e.user_name}</strong>
 								</span> <br> <br> <span> <!-- 作品名 --> 【
 									${e.video_name} 】
 								</span>
