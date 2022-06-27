@@ -40,6 +40,11 @@ button:active{
 .video-image {
     background-color: gray;
     height: 150px;
+    width: 100%;
+}
+.video-image img {
+  width: 100%;
+  height: 150px;
 }
 
 .video-info {

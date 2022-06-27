@@ -22,6 +22,9 @@
                 <core:forEach var="video" items="${ videoList }">
                 <div class="search-result-item">
                     <div class="video-image">
+                      <img src="images/sampleImage.png"
+                           width="250px"
+                           onError="this.onerror=null;this.src='images/sampleImage.png';">
                     </div>
                     <table class="video-info">
                         <tr>
@@ -30,7 +33,11 @@
                         </tr>
                         <tr>
                             <th>年代：</th>
-                            <td>${ video.video_year }</td>
+                            <td>${ video.video_year }年</td>
+                        </tr>
+                        <tr>
+                            <th>時間：</th>
+                            <td>${ video.video_time }分</td>
                         </tr>
                         <tr>
                             <th>時間：</th>
