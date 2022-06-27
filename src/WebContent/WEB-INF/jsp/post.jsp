@@ -50,7 +50,7 @@
 			<form name="form_post" id="post_form" method="POST" action="/FLIFRE/PostServlet" >
 			   <div ><input class="post-btn" type="submit" id="post-btn" value=""></div>
 <!-- 			    <div id="post-btn" class="post-btn" ></div> -->
-			    <input  type="submit" value="submit">
+<!-- 			    <input  type="submit" value="submit"> -->
 
 			    <input type="hidden" name="video_id" value="${video.video_id}">
 			    <input type="hidden" name="user_id" value="'${id.user_id}">
