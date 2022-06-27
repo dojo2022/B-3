@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/FLIFRE/css/common.css">
 <link rel="stylesheet" href="/FLIFRE/css/profile.css">
 <script src="/FLIFRE/js/profile.js " defer></script>
+<script src="/FLIFRE/js/reply.js" defer></script>
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -117,7 +118,10 @@
 									name="review_contents" value="${e.review_contents}">
 								</span>
 								<!-- t_reviewのreview_contentsを引用 -->
-								<br> <br> <input type="hidden" name="review_id"
+
+								<br>
+								<br>
+								<input type="hidden" name="review_id"
 									value="${e.review_id}">
 									<input type="hidden" name="review_id"
 									value="${e.review_date}"><input class="delete"
@@ -126,6 +130,33 @@
 								<br>
 								<br>
 								<hr>
+								<c:set var="e_review_id" value="${e.review_id}" />
+								<c:forEach var="i" begin="0" end="${replyLists.size()}" step="1">
+									<c:forEach var="reply" items="${replyLists[i] }">
+
+										<c:set var="reply_review_id" value="${reply.review_id}" />
+
+
+										<c:if test="${reply_review_id == e_review_id}">
+											<p><a href="/FLIFRE/UserpageServlet?user_id=${reply.user_id}">
+											${reply.user_name}</a></p>
+											<p>${reply.reply_contents}</p>
+											<p>${reply.reply_date}</p>
+										</c:if>
+
+									</c:forEach>
+								</c:forEach>
+								<hr>
+								<%-- <input type="hidden" id="status_index" value="${status.index}">
+								<img id="reply${status.index}" src="./images/reply.png"  width="50" height="50">
+								<div id="reply_submit${status.index}">
+								<input type="hidden" name="review_id" value="${e.review_id}">
+								<input type="hidden" name="user_id" value="${id.user_id}">
+								<input type="hidden" name="follow_id" value="${m_user.user_id}">
+								<textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
+								<input type="submit" name="submit" value="リプライを送信する">
+								</div> --%>
+
 								<br>
 							</form>
 						</c:forEach>
@@ -137,7 +168,7 @@
 						<hr>
 						<br>
 						<c:forEach var="e" items="${Replydata}">
-
+						<!-- リプライ先のレビューリンクか何かがあればいい -->
 
 							<!-- 自分のアイコン -->
 							 <img src="images/${e.user_img}" width="75"

@@ -28,7 +28,6 @@
     <td><span class="user">${e.user_name}</span></td>
     <td><span class="video">${e.video_name}</span></td>
     <td><span class="time">${e.review_date}</span></td>
-    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
@@ -64,6 +63,7 @@
       //中身がsuccessだったら成功しましたのアラート表示
 
 </script>
+
 
 </body>
 </html>
