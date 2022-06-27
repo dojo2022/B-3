@@ -25,12 +25,11 @@
    <tr>
     <td><span class="user">${e.user_name}</span></td>
     <td><span class="video">${e.video_name}</span></td>
+        <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="30" hight="30"></label></td>
     <td><span class="time">${e.review_date}</span></td>
-    <td><img id="image_file" src="images/nikochan5.png" onclick="henkou()" width="50" hight="50"></td>
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
-    <td><label class="open" for="popup"><img id="reply" src="images/reply.png" onclick="replyfrom()"width="50" hight="50"></label></td>
     </tr>
     </table>
     <br>

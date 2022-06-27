@@ -53,8 +53,8 @@
 <!-- 			    <input  type="submit" value="submit"> -->
 
 			    <input type="hidden" name="video_id" value="${video.video_id}">
-			    <input type="hidden" name="user_id" value="'${id.user_id}">
-			    <input type="hidden" name="genre_name" value="'${video.genre_name}">
+			    <input type="hidden" name="user_id" value="${id.user_id}">
+			    <input type="hidden" name="genre_name" value="${video.genre_name}">
 			    <table>
 			        <tr>
 						<td>
@@ -85,11 +85,11 @@
 				        <td>
 				        	<select name="star">
 				        		<option>選択してください</option>
-				        		<option value="1">★</option>
-				        		<option value="2">★★</option>
-				        		<option value="3">★★★</option>
-				        		<option value="4">★★★★</option>
-				        		<option value="5">★★★★★</option>
+				        		<option>★</option>
+				        		<option>★★</option>
+				        		<option>★★★</option>
+				        		<option>★★★★</option>
+				        		<option>★★★★★</option>
 				        	</select>
 				        </td>
 				        <td>
