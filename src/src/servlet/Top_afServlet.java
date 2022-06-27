@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ReplyDao;
 import dao.ReviewDao;
 import model.LoginUser;
+import model.Reply;
 import model.Top;
 
 /**
@@ -41,6 +43,8 @@ public class Top_afServlet extends HttpServlet {
 				LoginUser user = (LoginUser)session.getAttribute("id");
 				String user_id = user.getUser_id();
 
+				String bottun = request.getParameter("submit");
+
 		/*review_id取得
 				Review use = (Review)session.getAttribute("id");
 				String Review_id = use.getReview_id();*/
@@ -60,7 +64,6 @@ public class Top_afServlet extends HttpServlet {
 	// ログイン後トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
-		return;
 	}
 
 }
