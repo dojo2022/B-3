@@ -80,6 +80,10 @@
 							<span>
 								<!-- 作品名 -->【 ${e.video_name} 】
 							</span>
+							<span>
+									<!--  ジャンル  --> ${e.genre_name}
+								</span>
+								<!-- t_reviewのgenre_idを引用 -->
 							<!-- t_reviewのvideo_idを引用 -->
 							<form id="mylist_edit" method="POST" action="/FLIFRE/MypageServlet">
 								<span>
@@ -92,11 +96,8 @@
 									<!-- 投稿日時 --> ${e.review_date}
 								</span>
 								<!-- t_reviewのreview_dateを引用 -->
-								<br> <span>
-									<!--  ジャンル  --> ${e.genre_name}
-								</span>
-								<!-- t_reviewのgenre_idを引用 -->
-
+								<br>
+								感想カテゴリ：
 								<span>
 									<!-- 感想カテゴリ1 --> ${e.feelcat_name1} <input type="hidden"
 									name="feelcat_name1" value="${e.feelcat_name1}">
@@ -109,6 +110,7 @@
 								</span>
 								<!-- t_reviewのfeelcat_name2を引用 -->
 
+								<br>
 								<br>
 								<span>
 									<!-- レビュー本文 --> ${e.review_contents} <input type="hidden"

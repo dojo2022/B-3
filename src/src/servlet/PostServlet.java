@@ -103,8 +103,8 @@ public class PostServlet extends HttpServlet {
 //		}
 
 		// トップページにフォワードする
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking_bf.jsp");
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("Top_afServlet");
 //		dispatcher.forward(request, response);
-		response.sendRedirect("/FLIFRE/Ranking_bfServlet");
+		response.sendRedirect("/FLIFRE/Top_afServlet");
 	}
 }
