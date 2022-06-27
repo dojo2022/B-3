@@ -24,7 +24,7 @@
 			<table id="login_table">
 				<tr>
 					<td>
-					<label>ID(メールアドレス)<br>
+					<label>メールアドレス<br>
 					<input type="text" name="ID">
 					</label>
 					</td>

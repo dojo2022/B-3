@@ -71,18 +71,21 @@
 			<tr>
 				<th>変更項目</th><th>変更前</th><th>変更後</th>
 			</tr>
-			<tr>
-				<td>
+ 			<tr id="icon_tr">
+				<td id="icon_tr">
 					アイコン画像
 				</td>
-				<td>
-					<img src="images/${m_user.user_img}" width="75" height="75">
+ 			<td id="icon_tr">
+					<img src="images/${m_user.user_img}" width="80" height="80">
 				</td>
-				<td>
+				<td id="icon_tr">
 					<select name="iconSelect">
 						<optgroup label="icon">
 							<option value="icon1">icon1.png</option>
 							<option value="icon2">icon2.png</option>
+							<option value="icon3">icon3.png</option>
+							<option value="icon4">icon4.png</option>
+							<option value="icon5">icon5.png</option>
 						</optgroup>
 					</select>
 				</td>
