@@ -16,7 +16,7 @@ body {
     text-align: start;
 }
 
-.log {
+#log {
     text-align: right;
     margin: 10px 80px 0 30px;
 }
