@@ -8,19 +8,19 @@ public class Top implements Serializable{
 	private String video_name;
 	private String review_contents;
 	private String review_date;
-	private String genre_id;
+	private String user_id;
 	private String genre_name;
 
 
 	//引数があるコンストラクタ
-	public Top(String user_name, String user_img, String video_name, String review_contents, String review_date, String genre_id, String genre_name) {
+	public Top(String user_name, String user_img, String video_name, String review_contents, String review_date, String user_id, String genre_name) {
 		super();
 		this.user_name = user_name;
 		this.user_img = user_img;
 		this.video_name = video_name;
 		this.review_contents = review_contents;
 		this.review_date = review_date;
-		this.genre_id = genre_id;
+		this.user_id = user_id;
 		this.genre_name = genre_name;
 	}
 
@@ -32,7 +32,7 @@ public class Top implements Serializable{
 		this.video_name = "";
 		this.review_contents = "";
 		this.review_date = "";
-		this.genre_id = "";
+		this.user_id = "";
 		this.genre_name = "";
 	}
 
@@ -76,12 +76,12 @@ public class Top implements Serializable{
 		this.review_date = review_date;
 	}
 
-	public String getGenre_id() {
-		return genre_id;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setGenre_id(String genre_id) {
-		this.genre_id = genre_id;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getGenre_name() {
@@ -91,8 +91,5 @@ public class Top implements Serializable{
 	public void setGenre_name(String genre_name) {
 		this.genre_name = genre_name;
 	}
-
-
-
 
 }

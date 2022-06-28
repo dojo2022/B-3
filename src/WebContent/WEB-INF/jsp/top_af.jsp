@@ -25,7 +25,7 @@
     <td><img class="circle" src="images/${e.user_img}" width="75" height="75"></td>
    </tr>
    <tr>
-    <td><span class="user">${e.user_name}</span></td>
+    <td><span class="user"><a href="/FLIFRE/UserpageServlet?user_id=${e.user_id}">${e.user_name}</a></span></td>
     <td><span class="video">${e.video_name}</span></td>
     <input type="hidden" id="status_index" value="${status.index}">
         <td><label class="open" for="popup"><img id="reply${status.index}" src="images/reply.png" onclick="replyfrom()"width="30" hight="30"></label></td>

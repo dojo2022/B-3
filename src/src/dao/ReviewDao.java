@@ -555,7 +555,7 @@ public class ReviewDao {
 
 					// SQL文を準備する
 
-					String sql = "select m_user.user_name, m_user.user_img, t_review.review_date, t_review.review_contents, m_video.video_name from t_review inner join t_follow on T_review.user_id = t_follow.follow_id inner join m_user ON t_review.user_id = m_user.user_id  inner join m_video ON t_review.video_id = m_video.video_id where t_follow.user_id = ?"  ;
+					String sql = "select m_user.user_id, m_user.user_name, m_user.user_img, t_review.review_date, t_review.review_contents, m_video.video_name from t_review inner join t_follow on T_review.user_id = t_follow.follow_id inner join m_user ON t_review.user_id = m_user.user_id  inner join m_video ON t_review.video_id = m_video.video_id where t_follow.user_id = ?"  ;
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 							pStmt.setString(1,user_id);
 
@@ -570,7 +570,7 @@ public class ReviewDao {
 						rs.getString("video_name"),
 						rs.getString("review_contents"),
 						rs.getString("review_date"),
-						"",
+						rs.getString("user_id"),
 						""
 						);
 						Reviewlist2.add(card);
