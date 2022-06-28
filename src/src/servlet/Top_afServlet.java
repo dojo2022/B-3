@@ -45,7 +45,7 @@ public class Top_afServlet extends HttpServlet {
 				LoginUser user = (LoginUser)session.getAttribute("id");
 				String user_id = user.getUser_id();
 
-				String bottun = request.getParameter("submit");
+
 
 		/*review_id取得
 				Review use = (Review)session.getAttribute("id");
@@ -88,5 +88,7 @@ public class Top_afServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top_af.jsp");
 		dispatcher.forward(request, response);
 	}
+
+
 
 }
