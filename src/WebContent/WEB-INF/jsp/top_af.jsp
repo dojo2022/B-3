@@ -22,7 +22,7 @@
  <c:forEach var="e" items="${Reviewdata}">
   <table class="table">
    <tr>
-    <td><span class="circle" >${e.user_img}</span></td>
+    <td><img class="circle" src="images/${e.user_img}" width="75" height="75"></td>
    </tr>
    <tr>
     <td><span class="user">${e.user_name}</span></td>

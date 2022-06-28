@@ -430,12 +430,7 @@ public class ReviewDao {
 
 					// SQL文を準備する
 
-					String sql = " SELECT m_user.user_name,m_user.user_img,m_video.video_name,t_review.star,t_review.review_date,m_genre.genre_name,t_review.feelcat_name1,t_review.feelcat_name2,t_review.review_contents"
-							   + " FROM t_review"
-							   + " LEFT JOIN m_user ON t_review.user_id = m_user.user_id"
-							   + " LEFT JOIN m_video ON t_review.video_id = m_video.video_id"
-							   + " LEFT JOIN m_genre ON t_review.genre_id = m_genre.genre_id"
-							   ;
+					String sql = "select m_user.user_name, m_user.user_img, t_review.review_date, t_review.review_contents, m_video.video_name from t_review inner join t_follow on T_review.user_id = t_follow.follow_id inner join m_user ON t_review.user_id = m_user.user_id  inner join m_video ON t_review.video_id = m_video.video_id ";
 
 //							   "FROM (t_review  LEFT JOIN m_user ON t_review.user_id = m_user.user_id ) LEFT JOIN m_video ON t_review.video_id = m_video.video_id;";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -446,16 +441,14 @@ public class ReviewDao {
 					// 結果表をコレクションにコピーする
 					while (rs.next()) {
 						Top card = new Top(
-						rs.getString("user_name"),
-						rs.getString("user_img"),
-						rs.getString("video_name"),
-						rs.getString("star"),
-						rs.getString("review_date"),
-						rs.getString("genre_name"),
-						rs.getString("feelcat_name1"),
-						rs.getString("feelcat_name2"),
-						rs.getString("review_contents")
-						);
+								rs.getString("user_name"),
+								rs.getString("user_img"),
+								rs.getString("video_name"),
+								rs.getString("review_contents"),
+								rs.getString("review_date"),
+								"",
+								""
+								);
 						Reviewlist.add(card);
 					}
 				}

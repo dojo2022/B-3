@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/top.css">
+    <script src="/FLIFRE/js/profile.js" defer></script>
+<script src="/FLIFRE/js/reply.js" defer></script>
 </head>
 
 
@@ -17,55 +19,10 @@
 <!--  script type="text/javascript" src="/FLIFRE/jsp.js"></script>
     <form method="POST" action="/FLIFRE/Top_afServlet"-->
 <div class="border1">
-
-
  <c:forEach var="e" items="${Review}">
- 	<img src="images/${e.user_img}" width="75" height="75">
- 	<span>
-		<!-- ユーザー名  --> <strong>${e.user_name}</strong>
-	</span>
-	<br>
-	<br>
-
-<!-- 	<span> -->
-<%-- 		<!-- 作品名 -->【 ${e.video_name} 】 --%>
-		<span class="video">【 ${e.video_name} 】</span>
-
-<!-- 	</span> -->
-<!-- 	<span> -->
-<%-- 		<!--  ジャンル  --> ${e.genre_name} --%>
-<!-- 	</span> -->
-<!-- 	<span> -->
-<%-- 		<!-- 5段階評価  --> ${e.star} <input type="hidden" name="star" --%>
-<%-- 		value="${e.star}"> --%>
-<!-- 	</span> -->
-<!-- 	<br> -->
-<!-- 	感想カテゴリ： -->
-<!-- 	<span> -->
-<%-- 		<!-- 感想カテゴリ1 --> ${e.feelcat_name1} <input type="hidden" --%>
-<%-- 		name="feelcat_name1" value="${e.feelcat_name1}"> --%>
-<!-- 	</span> -->
- 	<!-- t_reviewのfeelcat_name1を引用 -->
-
-<!-- 	<span> -->
-<%-- 		<!--  感想カテゴリ2  --> ${e.feelcat_name2} <input type="hidden" --%>
-<%-- 		name="feelcat_name2" value="${e.feelcat_name2}"> --%>
-<!-- 	</span> -->
-	<!-- t_reviewのfeelcat_name2を引用 -->
-	<br>
-	<br>
-	<span>
-		<!-- レビュー本文 --> ${e.review_contents} <input type="hidden"
-		name="review_contents" value="${e.review_contents}">
-	</span>
-	<br>
-	<br><span>
-		<!-- 投稿日時 --> ${e.review_date}
-	</span>
-
   <table class="table">
    <tr>
-    <td><span class="circle" >${e.user_img}</span></td>
+    <td><img class="circle" src="images/${e.user_img}" width="75" height="75"></td>
    </tr>
    <tr>
     <td><span class="user">${e.user_name}</span></td>
@@ -74,18 +31,39 @@
    </tr>
    <tr>
     <td><textarea class="review" readonly>${e.review_contents}</textarea></td>
+
     </tr>
+
     </table>
     <br>
     <hr>
     <br>
     </c:forEach>
+     <input type="checkbox" id="popup">
+     <div class="overlay">
+    <div class="window">
+        <label class="close" for="popup">×</label>
+        <from>
+            <div class="example">
+
+<div id="user_reply">
+                                    <input type="hidden" id="status_index" value="${status.index}">
+                                    <div id="reply_submit${status.index}">
+                                    <input type="hidden" name="review_id" value="${e.review_id}">
+                                    <input type="hidden" name="user_id" value="${id.user_id}">
+                                    <input type="hidden" name="follow_id" value="${m_user.user_id}">
+                                    <textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
+                                    <input type="submit" name="submit" value="リプライを送信する">
+                                    <!-- リプライフォームここまで -->
+                                    </div>
+                                </div>
+  </div>
+
+        </from>
+    </div>
+</div>
 
 
-    	</div>
-	</div>
-
-  <div class="border-bottom"></div>
 </div>
 <!-- レビュー星表示 -->
     <script>
@@ -104,9 +82,10 @@
       }
       //resultという名前のスコープの中身を取り出す
       //中身がsuccessだったら成功しましたのアラート表示
-
+      if(document.getAttribute("result") != null){
+        window.alert(document.getAttribute("result"));
+      }
 </script>
-
 
 </body>
 </html>

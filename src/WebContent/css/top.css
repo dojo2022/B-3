@@ -13,6 +13,7 @@
 .table{
   position: relative;
   left:50px;
+  bottom:40px;
 }
 
 hr {
@@ -21,8 +22,8 @@ hr {
 
 .circle{
   position: relative;
-  top: 115px;
-  right:50px;
+  top: 110px;
+  right:11px;
   width: 80px;
   height: 80px;
   border-radius:50%;
@@ -31,15 +32,15 @@ hr {
 
 .user{
   position: relative;
-  top: 10px;
-  left: 90px;
+  top: 100px;
+  left: auot;
   margin:0 30px 0 0;
 }
 
 .video{
   position: relative;
   top: 10px;
-  left: auto;
+  left: -75px;
   margin:0 30px 0 0;
 }
 
@@ -54,6 +55,7 @@ hr {
 display: inline-block;
 position: relative;
 left:90px;
+top:5px;
 width: 463%;
 height: 80px;
 }
@@ -62,6 +64,7 @@ height: 80px;
 #reply{
 position: relative;
 top:10px;
+left: -70px;
 margin:0 30px 0 0;
 
 }
