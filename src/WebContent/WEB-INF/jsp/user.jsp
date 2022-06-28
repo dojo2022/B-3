@@ -148,7 +148,7 @@
 									<input type="hidden" name="user_id" value="${id.user_id}">
 									<input type="hidden" name="follow_id" value="${m_user.user_id}">
 									<textarea id="iken" placeholder="内容を入力してください" name="textarea"></textarea>
-									<input type="submit" name="submit" value="リプライを送信する">
+									<br><input type="submit" name="submit" value="リプライを送信する">
 									<!-- リプライフォームここまで -->
 									</div>
 								</div>
