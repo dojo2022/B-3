@@ -10,7 +10,7 @@
 	<script src="js/post.js" defer></script>
 </head>
 <body>
-<h1>edit</h1>
+
    <%@ include file="header.jsp" %>
 
 
@@ -86,8 +86,10 @@
 					    <td>
 					    <!-- submitボタンで/FLIFRE/PostServletのpostにデータを渡す -->
 				<br> <br> <input type="hidden" name="review_date" value="${review_edit.review_date}">
-				<input class="delete"type="submit" name="submit" value="レビュー編集中止"> <input
-									class="edit" type="submit" name="submit" value="レビュー編集完了">
+				<button class="delete"type="submit" name="submit" value="レビュー編集中止">レビュー編集中止</button>
+				<br>
+				<br>
+				<button class="edit" type="submit" name="submit" value="レビュー編集完了">レビュー編集完了</button>
 								<br>
 					    </td>
 					</tr>

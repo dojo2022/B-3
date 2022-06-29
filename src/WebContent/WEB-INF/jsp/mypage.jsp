@@ -120,12 +120,10 @@
 
 								<br>
 								<br>
-								<input type="hidden" name="review_id"
-									value="${e.review_id}">
-									<input type="hidden" name="review_id"
-									value="${e.review_date}"><input class="delete"
-									type="submit" name="submit" value="レビュー削除"> <input
-									class="edit" type="submit" name="submit" value="レビュー編集">
+								<input type="hidden" name="review_id" value="${e.review_id}">
+								<input type="hidden" name="review_id" value="${e.review_date}">
+									<button class="delete" type="submit" name="submit" value="レビュー削除">レビュー削除</button>
+									<button class="edit" type="submit" name="submit" value="レビュー編集">レビュー編集</button>
 								<br>
 								<br>
 								<hr>
