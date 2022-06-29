@@ -8,46 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/FLIFRE/css/contact.css">
 </head>
 <body id="contact_body">
-	<div class="wrapper">
-<!-- ロゴ -->
-	<div id="logo">
-		<a href="/FLIFRE/Top_afServlet">
-			<img src="images/logo.png" width="240" height="140" alt="FLIFRE">
-		</a>
-	</div>
-<!-- ハンバーガーメニュー -->
-   <header>
-      <p class="log">
-         <a href="/FLIFRE/LogoutServlet"><img src="images/logout.png"  width="120" height="29" alt="ログアウト"></a>
-         <!--ログアウト状態のページではこっち→　<a href="/FLIFRE/LoginServlet"><img src="images/login.png"  width="97" height="29" alt="ログイン"></a>　-->
-      </p>
-      <div class="hamburger-menu">
-         <input type="checkbox" id="menu-btn-check">
-         <label for="menu-btn-check" class="menu-btn"><span></span></label>
-<!--ここからメニュー-->
-      <div class="menu-content">
-         <ul>
-            <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-            <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-            <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-            <li><a href="/FLIFRE/MypageServlet">マイページ</a></li> <!--ログアウト状態のページではカット-->
-         </ul>
-      </div>
-      </div>
-   </header>
+	 <%@ include file="header.jsp" %>
 <!--ここまでメニュー-->
 <!-- お問い合わせ -->
 	<main>

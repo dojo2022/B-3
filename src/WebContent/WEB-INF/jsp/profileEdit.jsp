@@ -11,51 +11,8 @@
 <script src="/FLIFRE/js/profile.js"  defer></script>
 </head>
 <body>
-<header>
 
-<!-- ロゴ -->
-	<h1 id="logo">
-    	<a href="/FLIFRE/Top_afServlet"><img src="images/logo.png" width="240" height="140" alt="FLIFRE"></a>
-    </h1>
-
-<!-- ログアウトボタン -->
-	<p class="log">
-		<a href="/FLIFRE/LogoutServlet">
-		<img src="images/logout.png"  width="120" height="29" alt="ログアウト">
-		</a>
-	</p>
-
-<!--ここからメニュー-->
-		<div class="hamburger-menu">
-			<input type="checkbox" id="menu-btn-check">
-			<label for="menu-btn-check" class="menu-btn"><span></span></label>
-			<div class="menu-content">
-				<ul>
-			    <li><a href="/FLIFRE/Result_afServlet">アニメ</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">国内</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">欧米</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">韓国</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">華流</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">アクション</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">コメディ</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">キッズ・ファミリー</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">ヒューマンドラマ</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">サスペンス</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">ラブロマンス</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">ホラー</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">ファンタジー</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">SF</a></li>
-			    <li><a href="/FLIFRE/Result_afServlet">バラエティ</a></li>
-			    <li><a href="/FLIFRE/Ranking_afServlet">レビューランキング</a></li>
-			    	<core:if test="${ not empty id }">
-			        <li><a href="/FLIFRE/MypageServlet">マイページ</a></li>
-			        </core:if>
-			    <li><a href="/FLIFRE/ContactServlet">お問い合わせ</a></li>
-				</ul>
-			</div>
-		</div>
-<!--ここまでメニュー-->
-</header>
+ <%@ include file="header.jsp" %>
 
 
 <h2 id="explain">プロフィール変更</h2>
