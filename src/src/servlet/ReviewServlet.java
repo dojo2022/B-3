@@ -11,10 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MasterVideoDao;
-import dao.ReplyDao;
 import dao.ReviewDao;
 import model.MasterVideo;
-import model.Reply;
 import model.Reviewdata;
 
 /**
@@ -64,29 +62,29 @@ public class ReviewServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		//リクエストパラメータを取得する☆
-		request.setCharacterEncoding("UTF-8");
-
-		String bottun = request.getParameter("submit");
-
-		if (bottun.equals("リプライを送信する")) {
-
-			String reply_contents = request.getParameter("textarea");
-			String review_id = request.getParameter("review_id");
-
-			// 新規リプライ送信を行う☆
-			ReplyDao pDao = new ReplyDao();
-			if (pDao.insert(new Reply("", review_id, user_id, reply_contents, ""))) { // 登録成功
-
-				request.setAttribute("result", "success");
-				//			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
-			} else { // 登録失敗
-				request.setAttribute("result", "fail");
-				//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
-			}
-		}
-		String userurl="/FLIFRE/UserpageServlet?user_id="+follow_id;
-		response.sendRedirect(userurl);
-		return;
+//		//リクエストパラメータを取得する☆
+//		request.setCharacterEncoding("UTF-8");
+//
+//		String bottun = request.getParameter("submit");
+//
+//		if (bottun.equals("リプライを送信する")) {
+//
+//			String reply_contents = request.getParameter("textarea");
+//			String review_id = request.getParameter("review_id");
+//
+//			// 新規リプライ送信を行う☆
+//			ReplyDao pDao = new ReplyDao();
+//			if (pDao.insert(new Reply("", review_id, user_id, reply_contents, ""))) { // 登録成功
+//
+//				request.setAttribute("result", "success");
+//				//			new Result("登録成功！", "リプライを送信しました。", "/FLIFRE/MypageServlet"));
+//			} else { // 登録失敗
+//				request.setAttribute("result", "fail");
+//				//			new Result("登録失敗！", "リプライを送信できませんでした。", "/FLIFRE/MypageServlet"));
+//			}
+//		}
+//		String userurl="/FLIFRE/UserpageServlet?user_id="+follow_id;
+//		response.sendRedirect(userurl);
+//		return;
 	}
 }
