@@ -93,7 +93,7 @@
 	    <div id="log" class="${ empty id ? 'login' : 'logout' }">
 	        <a href="/FLIFRE/${ empty id ? 'Login' : 'Logout' }Servlet">
 	            <img src="images/${ empty id ? 'login' : 'logout' }.png"
-	                 width="97" height="29"
+	                 width="105" height="36"
 	                 alt="${ empty id ? 'ログイン' : 'ログアウト' }">
 	        </a>
 	    </div>
