@@ -4,7 +4,7 @@ html * {box-sizing: border-box;}
 
 body {
     margin: 0 0 0 0;
-    background-color:  #c6e872;
+    background-color:  cadetblue;
 }
 
 .wrapper {
@@ -18,9 +18,9 @@ body {
 }
 
 h2 {
-    color: #056334;
+    color: #004080;
     font-size: 22px;
-    border-bottom: 3px dotted #056334;
+    border-bottom: 3px dotted #004080;
     margin-top: 20px 0px 20px 0px;
     padding-top: 10px 10px 10px 10px;
 }
@@ -33,9 +33,9 @@ h3 {
 }
 
 
-a:link {color: #056334;}
-a:visited {color: #056334;}
-a:hover {color: #09a858;}
+a:link {color: #004080;}
+a:visited {color: #004080;}
+a:hover {color: cadetblue;}
 a:active {color: #a3060c;}
 img {border-style: none;}
 

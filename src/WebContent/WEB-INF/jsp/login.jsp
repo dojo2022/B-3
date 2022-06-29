@@ -45,12 +45,12 @@
 			    </tr>
 			    <tr>
 			    	<td>
-			    	<a href="/FLIFRE/RegisterServlet">新規会員登録</a>
+			    	<strong><a href="/FLIFRE/RegisterServlet">新規会員登録</a></strong>
 			    	</td>
 			    </tr>
 			     <tr>
 			    	<td>
-			    	<a href="/FLIFRE/Top_bfServlet">トップページ</a>
+			    	<strong><a href="/FLIFRE/Top_bfServlet">トップページ</a></strong>
 			    	</td>
 			    </tr>
 			</table>

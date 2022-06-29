@@ -52,9 +52,10 @@
 <!-- お問い合わせ -->
 	<main>
 	<h2 id="explain">お問い合わせ</h2>
+	<div class="contact-box">
 	<table id="contact_table">
 		<tr>
-			<td>各種お問い合わせに関しましては、
+			<td><br>各種お問い合わせに関しましては、
 			<strong>aburiengawa@gmail.com</strong>に送信いただきますようお願い申し上げます。</td>
 		</tr>
 		<tr>
@@ -90,10 +91,10 @@
 		</tr>
 		<tr>
 			<td>以上の項目をすべて記入されませんと、
-			返信いたしかねますので何卒よろしくお願い申し上げます。</td>
-			<br>
+			返信いたしかねますので何卒よろしくお願い申し上げます。<br><br></td>
 		</tr>
 	</table>
+	</div>
 	</main>
 	</div>
 </body>

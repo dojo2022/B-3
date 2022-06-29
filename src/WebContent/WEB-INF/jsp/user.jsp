@@ -27,10 +27,10 @@
 					type="hidden" name="follow_id" value="${m_user.user_id}">
 				<c:choose>
 					<c:when test="${check}">
-						<input type="submit" name="submit" value="フォロー解除">
+						<button type="submit" class="follow" name="submit" value="フォロー解除">フォロー解除</button>
 					</c:when>
 					<c:otherwise>
-						<input type="submit" name="submit" value="フォロー">
+						<button type="submit" class="follow" name="submit" value="フォロー">フォロー</button>
 					</c:otherwise>
 				</c:choose>
 			</form>

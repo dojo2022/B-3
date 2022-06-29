@@ -71,9 +71,11 @@
 				    </th>
 				    <td colspan="2">
 				    	<input type="text" name="title" placeholder="タイトル入力">
-				    	<input type="submit" name="submit" value="検索">
-				    </td>
-				    <td>
+<!-- 				    	<input type="submit" name="submit" value="検索"> -->
+						<button type="submit" title="search"
+	                 		 onclick="location.href='/FLIFRE/PostServlet?video_id=${ video.video_id }'" ${empty id? '' : ''}>
+	                  		検索
+	            		</button>
 				    </td>
 				</tr>
 		    </table>

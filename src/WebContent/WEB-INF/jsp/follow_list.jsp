@@ -37,10 +37,10 @@
 			    <input type="hidden" name="follow_id" value="${i.user_id}">
 				    <tr>
 					    <td id="icon"><img src="images/${i.user_img}" width="75" height="75"></td>
-					    <td id="name"><a href="/FLIFRE/UserpageServlet?user_id=${i.user_id}">${i.user_name}</a></td>
+					    <td id="name"><strong><a href="/FLIFRE/UserpageServlet?user_id=${i.user_id}">${i.user_name}</a></strong></td>
 					    <td id="pf">${i.user_pf}</td>
 				    	<td id="bottun">
-				    	<input type="submit" name="followBottun" value="フォロー解除">
+				    	<button type="submit" name="followBottun" value="フォロー解除">フォロー解除</button>
 				    	</td>
 				    </tr>
 			    </form>
@@ -74,15 +74,15 @@
 			    <input type="hidden" name="follow_id" value="${i.user_id}">
 			    <tr>
 				    <td id="icon"><img src="images/${i.user_img}" width="75" height="75"></td>
-				    <td id="name"><a href="/FLIFRE/UserpageServlet?user_id=${i.user_id}">${i.user_name}</a></td>
+				    <td id="name"><strong><a href="/FLIFRE/UserpageServlet?user_id=${i.user_id}">${i.user_name}</a></strong></td>
 				    <td id="pf">${i.user_pf}</td>
 			    	<td id="bottun">
 			    	<c:choose>
 			    	<c:when test = "${i.follow_exchange}">
-			    		<input type="submit" name="followBottun" value="フォロー解除">
+			    		<button type="submit" name="followBottun" value="フォロー解除">フォロー解除</button>
 			    	</c:when>
 			    	<c:otherwise>
-						<input type="submit" name="followBottun" value="フォロー">
+						<button type="submit" name="followBottun" value="フォロー">フォロー</button>
 					</c:otherwise>
 					</c:choose>
 					</td>

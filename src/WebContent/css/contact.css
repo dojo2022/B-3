@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+/* .contact-box { */
+/* 	background-color: #ffffff; */
+/*     border: 3px double #a3060c; */
+/*     position:relative; */
+/*     margin:0 auto 0 auto; */
+/*     padding:20px; */
+/*     max-width:1000px; */
+/* } */
+
 /* ロゴ */
 #logo {
 	text-align: left;
@@ -11,8 +20,10 @@
 }
 
 #contact_table {
+	background-color: #ffffff;
+    border: 3px double #a3060c;
 	margin: auto;
-	border: 1px solid black;
+/* 	border: 1px solid black; */
 }
 
 #explain {

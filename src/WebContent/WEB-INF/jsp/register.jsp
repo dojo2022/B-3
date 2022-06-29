@@ -55,7 +55,12 @@
 		    </tr>
 		    <tr>
 			    <td>
-			    <a href="/FLIFRE/LoginServlet">ログイン</a>
+			    <strong><a href="/FLIFRE/LoginServlet">ログイン</a></strong>
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+			    <strong><a href="/FLIFRE/Top_bfServlet">トップページ</a></strong>
 			    </td>
 			</tr>
 		</table>
